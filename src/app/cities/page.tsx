@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, ArrowRight, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
+import { MapPin, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -27,30 +27,30 @@ export default function CitiesPage() {
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute inset-0 bg-black" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
-            <MapPin className="w-4 h-4 text-accent-light" />
-            <span className="text-sm text-white/80 font-medium">100+ Cities &amp; Towns</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-black rounded-full text-sm font-semibold mb-6">
+            <MapPin className="w-4 h-4" />100+ Cities &amp; Towns
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
-            HVAC Service <span className="text-gradient">Areas</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            HVAC Service <span className="text-gold">Areas</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-lg max-w-2xl mx-auto">
             Mass HVAC proudly serves over 100 cities and towns across Massachusetts.
           </p>
+          <div className="gold-divider mt-8" />
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Services bar */}
-      <section className="py-6 bg-surface border-b border-gray-100 sticky top-[64px] z-30 backdrop-blur-md bg-surface/95">
+      <section className="py-4 bg-surface border-b border-gray-100 sticky top-[64px] z-30 backdrop-blur-md bg-surface/95">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-wrap justify-center gap-2">
             {services.map((s, i) => {
               const Icon = serviceIcons[i];
               return (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-600 text-sm font-medium rounded-full shadow-sm hover:shadow-md hover:bg-primary hover:text-white transition-all duration-200 border border-gray-100 hover:border-primary">
+                <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-600 text-sm font-medium rounded-full hover:bg-gold hover:text-black transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
                   <Icon className="w-3.5 h-3.5" />{s.shortName}
                 </Link>
               );
@@ -60,12 +60,11 @@ export default function CitiesPage() {
       </section>
 
       {/* Cities */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
-          {/* Alphabet nav */}
           <div className="flex flex-wrap justify-center gap-1.5 mb-16">
             {sortedLetters.map((letter) => (
-              <a key={letter} href={`#letter-${letter}`} className="w-9 h-9 flex items-center justify-center rounded-lg bg-surface text-primary font-bold text-sm hover:bg-primary hover:text-white transition-all duration-200">
+              <a key={letter} href={`#letter-${letter}`} className="w-9 h-9 flex items-center justify-center rounded-lg bg-surface text-dark-900 font-bold text-sm hover:bg-gold hover:text-black transition-all duration-200">
                 {letter}
               </a>
             ))}
@@ -76,7 +75,7 @@ export default function CitiesPage() {
               <ScrollReveal key={letter}>
                 <div id={`letter-${letter}`}>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-4xl font-extrabold text-primary/10">{letter}</span>
+                    <span className="text-4xl font-bold text-gold/30">{letter}</span>
                     <div className="flex-1 h-px bg-gray-100" />
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -84,10 +83,10 @@ export default function CitiesPage() {
                       <Link
                         key={city.slug}
                         href={`/cities/${city.slug}`}
-                        className="group p-4 bg-surface rounded-xl hover:bg-primary hover:text-white transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 border border-transparent hover:border-primary"
+                        className="group p-4 bg-surface rounded-xl hover:bg-gold hover:text-black transition-all duration-200 hover:shadow-[0_8px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5"
                       >
-                        <p className="font-semibold text-primary-dark group-hover:text-white transition-colors text-sm">{city.name}</p>
-                        <p className="text-[11px] text-gray-400 group-hover:text-white/60 transition-colors mt-0.5">MA &bull; HVAC Services</p>
+                        <p className="font-semibold text-dark-900 group-hover:text-black transition-colors text-sm">{city.name}</p>
+                        <p className="text-[11px] text-gray-400 group-hover:text-black/60 transition-colors mt-0.5">MA &bull; HVAC Services</p>
                       </Link>
                     ))}
                   </div>

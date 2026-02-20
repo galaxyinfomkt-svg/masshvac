@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Clock, Mail, ArrowRight, Star, Shield, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, ArrowRight, Star, ExternalLink } from "lucide-react";
 import { services } from "@/data/services";
 
 const quickLinks = [
@@ -10,171 +10,151 @@ const quickLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
-const popularCities = [
-  "Milford", "Framingham", "Natick", "Worcester", "Newton",
-  "Brookline", "Cambridge", "Wellesley", "Marlborough", "Hudson",
-];
-
 export default function Footer() {
   return (
-    <footer className="relative">
-      {/* ── Pre-footer CTA ── */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-16">
-          <div className="glass rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+    <footer>
+      {/* ── Gold CTA Banner (like RS Development) ── */}
+      <section className="py-12 bg-gold">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-2">
-                Ready for <span className="text-gradient">Perfect Comfort?</span>
-              </h3>
-              <p className="text-white/60 text-lg">Fast, reliable HVAC service across Massachusetts</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">
+                Ready to Start Your HVAC Project?
+              </h2>
+              <p className="text-black/70">Expert heating, cooling, and air quality solutions across Massachusetts.</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <a
-                href="tel:+15083869104"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-full transition-all duration-300 hover:scale-[1.03] glow-accent"
-              >
-                <Phone className="w-5 h-5" />
-                (508) 386-9104
-              </a>
-              <Link
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all duration-300 hover:scale-[1.03] border border-white/10"
-              >
-                Free Estimate <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
+            <a
+              href="tel:+15083869104"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105 shrink-0"
+            >
+              <Phone className="w-5 h-5" />(508) 386-9104
+            </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Main Footer ── */}
-      <div className="bg-primary-dark">
+      {/* ── Main Footer — Pure black like RS Development ── */}
+      <div className="bg-black">
         <div className="mx-auto max-w-7xl px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {/* Company info */}
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-8">
+            {/* Logo Column */}
+            <div className="text-center md:text-left">
               <Image
                 src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg"
                 alt="Mass HVAC Inc"
                 width={160}
                 height={50}
-                className="h-12 w-auto object-contain brightness-0 invert mb-5"
+                className="h-12 w-auto object-contain brightness-0 invert mb-5 mx-auto md:mx-0"
               />
-              <p className="text-white/50 text-sm leading-relaxed mb-6">
-                Professional heating, cooling, and indoor air quality services for homes and
-                businesses across Massachusetts.
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Licensed HVAC contractor serving over 100 cities across Massachusetts. Professional heating, cooling, and indoor air quality services.
               </p>
-              <div className="space-y-3 text-sm">
-                <a href="tel:+15083869104" className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <Phone className="w-3.5 h-3.5 text-accent" />
-                  </div>
-                  (508) 386-9104
-                </a>
-                <div className="flex items-center gap-3 text-white/70">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-                    <MapPin className="w-3.5 h-3.5 text-blue-light" />
-                  </div>
-                  Milford, MA
-                </div>
-                <div className="flex items-center gap-3 text-white/70">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-                    <Clock className="w-3.5 h-3.5 text-teal" />
-                  </div>
-                  Mon–Sat 7AM–8PM
-                </div>
-                <div className="flex items-center gap-3 text-white/70">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
-                    <Mail className="w-3.5 h-3.5 text-yellow-400" />
-                  </div>
-                  24/7 Emergency Available
-                </div>
-              </div>
             </div>
 
-            {/* Services */}
-            <div>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Services</h4>
-              <ul className="space-y-3">
-                {services.map((service) => (
+            {/* Services Column */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold mb-4 text-gold">Services</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                {services.map((service, i) => (
                   <li key={service.slug}>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="text-sm text-white/50 hover:text-white transition-colors flex items-center gap-2 group"
+                      className={`hover:text-gold transition-colors ${i === 0 ? "text-gold font-semibold" : ""}`}
                     >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
                       {service.shortName}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Quick Links + Cities */}
-            <div>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Quick Links</h4>
-              <ul className="space-y-3 mb-8">
+              <div className="mt-4">
                 {quickLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-white/50 hover:text-white transition-colors flex items-center gap-2 group"
-                    >
-                      <ArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Popular Areas</h4>
-              <div className="flex flex-wrap gap-2">
-                {popularCities.map((city) => (
-                  <Link
-                    key={city}
-                    href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="px-3 py-1 text-xs text-white/40 bg-white/5 rounded-full hover:bg-white/10 hover:text-white/80 transition-colors"
-                  >
-                    {city}
+                  <Link key={link.href} href={link.href} className="block text-sm text-gray-400 hover:text-gold transition-colors py-1">
+                    {link.label}
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Reviews & Hours */}
-            <div>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Reviews</h4>
-              <div className="glass rounded-2xl p-5 mb-6">
-                <div className="flex items-center gap-1 text-yellow-400 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-white/80 text-sm font-medium mb-1">5.0 Star Rating</p>
-                <p className="text-white/40 text-xs mb-4">Based on Google Reviews</p>
-                <a
-                  href="https://g.page/r/CSf92YebNYJPEAE/review"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-accent-light hover:text-accent font-semibold transition-colors"
-                >
-                  Leave a Review <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
+            {/* Contact Column */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold mb-4 text-gold">Contact Us</h4>
+              <ul className="space-y-4 text-gray-400">
+                <li>
+                  <a href="tel:+15083869104" className="flex items-center gap-3 justify-center md:justify-start hover:text-gold transition-colors">
+                    <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Phone className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Phone</p>
+                      <p className="font-bold text-white">(508) 386-9104</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div className="flex items-center gap-3 justify-center md:justify-start">
+                    <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <MapPin className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Location</p>
+                      <p className="text-sm">Milford, MA</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center gap-3 justify-center md:justify-start">
+                    <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Clock className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Hours</p>
+                      <p className="text-sm">Mon–Sat 7AM–8PM</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center gap-3 justify-center md:justify-start">
+                    <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Mail className="w-4 h-4 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500">Emergency</p>
+                      <p className="text-sm">24/7 Available</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-              <div className="flex items-center gap-3 text-white/60 text-xs">
-                <Shield className="w-4 h-4 text-emerald-400" />
-                <span>Licensed &amp; Insured in Massachusetts</span>
-              </div>
+            {/* Reviews Column */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold mb-4 text-gold">Google Reviews</h4>
+              <a
+                href="https://g.page/r/CSf92YebNYJPEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="flex items-center gap-1 text-gold mb-2 justify-center md:justify-start">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                  <span className="font-bold text-white ml-2">5.0</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-4">Based on Google Reviews</p>
+                <span className="inline-flex items-center gap-1.5 text-gold text-sm font-semibold hover:text-gold-light transition-colors">
+                  Leave a Review <ExternalLink className="w-3 h-3" />
+                </span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="border-t border-white/5">
-          <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
+        <div className="border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
             <p>&copy; {new Date().getFullYear()} Mass HVAC Inc. All rights reserved.</p>
-            <p>Designed for peak performance &amp; comfort.</p>
+            <p>Licensed & Insured HVAC Contractor — Massachusetts</p>
           </div>
         </div>
       </div>

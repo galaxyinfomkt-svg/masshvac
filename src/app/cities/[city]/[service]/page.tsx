@@ -36,26 +36,26 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
+        <div className="absolute inset-0 bg-black" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-6">
-              <Link href={`/cities/${city.slug}`} className="px-3 py-1 glass text-white/70 text-sm rounded-full hover:bg-white/15 transition-colors">{city.name}, MA</Link>
+              <Link href={`/cities/${city.slug}`} className="px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full hover:bg-white/20 transition-colors">{city.name}, MA</Link>
               <span className="text-white/30">/</span>
-              <Link href={`/services/${service.slug}`} className="px-3 py-1 glass text-white/70 text-sm rounded-full hover:bg-white/15 transition-colors">{service.shortName}</Link>
+              <Link href={`/services/${service.slug}`} className="px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full hover:bg-white/20 transition-colors">{service.shortName}</Link>
             </div>
             <span className="text-5xl block mb-5">{service.icon}</span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-[1.08]">
-              {service.name} in <span className="text-gradient">{city.name}, MA</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              {service.name} in <span className="text-gold">{city.name}, MA</span>
             </h1>
-            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/50 text-lg leading-relaxed mb-8 max-w-xl">
               Looking for professional {service.name.toLowerCase()} in {city.name}, Massachusetts? Mass HVAC is the trusted local choice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-full transition-all duration-300 hover:scale-[1.03] glow-accent">
+              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold hover:bg-gold-dark text-black font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03]">
                 <Phone className="w-5 h-5" />(508) 386-9104
               </a>
-              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 glass text-white font-bold text-lg rounded-full transition-all duration-300 hover:bg-white/15 hover:scale-[1.03]">
+              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
                 Free Estimate <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -65,26 +65,26 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       </section>
 
       {/* Content */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
-            <div className="bg-white rounded-3xl p-8 md:p-12">
+            <div className="bg-white rounded-xl p-8 md:p-12">
               {content.split("\n\n").map((block, i) => {
-                if (block.startsWith("## ")) return <h2 key={i} className="text-3xl font-extrabold text-primary-dark mt-8 mb-4 tracking-tight">{block.replace("## ", "")}</h2>;
-                if (block.startsWith("### ")) return <h3 key={i} className="text-2xl font-bold text-primary-dark mt-6 mb-3">{block.replace("### ", "")}</h3>;
+                if (block.startsWith("## ")) return <h2 key={i} className="text-3xl font-bold text-dark-900 mt-8 mb-4">{block.replace("## ", "")}</h2>;
+                if (block.startsWith("### ")) return <h3 key={i} className="text-2xl font-bold text-dark-900 mt-6 mb-3">{block.replace("### ", "")}</h3>;
                 if (block.startsWith("- ")) {
                   return (
                     <ul key={i} className="space-y-2 my-4">
                       {block.split("\n").filter((l) => l.startsWith("- ")).map((item, j) => (
                         <li key={j} className="flex items-start gap-3 text-gray-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
-                          <span dangerouslySetInnerHTML={{ __html: item.replace(/^- /, "").replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary-dark'>$1</strong>") }} />
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0" />
+                          <span dangerouslySetInnerHTML={{ __html: item.replace(/^- /, "").replace(/\*\*(.*?)\*\*/g, "<strong class='text-dark-900'>$1</strong>") }} />
                         </li>
                       ))}
                     </ul>
                   );
                 }
-                return <p key={i} className="text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary-dark'>$1</strong>") }} />;
+                return <p key={i} className="text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-dark-900'>$1</strong>") }} />;
               })}
             </div>
           </ScrollReveal>
@@ -92,12 +92,12 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       </section>
 
       {/* Other services */}
-      <section className="py-16 gradient-mesh-light">
+      <section className="py-16 bg-surface">
         <div className="mx-auto max-w-7xl px-4 text-center">
-          <h2 className="text-2xl font-extrabold text-primary-dark mb-8 tracking-tight">Other HVAC Services in {city.name}, MA</h2>
+          <h2 className="text-2xl font-bold text-dark-900 mb-8">Other HVAC Services in <span className="text-gold">{city.name}, MA</span></h2>
           <div className="flex flex-wrap justify-center gap-3">
             {services.filter((s) => s.slug !== service.slug).map((s) => (
-              <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-white text-gray-600 font-medium rounded-full shadow-sm hover:shadow-md hover:bg-primary hover:text-white transition-all duration-200 border border-gray-100 hover:border-primary text-sm">
+              <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-white text-gray-600 font-medium rounded-full hover:bg-gold hover:text-black transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
                 {s.icon} {s.shortName} in {city.name}
               </Link>
             ))}
@@ -108,16 +108,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       {/* Nearby cities */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 text-center">
-          <h2 className="text-2xl font-extrabold text-primary-dark mb-8 tracking-tight flex items-center justify-center gap-2">
-            <MapPin className="w-5 h-5 text-accent" />{service.shortName} in Nearby Cities
+          <h2 className="text-2xl font-bold text-dark-900 mb-8 flex items-center justify-center gap-2">
+            <MapPin className="w-5 h-5 text-gold" />{service.shortName} in Nearby Cities
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {nearby.map((c) => (
-              <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-surface text-gray-600 font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-200 border border-gray-100 hover:border-primary text-sm">
+              <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-surface text-gray-600 font-medium rounded-full hover:bg-gold hover:text-black transition-all duration-200 text-sm">
                 {c.name}, MA
               </Link>
             ))}
-            <Link href="/cities" className="px-5 py-2.5 bg-accent/5 text-accent font-bold rounded-full hover:bg-accent hover:text-white transition-all border border-accent/20 hover:border-accent text-sm">
+            <Link href="/cities" className="px-5 py-2.5 bg-gold/10 text-gold font-bold rounded-full hover:bg-gold hover:text-black transition-all text-sm">
               All Cities →
             </Link>
           </div>

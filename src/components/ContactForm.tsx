@@ -1,74 +1,31 @@
-import { Phone, CheckCircle2, Clock, Shield, ArrowRight } from "lucide-react";
+import { Phone, Clock, Shield, CheckCircle2, Star, Award } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function ContactForm() {
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 gradient-mesh-light" />
+    <section id="contact" className="py-20 bg-white">
+      <div className="mx-auto max-w-7xl px-4">
+        <ScrollReveal className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-dark-900 mb-4">
+            Get Your <span className="text-gold">Free Estimate</span>
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Fill out the form or call us directly. We respond within 1 hour.
+          </p>
+          <div className="gold-divider mt-6" />
+        </ScrollReveal>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+          {/* Left — Gold form container (RS Development style) */}
           <ScrollReveal direction="left">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/5 text-accent text-sm font-semibold rounded-full mb-6">
-              <Phone className="w-3.5 h-3.5" /> Get In Touch
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-dark mb-4 tracking-tight">
-              Ready for Comfort?{" "}
-              <span className="text-gradient">Let&apos;s Talk.</span>
-            </h2>
-            <p className="text-gray-500 text-lg leading-relaxed mb-10">
-              Fill out the form and one of our HVAC specialists will contact you
-              within the hour. Or call us directly for immediate assistance.
-            </p>
-
-            <div className="space-y-4">
-              <a
-                href="tel:+15083869104"
-                className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
-              >
-                <div className="w-14 h-14 bg-accent/5 rounded-xl flex items-center justify-center group-hover:bg-accent/10 group-hover:scale-110 transition-all duration-300">
-                  <Phone className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Call Us Now</p>
-                  <p className="text-xl font-extrabold text-primary-dark">(508) 386-9104</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gray-300 ml-auto group-hover:text-accent group-hover:translate-x-1 transition-all" />
-              </a>
-
-              {[
-                { icon: Clock, title: "Response Time", value: "Within 1 Hour", bg: "bg-teal/5", color: "text-teal" },
-                { icon: CheckCircle2, title: "Free Estimates", value: "No Obligation", bg: "bg-blue/5", color: "text-blue" },
-                { icon: Shield, title: "Our Promise", value: "100% Satisfaction Guarantee", bg: "bg-yellow-50", color: "text-yellow-600" },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100"
-                >
-                  <div className={`w-14 h-14 ${item.bg} rounded-xl flex items-center justify-center shrink-0`}>
-                    <item.icon className={`w-6 h-6 ${item.color}`} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">{item.title}</p>
-                    <p className="text-lg font-bold text-primary-dark">{item.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          {/* Right — Form */}
-          <ScrollReveal direction="right">
-            <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-3 overflow-hidden">
-              <div className="bg-primary rounded-2xl p-5 mb-3 text-center">
-                <h3 className="text-white font-bold text-lg">Get Your Free Estimate</h3>
-                <p className="text-white/60 text-sm">No obligation • Fast response</p>
-              </div>
+            <div className="bg-gold rounded-xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.15)] overflow-hidden">
+              <h3 className="text-2xl font-bold text-black mb-1 text-center">
+                Request Your Free Estimate
+              </h3>
+              <p className="text-black/60 text-sm text-center mb-4">No obligation &bull; Fast response</p>
               <iframe
                 src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
-                className="w-full border-none rounded-xl"
+                className="w-full border-none rounded-lg bg-white"
                 style={{ height: "480px" }}
                 id="inline-ko3gg97CJtkDUrqpruBq"
                 data-layout="{'id':'INLINE'}"
@@ -84,6 +41,62 @@ export default function ContactForm() {
                 data-form-id="ko3gg97CJtkDUrqpruBq"
                 title="FunilGhl"
               />
+            </div>
+          </ScrollReveal>
+
+          {/* Right — Contact info + trust badges (RS Development style) */}
+          <ScrollReveal direction="right">
+            <div className="space-y-6">
+              {/* Black contact card */}
+              <div className="bg-black text-white p-8 rounded-xl">
+                <h3 className="text-2xl font-bold mb-6 text-gold">Contact Us Directly</h3>
+                <div className="space-y-5">
+                  <a href="tel:+15083869104" className="flex items-center gap-4 hover:text-gold transition-colors">
+                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Phone</p>
+                      <p className="text-xl font-bold">(508) 386-9104</p>
+                    </div>
+                  </a>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Hours</p>
+                      <p className="font-bold">Mon–Sat 7AM–8PM</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center shrink-0">
+                      <Star className="w-5 h-5 text-black" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Rating</p>
+                      <p className="font-bold">5.0 Stars on Google</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Trust badges grid */}
+              <div className="bg-surface p-6 rounded-xl">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  {[
+                    { icon: Shield, label: "Licensed & Insured" },
+                    { icon: Star, label: "Top Rated" },
+                    { icon: CheckCircle2, label: "Free Estimates" },
+                    { icon: Award, label: "Warranty Included" },
+                  ].map((badge) => (
+                    <div key={badge.label} className="py-4">
+                      <badge.icon className="w-8 h-8 text-gold mx-auto mb-2" />
+                      <p className="text-sm font-medium text-dark-900">{badge.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </div>
