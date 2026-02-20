@@ -25,7 +25,8 @@ export default function BlogPage() {
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg" alt="HVAC tips and guides for Massachusetts homeowners" fill className="object-cover" priority quality={85} />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
             <BookOpen className="w-4 h-4" />Expert HVAC Insights
@@ -45,7 +46,7 @@ export default function BlogPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
           <ScrollReveal>
-            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 bg-white rounded-xl overflow-hidden card-hover">
+            <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 bg-white rounded-xl overflow-hidden border border-gray-100 card-premium">
               <div className="relative h-72 lg:h-auto overflow-hidden">
                 <Image src={featured.image} alt={featured.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
@@ -85,7 +86,7 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rest.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.08}>
-                <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-xl overflow-hidden card-hover">
+                <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-xl overflow-hidden border border-gray-100 card-premium">
                   <div className="relative h-52 overflow-hidden">
                     <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>

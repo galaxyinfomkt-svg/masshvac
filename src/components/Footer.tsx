@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer>
       {/* Accent CTA Banner */}
-      <section className="py-12 bg-accent">
+      <section className="py-12 bg-gradient-to-r from-accent via-accent to-accent-dark relative overflow-hidden noise-texture">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
@@ -36,17 +36,17 @@ export default function Footer() {
       </section>
 
       {/* Main Footer */}
-      <div className="bg-black">
+      <div className="bg-dark-950">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-8">
             <div className="text-center md:text-left">
-              <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC Inc" width={160} height={50} className="h-12 w-auto object-contain brightness-0 invert mb-5 mx-auto md:mx-0" />
+              <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC Inc" width={160} height={50} className="h-12 w-auto object-contain brightness-0 invert mb-5 mx-auto md:mx-0" style={{ mixBlendMode: "screen" }} />
               <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 100+ cities across Massachusetts. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
               <p className="text-gray-500 text-xs">MA License #12345 | Fully Insured</p>
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="font-bold mb-4 text-accent">Services</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 {services.map((service) => (
                   <li key={service.slug}>
@@ -54,7 +54,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <h4 className="font-bold mb-3 mt-6 text-accent">Quick Links</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Quick Links</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 {quickLinks.map((link) => (
                   <li key={link.href}><Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link></li>
@@ -63,7 +63,7 @@ export default function Footer() {
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="font-bold mb-4 text-accent">Contact Us</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Contact Us</h4>
               <ul className="space-y-4 text-gray-400">
                 <li>
                   <a href="tel:+15083869104" className="flex items-center gap-3 justify-center md:justify-start hover:text-accent transition-colors">
@@ -93,7 +93,7 @@ export default function Footer() {
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="font-bold mb-4 text-accent">Google Reviews</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Google Reviews</h4>
               <a href="https://g.page/r/CSf92YebNYJPEAE/review" target="_blank" rel="noopener noreferrer" className="block">
                 <div className="flex items-center gap-1 text-accent mb-2 justify-center md:justify-start">
                   {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 fill-current" />))}
@@ -103,21 +103,27 @@ export default function Footer() {
                 <span className="inline-flex items-center gap-1.5 text-accent text-sm font-semibold hover:text-accent-light transition-colors">Leave a Review <ExternalLink className="w-3 h-3" /></span>
               </a>
 
-              <h4 className="font-bold mb-3 mt-6 text-accent">Popular Areas</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Popular Areas</h4>
               <div className="flex flex-wrap gap-1.5 justify-center md:justify-start">
                 {popularCities.map((city) => (
-                  <Link key={city} href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`} className="px-2 py-0.5 text-xs text-gray-500 bg-white/5 rounded hover:bg-accent/20 hover:text-accent transition-colors">{city}</Link>
+                  <Link key={city} href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`} className="px-2 py-0.5 text-xs text-gray-500 bg-white/5 rounded border border-white/5 hover:border-accent/30 hover:bg-accent/20 hover:text-accent transition-colors">{city}</Link>
                 ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/5">
           <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
             <p>&copy; {new Date().getFullYear()} Mass HVAC Inc. All rights reserved.</p>
             <p>Licensed & Insured HVAC Contractor — Serving All of Massachusetts</p>
           </div>
+          <p className="text-center text-xs text-gray-600 mt-3">
+            Developed by{" "}
+            <a href="https://galaxyinfo.us" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light transition-colors font-medium">
+              Galaxy IT Mkt
+            </a>
+          </p>
         </div>
       </div>
     </footer>

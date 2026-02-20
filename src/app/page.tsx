@@ -30,6 +30,7 @@ import TextRotator from "@/components/TextRotator";
 import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
+import FAQAccordion from "@/components/FAQAccordion";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
@@ -100,7 +101,8 @@ export default function HomePage() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 hero-overlay-premium" />
+        <div className="absolute inset-0 noise-texture" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -112,7 +114,7 @@ export default function HomePage() {
                   <MapPin className="w-4 h-4" />
                   Serving 100+ MA Cities
                 </div>
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                <div className="inline-flex items-center gap-2 glass-premium text-white px-4 py-2 rounded-full text-sm">
                   <div className="flex text-accent">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -143,14 +145,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <a
                   href="tel:+15083869104"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-accent to-accent-dark relative overflow-hidden shimmer-line text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
                 >
                   <Phone className="w-5 h-5" />
                   (508) 386-9104
                 </a>
                 <Link
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
                 >
                   Get Free Estimate <ArrowRight className="w-5 h-5" />
                 </Link>
@@ -164,7 +166,7 @@ export default function HomePage() {
                   { icon: CheckCircle2, label: "Free Estimates" },
                 ].map((badge) => (
                   <span key={badge.label} className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-accent/15 shadow-[0_2px_8px_rgba(200,16,46,0.15)] rounded-full flex items-center justify-center">
                       <badge.icon className="w-4 h-4 text-accent" />
                     </div>
                     {badge.label}
@@ -222,7 +224,7 @@ export default function HomePage() {
                 <ScrollReveal key={service.slug} delay={i * 0.08}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className={`group relative block bg-white rounded-xl overflow-hidden card-hover ${
+                    className={`group relative block bg-white rounded-xl overflow-hidden card-premium border border-gray-100 ${
                       isFeatured
                         ? "ring-2 ring-accent"
                         : "shadow-[0_4px_6px_rgba(0,0,0,0.07)]"
@@ -248,7 +250,7 @@ export default function HomePage() {
                     {/* Content */}
                     <div className="p-6">
                       {/* Overlapping icon badge */}
-                      <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center -mt-12 relative z-10 shadow-[0_4px_15px_rgba(0,0,0,0.25)] group-hover:scale-110 transition-transform">
+                      <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center -mt-12 relative z-10 shadow-[0_4px_15px_rgba(200,16,46,0.3)] group-hover:scale-110 transition-transform">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
 
@@ -287,7 +289,7 @@ export default function HomePage() {
       {/* ════════════════════════════════════════════════
           ABOUT / STATS — Dark bg, 2-col, stat cards
           ════════════════════════════════════════════════ */}
-      <section className="py-20 bg-primary text-white">
+      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark relative overflow-hidden noise-texture py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Text */}
@@ -351,7 +353,7 @@ export default function HomePage() {
                 ].map((stat) => (
                   <div
                     key={stat.label}
-                    className="bg-white/10 p-5 rounded-xl"
+                    className="glass-premium p-5 rounded-xl"
                   >
                     <div className="text-accent text-3xl font-bold mb-1">
                       {stat.value}
@@ -437,11 +439,11 @@ export default function HomePage() {
               },
             ].map((step) => (
               <ScrollReveal key={step.num} delay={Number(step.num) * 0.08}>
-                <div className="relative bg-surface p-8 rounded-xl h-full shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
+                <div className="relative bg-white border border-gray-100 p-8 rounded-xl h-full shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
                   <div className="text-accent text-6xl font-bold opacity-20 absolute top-4 right-4">
                     {step.num}
                   </div>
-                  <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-4 shadow-[0_4px_15px_rgba(0,0,0,0.15)]">
+                  <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-4 shadow-[0_4px_15px_rgba(200,16,46,0.2)]">
                     <step.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-primary mb-3">
@@ -495,7 +497,7 @@ export default function HomePage() {
               },
             ].map((item) => (
               <ScrollReveal key={item.title}>
-                <div className="bg-white p-8 rounded-xl text-center card-hover shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                <div className="bg-white p-8 rounded-xl text-center card-premium border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
                   <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_4px_15px_rgba(0,0,0,0.15)]">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
@@ -531,7 +533,7 @@ export default function HomePage() {
               <ScrollReveal key={project.slug} delay={i * 0.08}>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group block rounded-xl overflow-hidden card-hover bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+                  className="group block rounded-xl overflow-hidden card-premium border border-gray-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                 >
                   <div className="relative h-60 overflow-hidden">
                     <Image
@@ -590,7 +592,8 @@ export default function HomePage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 hero-overlay-premium" />
+        <div className="absolute inset-0 noise-texture" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <ScrollReveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-8">
@@ -656,7 +659,7 @@ export default function HomePage() {
               <Link
                 key={city}
                 href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`}
-                className="px-4 py-2 bg-surface text-primary text-sm font-medium rounded-full hover:bg-accent hover:text-white transition-colors duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.06)]"
+                className="px-4 py-2 bg-white border border-gray-100 text-primary text-sm font-medium rounded-full hover:bg-accent hover:text-white hover:border-accent hover:shadow-[0_4px_15px_rgba(200,16,46,0.2)] transition-all duration-200 shadow-[0_1px_4px_rgba(0,0,0,0.06)]"
               >
                 {city}, MA
               </Link>
@@ -686,18 +689,7 @@ export default function HomePage() {
             </h2>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
-          <div className="space-y-4">
-            {faqData.map((faq, i) => (
-              <ScrollReveal key={i} delay={i * 0.05}>
-                <div className="bg-white rounded-xl p-6 shadow-[0_2px_10px_rgba(0,0,0,0.06)]">
-                  <h3 className="text-lg font-bold text-primary mb-2">
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <FAQAccordion items={faqData} />
         </div>
       </section>
 

@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone, ArrowRight, MapPin, Shield, Clock, Star, CheckCircle, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
 import { cities, getCityBySlug, getCityServiceContent } from "@/data/cities";
-import { services, getServiceBySlug } from "@/data/services";
+import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
@@ -40,12 +41,15 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   const nearby = cities.filter((_, i) => Math.abs(i - cityIndex) > 0 && Math.abs(i - cityIndex) <= 5).slice(0, 5);
   const serviceIndex = services.findIndex((s) => s.slug === service.slug);
   const ServiceIcon = serviceIcons[serviceIndex] || Wrench;
+  const serviceImages = serviceImagePool[service.slug] || cityHeroImages;
+  const heroImage = getImageForCity(`${city.slug}-${service.slug}`, serviceImages);
 
   return (
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
+        <Image src={heroImage} alt={`${service.name} in ${city.name}, Massachusetts - Mass HVAC`} fill className="object-cover" priority quality={85} />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
             {/* Breadcrumb pills */}
@@ -99,7 +103,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
-            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 md:p-12">
+            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
               {content.split("\n\n").map((block, i) => {
                 if (block.startsWith("## ")) return <h2 key={i} className="text-3xl font-bold text-primary mt-8 mb-4">{block.replace("## ", "")}</h2>;
                 if (block.startsWith("### ")) return <h3 key={i} className="text-2xl font-bold text-primary mt-6 mb-3">{block.replace("### ", "")}</h3>;
@@ -137,7 +141,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               { title: "100% Satisfaction", desc: `Every ${service.name.toLowerCase()} job in ${city.name} backed by our guarantee.` },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)]">
+                <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-gray-100 card-premium">
                   <CheckCircle className="w-8 h-8 text-accent mb-3" />
                   <h3 className="font-bold text-primary mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.desc}</p>
@@ -156,7 +160,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <p className="text-gray-500 text-sm mb-8">Explore all our professional HVAC services available in {city.name}.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {services.filter((s) => s.slug !== service.slug).map((s) => (
-                <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-surface text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
                   {s.icon} {s.shortName} in {city.name}
                 </Link>
               ))}
@@ -175,7 +179,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <p className="text-gray-500 text-sm mb-8">We also provide {service.name.toLowerCase()} in these nearby Massachusetts communities.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {nearby.map((c) => (
-                <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-white text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
                   {c.name}, MA
                 </Link>
               ))}
@@ -210,7 +214,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               },
             ].map((faq, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="p-6 bg-surface rounded-xl">
+                <div className="p-6 bg-white border border-gray-100 rounded-xl">
                   <h3 className="font-bold text-primary mb-2">{faq.q}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>

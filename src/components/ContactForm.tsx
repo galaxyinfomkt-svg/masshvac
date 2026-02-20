@@ -39,25 +39,25 @@ export default function ContactForm() {
           {/* Right — Contact info + trust badges */}
           <ScrollReveal direction="right">
             <div className="space-y-6">
-              <div className="bg-black text-white p-8 rounded-xl">
+              <div className="bg-gradient-to-br from-dark-900 to-dark-950 relative overflow-hidden noise-texture text-white p-8 rounded-xl">
                 <h3 className="text-2xl font-bold mb-6 text-accent">Contact Us Directly</h3>
                 <div className="space-y-5">
                   <a href="tel:+15083869104" className="flex items-center gap-4 hover:text-accent transition-colors">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0"><Phone className="w-5 h-5 text-white" /></div>
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(200,16,46,0.25)]"><Phone className="w-5 h-5 text-white" /></div>
                     <div><p className="text-sm text-gray-400">Phone</p><p className="text-xl font-bold">(508) 386-9104</p></div>
                   </a>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0"><Clock className="w-5 h-5 text-white" /></div>
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(200,16,46,0.25)]"><Clock className="w-5 h-5 text-white" /></div>
                     <div><p className="text-sm text-gray-400">Hours</p><p className="font-bold">Mon-Sat 7AM-8PM</p></div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0"><Star className="w-5 h-5 text-white" /></div>
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(200,16,46,0.25)]"><Star className="w-5 h-5 text-white" /></div>
                     <div><p className="text-sm text-gray-400">Rating</p><p className="font-bold">5.0 Stars on Google</p></div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-surface p-6 rounded-xl">
+              <div className="bg-white border border-gray-100 p-6 rounded-xl">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   {[
                     { icon: Shield, label: "Licensed & Insured" },

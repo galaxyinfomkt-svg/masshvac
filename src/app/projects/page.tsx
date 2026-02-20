@@ -23,7 +23,8 @@ export default function ProjectsPage() {
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c03544725a0db8.jpg" alt="HVAC projects portfolio Massachusetts" fill className="object-cover" priority quality={85} />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
             <Zap className="w-4 h-4" />{projects.length} Completed Projects
@@ -45,7 +46,7 @@ export default function ProjectsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.slug} delay={i * 0.05}>
-                <Link href={`/projects/${project.slug}`} className="group block rounded-xl overflow-hidden card-hover bg-white">
+                <Link href={`/projects/${project.slug}`} className="group block rounded-xl overflow-hidden border border-gray-100 card-premium bg-white">
                   <div className="relative h-64 overflow-hidden">
                     <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -71,7 +72,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-accent">
+      <section className="py-12 bg-gradient-to-r from-accent via-accent to-accent-dark relative overflow-hidden noise-texture">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>

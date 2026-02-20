@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <Image src={project.image} alt={project.title} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
             <Link href="/projects" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors">
@@ -108,7 +108,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   </div>
                 </div>
 
-                <div className="bg-black rounded-xl p-7">
+                <div className="bg-black rounded-xl p-7 border border-white/10">
                   <h3 className="font-bold text-accent text-lg mb-2">Need Similar Work?</h3>
                   <p className="text-white/50 text-sm mb-6">Get a free estimate for your {project.service.toLowerCase()} project.</p>
                   <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
@@ -131,7 +131,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <h2 className="text-2xl font-bold text-primary text-center mb-10">Related <span className="text-accent">Projects</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {related.map((proj) => (
-                <Link key={proj.slug} href={`/projects/${proj.slug}`} className="group block rounded-xl overflow-hidden card-hover bg-white">
+                <Link key={proj.slug} href={`/projects/${proj.slug}`} className="group block rounded-xl overflow-hidden border border-gray-100 card-premium bg-white">
                   <div className="relative h-48 overflow-hidden">
                     <Image src={proj.image} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

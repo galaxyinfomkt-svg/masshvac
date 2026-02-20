@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MapPin, Phone, ArrowRight, Flame, Snowflake, Wind, Wrench, AirVent, Shield, Clock, Star, CheckCircle } from "lucide-react";
 import { cities, getCityBySlug, getCityContent } from "@/data/cities";
-import { services } from "@/data/services";
+import { services, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
@@ -34,12 +35,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   const city = getCityBySlug(slug);
   if (!city) notFound();
   const content = getCityContent(city.name);
+  const heroImage = getImageForCity(city.slug, cityHeroImages);
 
   return (
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
+        <Image src={heroImage} alt={`Professional HVAC services in ${city.name}, Massachusetts`} fill className="object-cover" priority quality={85} />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
@@ -92,7 +95,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               const Icon = serviceIcons[i];
               return (
                 <ScrollReveal key={service.slug} delay={i * 0.08}>
-                  <Link href={`/cities/${city.slug}/${service.slug}`} className="group block p-7 bg-surface rounded-xl card-hover">
+                  <Link href={`/cities/${city.slug}/${service.slug}`} className="group block p-7 bg-white border border-gray-100 card-premium rounded-xl">
                     <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.15)]">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
@@ -124,7 +127,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               { title: "100% Satisfaction", desc: "We stand behind every job with our satisfaction guarantee." },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
-                <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)]">
+                <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-gray-100 card-premium">
                   <CheckCircle className="w-8 h-8 text-accent mb-3" />
                   <h3 className="font-bold text-primary mb-2">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.desc}</p>
@@ -139,7 +142,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
-            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 md:p-12">
+            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
               {content.split("\n\n").map((block, i) => {
                 if (block.startsWith("## ")) return <h2 key={i} className="text-3xl font-bold text-primary mt-8 mb-4">{block.replace("## ", "")}</h2>;
                 if (block.startsWith("### ")) return <h3 key={i} className="text-2xl font-bold text-primary mt-6 mb-3">{block.replace("### ", "")}</h3>;

@@ -115,7 +115,7 @@ export default function ServicesPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -161,7 +161,7 @@ export default function ServicesPage() {
                 <ScrollReveal key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className={`group grid grid-cols-1 md:grid-cols-2 bg-white rounded-xl overflow-hidden card-hover ${isEven ? "" : "md:direction-rtl"}`}
+                    className={`group grid grid-cols-1 md:grid-cols-2 bg-white rounded-xl overflow-hidden card-premium ${isEven ? "" : "md:direction-rtl"}`}
                   >
                     <div className={`relative h-72 md:h-auto overflow-hidden ${isEven ? "" : "md:order-2"}`}>
                       <Image
@@ -171,7 +171,7 @@ export default function ServicesPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute top-5 left-5 w-14 h-14 bg-accent rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
+                      <div className="absolute top-5 left-5 w-14 h-14 bg-accent rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(200,16,46,0.3)]">
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                     </div>

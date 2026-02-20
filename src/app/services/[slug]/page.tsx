@@ -43,7 +43,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <Image src={service.heroImage} alt={`${service.name} in Massachusetts — Mass HVAC`} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
             {/* Breadcrumb Navigation */}
@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
               <div className="space-y-4">
                 {service.painPoints.map((point) => (
-                  <div key={point} className="flex items-start gap-4 p-5 bg-red-50/50 rounded-xl">
+                  <div key={point} className="flex items-start gap-4 p-5 bg-red-50/50 rounded-xl border-l-4 border-red-300">
                     <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                     <p className="text-gray-700 leading-relaxed">{point}</p>
                   </div>
@@ -125,7 +125,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
               <div className="space-y-4">
                 {service.solutions.map((sol) => (
-                  <div key={sol} className="flex items-start gap-4 p-5 bg-emerald-50/50 rounded-xl">
+                  <div key={sol} className="flex items-start gap-4 p-5 bg-emerald-50/50 rounded-xl border-l-4 border-emerald-300">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                     <p className="text-gray-700 leading-relaxed">{sol}</p>
                   </div>
@@ -140,7 +140,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="py-20 bg-surface">
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
-            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 md:p-12">
+            <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
               <h2 className="text-3xl font-bold text-primary mb-8">
                 About Our {service.shortName} <span className="text-accent">Services</span>
               </h2>
@@ -195,7 +195,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <Link
                 key={city.slug}
                 href={`/cities/${city.slug}/${service.slug}`}
-                className="px-4 py-2 bg-surface hover:bg-accent hover:text-white text-gray-600 text-sm font-medium rounded-full transition-all duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]"
+                className="px-4 py-2 bg-surface hover:bg-accent hover:text-white text-gray-600 text-sm font-medium rounded-full border border-gray-100 transition-all duration-200 hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]"
               >
                 {city.name}, MA
               </Link>

@@ -31,7 +31,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <Image src={post.image} alt={post.title} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-4xl px-4">
           <Link href="/blog" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" />Back to Blog
@@ -108,7 +108,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Sidebar */}
             <aside className="lg:col-span-1">
               <div className="sticky top-28 space-y-6">
-                <div className="bg-black rounded-xl p-6">
+                <div className="bg-black rounded-xl p-6 border border-white/10">
                   <h3 className="font-bold text-accent text-lg mb-2">Need HVAC Help?</h3>
                   <p className="text-white/50 text-sm mb-5">Our experts are ready to help.</p>
                   <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3 bg-accent hover:bg-accent-dark text-white font-bold text-sm rounded-lg transition-all mb-2">
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h2 className="text-2xl font-bold text-primary text-center mb-10">More <span className="text-accent">Articles</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {related.map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}`} className="group block bg-white rounded-xl overflow-hidden card-hover">
+              <Link key={p.slug} href={`/blog/${p.slug}`} className="group block bg-white rounded-xl overflow-hidden border border-gray-100 card-premium">
                 <div className="relative h-48 overflow-hidden">
                   <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>

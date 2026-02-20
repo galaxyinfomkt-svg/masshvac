@@ -19,7 +19,7 @@ export default function MapSection() {
               { icon: Shield, title: "Licensed & Insured", desc: "Full MA HVAC licensure" },
               { icon: Star, title: "5-Star Rated", desc: "On Google Reviews" },
             ].map((card) => (
-              <div key={card.title} className="group flex items-center gap-4 p-5 bg-surface rounded-xl hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300">
+              <div key={card.title} className="group flex items-center gap-4 p-5 bg-white border border-gray-100 card-premium rounded-xl hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
                   <card.icon className="w-5 h-5 text-white" />
                 </div>
@@ -36,7 +36,7 @@ export default function MapSection() {
 
           <ScrollReveal direction="right" className="lg:col-span-2">
             <h3 className="text-xl font-bold text-primary mb-4 text-center">Find Us on the Map</h3>
-            <div className="rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.12)] border-4 border-accent">
+            <div className="rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(200,16,46,0.08)] border-2 border-accent/50">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d378360.36716461886!2d-71.5129531!3d42.1943425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x429044bbca3bf46b%3A0x4f82359b87d9fd27!2sMass%20Hvac%20Inc!5e0!3m2!1sen!2sbr!4v1771603708812!5m2!1sen!2sbr" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Mass HVAC Service Area Map - Milford Massachusetts" className="w-full" />
             </div>
           </ScrollReveal>

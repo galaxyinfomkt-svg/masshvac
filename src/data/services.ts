@@ -214,3 +214,54 @@ Don't let the air in your home compromise your family's health. Contact Mass HVA
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }
+
+export const serviceImagePool: Record<string, string[]> = {
+  "heating-installation-repair": [
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae753dac28d098.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531d83aecc9666cf028.jpg",
+  ],
+  "air-conditioning-installation-repair": [
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae75c64728d09a.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498f886003707.jpg",
+  ],
+  "heat-pumps-ductless-mini-splits": [
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc19c80e9796b.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd623359c780.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae752c1728d099.jpg",
+  ],
+  "hvac-maintenance-tune-ups": [
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e5cde03d06c.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c03544725a0db8.jpg",
+  ],
+  "indoor-air-quality": [
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf89fa5e9ee1.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf801d5e9ee3.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc121bee97966.jpg",
+  ],
+};
+
+export const cityHeroImages: string[] = [
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
+];
+
+export function getImageForCity(slug: string, images: string[]): string {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = ((hash << 5) - hash) + slug.charCodeAt(i);
+    hash |= 0;
+  }
+  return images[Math.abs(hash) % images.length];
+}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Flame, Snowflake, Wind, Wrench, AirVent, Phone, ArrowRight, Shield, Clock, Star } from "lucide-react";
 import { cities } from "@/data/cities";
@@ -36,7 +37,8 @@ export default function CitiesPage() {
     <>
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black" />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg" alt="HVAC services across Massachusetts" fill className="object-cover" priority quality={85} />
+        <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
             <MapPin className="w-4 h-4" />100+ Cities &amp; Towns
@@ -73,7 +75,7 @@ export default function CitiesPage() {
             {services.map((s, i) => {
               const Icon = serviceIcons[i];
               return (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-600 text-sm font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-100 text-gray-600 text-sm font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
                   <Icon className="w-3.5 h-3.5" />{s.shortName}
                 </Link>
               );
@@ -107,7 +109,7 @@ export default function CitiesPage() {
                       <Link
                         key={city.slug}
                         href={`/cities/${city.slug}`}
-                        className="group p-4 bg-surface rounded-xl hover:bg-accent hover:text-white transition-all duration-200 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-y-0.5"
+                        className="group p-4 bg-surface border border-gray-100 rounded-xl hover:bg-accent hover:text-white transition-all duration-200 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-y-0.5"
                       >
                         <p className="font-semibold text-primary group-hover:text-white transition-colors text-sm">{city.name}</p>
                         <p className="text-[11px] text-gray-400 group-hover:text-white/70 transition-colors mt-0.5">MA &bull; HVAC Services</p>

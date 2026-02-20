@@ -15,7 +15,7 @@ export default function ScrollReveal({
   className = "",
   direction = "up",
   delay = 0,
-  threshold = 0.15,
+  threshold = 0.1,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
