@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "HVAC Services in Massachusetts | Heating, Cooling, Mini-Splits & More | Mass HVAC",
   description:
     "Complete HVAC services across Massachusetts — heating installation & repair, air conditioning, ductless mini-splits, preventive maintenance & indoor air quality. Licensed & insured. Call (508) 386-9104 for a free estimate.",
+  alternates: {
+    canonical: "https://masshvac.net/services",
+  },
   openGraph: {
     title: "HVAC Services in Massachusetts | Mass HVAC",
     description:
@@ -102,6 +105,26 @@ export default function ServicesPage() {
                 },
               },
             ],
+          }),
+        }}
+      />
+
+      {/* WebPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "HVAC Services in Massachusetts | Mass HVAC",
+            url: "https://masshvac.net/services",
+            description: "Complete HVAC services across Massachusetts — heating, cooling, mini-splits, maintenance & indoor air quality.",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", "h2"],
+            },
+            isPartOf: { "@id": "https://masshvac.net/#website" },
+            about: { "@id": "https://masshvac.net/#organization" },
           }),
         }}
       />

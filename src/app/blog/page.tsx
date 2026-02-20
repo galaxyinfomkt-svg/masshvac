@@ -144,6 +144,21 @@ export default function BlogPage() {
           { "@type": "ListItem", position: 2, name: "Blog", item: "https://masshvac.net/blog" },
         ],
       }) }} />
+
+      {/* WebPage JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "HVAC Blog | Tips, Guides & News – Mass HVAC",
+        url: "https://masshvac.net/blog",
+        description: "Expert HVAC tips, guides, and news for Massachusetts homeowners.",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2"],
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" },
+      }) }} />
     </>
   );
 }

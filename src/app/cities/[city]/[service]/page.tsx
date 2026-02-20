@@ -191,6 +191,29 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
+      {/* HVAC Resources */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-7xl px-4 text-center">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-primary mb-6">HVAC <span className="text-accent">Resources</span></h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/blog" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+                HVAC Tips &amp; Guides
+              </Link>
+              <Link href="/projects" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+                View Our Projects
+              </Link>
+              <Link href={`/services/${service.slug}`} className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+                About {service.shortName}
+              </Link>
+              <Link href={`/cities/${city.slug}`} className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+                All Services in {city.name}
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* FAQ Section (visible on page) */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4">
@@ -234,6 +257,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@type": "Service",
         name: `${service.name} in ${city.name}, MA`,
         description: `Professional ${service.name.toLowerCase()} services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 386-9104.`,
+        image: heroImage,
+        serviceType: service.name,
+        url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
         provider: {
           "@type": "HVACBusiness",
           name: "Mass HVAC Inc",
@@ -243,6 +269,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "50", bestRating: "5" },
         },
         areaServed: { "@type": "City", name: city.name, containedInPlace: { "@type": "State", name: "Massachusetts" } },
+        availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: "+1-508-386-9104", contactType: "customer service" } },
+        offers: { "@type": "Offer", availability: "https://schema.org/InStock", areaServed: { "@type": "City", name: city.name } },
       }) }} />
 
       {/* JSON-LD: BreadcrumbList */}
@@ -266,6 +294,22 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           { "@type": "Question", name: `Does Mass HVAC serve ${city.name}, Massachusetts?`, acceptedAnswer: { "@type": "Answer", text: `Yes! Mass HVAC proudly serves ${city.name}, MA and surrounding areas with professional ${service.name.toLowerCase()} services. We offer same-day service and 24/7 emergency response.` } },
           { "@type": "Question", name: `Why choose Mass HVAC for ${service.name.toLowerCase()} in ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: `Mass HVAC is a licensed and insured HVAC contractor with a 5.0 Google rating. We offer transparent pricing, 24/7 emergency service, and a 100% satisfaction guarantee for all ${service.name.toLowerCase()} work in ${city.name}, MA.` } },
         ],
+      }) }} />
+
+      {/* JSON-LD: WebPage with SpeakableSpecification */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: `${service.name} in ${city.name}, MA – Mass HVAC`,
+        url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
+        description: `Professional ${service.name.toLowerCase()} in ${city.name}, Massachusetts. Fast service, fair pricing, 5-star rated, satisfaction guaranteed. Call (508) 386-9104 for a free estimate.`,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", "p"],
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" },
+        lastReviewed: "2026-02-20",
       }) }} />
     </>
   );

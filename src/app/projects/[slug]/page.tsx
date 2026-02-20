@@ -148,6 +148,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </section>
       )}
 
+      {/* Internal Links */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <h2 className="text-xl font-bold text-primary mb-6">Explore <span className="text-accent">More</span></h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/services" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              All HVAC Services
+            </Link>
+            <Link href="/projects" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              More Projects
+            </Link>
+            <Link href="/cities" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              Service Areas
+            </Link>
+            <Link href="/blog" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              HVAC Blog
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <ContactForm />
 
       {/* BreadcrumbList JSON-LD */}
@@ -159,6 +180,37 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
           { "@type": "ListItem", position: 3, name: project.title, item: `https://masshvac.net/projects/${project.slug}` },
         ],
+      }) }} />
+
+      {/* CreativeWork JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        name: project.title,
+        description: project.description,
+        image: project.image,
+        author: {
+          "@type": "Organization",
+          name: "Mass HVAC Inc",
+          url: "https://masshvac.net",
+        },
+        about: {
+          "@type": "Service",
+          name: project.service,
+          provider: { "@type": "HVACBusiness", name: "Mass HVAC Inc" },
+        },
+        locationCreated: {
+          "@type": "Place",
+          name: `${project.city}, Massachusetts`,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Mass HVAC Inc",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+          },
+        },
       }) }} />
     </>
   );

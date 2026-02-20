@@ -91,6 +91,24 @@ export default function ProjectsPage() {
         </div>
       </section>
 
+      {/* Related Pages */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <h2 className="text-xl font-bold text-primary mb-6">Related <span className="text-accent">Pages</span></h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link href="/services" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              All HVAC Services
+            </Link>
+            <Link href="/cities" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              Service Areas
+            </Link>
+            <Link href="/blog" className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 text-sm">
+              HVAC Blog
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <ContactForm />
 
       {/* CollectionPage Schema */}
@@ -124,6 +142,21 @@ export default function ProjectsPage() {
           { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
           { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
         ],
+      }) }} />
+
+      {/* WebPage JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Our Projects | HVAC Portfolio – Mass HVAC",
+        url: "https://masshvac.net/projects",
+        description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2"]
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" }
       }) }} />
     </>
   );

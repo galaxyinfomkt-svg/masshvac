@@ -126,6 +126,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     ))}
                   </div>
                 </div>
+                <div className="bg-surface rounded-xl p-6">
+                  <h3 className="font-bold text-primary mb-3 text-xs uppercase tracking-wider">Our Services</h3>
+                  <div className="space-y-2">
+                    {[
+                      { name: "Heating", href: "/services/heating-installation-repair" },
+                      { name: "Air Conditioning", href: "/services/air-conditioning-installation-repair" },
+                      { name: "Mini-Splits", href: "/services/heat-pumps-ductless-mini-splits" },
+                      { name: "Maintenance", href: "/services/hvac-maintenance-tune-ups" },
+                      { name: "Air Quality", href: "/services/indoor-air-quality" },
+                    ].map((s) => (
+                      <Link key={s.href} href={s.href} className="block text-sm text-gray-600 hover:text-accent transition-colors">
+                        {s.name} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             </aside>
           </div>
@@ -182,6 +198,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           },
         },
         keywords: post.tags.join(", "),
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", "article p"],
+        },
+        articleSection: "HVAC",
+        inLanguage: "en-US",
+        wordCount: post.content.split(/\s+/).length,
       }) }} />
 
       {/* BreadcrumbList JSON-LD */}
@@ -193,6 +216,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           { "@type": "ListItem", position: 2, name: "Blog", item: "https://masshvac.net/blog" },
           { "@type": "ListItem", position: 3, name: post.title, item: `https://masshvac.net/blog/${post.slug}` },
         ],
+      }) }} />
+
+      {/* WebPage JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: post.title,
+        url: `https://masshvac.net/blog/${post.slug}`,
+        description: post.metaDescription,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", "article p"],
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" },
+        lastReviewed: post.date,
       }) }} />
     </>
   );

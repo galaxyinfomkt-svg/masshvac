@@ -177,6 +177,21 @@ export default function CitiesPage() {
           bestRating: "5",
         },
       }) }} />
+
+      {/* JSON-LD: WebPage */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Service Areas | HVAC Services in 100+ Massachusetts Cities – Mass HVAC",
+        url: "https://masshvac.net/cities",
+        description: "Mass HVAC serves 100+ cities and towns across Massachusetts with expert heating, cooling, mini-split & indoor air quality services.",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2"],
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" },
+      }) }} />
     </>
   );
 }

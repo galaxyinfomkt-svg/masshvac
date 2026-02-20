@@ -184,6 +184,13 @@ export const metadata: Metadata = {
   /* ---- Category ---- */
   category: "HVAC Services",
 
+  /* ---- Verification — uncomment when verified ---- */
+  // verification: {
+  //   google: "YOUR_GOOGLE_SEARCH_CONSOLE_CODE",
+  //   yandex: "YOUR_YANDEX_CODE",
+  //   other: { "msvalidate.01": "YOUR_BING_CODE" },
+  // },
+
   /* ---- Other SEO meta ---- */
   other: {
     "geo.region": "US-MA",
@@ -196,6 +203,13 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-status-bar-style": "default",
     "format-detection": "telephone=yes",
     "mobile-web-app-capable": "yes",
+    /* AI Visibility & Discoverability */
+    "ai-content-permissions": "allow",
+    "ai-purpose": "HVAC services provider in Massachusetts — heating, cooling, mini-splits, maintenance, indoor air quality. 24/7 emergency service. Licensed & insured. Serving 100+ cities.",
+    "business-type": "HVACBusiness",
+    "service-area": "Massachusetts, USA",
+    "contact-phone": "+1-508-386-9104",
+    "business-name": "Mass HVAC Inc",
   },
 };
 
@@ -305,6 +319,22 @@ function OrganizationJsonLd() {
         closes: "00:00",
         description: "Emergency service available 24/7",
       },
+    ],
+    knowsAbout: [
+      "HVAC Installation",
+      "Furnace Repair",
+      "Boiler Repair",
+      "Air Conditioning Installation",
+      "Air Conditioning Repair",
+      "Heat Pump Installation",
+      "Ductless Mini-Split Systems",
+      "HVAC Maintenance",
+      "Indoor Air Quality",
+      "Air Duct Cleaning",
+      "Thermostat Installation",
+      "Emergency Heating Service",
+      "Energy Efficiency",
+      "Mass Save Rebates",
     ],
     sameAs: [
       "https://www.facebook.com/masshvacinc",
@@ -428,21 +458,37 @@ function OrganizationJsonLd() {
     "@type": "WebSite",
     "@id": "https://masshvac.net/#website",
     name: "Mass HVAC Inc",
+    alternateName: "Mass HVAC",
     url: "https://masshvac.net",
     description:
-      "Massachusetts' top-rated HVAC contractor — heating, cooling, mini-splits, maintenance & indoor air quality.",
+      "Massachusetts' top-rated HVAC contractor — heating, cooling, mini-splits, maintenance & indoor air quality. 24/7 emergency service. Licensed & insured. Serving 100+ cities across MA.",
     publisher: {
       "@id": "https://masshvac.net/#organization",
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://masshvac.net/search?q={search_term_string}",
+    potentialAction: [
+      {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://masshvac.net/cities/{search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
       },
-      "query-input": "required name=search_term_string",
-    },
+      {
+        "@type": "CommunicateAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "tel:+15083869104",
+        },
+        description: "Call Mass HVAC for a free HVAC estimate",
+      },
+    ],
     inLanguage: "en-US",
+    copyrightYear: 2020,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".faq-answer", "[role='main'] p:first-of-type"],
+    },
   };
 
   const breadcrumbSchema = {

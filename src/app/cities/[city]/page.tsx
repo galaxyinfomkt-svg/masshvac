@@ -6,6 +6,7 @@ import { cities, getCityBySlug, getCityContent } from "@/data/cities";
 import { services, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
+import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
@@ -36,6 +37,23 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   if (!city) notFound();
   const content = getCityContent(city.name);
   const heroImage = getImageForCity(city.slug, cityHeroImages);
+  const cityIndex = cities.findIndex((c) => c.slug === city.slug);
+  const nearby = cities.filter((_, i) => Math.abs(i - cityIndex) > 0 && Math.abs(i - cityIndex) <= 4).slice(0, 8);
+
+  const faqItems = [
+    {
+      q: `How much does HVAC service cost in ${city.name}, MA?`,
+      a: `HVAC service costs in ${city.name}, MA vary depending on the type of service needed. A standard tune-up typically ranges from $89–$149, while repairs can range from $150–$500+. For new installations, costs depend on system size and efficiency rating. Mass HVAC provides free, no-obligation estimates for all ${city.name} homeowners — call (508) 386-9104 for a personalized quote.`,
+    },
+    {
+      q: `Does Mass HVAC provide 24/7 emergency HVAC service in ${city.name}?`,
+      a: `Yes! Mass HVAC offers 24/7 emergency HVAC service to all ${city.name}, Massachusetts residents. Whether your furnace stops working on a cold winter night or your AC breaks down during a summer heatwave, our licensed technicians are available around the clock. Call (508) 386-9104 for immediate emergency assistance.`,
+    },
+    {
+      q: `What HVAC services does Mass HVAC offer in ${city.name}, Massachusetts?`,
+      a: `Mass HVAC provides a full range of HVAC services in ${city.name}, including heating installation and repair, air conditioning service, ductless mini-split systems, preventive maintenance plans, and indoor air quality solutions. We service all major brands and offer free estimates for ${city.name} homeowners and businesses.`,
+    },
+  ];
 
   return (
     <>
@@ -138,6 +156,45 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+      {/* Nearby Cities */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 text-center">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
+              <MapPin className="w-5 h-5 text-accent" />HVAC Services in Nearby Cities
+            </h2>
+            <p className="text-gray-500 text-sm mb-8">We also provide professional HVAC services in these nearby Massachusetts communities.</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {nearby.map((c) => (
+                <Link key={c.slug} href={`/cities/${c.slug}`} className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                  {c.name}, MA
+                </Link>
+              ))}
+              <Link href="/cities" className="px-5 py-2.5 bg-accent/5 text-accent font-bold rounded-full hover:bg-accent hover:text-white transition-all text-sm">
+                All Cities &rarr;
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-12 bg-surface">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-primary mb-6">Related Resources</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                HVAC Tips &amp; Blog <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+                All HVAC Services <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4">
@@ -161,6 +218,20 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 return <p key={i} className="text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary'>$1</strong>") }} />;
               })}
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-surface">
+        <div className="mx-auto max-w-4xl px-4">
+          <ScrollReveal className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary">Frequently Asked Questions About <span className="text-accent">HVAC in {city.name}</span></h2>
+            <p className="text-gray-500 mt-3">Common questions about our HVAC services in {city.name}, Massachusetts.</p>
+            <div className="accent-divider mt-6" />
+          </ScrollReveal>
+          <ScrollReveal>
+            <FAQAccordion items={faqItems} />
           </ScrollReveal>
         </div>
       </section>
@@ -232,6 +303,36 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://masshvac.net/cities" },
           { "@type": "ListItem", position: 3, name: `${city.name}, MA`, item: `https://masshvac.net/cities/${city.slug}` },
         ],
+      }) }} />
+
+      {/* JSON-LD: WebPage with SpeakableSpecification */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: `HVAC Services in ${city.name}, MA – Mass HVAC`,
+        url: `https://masshvac.net/cities/${city.slug}`,
+        description: `Professional HVAC services in ${city.name}, Massachusetts. Heating, cooling, mini-splits, maintenance & indoor air quality. Licensed & insured. 24/7 emergency service.`,
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", "p"],
+        },
+        isPartOf: { "@id": "https://masshvac.net/#website" },
+        about: { "@id": "https://masshvac.net/#organization" },
+        lastReviewed: "2026-02-20",
+      }) }} />
+
+      {/* JSON-LD: FAQPage */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.a,
+          },
+        })),
       }) }} />
     </>
   );

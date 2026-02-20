@@ -210,6 +210,31 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {/* Internal Links for SEO */}
+      <section className="py-12 bg-surface">
+        <div className="mx-auto max-w-7xl px-4 text-center">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-primary mb-6">
+              {service.shortName} <span className="text-accent">Resources</span>
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/blog" className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                HVAC Tips & Blog
+              </Link>
+              <Link href="/projects" className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                View Our Projects
+              </Link>
+              <Link href="/services" className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                All Services
+              </Link>
+              <Link href="/cities" className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
+                Service Areas
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <ReviewsWidget />
       <MapSection />
       <ContactForm />
@@ -223,6 +248,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             "@type": "Service",
             name: service.name,
             description: service.metaDescription,
+            url: `https://masshvac.net/services/${service.slug}`,
             provider: {
               "@type": "HVACBusiness",
               name: "Mass HVAC Inc",
@@ -248,6 +274,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               },
             },
             areaServed: { "@type": "State", name: "Massachusetts" },
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "USD",
+              },
+              areaServed: { "@type": "State", name: "Massachusetts" },
+            },
             image: service.heroImage,
             serviceType: service.name,
             availableChannel: {
@@ -316,6 +351,27 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 },
               },
             ],
+          }),
+        }}
+      />
+
+      {/* WebPage JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: service.metaTitle,
+            url: `https://masshvac.net/services/${service.slug}`,
+            description: service.metaDescription,
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", "h2", "p"],
+            },
+            isPartOf: { "@id": "https://masshvac.net/#website" },
+            about: { "@id": "https://masshvac.net/#organization" },
+            lastReviewed: "2026-02-20",
           }),
         }}
       />
