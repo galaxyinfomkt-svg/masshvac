@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${project.title} in ${project.city} – Mass HVAC`,
     description: project.description,
     openGraph: { title: `${project.title} – Mass HVAC`, description: project.description, images: [{ url: project.image, width: 1200, height: 630, alt: project.title }] },
+    alternates: { canonical: `https://masshvac.net/projects/${project.slug}` },
   };
 }
 
@@ -38,7 +39,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               <ArrowLeft className="w-4 h-4" />Back to Projects
             </Link>
             <div className="flex items-center gap-2 mb-4">
-              <span className="px-3 py-1 bg-gold text-black text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
+              <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
               <span className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">{project.city}</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{project.title}</h1>
@@ -59,7 +60,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               </ScrollReveal>
 
               <ScrollReveal delay={0.1}>
-                <h2 className="text-2xl font-bold text-dark-900 mb-4">Project Overview</h2>
+                <h2 className="text-2xl font-bold text-primary mb-4">Project Overview</h2>
                 <p className="text-gray-600 text-lg leading-relaxed mb-10">{project.description}</p>
               </ScrollReveal>
 
@@ -92,7 +93,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="lg:col-span-2">
               <div className="sticky top-28 space-y-6">
                 <div className="bg-surface rounded-xl p-7">
-                  <h3 className="font-bold text-dark-900 mb-5 text-sm uppercase tracking-wider">Project Details</h3>
+                  <h3 className="font-bold text-primary mb-5 text-sm uppercase tracking-wider">Project Details</h3>
                   <div className="space-y-5">
                     {[
                       { label: "Service", value: project.service },
@@ -101,16 +102,16 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     ].map((d) => (
                       <div key={d.label}>
                         <p className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-1">{d.label}</p>
-                        <p className={`font-bold ${d.color || "text-dark-900"}`}>{d.value}</p>
+                        <p className={`font-bold ${d.color || "text-primary"}`}>{d.value}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className="bg-black rounded-xl p-7">
-                  <h3 className="font-bold text-gold text-lg mb-2">Need Similar Work?</h3>
+                  <h3 className="font-bold text-accent text-lg mb-2">Need Similar Work?</h3>
                   <p className="text-white/50 text-sm mb-6">Get a free estimate for your {project.service.toLowerCase()} project.</p>
-                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gold hover:bg-gold-dark text-black font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
+                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
                     <Phone className="w-4 h-4" />(508) 386-9104
                   </a>
                   <Link href="#contact" className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all">
@@ -127,17 +128,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {related.length > 0 && (
         <section className="py-20 bg-surface">
           <div className="mx-auto max-w-7xl px-4">
-            <h2 className="text-2xl font-bold text-dark-900 text-center mb-10">Related <span className="text-gold">Projects</span></h2>
+            <h2 className="text-2xl font-bold text-primary text-center mb-10">Related <span className="text-accent">Projects</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {related.map((proj) => (
                 <Link key={proj.slug} href={`/projects/${proj.slug}`} className="group block rounded-xl overflow-hidden card-hover bg-white">
                   <div className="relative h-48 overflow-hidden">
                     <Image src={proj.image} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <span className="absolute bottom-3 left-3 px-2 py-0.5 bg-gold text-black text-xs font-bold rounded-full">{proj.service}</span>
+                    <span className="absolute bottom-3 left-3 px-2 py-0.5 bg-accent text-white text-xs font-bold rounded-full">{proj.service}</span>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-bold text-dark-900 group-hover:text-gold transition-colors">{proj.title}</h3>
+                    <h3 className="font-bold text-primary group-hover:text-accent transition-colors">{proj.title}</h3>
                     <p className="text-gray-400 text-sm">{proj.city}</p>
                   </div>
                 </Link>
@@ -148,6 +149,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       )}
 
       <ContactForm />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
+          { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
+          { "@type": "ListItem", position: 3, name: project.title, item: `https://masshvac.net/projects/${project.slug}` },
+        ],
+      }) }} />
     </>
   );
 }

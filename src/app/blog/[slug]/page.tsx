@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle, description: post.metaDescription,
     openGraph: { title: post.metaTitle, description: post.metaDescription, type: "article", publishedTime: post.date, authors: [post.author], images: [{ url: post.image, width: 1200, height: 630, alt: post.title }] },
+    alternates: { canonical: `https://masshvac.net/blog/${post.slug}` },
   };
 }
 
@@ -37,12 +38,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </Link>
           <div className="flex items-center gap-2 mb-4">
             {post.tags.map((tag) => (
-              <span key={tag} className="px-3 py-1 bg-gold text-black text-xs font-semibold rounded-full">{tag}</span>
+              <span key={tag} className="px-3 py-1 bg-accent text-white text-xs font-semibold rounded-full">{tag}</span>
             ))}
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">{post.title}</h1>
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 bg-gold rounded-full flex items-center justify-center"><span className="text-black text-sm font-bold">MH</span></div>
+            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center"><span className="text-white text-sm font-bold">MH</span></div>
             <div>
               <p className="text-white font-medium">{post.author}</p>
               <p className="text-white/40 text-sm">{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</p>
@@ -60,8 +61,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <ScrollReveal>
                 <div className="prose prose-lg max-w-none">
                   {post.content.split("\n\n").map((block, i) => {
-                    if (block.startsWith("### ")) return <h3 key={i} className="text-xl font-bold text-dark-900 mt-10 mb-3">{block.replace("### ", "")}</h3>;
-                    if (block.startsWith("## ")) return <h2 key={i} className="text-2xl font-bold text-dark-900 mt-12 mb-4">{block.replace("## ", "")}</h2>;
+                    if (block.startsWith("### ")) return <h3 key={i} className="text-xl font-bold text-primary mt-10 mb-3">{block.replace("### ", "")}</h3>;
+                    if (block.startsWith("## ")) return <h2 key={i} className="text-2xl font-bold text-primary mt-12 mb-4">{block.replace("## ", "")}</h2>;
                     if (block.startsWith("- ") || block.startsWith("1. ")) {
                       const items = block.split("\n").filter((l) => l.trim());
                       const isOrdered = block.startsWith("1. ");
@@ -70,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         <Tag key={i} className={`space-y-2.5 my-5 ${isOrdered ? "list-decimal pl-6" : ""}`}>
                           {items.map((item, j) => (
                             <li key={j} className="text-gray-600 leading-relaxed">
-                              <span dangerouslySetInnerHTML={{ __html: item.replace(/^[-\d]+[.)]\s*/, "").replace(/\*\*(.*?)\*\*/g, "<strong class='text-dark-900 font-bold'>$1</strong>") }} />
+                              <span dangerouslySetInnerHTML={{ __html: item.replace(/^[-\d]+[.)]\s*/, "").replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary font-bold'>$1</strong>") }} />
                             </li>
                           ))}
                         </Tag>
@@ -86,9 +87,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                               const cells = row.split("|").filter((c) => c.trim());
                               const CellTag = ri === 0 ? "th" : "td";
                               return (
-                                <tr key={ri} className={ri === 0 ? "bg-gold/5" : "border-t border-gray-50"}>
+                                <tr key={ri} className={ri === 0 ? "bg-accent/5" : "border-t border-gray-50"}>
                                   {cells.map((cell, ci) => (
-                                    <CellTag key={ci} className={`px-5 py-3 text-left ${ri === 0 ? "font-bold text-dark-900" : "text-gray-600"}`}>{cell.trim()}</CellTag>
+                                    <CellTag key={ci} className={`px-5 py-3 text-left ${ri === 0 ? "font-bold text-primary" : "text-gray-600"}`}>{cell.trim()}</CellTag>
                                   ))}
                                 </tr>
                               );
@@ -98,7 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         </div>
                       );
                     }
-                    return <p key={i} className="text-gray-600 leading-relaxed mb-5" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-dark-900 font-bold'>$1</strong>") }} />;
+                    return <p key={i} className="text-gray-600 leading-relaxed mb-5" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary font-bold'>$1</strong>") }} />;
                   })}
                 </div>
               </ScrollReveal>
@@ -108,9 +109,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <aside className="lg:col-span-1">
               <div className="sticky top-28 space-y-6">
                 <div className="bg-black rounded-xl p-6">
-                  <h3 className="font-bold text-gold text-lg mb-2">Need HVAC Help?</h3>
+                  <h3 className="font-bold text-accent text-lg mb-2">Need HVAC Help?</h3>
                   <p className="text-white/50 text-sm mb-5">Our experts are ready to help.</p>
-                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3 bg-gold hover:bg-gold-dark text-black font-bold text-sm rounded-lg transition-all mb-2">
+                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3 bg-accent hover:bg-accent-dark text-white font-bold text-sm rounded-lg transition-all mb-2">
                     <Phone className="w-4 h-4" />(508) 386-9104
                   </a>
                   <Link href="#contact" className="flex items-center justify-center gap-2 w-full py-3 border-2 border-white text-white font-medium text-sm rounded-lg hover:bg-white hover:text-black transition-all">
@@ -118,7 +119,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </Link>
                 </div>
                 <div className="bg-surface rounded-xl p-6">
-                  <h3 className="font-bold text-dark-900 mb-3 text-xs uppercase tracking-wider">Topics</h3>
+                  <h3 className="font-bold text-primary mb-3 text-xs uppercase tracking-wider">Topics</h3>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span key={tag} className="px-3 py-1 bg-white text-gray-500 text-xs font-medium rounded-full border border-gray-100">{tag}</span>
@@ -134,7 +135,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Related */}
       <section className="py-20 bg-surface">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-2xl font-bold text-dark-900 text-center mb-10">More <span className="text-gold">Articles</span></h2>
+          <h2 className="text-2xl font-bold text-primary text-center mb-10">More <span className="text-accent">Articles</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {related.map((p) => (
               <Link key={p.slug} href={`/blog/${p.slug}`} className="group block bg-white rounded-xl overflow-hidden card-hover">
@@ -142,7 +143,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-dark-900 group-hover:text-gold transition-colors mb-2 line-clamp-2">{p.title}</h3>
+                  <h3 className="font-bold text-primary group-hover:text-accent transition-colors mb-2 line-clamp-2">{p.title}</h3>
                   <p className="text-gray-400 text-sm line-clamp-2">{p.excerpt}</p>
                 </div>
               </Link>
@@ -153,10 +154,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <ContactForm />
 
+      {/* BlogPosting JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.excerpt, image: post.image, datePublished: post.date,
-        author: { "@type": "Organization", name: "Mass HVAC Inc" },
-        publisher: { "@type": "Organization", name: "Mass HVAC Inc", logo: { "@type": "ImageObject", url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" } },
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.excerpt,
+        image: post.image,
+        datePublished: post.date,
+        dateModified: post.date,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://masshvac.net/blog/${post.slug}`,
+        },
+        author: {
+          "@type": "Organization",
+          name: "Mass HVAC Inc",
+          url: "https://masshvac.net",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Mass HVAC Inc",
+          url: "https://masshvac.net",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+          },
+        },
+        keywords: post.tags.join(", "),
+      }) }} />
+
+      {/* BreadcrumbList JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://masshvac.net/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: `https://masshvac.net/blog/${post.slug}` },
+        ],
       }) }} />
     </>
   );

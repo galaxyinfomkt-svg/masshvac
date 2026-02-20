@@ -9,6 +9,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Projects | HVAC Portfolio – Mass HVAC",
   description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
+  openGraph: {
+    title: "Our Projects | HVAC Portfolio – Mass HVAC",
+    description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
+    type: "website",
+    url: "https://masshvac.net/projects",
+  },
+  alternates: { canonical: "https://masshvac.net/projects" },
 };
 
 export default function ProjectsPage() {
@@ -18,16 +25,16 @@ export default function ProjectsPage() {
       <section className="relative pt-40 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-black" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-black rounded-full text-sm font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
             <Zap className="w-4 h-4" />{projects.length} Completed Projects
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Our <span className="text-gold">Projects</span>
+            Our <span className="text-accent">Projects</span>
           </h1>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
             Browse our portfolio of completed HVAC projects. From emergency repairs to full system installations.
           </p>
-          <div className="gold-divider mt-8" />
+          <div className="accent-divider mt-8" />
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
@@ -43,7 +50,7 @@ export default function ProjectsPage() {
                     <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-gold text-black text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
+                      <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
                     </div>
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-white font-bold text-lg leading-snug">{project.title}</h3>
@@ -52,7 +59,7 @@ export default function ProjectsPage() {
                   </div>
                   <div className="p-5">
                     <p className="text-gray-500 text-sm line-clamp-2 mb-4">{project.description}</p>
-                    <span className="inline-flex items-center text-gold font-semibold text-sm">
+                    <span className="inline-flex items-center text-accent font-semibold text-sm">
                       View Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </span>
                   </div>
@@ -64,18 +71,18 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-gold">
+      <section className="py-12 bg-accent">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">Ready to Start Your Project?</h2>
-              <p className="text-black/70">Quality workmanship and guaranteed satisfaction.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Ready to Start Your Project?</h2>
+              <p className="text-white/70">Quality workmanship and guaranteed satisfaction.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105">
+              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
                 <Phone className="w-5 h-5" />(508) 386-9104
               </a>
-              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-black text-black font-bold rounded-lg hover:bg-black hover:text-white transition-all duration-300">
+              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
                 Free Estimate <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -84,6 +91,39 @@ export default function ProjectsPage() {
       </section>
 
       <ContactForm />
+
+      {/* CollectionPage Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Our Projects | HVAC Portfolio – Mass HVAC",
+        description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
+        url: "https://masshvac.net/projects",
+        publisher: {
+          "@type": "Organization",
+          name: "Mass HVAC Inc",
+          logo: { "@type": "ImageObject", url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" },
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: projects.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `https://masshvac.net/projects/${project.slug}`,
+            name: project.title,
+          })),
+        },
+      }) }} />
+
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
+          { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
+        ],
+      }) }} />
     </>
   );
 }
