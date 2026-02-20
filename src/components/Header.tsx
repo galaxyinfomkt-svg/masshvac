@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X, ChevronDown, MapPin, Mail, Clock, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
@@ -26,6 +27,16 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Detect city name from URL path (e.g. /cities/worcester → "Worcester")
+  const cityMatch = pathname.match(/^\/cities\/([^/]+)/);
+  const currentCity = cityMatch
+    ? cityMatch[1].split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
+    : null;
+  const locationText = currentCity
+    ? `Serving ${currentCity}, Massachusetts`
+    : "Serving All of Massachusetts";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -44,7 +55,7 @@ export default function Header() {
       <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-gradient-to-r from-accent to-accent-dark`}>
         <div className="mx-auto max-w-7xl px-4 h-full flex items-center justify-between text-xs text-white/90">
           <div className="hidden sm:flex items-center gap-6">
-            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3 text-white" />Serving Milford, Massachusetts</span>
+            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3 text-white" />{locationText}</span>
             <a href="mailto:info@masshvac.net" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="w-3 h-3 text-white" />info@masshvac.net</a>
           </div>
           <a href="tel:+15083869104" className="flex items-center gap-1.5 text-white font-bold hover:text-white/80 transition-colors ml-auto">

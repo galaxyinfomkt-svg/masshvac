@@ -6,6 +6,7 @@ import { cities, getCityBySlug, getCityServiceContent } from "@/data/cities";
 import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
+import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
@@ -237,15 +238,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
-      {/* FAQ Section (visible on page) */}
-      <section className="py-16 bg-white">
+      {/* FAQ Section */}
+      <section className="py-20 bg-surface">
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary">Frequently Asked Questions About <span className="text-accent">{service.shortName}</span> in {city.name}</h2>
+            <p className="text-gray-500 mt-3">Common questions about {service.name.toLowerCase()} in {city.name}, Massachusetts.</p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
-          <div className="space-y-4">
-            {[
+          <ScrollReveal>
+            <FAQAccordion items={[
               {
                 q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
                 a: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 386-9104 for a personalized quote.`,
@@ -258,15 +260,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
                 q: `Why choose Mass HVAC for ${service.name.toLowerCase()} in ${city.name}?`,
                 a: `Mass HVAC is a licensed and insured HVAC contractor with a 5.0 Google rating. We offer transparent pricing, 24/7 emergency service, and a 100% satisfaction guarantee for all ${service.name.toLowerCase()} work in ${city.name}, MA.`,
               },
-            ].map((faq, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <div className="p-6 bg-white border border-gray-100 rounded-xl">
-                  <h3 className="font-bold text-primary mb-2">{faq.q}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+            ]} />
+          </ScrollReveal>
         </div>
       </section>
 

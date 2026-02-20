@@ -69,10 +69,10 @@
   border-color: rgba(204, 0, 0, 0.15);
 }
 
-/* Hero Overlay Premium — lighter gradient so photos show through */
+/* Hero Overlay Premium — strong dark overlay for text readability */
 .hero-overlay-premium {
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.25) 30%, rgba(0, 0, 0, 0.45) 70%, rgba(0, 0, 0, 0.65) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0.70) 60%, rgba(0, 0, 0, 0.85) 100%);
 }
 
 /* Shimmer Line */
@@ -123,8 +123,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 100vw);
+  height: min(500px, 100vw);
   background: radial-gradient(circle, rgba(204, 0, 0, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -134,7 +134,10 @@
    Base Styles
    ============================================ */
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-sans);
@@ -186,7 +189,7 @@ body {
    ============================================ */
 
 .hero-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.45) 100%);
 }
 
 /* ============================================
