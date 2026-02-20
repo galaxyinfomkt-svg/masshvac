@@ -63,6 +63,7 @@ export default function Header() {
               width={160}
               height={50}
               className="h-10 w-auto object-contain"
+              style={{ mixBlendMode: "multiply" }}
               priority
             />
           </Link>
@@ -116,7 +117,7 @@ export default function Header() {
         <div className="h-[3px] bg-gradient-to-r from-accent to-accent-dark" />
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-5 border-b border-gray-200">
-            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto" />
+            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto" style={{ mixBlendMode: "multiply" }} />
             <button type="button" onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu"><X className="w-5 h-5 text-gray-800" /></button>
           </div>
           <div className="flex-1 overflow-y-auto py-4 px-3">

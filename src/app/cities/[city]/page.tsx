@@ -57,43 +57,66 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      {/* Hero — Text left + Form right */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <Image src={heroImage} alt={`Professional HVAC services in ${city.name}, Massachusetts`} fill className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 hero-overlay-premium" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
-              <MapPin className="w-4 h-4" />{city.name}, Massachusetts
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Professional HVAC Services in <span className="text-accent">{city.name}, MA</span>
-            </h1>
-            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-xl">
-              Mass HVAC provides expert heating, cooling, and indoor air quality services to homes and businesses in {city.name}, Massachusetts. Licensed, insured, and 5-star rated.
-            </p>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-28 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
+                <MapPin className="w-4 h-4" />{city.name}, Massachusetts
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                HVAC Services in <span className="text-accent">{city.name}, MA</span>
+              </h1>
+              <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-xl">
+                Mass HVAC provides expert heating, cooling, and indoor air quality services to homes and businesses in {city.name}, Massachusetts. Licensed, insured, and 5-star rated.
+              </p>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              {[
-                { icon: Shield, text: "Licensed & Insured" },
-                { icon: Clock, text: "24/7 Emergency" },
-                { icon: Star, text: "5.0 Google Rating" },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2 text-white/70 text-sm">
-                  <Icon className="w-4 h-4 text-accent" />
-                  <span>{text}</span>
-                </div>
-              ))}
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                {[
+                  { icon: Shield, text: "Licensed & Insured" },
+                  { icon: Clock, text: "24/7 Emergency" },
+                  { icon: Star, text: "5.0 Google Rating" },
+                ].map(({ icon: Icon, text }) => (
+                  <div key={text} className="flex items-center gap-2 text-white/80 text-sm">
+                    <Icon className="w-4 h-4 text-accent" />
+                    <span>{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                  <Phone className="w-5 h-5" />(508) 386-9104
+                </a>
+                <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
+                  Free Estimate <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                <Phone className="w-5 h-5" />(508) 386-9104
-              </a>
-              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
-                Free Estimate in {city.name} <ArrowRight className="w-5 h-5" />
-              </Link>
+            {/* Right — Form (desktop only) */}
+            <div className="hidden lg:block">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
+                className="w-full border-none rounded-lg"
+                style={{ height: "420px" }}
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="FunilGhl"
+                data-height="420"
+                data-form-id="ko3gg97CJtkDUrqpruBq"
+                title={`Free HVAC Estimate in ${city.name}, MA - Mass HVAC`}
+              />
             </div>
           </div>
         </div>
