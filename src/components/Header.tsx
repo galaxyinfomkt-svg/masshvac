@@ -40,10 +40,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Accent gradient line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent" />
-
-      {/* Top Bar — Red */}
+      {/* Top Bar — Red accent */}
       <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-gradient-to-r from-accent to-accent-dark`}>
         <div className="mx-auto max-w-7xl px-4 h-full flex items-center justify-between text-xs text-white/90">
           <div className="hidden sm:flex items-center gap-6">
@@ -56,8 +53,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Header */}
-      <header className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-dark-950/95 backdrop-blur-xl border-b border-white/5 ${scrolled ? "top-0 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "top-10"}`}>
+      {/* Main Header — White background */}
+      <header className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-xl border-b border-gray-200/60 ${scrolled ? "top-0 shadow-lg" : "top-10"}`}>
         <nav className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <Link href="/" className="relative shrink-0">
             <Image
@@ -66,7 +63,6 @@ export default function Header() {
               width={160}
               height={50}
               className="h-10 w-auto object-contain"
-              style={{ mixBlendMode: "screen" }}
               priority
             />
           </Link>
@@ -74,22 +70,22 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div key={link.href} className="relative" onMouseEnter={() => link.hasDropdown && setServicesOpen(true)} onMouseLeave={() => link.hasDropdown && setServicesOpen(false)}>
-                <Link href={link.href} className="flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium text-white/60 hover:text-white transition-colors duration-200">
+                <Link href={link.href} className="flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:text-accent transition-colors duration-200">
                   {link.label}
                   {link.hasDropdown && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />}
                 </Link>
                 {link.hasDropdown && (
                   <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-300 ${servicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}`}>
-                    <div className="bg-dark-800 border border-white/10 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.4)] p-2 min-w-[320px]">
+                    <div className="bg-white border border-gray-200 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-2 min-w-[320px]">
                       {serviceLinks.map((s) => (
-                        <Link key={s.href} href={s.href} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors group/item">
+                        <Link key={s.href} href={s.href} className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-accent hover:bg-gray-50 transition-colors group/item">
                           <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center group-hover/item:scale-110 transition-transform">
                             <s.icon className="w-[18px] h-[18px] text-white" />
                           </div>
                           <span className="text-sm font-medium">{s.label}</span>
                         </Link>
                       ))}
-                      <div className="border-t border-white/10 mt-1 pt-1">
+                      <div className="border-t border-gray-100 mt-1 pt-1">
                         <Link href="/services" className="flex items-center justify-center gap-1 px-4 py-2.5 text-sm font-bold text-accent hover:bg-accent/10 rounded-lg transition-colors">View All Services &rarr;</Link>
                       </div>
                     </div>
@@ -100,37 +96,37 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+15083869104" className="relative overflow-hidden flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold text-sm rounded-lg transition-all duration-300">
+            <a href="tel:+15083869104" className="relative overflow-hidden flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg">
               <Phone className="w-4 h-4" />(508) 386-9104
             </a>
-            <Link href="#contact" className="px-6 py-2.5 border border-white/20 text-white font-bold text-sm rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
+            <Link href="#contact" className="px-6 py-2.5 border border-gray-300 text-gray-800 font-bold text-sm rounded-lg transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent">
               Free Estimate
             </Link>
           </div>
 
           <button type="button" onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden p-2" aria-label="Toggle menu">
-            {mobileOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            {mobileOpen ? <X className="w-6 h-6 text-gray-800" /> : <Menu className="w-6 h-6 text-gray-800" />}
           </button>
         </nav>
       </header>
 
-      <div className={`fixed inset-0 z-[55] bg-black/60 transition-opacity duration-300 lg:hidden ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`} onClick={() => setMobileOpen(false)} />
+      <div className={`fixed inset-0 z-[55] bg-black/50 transition-opacity duration-300 lg:hidden ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`} onClick={() => setMobileOpen(false)} />
 
-      <div className={`fixed top-0 right-0 bottom-0 z-[56] w-[85%] max-w-sm bg-dark-950 shadow-2xl transition-transform duration-500 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
-        <div className="h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent" />
+      <div className={`fixed top-0 right-0 bottom-0 z-[56] w-[85%] max-w-sm bg-white shadow-2xl transition-transform duration-500 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="h-[3px] bg-gradient-to-r from-accent to-accent-dark" />
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between p-5 border-b border-white/10">
-            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto" style={{ mixBlendMode: "screen" }} />
-            <button type="button" onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-white/10" aria-label="Close menu"><X className="w-5 h-5 text-white" /></button>
+          <div className="flex items-center justify-between p-5 border-b border-gray-200">
+            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto" />
+            <button type="button" onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu"><X className="w-5 h-5 text-gray-800" /></button>
           </div>
           <div className="flex-1 overflow-y-auto py-4 px-3">
             {navLinks.map((link) => (
               <div key={link.href}>
-                <Link href={link.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-3.5 rounded-lg text-white/80 hover:text-accent hover:bg-white/5 font-medium transition-colors">{link.label}</Link>
+                <Link href={link.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-3.5 rounded-lg text-gray-700 hover:text-accent hover:bg-gray-50 font-medium transition-colors">{link.label}</Link>
                 {link.hasDropdown && (
                   <div className="ml-4 space-y-0.5">
                     {serviceLinks.map((s) => (
-                      <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-white/50 hover:text-accent hover:bg-white/5 transition-colors">
+                      <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-500 hover:text-accent hover:bg-gray-50 transition-colors">
                         <s.icon className="w-4 h-4 text-accent" />{s.label}
                       </Link>
                     ))}
@@ -139,11 +135,11 @@ export default function Header() {
               </div>
             ))}
           </div>
-          <div className="p-4 border-t border-white/10 space-y-3">
+          <div className="p-4 border-t border-gray-200 space-y-3">
             <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold rounded-lg transition-colors">
               <Phone className="w-4 h-4" />Call (508) 386-9104
             </a>
-            <Link href="#contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center w-full py-3.5 border border-white/20 text-white font-bold rounded-lg hover:bg-white hover:text-black transition-colors">
+            <Link href="#contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center w-full py-3.5 border border-gray-300 text-gray-800 font-bold rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">
               Get Free Estimate
             </Link>
           </div>

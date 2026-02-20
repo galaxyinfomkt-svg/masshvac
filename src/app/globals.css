@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #081a30;
-  --color-primary-light: #0f2847;
-  --color-primary-dark: #040d18;
-  --color-accent: #c8102e;
-  --color-accent-light: #dc2626;
-  --color-accent-dark: #9b0a20;
-  --color-blue: #1d4ed8;
-  --color-blue-light: #3b82f6;
+  --color-primary: #1B2A6B;
+  --color-primary-light: #2B4088;
+  --color-primary-dark: #0F1845;
+  --color-accent: #CC0000;
+  --color-accent-light: #EE0000;
+  --color-accent-dark: #990000;
+  --color-blue: #009ADE;
+  --color-blue-light: #33B5E8;
   --color-teal: #0d9488;
   --color-warm: #ea580c;
   --color-dark: #000000;
@@ -65,15 +65,15 @@
 }
 .card-premium:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(8, 26, 48, 0.12);
-  border-color: rgba(200, 16, 46, 0.15);
+  box-shadow: 0 12px 40px rgba(27, 42, 107, 0.12);
+  border-color: rgba(204, 0, 0, 0.15);
 }
 
 /* Hero Overlay Premium */
 .hero-overlay-premium {
   background:
-    linear-gradient(180deg, rgba(4, 13, 24, 0.4) 0%, rgba(4, 13, 24, 0.6) 30%, rgba(4, 13, 24, 0.85) 70%, rgba(4, 13, 24, 0.95) 100%),
-    radial-gradient(ellipse at 20% 80%, rgba(200, 16, 46, 0.08) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(15, 24, 69, 0.4) 0%, rgba(15, 24, 69, 0.6) 30%, rgba(15, 24, 69, 0.85) 70%, rgba(15, 24, 69, 0.95) 100%),
+    radial-gradient(ellipse at 20% 80%, rgba(204, 0, 0, 0.08) 0%, transparent 60%);
 }
 
 /* Shimmer Line */
@@ -100,7 +100,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #c8102e, #dc2626);
+  background: linear-gradient(90deg, #CC0000, #EE0000);
   transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .link-premium:hover::after {
@@ -126,7 +126,7 @@
   right: 0;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(200, 16, 46, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(204, 0, 0, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -153,12 +153,12 @@ body {
 .accent-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #c8102e, #dc2626);
+  background: linear-gradient(90deg, #CC0000, #EE0000);
   margin: 0 auto;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #c8102e 0%, #dc2626 100%);
+  background: linear-gradient(135deg, #CC0000 0%, #EE0000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -208,7 +208,7 @@ body {
    ============================================ */
 
 .glow-accent {
-  box-shadow: 0 0 30px rgba(200, 16, 46, 0.3), 0 0 60px rgba(200, 16, 46, 0.1);
+  box-shadow: 0 0 30px rgba(204, 0, 0, 0.3), 0 0 60px rgba(204, 0, 0, 0.1);
 }
 
 /* ============================================
@@ -216,8 +216,8 @@ body {
    ============================================ */
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.5); }
-  50% { box-shadow: 0 0 0 14px rgba(200, 16, 46, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 0 14px rgba(204, 0, 0, 0); }
 }
 .animate-pulse-glow {
   animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -279,13 +279,13 @@ main > *:first-child {
    Selection
    ============================================ */
 
-::selection { background: rgba(200, 16, 46, 0.15); color: #081a30; }
+::selection { background: rgba(204, 0, 0, 0.15); color: #1B2A6B; }
 
 /* ============================================
    Scrollbar
    ============================================ */
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0f1117; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #c8102e, #9b0a20); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #dc2626, #c8102e); }
+::-webkit-scrollbar-track { background: #f1f3f7; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #CC0000, #990000); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #EE0000, #CC0000); }
