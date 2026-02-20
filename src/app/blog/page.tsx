@@ -122,7 +122,7 @@ export default function BlogPage() {
         publisher: {
           "@type": "Organization",
           name: "Mass HVAC Inc",
-          logo: { "@type": "ImageObject", url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" },
+          logo: { "@type": "ImageObject", url: "https://masshvac.net/logo.png" },
         },
         mainEntity: {
           "@type": "ItemList",

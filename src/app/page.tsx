@@ -712,7 +712,7 @@ export default function HomePage() {
             "@type": "HVACBusiness",
             name: "Mass HVAC Inc",
             image:
-              "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+              "https://masshvac.net/logo.png",
             "@id": "https://masshvac.net/#business",
             url: "https://masshvac.net",
             telephone: "+1-508-386-9104",
@@ -900,7 +900,7 @@ export default function HomePage() {
             },
             primaryImageOfPage: {
               "@type": "ImageObject",
-              url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+              url: "https://masshvac.net/logo.png",
             },
             speakable: {
               "@type": "SpeakableSpecification",

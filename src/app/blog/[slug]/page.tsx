@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           url: "https://masshvac.net",
           logo: {
             "@type": "ImageObject",
-            url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+            url: "https://masshvac.net/logo.png",
           },
         },
         keywords: post.tags.join(", "),

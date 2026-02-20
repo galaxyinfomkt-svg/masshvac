@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     url: "https://masshvac.net",
     images: [
       {
-        url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+        url: "https://masshvac.net/logo.png",
         width: 1200,
         height: 630,
         alt: "Mass HVAC Inc — Professional Heating & Cooling Services in Massachusetts",
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
       "Professional HVAC services across Massachusetts. Heating, AC, mini-splits, heat pumps & more. 24/7 emergency service. 5-star Google rated. Call (508) 386-9104 for a free estimate.",
     images: [
       {
-        url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+        url: "https://masshvac.net/logo.png",
         alt: "Mass HVAC Inc — Professional Heating & Cooling Services in Massachusetts",
       },
     ],
@@ -174,10 +174,10 @@ export const metadata: Metadata = {
   /* ---- Icons & Manifest ---- */
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
     ],
     apple: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
     ],
   },
 
@@ -224,9 +224,9 @@ function OrganizationJsonLd() {
     name: "Mass HVAC Inc",
     alternateName: ["Mass HVAC", "MASS HVAC INC"],
     url: "https://masshvac.net",
-    logo: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+    logo: "https://masshvac.net/logo.png",
     image:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg",
+      "https://masshvac.net/logo.png",
     description:
       "Mass HVAC Inc is Massachusetts' top-rated HVAC contractor providing heating installation & repair, air conditioning, ductless mini-splits, heat pumps, maintenance, and indoor air quality services. 24/7 emergency service across MetroWest, Worcester & Greater Boston.",
     telephone: "+1-508-386-9104",
@@ -576,7 +576,7 @@ export default function RootLayout({
         />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
 
         {/* JSON-LD Structured Data */}
         <OrganizationJsonLd />
