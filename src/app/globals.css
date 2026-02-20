@@ -69,11 +69,10 @@
   border-color: rgba(204, 0, 0, 0.15);
 }
 
-/* Hero Overlay Premium */
+/* Hero Overlay Premium — neutral dark, no blue tint */
 .hero-overlay-premium {
   background:
-    linear-gradient(180deg, rgba(15, 24, 69, 0.4) 0%, rgba(15, 24, 69, 0.6) 30%, rgba(15, 24, 69, 0.85) 70%, rgba(15, 24, 69, 0.95) 100%),
-    radial-gradient(ellipse at 20% 80%, rgba(204, 0, 0, 0.08) 0%, transparent 60%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.45) 30%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.88) 100%);
 }
 
 /* Shimmer Line */

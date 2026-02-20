@@ -36,8 +36,8 @@ export default function CitiesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
-        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg" alt="HVAC services across Massachusetts" fill className="object-cover" priority quality={85} />
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg" alt="HVAC services across Massachusetts" fill className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">

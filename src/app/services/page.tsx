@@ -107,12 +107,12 @@ export default function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg"
           alt="Professional HVAC services in Massachusetts by Mass HVAC"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
         <div className="absolute inset-0 hero-overlay-premium" />

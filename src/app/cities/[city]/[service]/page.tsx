@@ -47,8 +47,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
-        <Image src={heroImage} alt={`${service.name} in ${city.name}, Massachusetts - Mass HVAC`} fill className="object-cover" priority quality={85} />
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <Image src={heroImage} alt={`${service.name} in ${city.name}, Massachusetts - Mass HVAC`} fill className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">

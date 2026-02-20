@@ -41,8 +41,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
-        <Image src={service.heroImage} alt={`${service.name} in Massachusetts — Mass HVAC`} fill className="object-cover" priority />
+      <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+        <Image src={service.heroImage} alt={`${service.name} in Massachusetts — Mass HVAC`} fill className="object-cover object-center" priority />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
