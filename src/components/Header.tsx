@@ -43,15 +43,15 @@ export default function Header() {
       {/* Accent gradient line */}
       <div className="h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent" />
 
-      {/* Top Bar */}
-      <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-dark-950`}>
-        <div className="mx-auto max-w-7xl px-4 h-full flex items-center justify-between text-xs text-white/70">
+      {/* Top Bar — Red */}
+      <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-gradient-to-r from-accent to-accent-dark`}>
+        <div className="mx-auto max-w-7xl px-4 h-full flex items-center justify-between text-xs text-white/90">
           <div className="hidden sm:flex items-center gap-6">
-            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3 text-accent" />Serving Milford, Massachusetts</span>
-            <a href="mailto:info@masshvac.net" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="w-3 h-3 text-accent" />info@masshvac.net</a>
+            <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3 text-white" />Serving Milford, Massachusetts</span>
+            <a href="mailto:info@masshvac.net" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="w-3 h-3 text-white" />info@masshvac.net</a>
           </div>
-          <a href="tel:+15083869104" className="flex items-center gap-1.5 text-white font-semibold hover:text-accent transition-colors ml-auto">
-            <Phone className="w-3 h-3 text-accent" />(508) 386-9104
+          <a href="tel:+15083869104" className="flex items-center gap-1.5 text-white font-bold hover:text-white/80 transition-colors ml-auto">
+            <Phone className="w-3 h-3 text-white" />(508) 386-9104
           </a>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function Header() {
               alt="Mass HVAC Inc - Professional HVAC Services Massachusetts"
               width={160}
               height={50}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-10 w-auto object-contain"
               style={{ mixBlendMode: "screen" }}
               priority
             />
@@ -120,7 +120,7 @@ export default function Header() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent" />
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-5 border-b border-white/10">
-            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto brightness-0 invert" style={{ mixBlendMode: "screen" }} />
+            <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC" width={130} height={40} className="h-9 w-auto" style={{ mixBlendMode: "screen" }} />
             <button type="button" onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-white/10" aria-label="Close menu"><X className="w-5 h-5 text-white" /></button>
           </div>
           <div className="flex-1 overflow-y-auto py-4 px-3">

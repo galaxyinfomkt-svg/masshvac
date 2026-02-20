@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-8">
             <div className="text-center md:text-left">
-              <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC Inc" width={160} height={50} className="h-12 w-auto object-contain brightness-0 invert mb-5 mx-auto md:mx-0" style={{ mixBlendMode: "screen" }} />
+              <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6772f50110f862fc52e1d170.jpeg" alt="Mass HVAC Inc" width={160} height={50} className="h-12 w-auto object-contain mb-5 mx-auto md:mx-0" style={{ mixBlendMode: "screen" }} />
               <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 100+ cities across Massachusetts. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
               <p className="text-gray-500 text-xs">MA License #12345 | Fully Insured</p>
             </div>
