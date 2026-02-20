@@ -115,17 +115,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/5">
+        <div className="border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
             <p>&copy; {new Date().getFullYear()} Mass HVAC Inc. All rights reserved.</p>
             <p>Licensed & Insured HVAC Contractor — Serving All of Massachusetts</p>
           </div>
-          <p className="text-center text-xs text-gray-600 mt-3">
-            Developed by{" "}
-            <a href="https://galaxyinfo.us" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light transition-colors font-medium">
-              Galaxy IT Mkt
-            </a>
-          </p>
+          <div className="border-t border-white/5 py-4">
+            <p className="text-center text-sm text-gray-400">
+              Developed by{" "}
+              <a href="https://galaxyinfo.us" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light transition-colors font-semibold">
+                Galaxy IT Mkt
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
