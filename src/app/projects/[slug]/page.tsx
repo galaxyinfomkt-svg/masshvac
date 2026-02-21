@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${project.title} in ${project.city} – Mass HVAC`,
     description: project.description,
-    openGraph: { title: `${project.title} – Mass HVAC`, description: project.description, images: [{ url: project.image, width: 1200, height: 630, alt: project.title }] },
+    openGraph: { title: `${project.title} – Mass HVAC`, description: project.description, url: `https://masshvac.net/projects/${project.slug}`, type: "article", images: [{ url: project.image, width: 1200, height: 630, alt: project.title }] },
     alternates: { canonical: `https://masshvac.net/projects/${project.slug}` },
   };
 }

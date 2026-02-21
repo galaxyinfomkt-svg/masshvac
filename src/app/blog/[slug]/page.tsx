@@ -46,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center"><span className="text-white text-sm font-bold">MH</span></div>
             <div>
               <p className="text-white font-medium">{post.author}</p>
-              <p className="text-white/40 text-sm">{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</p>
+              <time dateTime={post.date} className="text-white/40 text-sm">{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
             </div>
           </div>
         </div>
@@ -184,8 +184,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           "@id": `https://masshvac.net/blog/${post.slug}`,
         },
         author: {
-          "@type": "Organization",
-          name: "Mass HVAC Inc",
+          "@type": "Person",
+          name: post.author,
           url: "https://masshvac.net",
         },
         publisher: {

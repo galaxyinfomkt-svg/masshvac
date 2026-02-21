@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone, ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 import { services, getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/cities";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "website",
       images: [{ url: service.heroImage, width: 1200, height: 630, alt: service.name }],
     },
+    alternates: { canonical: `https://masshvac.net/services/${service.slug}` },
   };
 }
 
@@ -210,8 +212,36 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {/* FAQ Section — matches FAQPage schema */}
+      <section className="py-20 bg-surface">
+        <div className="mx-auto max-w-4xl px-4">
+          <ScrollReveal className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              {service.shortName} <span className="text-accent">FAQ</span>
+            </h2>
+            <div className="accent-divider mt-6" />
+          </ScrollReveal>
+          <FAQAccordion
+            items={[
+              {
+                q: `How much does ${service.name.toLowerCase()} cost in Massachusetts?`,
+                a: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 386-9104 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
+              },
+              {
+                q: `Does Mass HVAC offer emergency ${service.shortName.toLowerCase()} service?`,
+                a: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 386-9104 anytime, day or night.`,
+              },
+              {
+                q: `What areas does Mass HVAC serve for ${service.name.toLowerCase()}?`,
+                a: `Mass HVAC provides ${service.name.toLowerCase()} services across Massachusetts, including Milford, Framingham, Worcester, Natick, Hopkinton, Franklin, Bellingham, and dozens of other communities. We cover all of Central and Eastern MA.`,
+              },
+            ]}
+          />
+        </div>
+      </section>
+
       {/* Internal Links for SEO */}
-      <section className="py-12 bg-surface">
+      <section className="py-12 bg-surface-dark">
         <div className="mx-auto max-w-7xl px-4 text-center">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-primary mb-6">
@@ -250,28 +280,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             description: service.metaDescription,
             url: `https://masshvac.net/services/${service.slug}`,
             provider: {
-              "@type": "HVACBusiness",
-              name: "Mass HVAC Inc",
-              telephone: "+1-508-386-9104",
-              url: "https://masshvac.net",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Milford",
-                addressLocality: "Milford",
-                addressRegion: "MA",
-                addressCountry: "US",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 42.1398,
-                longitude: -71.5164,
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "50",
-                bestRating: "5",
-              },
+              "@id": "https://masshvac.net/#organization",
             },
             areaServed: { "@type": "State", name: "Massachusetts" },
             offers: {

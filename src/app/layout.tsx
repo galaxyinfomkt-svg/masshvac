@@ -28,89 +28,28 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://masshvac.net"),
 
-  /* ---- Title ---- */
+  /* ---- Title (under 60 chars) ---- */
   title: {
-    default:
-      "Mass HVAC Inc | #1 Heating & Cooling Company in Massachusetts | 24/7 HVAC Service",
-    template: "%s | Mass HVAC Inc — Massachusetts HVAC Experts",
+    default: "Mass HVAC Inc | Heating & Cooling in Massachusetts",
+    template: "%s | Mass HVAC Inc",
   },
 
-  /* ---- Description (155-160 chars, front-loaded with keywords) ---- */
+  /* ---- Description (under 160 chars, CTA front-loaded) ---- */
   description:
-    "Mass HVAC Inc is Massachusetts' top-rated HVAC contractor. Expert heating installation & repair, AC service, ductless mini-splits, heat pumps, indoor air quality & 24/7 emergency service across MetroWest, Worcester & Greater Boston. Licensed & insured. 5-star rated. Call (508) 386-9104 for a free estimate.",
+    "Top-rated HVAC contractor in Massachusetts. 24/7 heating & cooling service. Licensed & insured. Call (508) 386-9104 for a free estimate.",
 
-  /* ---- Keywords (broad + long-tail + geo-targeted) ---- */
+  /* ---- Keywords (trimmed to core terms — Google ignores this tag) ---- */
   keywords: [
-    // Primary service keywords
     "HVAC Massachusetts",
     "HVAC contractor MA",
-    "HVAC company Massachusetts",
     "heating and cooling Massachusetts",
-    "heating repair Massachusetts",
-    "heating installation MA",
-    "furnace repair Massachusetts",
-    "furnace installation MA",
-    "boiler repair Massachusetts",
-    "boiler installation MA",
+    "furnace repair MA",
     "AC installation Massachusetts",
-    "AC repair MA",
-    "air conditioning installation Massachusetts",
-    "air conditioning repair MA",
-    "central air installation MA",
-    "ductless mini-split installation Massachusetts",
-    "mini-split repair MA",
-    "heat pump installation Massachusetts",
-    "heat pump repair MA",
+    "ductless mini-split MA",
+    "heat pump installation MA",
     "HVAC maintenance Massachusetts",
-    "furnace tune-up MA",
-    "AC tune-up Massachusetts",
-    "indoor air quality Massachusetts",
-    "air duct cleaning MA",
-    "thermostat installation MA",
-    // Emergency keywords
-    "emergency HVAC service Massachusetts",
-    "emergency heating repair MA",
-    "24/7 HVAC service Massachusetts",
-    "no heat emergency MA",
-    "furnace stopped working MA",
-    // Brand name
-    "Mass HVAC",
+    "emergency HVAC service MA",
     "Mass HVAC Inc",
-    // Geo-targeted: MetroWest
-    "HVAC Framingham MA",
-    "HVAC Natick MA",
-    "HVAC Marlborough MA",
-    "HVAC Milford MA",
-    "HVAC Hopkinton MA",
-    "HVAC Sudbury MA",
-    "HVAC Ashland MA",
-    "HVAC Westborough MA",
-    "HVAC Hudson MA",
-    "HVAC Holliston MA",
-    "HVAC Shrewsbury MA",
-    "HVAC Wayland MA",
-    // Geo-targeted: Worcester area
-    "HVAC Worcester MA",
-    "HVAC Auburn MA",
-    "HVAC Grafton MA",
-    // Geo-targeted: Greater Boston
-    "HVAC Newton MA",
-    "HVAC Wellesley MA",
-    "HVAC Needham MA",
-    "HVAC Waltham MA",
-    "HVAC Brookline MA",
-    "HVAC Lexington MA",
-    "HVAC Cambridge MA",
-    // Long-tail / intent-driven
-    "best HVAC company near me Massachusetts",
-    "affordable heating repair Massachusetts",
-    "licensed HVAC contractor MA",
-    "HVAC free estimate Massachusetts",
-    "Mass Save rebates HVAC",
-    "energy efficient heating MA",
-    "Carrier dealer Massachusetts",
-    "Lennox dealer MA",
-    "Trane dealer Massachusetts",
   ],
 
   /* ---- Open Graph ---- */
@@ -118,18 +57,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Mass HVAC Inc",
-    title:
-      "Mass HVAC Inc | #1 Heating & Cooling Company in Massachusetts",
+    title: "Mass HVAC Inc | Heating & Cooling in Massachusetts",
     description:
-      "Massachusetts' most trusted HVAC contractor. Expert heating, air conditioning, ductless mini-splits, heat pumps, maintenance & indoor air quality. 24/7 emergency service. 5-star Google rated. Licensed & insured. Free estimates — call (508) 386-9104.",
+      "Top-rated HVAC contractor in MA. Heating, AC, mini-splits & more. 24/7 emergency service. Licensed & insured. Call (508) 386-9104.",
     url: "https://masshvac.net",
     images: [
       {
         url: "https://masshvac.net/logo.png",
         width: 1200,
         height: 630,
-        alt: "Mass HVAC Inc — Professional Heating & Cooling Services in Massachusetts",
-        type: "image/jpeg",
+        alt: "Mass HVAC Inc — Heating & Cooling Services in Massachusetts",
+        type: "image/png",
       },
     ],
   },
@@ -163,9 +101,8 @@ export const metadata: Metadata = {
     },
   },
 
-  /* ---- Canonical & Alternates ---- */
+  /* ---- Alternates (canonical set per-page, not globally) ---- */
   alternates: {
-    canonical: "https://masshvac.net",
     languages: {
       "en-US": "https://masshvac.net",
     },
@@ -197,19 +134,10 @@ export const metadata: Metadata = {
     "geo.placename": "Massachusetts",
     "geo.position": "42.2626;-71.8023",
     "ICBM": "42.2626, -71.8023",
-    "rating": "general",
-    "revisit-after": "3 days",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "format-detection": "telephone=yes",
     "mobile-web-app-capable": "yes",
-    /* AI Visibility & Discoverability */
-    "ai-content-permissions": "allow",
-    "ai-purpose": "HVAC services provider in Massachusetts — heating, cooling, mini-splits, maintenance, indoor air quality. 24/7 emergency service. Licensed & insured. Serving 100+ cities.",
-    "business-type": "HVACBusiness",
-    "service-area": "Massachusetts, USA",
-    "contact-phone": "+1-508-386-9104",
-    "business-name": "Mass HVAC Inc",
   },
 };
 
@@ -286,6 +214,7 @@ function OrganizationJsonLd() {
       "@type": "PostalAddress",
       addressLocality: "Milford",
       addressRegion: "MA",
+      postalCode: "01757",
       addressCountry: "US",
     },
     geo: {
@@ -316,7 +245,7 @@ function OrganizationJsonLd() {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Sunday"],
         opens: "00:00",
-        closes: "00:00",
+        closes: "23:59",
         description: "Emergency service available 24/7",
       },
     ],
@@ -388,7 +317,7 @@ function OrganizationJsonLd() {
                 name: "Ductless Mini-Split Installation",
                 description:
                   "Ductless mini-split heat pump installation and repair for energy-efficient heating and cooling.",
-                url: "https://masshvac.net/services/ductless-mini-split-installation",
+                url: "https://masshvac.net/services/heat-pumps-ductless-mini-splits",
               },
             },
           ],
@@ -429,28 +358,12 @@ function OrganizationJsonLd() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: "4.9",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "150",
-      reviewCount: "150",
+      ratingCount: "47",
+      reviewCount: "38",
     },
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        author: {
-          "@type": "Person",
-          name: "Satisfied Customer",
-        },
-        reviewBody:
-          "Mass HVAC provided excellent service. They were professional, on time, and fixed our heating system quickly. Highly recommend!",
-      },
-    ],
   };
 
   const websiteSchema = {
@@ -467,14 +380,6 @@ function OrganizationJsonLd() {
     },
     potentialAction: [
       {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://masshvac.net/cities/{search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
-      },
-      {
         "@type": "CommunicateAction",
         target: {
           "@type": "EntryPoint",
@@ -484,48 +389,11 @@ function OrganizationJsonLd() {
       },
     ],
     inLanguage: "en-US",
-    copyrightYear: 2020,
+    copyrightYear: new Date().getFullYear(),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "h2", ".faq-answer", "[role='main'] p:first-of-type"],
     },
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://masshvac.net",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Services",
-        item: "https://masshvac.net/services",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Service Areas",
-        item: "https://masshvac.net/cities",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "Projects",
-        item: "https://masshvac.net/projects",
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        name: "Blog",
-        item: "https://masshvac.net/blog",
-      },
-    ],
   };
 
   return (
@@ -540,12 +408,6 @@ function OrganizationJsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
         }}
       />
     </>

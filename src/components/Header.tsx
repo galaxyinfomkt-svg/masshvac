@@ -80,8 +80,8 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <div key={link.href} className="relative" onMouseEnter={() => link.hasDropdown && setServicesOpen(true)} onMouseLeave={() => link.hasDropdown && setServicesOpen(false)}>
-                <Link href={link.href} className="flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:text-accent transition-colors duration-200">
+              <div key={link.href} className="relative" onMouseEnter={() => link.hasDropdown && setServicesOpen(true)} onMouseLeave={() => link.hasDropdown && setServicesOpen(false)} onFocus={() => link.hasDropdown && setServicesOpen(true)} onBlur={(e) => { if (link.hasDropdown && !e.currentTarget.contains(e.relatedTarget)) setServicesOpen(false); }}>
+                <Link href={link.href} className={`flex items-center gap-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 ${pathname === link.href ? "text-accent" : "text-gray-700 hover:text-accent"}`} {...(link.hasDropdown ? { "aria-expanded": servicesOpen, "aria-haspopup": true } : {})} {...(pathname === link.href ? { "aria-current": "page" as const } : {})}>
                   {link.label}
                   {link.hasDropdown && <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />}
                 </Link>
@@ -123,7 +123,7 @@ export default function Header() {
 
       <div className={`fixed inset-0 z-[55] bg-black/50 transition-opacity duration-300 lg:hidden ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`} onClick={() => setMobileOpen(false)} />
 
-      <div className={`fixed top-0 right-0 bottom-0 z-[56] w-[85%] max-w-sm bg-white shadow-2xl transition-transform duration-500 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
+      <div role="dialog" aria-label="Navigation menu" aria-modal="true" className={`fixed top-0 right-0 bottom-0 z-[56] w-[85%] max-w-sm bg-white shadow-2xl transition-transform duration-500 ease-out lg:hidden ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="h-[3px] bg-gradient-to-r from-accent to-accent-dark" />
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-5 border-b border-gray-200">

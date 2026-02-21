@@ -10,9 +10,9 @@ import type { Metadata } from "next";
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
 export const metadata: Metadata = {
-  title: "HVAC Services in Massachusetts | Heating, Cooling, Mini-Splits & More | Mass HVAC",
+  title: "HVAC Services in Massachusetts | Mass HVAC",
   description:
-    "Complete HVAC services across Massachusetts — heating installation & repair, air conditioning, ductless mini-splits, preventive maintenance & indoor air quality. Licensed & insured. Call (508) 386-9104 for a free estimate.",
+    "Complete HVAC services across MA — heating, AC, mini-splits, maintenance & air quality. Licensed & insured. Call (508) 386-9104 for a free estimate.",
   alternates: {
     canonical: "https://masshvac.net/services",
   },

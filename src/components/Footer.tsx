@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Ready to Start Your HVAC Project?</h2>
+              <p className="text-2xl md:text-3xl font-bold text-white mb-2">Ready to Start Your HVAC Project?</p>
               <p className="text-white/80">Expert heating, cooling, and air quality solutions across Massachusetts.</p>
             </div>
             <a href="tel:+15083869104" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105 shrink-0">
@@ -44,11 +44,11 @@ export default function Footer() {
                 <Image src="/logo.png" alt="Mass HVAC Inc" width={160} height={50} className="h-10 w-auto object-contain" />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 100+ cities across Massachusetts. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
-              <p className="text-gray-500 text-xs">MA License #12345 | Fully Insured</p>
+              <p className="text-gray-500 text-xs">Fully Licensed &amp; Insured</p>
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Services</h4>
+              <p className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Services</p>
               <ul className="space-y-2 text-sm text-gray-400">
                 {services.map((service) => (
                   <li key={service.slug}>
@@ -56,7 +56,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Quick Links</h4>
+              <p className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Quick Links</p>
               <ul className="space-y-2 text-sm text-gray-400">
                 {quickLinks.map((link) => (
                   <li key={link.href}><Link href={link.href} className="hover:text-accent transition-colors">{link.label}</Link></li>
@@ -65,7 +65,7 @@ export default function Footer() {
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Contact Us</h4>
+              <p className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Contact Us</p>
               <ul className="space-y-4 text-gray-400">
                 <li>
                   <a href="tel:+15083869104" className="flex items-center gap-3 justify-center md:justify-start hover:text-accent transition-colors">
@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
 
             <div className="text-center md:text-left">
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Google Reviews</h4>
+              <p className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Google Reviews</p>
               <a href="https://g.page/r/CSf92YebNYJPEAE/review" target="_blank" rel="noopener noreferrer" className="block">
                 <div className="flex items-center gap-1 text-accent mb-2 justify-center md:justify-start">
                   {[...Array(5)].map((_, i) => (<Star key={i} className="w-5 h-5 fill-current" />))}
@@ -105,7 +105,7 @@ export default function Footer() {
                 <span className="inline-flex items-center gap-1.5 text-accent text-sm font-semibold hover:text-accent-light transition-colors">Leave a Review <ExternalLink className="w-3 h-3" /></span>
               </a>
 
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Popular Areas</h4>
+              <p className="text-xs font-bold uppercase tracking-widest mb-3 mt-6 text-accent">Popular Areas</p>
               <div className="flex flex-wrap gap-1.5 justify-center md:justify-start">
                 {popularCities.map((city) => (
                   <Link key={city} href={`/cities/${city.toLowerCase().replace(/\s+/g, "-")}`} className="px-2 py-0.5 text-xs text-gray-500 bg-white/5 rounded border border-white/5 hover:border-accent/30 hover:bg-accent/20 hover:text-accent transition-colors">{city}</Link>

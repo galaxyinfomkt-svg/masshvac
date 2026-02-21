@@ -700,148 +700,9 @@ export default function HomePage() {
       <ContactForm />
 
       {/* ════════════════════════════════════════════════
-          JSON-LD Structured Data — Comprehensive SEO Schemas
+          JSON-LD Structured Data — Page-Specific Schemas
+          (HVACBusiness schema is in layout.tsx — no duplicate here)
           ════════════════════════════════════════════════ */}
-
-      {/* Schema 1: HVACBusiness with AggregateRating */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HVACBusiness",
-            name: "Mass HVAC Inc",
-            image:
-              "https://masshvac.net/logo.png",
-            "@id": "https://masshvac.net/#business",
-            url: "https://masshvac.net",
-            telephone: "+1-508-386-9104",
-            email: "info@masshvac.net",
-            description:
-              "Mass HVAC Inc provides professional heating, cooling, and indoor air quality services across Massachusetts. Licensed & insured HVAC contractor offering 24/7 emergency service, installations, repairs, and maintenance.",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Milford",
-              addressRegion: "MA",
-              postalCode: "01757",
-              addressCountry: "US",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 42.1398,
-              longitude: -71.5164,
-            },
-            openingHoursSpecification: [
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                ],
-                opens: "07:00",
-                closes: "20:00",
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: "Saturday",
-                opens: "08:00",
-                closes: "17:00",
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: "Sunday",
-                opens: "00:00",
-                closes: "23:59",
-                description: "Emergency service only",
-              },
-            ],
-            areaServed: areaCities.map((city) => ({
-              "@type": "City",
-              name: city,
-              containedInPlace: {
-                "@type": "State",
-                name: "Massachusetts",
-              },
-            })),
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "HVAC Services",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Heating Installation & Repair",
-                    url: "https://masshvac.net/services/heating-installation-repair",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Air Conditioning Installation & Repair",
-                    url: "https://masshvac.net/services/air-conditioning-installation-repair",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Heat Pumps & Ductless Mini-Splits",
-                    url: "https://masshvac.net/services/heat-pumps-ductless-mini-splits",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "HVAC Maintenance & Tune-Ups",
-                    url: "https://masshvac.net/services/hvac-maintenance-tune-ups",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Indoor Air Quality",
-                    url: "https://masshvac.net/services/indoor-air-quality",
-                  },
-                },
-              ],
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "5.0",
-              reviewCount: "50",
-              bestRating: "5",
-              worstRating: "1",
-            },
-            priceRange: "$$",
-            sameAs: [
-              "https://www.google.com/maps/place/Mass+HVAC+Inc",
-            ],
-            slogan:
-              "Massachusetts' Trusted HVAC Experts — 24/7 Emergency Service",
-            knowsAbout: [
-              "HVAC Installation",
-              "Furnace Repair",
-              "Air Conditioning",
-              "Heat Pumps",
-              "Ductless Mini-Splits",
-              "HVAC Maintenance",
-              "Indoor Air Quality",
-              "Duct Cleaning",
-              "Boiler Repair",
-              "Emergency Heating Service",
-            ],
-            paymentAccepted: "Cash, Credit Card, Check, Financing Available",
-            currenciesAccepted: "USD",
-          }),
-        }}
-      />
 
       {/* Schema 2: FAQPage */}
       <script
@@ -862,7 +723,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* Schema 3: WebPage with Breadcrumb */}
+      {/* Schema 3: WebPage */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -871,21 +732,14 @@ export default function HomePage() {
             "@type": "WebPage",
             "@id": "https://masshvac.net/#webpage",
             url: "https://masshvac.net",
-            name: "Mass HVAC Inc - Professional Heating & Cooling Services in Massachusetts",
+            name: "Mass HVAC Inc — Heating & Cooling in Massachusetts",
             description:
-              "Expert HVAC installation, repair & maintenance across Massachusetts. 24/7 emergency service. Licensed & insured. Free estimates. Call (508) 386-9104.",
+              "Expert HVAC installation, repair & maintenance across Massachusetts. 24/7 emergency service. Licensed & insured. Call (508) 386-9104.",
             isPartOf: {
-              "@type": "WebSite",
               "@id": "https://masshvac.net/#website",
-              url: "https://masshvac.net",
-              name: "Mass HVAC Inc",
-              publisher: {
-                "@type": "Organization",
-                name: "Mass HVAC Inc",
-              },
             },
             about: {
-              "@id": "https://masshvac.net/#business",
+              "@id": "https://masshvac.net/#organization",
             },
             breadcrumb: {
               "@type": "BreadcrumbList",
@@ -906,50 +760,7 @@ export default function HomePage() {
               "@type": "SpeakableSpecification",
               cssSelector: ["h1", ".faq-answer"],
             },
-            lastReviewed: "2026-02-20",
-          }),
-        }}
-      />
-
-      {/* Schema 4: BreadcrumbList (standalone) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: "https://masshvac.net",
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Services",
-                item: "https://masshvac.net/services",
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: "Service Areas",
-                item: "https://masshvac.net/cities",
-              },
-              {
-                "@type": "ListItem",
-                position: 4,
-                name: "Projects",
-                item: "https://masshvac.net/projects",
-              },
-              {
-                "@type": "ListItem",
-                position: 5,
-                name: "Blog",
-                item: "https://masshvac.net/blog",
-              },
-            ],
+            lastReviewed: new Date().toISOString().split("T")[0],
           }),
         }}
       />

@@ -19,7 +19,7 @@ export const services: Service[] = [
     shortName: "Heating",
     description:
       "Expert furnace and boiler installation, repair, and replacement services across Massachusetts. Stay warm all winter with Mass HVAC.",
-    metaTitle: "Heating Installation & Repair in MA | Furnaces & Boilers – Mass HVAC",
+    metaTitle: "Heating Installation & Repair in MA | Mass HVAC",
     metaDescription:
       "Professional heating installation, repair & replacement in Massachusetts. Furnaces, boilers & more. 24/7 emergency service. Call Mass HVAC today!",
     icon: "🔥",
@@ -56,7 +56,7 @@ Whether your furnace stopped working at 2 AM or you're planning a proactive upgr
     shortName: "Cooling",
     description:
       "Professional AC installation, repair, and maintenance in Massachusetts. Beat the summer heat with Mass HVAC's cooling experts.",
-    metaTitle: "AC Installation & Repair in MA | Air Conditioning – Mass HVAC",
+    metaTitle: "AC Installation & Repair in MA | Mass HVAC",
     metaDescription:
       "Expert air conditioning installation, repair & maintenance in Massachusetts. Central AC, ductless systems & more. Fast service. Call Mass HVAC!",
     icon: "❄️",
@@ -174,7 +174,7 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
     shortName: "Air Quality",
     description:
       "Indoor air quality solutions in Massachusetts — duct cleaning, air purifiers, humidifiers, and filtration systems.",
-    metaTitle: "Indoor Air Quality Solutions in MA | Duct Cleaning & Purifiers – Mass HVAC",
+    metaTitle: "Indoor Air Quality Solutions in MA | Mass HVAC",
     metaDescription:
       "Improve your indoor air quality in Massachusetts. Duct cleaning, air purifiers, humidifiers & advanced filtration. Breathe easier with Mass HVAC!",
     icon: "💨",

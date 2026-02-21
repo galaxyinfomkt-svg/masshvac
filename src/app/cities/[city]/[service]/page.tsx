@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: cs, service: ss } = await params;
   const city = getCityBySlug(cs), service = getServiceBySlug(ss);
   if (!city || !service) return {};
-  const title = `${service.name} in ${city.name}, MA – Licensed HVAC Contractor | Mass HVAC`;
-  const description = `Professional ${service.name.toLowerCase()} in ${city.name}, Massachusetts. Fast service, fair pricing, 5-star rated, satisfaction guaranteed. Call (508) 386-9104 for a free estimate.`;
+  const title = `${service.shortName} in ${city.name}, MA | Mass HVAC`;
+  const description = `Expert ${service.shortName.toLowerCase()} in ${city.name}, MA. Fast, reliable service. Licensed & insured. Call (508) 386-9104 for a free estimate.`;
   return {
     title,
     description,

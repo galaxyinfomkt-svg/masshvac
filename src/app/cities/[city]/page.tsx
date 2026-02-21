@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const city = getCityBySlug(slug);
   if (!city) return {};
-  const title = `HVAC Services in ${city.name}, MA | Heating & Cooling – Mass HVAC`;
-  const description = `Professional HVAC services in ${city.name}, Massachusetts. Heating, cooling, mini-splits, maintenance & indoor air quality. Licensed & insured. 24/7 emergency service. Call (508) 386-9104!`;
+  const title = `HVAC Services in ${city.name}, MA | Mass HVAC`;
+  const description = `Professional HVAC services in ${city.name}, MA. Heating, cooling, mini-splits & maintenance. Licensed & insured. Call (508) 386-9104.`;
   return {
     title,
     description,

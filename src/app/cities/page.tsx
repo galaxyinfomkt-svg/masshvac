@@ -11,13 +11,13 @@ import type { Metadata } from "next";
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
 export const metadata: Metadata = {
-  title: "Service Areas | HVAC Services in 100+ Massachusetts Cities – Mass HVAC",
+  title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
   description:
-    "Mass HVAC serves 100+ cities and towns across Massachusetts with expert heating, cooling, mini-split & indoor air quality services. Licensed & insured. Call (508) 386-9104 for a free estimate!",
+    "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 386-9104.",
   openGraph: {
-    title: "Service Areas | HVAC Services in 100+ Massachusetts Cities – Mass HVAC",
+    title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
     description:
-      "Mass HVAC serves 100+ cities and towns across Massachusetts with expert heating, cooling, mini-split & indoor air quality services. Licensed & insured. Call (508) 386-9104 for a free estimate!",
+      "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 386-9104.",
     url: "https://masshvac.net/cities",
     type: "website",
   },
@@ -133,7 +133,7 @@ export default function CitiesPage() {
         name: "Mass HVAC Service Areas in Massachusetts",
         description: "Complete list of cities and towns served by Mass HVAC Inc for heating, cooling, and HVAC services in Massachusetts.",
         numberOfItems: cities.length,
-        itemListElement: cities.slice(0, 50).map((city, i) => ({
+        itemListElement: cities.map((city, i) => ({
           "@type": "ListItem",
           position: i + 1,
           name: `${city.name}, MA`,
