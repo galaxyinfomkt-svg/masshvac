@@ -343,11 +343,11 @@ function OrganizationJsonLd() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.9",
+      ratingValue: "5.0",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "47",
-      reviewCount: "38",
+      ratingCount: "6",
+      reviewCount: "6",
     },
   };
 

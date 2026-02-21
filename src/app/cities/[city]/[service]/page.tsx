@@ -120,7 +120,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Content */}
@@ -284,7 +283,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           telephone: "+1-508-740-4113",
           url: "https://masshvac.net",
           address: { "@type": "PostalAddress", addressLocality: "Milford", addressRegion: "MA", postalCode: "01757", addressCountry: "US" },
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", bestRating: "5", worstRating: "1", ratingCount: "47", reviewCount: "38" },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", bestRating: "5", worstRating: "1", ratingCount: "6", reviewCount: "6" },
         },
         areaServed: { "@type": "City", name: city.name, containedInPlace: { "@type": "State", name: "Massachusetts" } },
         availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: "+1-508-740-4113", contactType: "customer service" } },

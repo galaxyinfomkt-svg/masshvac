@@ -65,7 +65,6 @@ export default function CitiesPage() {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Services bar */}
@@ -173,7 +172,7 @@ export default function CitiesPage() {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "5.0",
-          reviewCount: "50",
+          reviewCount: "6",
           bestRating: "5",
         },
       }) }} />

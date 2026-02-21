@@ -46,7 +46,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{project.title}</h1>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Details */}

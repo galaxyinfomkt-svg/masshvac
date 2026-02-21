@@ -120,7 +120,6 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Services in this city */}
@@ -284,11 +283,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         },
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: "4.9",
+          ratingValue: "5.0",
           bestRating: "5",
           worstRating: "1",
-          ratingCount: "47",
-          reviewCount: "38",
+          ratingCount: "6",
+          reviewCount: "6",
         },
         priceRange: "$$",
         openingHoursSpecification: {
