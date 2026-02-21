@@ -410,17 +410,9 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" className={inter.variable}>
       <head>
-        {/* Preconnect to critical third-party origins for performance */}
+        {/* Preconnect only to the CDN serving hero/service images (critical path).
+            LeadConnectorHQ, msgsndr, reputationhub are lazy-loaded — no preconnect needed. */}
         <link rel="preconnect" href="https://assets.cdn.filesafe.space" />
-        <link rel="preconnect" href="https://widgets.leadconnectorhq.com" />
-        <link
-          rel="dns-prefetch"
-          href="https://link.msgsndr.com"
-        />
-        <link
-          rel="dns-prefetch"
-          href="https://reputationhub.site"
-        />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.png" type="image/png" />

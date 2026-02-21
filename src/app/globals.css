@@ -217,12 +217,24 @@ body {
    Keyframes
    ============================================ */
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.5); }
-  50% { box-shadow: 0 0 0 14px rgba(204, 0, 0, 0); }
+/* Pulse glow — uses composited properties (transform + opacity) via pseudo-element
+   instead of box-shadow to avoid non-composited animation jank */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
 .animate-pulse-glow {
-  animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  position: relative;
+}
+.animate-pulse-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(204, 0, 0, 0.5);
+  animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: -1;
+  pointer-events: none;
 }
 
 @keyframes float {
@@ -236,18 +248,8 @@ body {
   100% { transform: translateX(100%); }
 }
 
-@keyframes page-enter {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================================
-   Page Enter Animation
-   ============================================ */
-
-main > *:first-child {
-  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
+/* page-enter animation REMOVED — it set opacity:0 on the hero section,
+   directly delaying LCP (Largest Contentful Paint) by ~500ms+ */
 
 /* ============================================
    Button Press

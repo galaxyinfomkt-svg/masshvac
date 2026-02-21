@@ -1,5 +1,6 @@
 import { Star, ExternalLink } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import LazyIframe from "@/components/LazyIframe";
 
 export default function ReviewsWidget() {
   return (
@@ -21,7 +22,7 @@ export default function ReviewsWidget() {
 
         <ScrollReveal>
           <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/10 bg-white">
-            <iframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/sZJvTMNScvm4zh9WxYtH" frameBorder="0" scrolling="no" style={{ minWidth: "100%", width: "100%", minHeight: "400px" }} title="Mass HVAC Customer Reviews Massachusetts" />
+            <LazyIframe className="lc_reviews_widget" src="https://reputationhub.site/reputation/widgets/review_widget/sZJvTMNScvm4zh9WxYtH" frameBorder="0" scrolling="no" style={{ minWidth: "100%", width: "100%", minHeight: "400px" }} title="Mass HVAC Customer Reviews Massachusetts" placeholderHeight="400px" />
           </div>
         </ScrollReveal>
 

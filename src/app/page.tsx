@@ -31,6 +31,7 @@ import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import FAQAccordion from "@/components/FAQAccordion";
+import LazyIframe from "@/components/LazyIframe";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
@@ -175,9 +176,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — Bare iframe form (desktop only) */}
+            {/* Right — Bare iframe form (desktop only, lazy-loaded to avoid
+                blocking LCP with reCAPTCHA + LeadConnector JS ~5MB) */}
             <div className="hidden lg:block">
-              <iframe
+              <LazyIframe
                 src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
                 className="w-full border-none rounded-lg"
                 style={{ height: "420px" }}
@@ -194,6 +196,8 @@ export default function HomePage() {
                 data-layout-iframe-id="hero-form-ko3gg97CJtkDUrqpruBq"
                 data-form-id="ko3gg97CJtkDUrqpruBq"
                 title="Free HVAC Estimate - Mass HVAC Inc Massachusetts"
+                delayMs={3000}
+                placeholderHeight="420px"
               />
             </div>
           </div>
@@ -242,6 +246,7 @@ export default function HomePage() {
                         src={service.heroImage}
                         alt={`${service.name} in Massachusetts - Mass HVAC`}
                         fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -373,6 +378,7 @@ export default function HomePage() {
                     alt="Mass HVAC professional technician servicing HVAC system in Massachusetts"
                     width={600}
                     height={400}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -540,6 +546,7 @@ export default function HomePage() {
                       src={project.image}
                       alt={`${project.title} - ${project.city} - Mass HVAC`}
                       fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

@@ -1,5 +1,6 @@
 import { Phone, Clock, Shield, CheckCircle2, Star, Award } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import LazyIframe from "@/components/LazyIframe";
 
 export default function ContactForm() {
   return (
@@ -16,7 +17,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
           {/* Left — Just the form iframe, NO background */}
           <ScrollReveal direction="left">
-            <iframe
+            <LazyIframe
               src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
               className="w-full border-none rounded-lg"
               style={{ height: "500px" }}
@@ -33,6 +34,7 @@ export default function ContactForm() {
               data-layout-iframe-id="inline-ko3gg97CJtkDUrqpruBq"
               data-form-id="ko3gg97CJtkDUrqpruBq"
               title="Request Free HVAC Estimate - Mass HVAC Inc"
+              placeholderHeight="500px"
             />
           </ScrollReveal>
 
