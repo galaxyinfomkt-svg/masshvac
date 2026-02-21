@@ -45,7 +45,7 @@ const faqData = [
   },
   {
     q: "Do you offer free estimates?",
-    a: "Yes, Mass HVAC provides free, no-obligation estimates for all HVAC installations and replacements. Call (508) 386-9104 to schedule yours.",
+    a: "Yes, Mass HVAC provides free, no-obligation estimates for all HVAC installations and replacements. Call (508) 740-4113 to schedule yours.",
   },
   {
     q: "What HVAC brands do you install and service?",
@@ -144,11 +144,11 @@ export default function HomePage() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <a
-                  href="tel:+15083869104"
+                  href="tel:+15087404113"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-accent to-accent-dark relative overflow-hidden shimmer-line text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
                 >
                   <Phone className="w-5 h-5" />
-                  (508) 386-9104
+                  (508) 740-4113
                 </a>
                 <Link
                   href="#contact"
@@ -617,11 +617,11 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+15083869104"
+                href="tel:+15087404113"
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent hover:bg-accent-dark text-white font-bold text-xl rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
               >
                 <Phone className="w-6 h-6" />
-                Call Now: (508) 386-9104
+                Call Now: (508) 740-4113
               </a>
               <Link
                 href="#contact"
@@ -734,7 +734,7 @@ export default function HomePage() {
             url: "https://masshvac.net",
             name: "Mass HVAC Inc — Heating & Cooling in Massachusetts",
             description:
-              "Expert HVAC installation, repair & maintenance across Massachusetts. 24/7 emergency service. Licensed & insured. Call (508) 386-9104.",
+              "Expert HVAC installation, repair & maintenance across Massachusetts. 24/7 emergency service. Licensed & insured. Call (508) 740-4113.",
             isPartOf: {
               "@id": "https://masshvac.net/#website",
             },

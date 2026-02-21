@@ -111,8 +111,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <div className="bg-black rounded-xl p-6 border border-white/10">
                   <h3 className="font-bold text-accent text-lg mb-2">Need HVAC Help?</h3>
                   <p className="text-white/50 text-sm mb-5">Our experts are ready to help.</p>
-                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3 bg-accent hover:bg-accent-dark text-white font-bold text-sm rounded-lg transition-all mb-2">
-                    <Phone className="w-4 h-4" />(508) 386-9104
+                  <a href="tel:+15087404113" className="flex items-center justify-center gap-2 w-full py-3 bg-accent hover:bg-accent-dark text-white font-bold text-sm rounded-lg transition-all mb-2">
+                    <Phone className="w-4 h-4" />(508) 740-4113
                   </a>
                   <Link href="#contact" className="flex items-center justify-center gap-2 w-full py-3 border-2 border-white text-white font-medium text-sm rounded-lg hover:bg-white hover:text-black transition-all">
                     Free Estimate <ArrowRight className="w-3.5 h-3.5" />

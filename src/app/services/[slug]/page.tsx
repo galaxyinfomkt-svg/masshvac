@@ -74,11 +74,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-xl">{service.description}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+15083869104"
+                href="tel:+15087404113"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
               >
                 <Phone className="w-5 h-5" />
-                (508) 386-9104
+                (508) 740-4113
               </a>
               <Link
                 href="#contact"
@@ -225,11 +225,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             items={[
               {
                 q: `How much does ${service.name.toLowerCase()} cost in Massachusetts?`,
-                a: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 386-9104 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
+                a: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 740-4113 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
               },
               {
                 q: `Does Mass HVAC offer emergency ${service.shortName.toLowerCase()} service?`,
-                a: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 386-9104 anytime, day or night.`,
+                a: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 740-4113 anytime, day or night.`,
               },
               {
                 q: `What areas does Mass HVAC serve for ${service.name.toLowerCase()}?`,
@@ -298,7 +298,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               "@type": "ServiceChannel",
               servicePhone: {
                 "@type": "ContactPoint",
-                telephone: "+1-508-386-9104",
+                telephone: "+1-508-740-4113",
                 contactType: "customer service",
               },
             },
@@ -340,7 +340,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 name: `How much does ${service.name.toLowerCase()} cost in Massachusetts?`,
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 386-9104 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
+                  text: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 740-4113 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
                 },
               },
               {
@@ -348,7 +348,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 name: `Does Mass HVAC offer emergency ${service.shortName.toLowerCase()} service?`,
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 386-9104 anytime, day or night.`,
+                  text: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 740-4113 anytime, day or night.`,
                 },
               },
               {

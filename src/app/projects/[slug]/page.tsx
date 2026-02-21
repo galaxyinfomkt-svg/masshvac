@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Phone, ArrowRight, ArrowLeft, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Phone, ArrowRight, ArrowLeft, AlertCircle, CheckCircle2, Clock, Wrench, Award, TrendingUp } from "lucide-react";
 import { projects, getProjectBySlug } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactForm from "@/components/ContactForm";
@@ -41,6 +41,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="flex items-center gap-2 mb-4">
               <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
               <span className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">{project.city}</span>
+              <span className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">{project.scope}</span>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{project.title}</h1>
           </div>
@@ -59,34 +60,65 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
               </ScrollReveal>
 
+              {/* Overview */}
               <ScrollReveal delay={0.1}>
                 <h2 className="text-2xl font-bold text-primary mb-4">Project Overview</h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-10">{project.description}</p>
+                {project.overview.split("\n\n").map((para, i) => (
+                  <p key={i} className="text-gray-600 text-lg leading-relaxed mb-4">{para}</p>
+                ))}
               </ScrollReveal>
 
+              {/* Problem */}
               <ScrollReveal delay={0.2}>
-                <div className="bg-red-50/70 rounded-xl p-8 mb-6">
+                <div className="bg-red-50/70 rounded-xl p-8 mb-6 mt-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                       <AlertCircle className="w-5 h-5 text-red-500" />
                     </div>
-                    <h3 className="text-xl font-bold text-red-700">The Problem</h3>
+                    <h3 className="text-xl font-bold text-red-700">The Challenge</h3>
                   </div>
-                  <p className="text-red-800/70 leading-relaxed">{project.problem}</p>
+                  {project.problem.split("\n\n").map((para, i) => (
+                    <p key={i} className="text-red-800/70 leading-relaxed mb-3 last:mb-0">{para}</p>
+                  ))}
                 </div>
               </ScrollReveal>
 
+              {/* Solution */}
               <ScrollReveal delay={0.3}>
-                <div className="bg-emerald-50/70 rounded-xl p-8">
+                <div className="bg-emerald-50/70 rounded-xl p-8 mb-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
                       <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                     </div>
                     <h3 className="text-xl font-bold text-emerald-700">Our Solution</h3>
                   </div>
-                  <p className="text-emerald-800/70 leading-relaxed">{project.solution}</p>
+                  {project.solution.split("\n\n").map((para, i) => (
+                    <p key={i} className="text-emerald-800/70 leading-relaxed mb-3 last:mb-0">{para}</p>
+                  ))}
                 </div>
               </ScrollReveal>
+
+              {/* Results */}
+              {project.results.length > 0 && (
+                <ScrollReveal delay={0.4}>
+                  <div className="bg-blue-50/70 rounded-xl p-8">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <TrendingUp className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-blue-700">Results & Outcomes</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {project.results.map((result, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                          <span className="text-blue-800/70 leading-relaxed">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -96,8 +128,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   <h3 className="font-bold text-primary mb-5 text-sm uppercase tracking-wider">Project Details</h3>
                   <div className="space-y-5">
                     {[
-                      { label: "Service", value: project.service },
+                      { icon: Wrench, label: "Service", value: project.service },
                       { label: "Location", value: project.city },
+                      { icon: Clock, label: "Duration", value: project.duration },
+                      { icon: Award, label: "Equipment", value: project.systemBrand },
+                      { label: "Scope", value: project.scope },
                       { label: "Result", value: "Completed Successfully", color: "text-emerald-600" },
                     ].map((d) => (
                       <div key={d.label}>
@@ -111,8 +146,8 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 <div className="bg-black rounded-xl p-7 border border-white/10">
                   <h3 className="font-bold text-accent text-lg mb-2">Need Similar Work?</h3>
                   <p className="text-white/50 text-sm mb-6">Get a free estimate for your {project.service.toLowerCase()} project.</p>
-                  <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
-                    <Phone className="w-4 h-4" />(508) 386-9104
+                  <a href="tel:+15087404113" className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
+                    <Phone className="w-4 h-4" />(508) 740-4113
                   </a>
                   <Link href="#contact" className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all">
                     Free Estimate <ArrowRight className="w-4 h-4" />
@@ -189,28 +224,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         name: project.title,
         description: project.description,
         image: project.image,
-        author: {
-          "@type": "Organization",
-          name: "Mass HVAC Inc",
-          url: "https://masshvac.net",
-        },
+        author: { "@id": "https://masshvac.net/#organization" },
         about: {
           "@type": "Service",
           name: project.service,
-          provider: { "@type": "HVACBusiness", name: "Mass HVAC Inc" },
+          provider: { "@id": "https://masshvac.net/#organization" },
         },
         locationCreated: {
           "@type": "Place",
           name: `${project.city}, Massachusetts`,
         },
-        publisher: {
-          "@type": "Organization",
-          name: "Mass HVAC Inc",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://masshvac.net/logo.png",
-          },
-        },
+        publisher: { "@id": "https://masshvac.net/#organization" },
       }) }} />
     </>
   );

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const city = getCityBySlug(cs), service = getServiceBySlug(ss);
   if (!city || !service) return {};
   const title = `${service.shortName} in ${city.name}, MA | Mass HVAC`;
-  const description = `Expert ${service.shortName.toLowerCase()} in ${city.name}, MA. Fast, reliable service. Licensed & insured. Call (508) 386-9104 for a free estimate.`;
+  const description = `Expert ${service.shortName.toLowerCase()} in ${city.name}, MA. Fast, reliable service. Licensed & insured. Call (508) 740-4113 for a free estimate.`;
   return {
     title,
     description,
@@ -90,8 +90,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                  <Phone className="w-5 h-5" />(508) 386-9104
+                <a href="tel:+15087404113" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                  <Phone className="w-5 h-5" />(508) 740-4113
                 </a>
                 <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
                   Free Estimate <ArrowRight className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <FAQAccordion items={[
               {
                 q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
-                a: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 386-9104 for a personalized quote.`,
+                a: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 740-4113 for a personalized quote.`,
               },
               {
                 q: `Does Mass HVAC serve ${city.name}, Massachusetts?`,
@@ -274,20 +274,20 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@context": "https://schema.org",
         "@type": "Service",
         name: `${service.name} in ${city.name}, MA`,
-        description: `Professional ${service.name.toLowerCase()} services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 386-9104.`,
+        description: `Professional ${service.name.toLowerCase()} services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 740-4113.`,
         image: heroImage,
         serviceType: service.name,
         url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
         provider: {
           "@type": "HVACBusiness",
           name: "Mass HVAC Inc",
-          telephone: "+1-508-386-9104",
+          telephone: "+1-508-740-4113",
           url: "https://masshvac.net",
-          address: { "@type": "PostalAddress", addressLocality: "Milford", addressRegion: "MA", addressCountry: "US" },
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "50", bestRating: "5" },
+          address: { "@type": "PostalAddress", addressLocality: "Milford", addressRegion: "MA", postalCode: "01757", addressCountry: "US" },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", bestRating: "5", worstRating: "1", ratingCount: "47", reviewCount: "38" },
         },
         areaServed: { "@type": "City", name: city.name, containedInPlace: { "@type": "State", name: "Massachusetts" } },
-        availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: "+1-508-386-9104", contactType: "customer service" } },
+        availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: "+1-508-740-4113", contactType: "customer service" } },
         offers: { "@type": "Offer", availability: "https://schema.org/InStock", areaServed: { "@type": "City", name: city.name } },
       }) }} />
 
@@ -308,7 +308,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: [
-          { "@type": "Question", name: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`, acceptedAnswer: { "@type": "Answer", text: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 386-9104 for a personalized quote.` } },
+          { "@type": "Question", name: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`, acceptedAnswer: { "@type": "Answer", text: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 740-4113 for a personalized quote.` } },
           { "@type": "Question", name: `Does Mass HVAC serve ${city.name}, Massachusetts?`, acceptedAnswer: { "@type": "Answer", text: `Yes! Mass HVAC proudly serves ${city.name}, MA and surrounding areas with professional ${service.name.toLowerCase()} services. We offer same-day service and 24/7 emergency response.` } },
           { "@type": "Question", name: `Why choose Mass HVAC for ${service.name.toLowerCase()} in ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: `Mass HVAC is a licensed and insured HVAC contractor with a 5.0 Google rating. We offer transparent pricing, 24/7 emergency service, and a 100% satisfaction guarantee for all ${service.name.toLowerCase()} work in ${city.name}, MA.` } },
         ],
@@ -320,7 +320,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@type": "WebPage",
         name: `${service.name} in ${city.name}, MA – Mass HVAC`,
         url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
-        description: `Professional ${service.name.toLowerCase()} in ${city.name}, Massachusetts. Fast service, fair pricing, 5-star rated, satisfaction guaranteed. Call (508) 386-9104 for a free estimate.`,
+        description: `Professional ${service.name.toLowerCase()} in ${city.name}, Massachusetts. Fast service, fair pricing, 5-star rated, satisfaction guaranteed. Call (508) 740-4113 for a free estimate.`,
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: ["h1", "h2", "p"],

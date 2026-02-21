@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const city = getCityBySlug(slug);
   if (!city) return {};
   const title = `HVAC Services in ${city.name}, MA | Mass HVAC`;
-  const description = `Professional HVAC services in ${city.name}, MA. Heating, cooling, mini-splits & maintenance. Licensed & insured. Call (508) 386-9104.`;
+  const description = `Professional HVAC services in ${city.name}, MA. Heating, cooling, mini-splits & maintenance. Licensed & insured. Call (508) 740-4113.`;
   return {
     title,
     description,
@@ -43,11 +43,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   const faqItems = [
     {
       q: `How much does HVAC service cost in ${city.name}, MA?`,
-      a: `HVAC service costs in ${city.name}, MA vary depending on the type of service needed. A standard tune-up typically ranges from $89–$149, while repairs can range from $150–$500+. For new installations, costs depend on system size and efficiency rating. Mass HVAC provides free, no-obligation estimates for all ${city.name} homeowners — call (508) 386-9104 for a personalized quote.`,
+      a: `HVAC service costs in ${city.name}, MA vary depending on the type of service needed. A standard tune-up typically ranges from $89–$149, while repairs can range from $150–$500+. For new installations, costs depend on system size and efficiency rating. Mass HVAC provides free, no-obligation estimates for all ${city.name} homeowners — call (508) 740-4113 for a personalized quote.`,
     },
     {
       q: `Does Mass HVAC provide 24/7 emergency HVAC service in ${city.name}?`,
-      a: `Yes! Mass HVAC offers 24/7 emergency HVAC service to all ${city.name}, Massachusetts residents. Whether your furnace stops working on a cold winter night or your AC breaks down during a summer heatwave, our licensed technicians are available around the clock. Call (508) 386-9104 for immediate emergency assistance.`,
+      a: `Yes! Mass HVAC offers 24/7 emergency HVAC service to all ${city.name}, Massachusetts residents. Whether your furnace stops working on a cold winter night or your AC breaks down during a summer heatwave, our licensed technicians are available around the clock. Call (508) 740-4113 for immediate emergency assistance.`,
     },
     {
       q: `What HVAC services does Mass HVAC offer in ${city.name}, Massachusetts?`,
@@ -90,8 +90,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                  <Phone className="w-5 h-5" />(508) 386-9104
+                <a href="tel:+15087404113" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                  <Phone className="w-5 h-5" />(508) 740-4113
                 </a>
                 <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
                   Free Estimate <ArrowRight className="w-5 h-5" />
@@ -268,7 +268,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         "@context": "https://schema.org",
         "@type": "HVACBusiness",
         name: "Mass HVAC Inc",
-        telephone: "+1-508-386-9104",
+        telephone: "+1-508-740-4113",
         url: "https://masshvac.net",
         address: {
           "@type": "PostalAddress",
@@ -284,9 +284,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         },
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: "50",
+          ratingValue: "4.9",
           bestRating: "5",
+          worstRating: "1",
+          ratingCount: "47",
+          reviewCount: "38",
         },
         priceRange: "$$",
         openingHoursSpecification: {
@@ -302,11 +304,11 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         "@context": "https://schema.org",
         "@type": "Service",
         name: `HVAC Services in ${city.name}, MA`,
-        description: `Professional heating, cooling & HVAC services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 386-9104.`,
+        description: `Professional heating, cooling & HVAC services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 740-4113.`,
         provider: {
           "@type": "HVACBusiness",
           name: "Mass HVAC Inc",
-          telephone: "+1-508-386-9104",
+          telephone: "+1-508-740-4113",
           url: "https://masshvac.net",
         },
         areaServed: {

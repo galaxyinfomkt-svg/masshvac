@@ -58,8 +58,8 @@ export default function Header() {
             <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3 text-white" />{locationText}</span>
             <a href="mailto:info@masshvac.net" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="w-3 h-3 text-white" />info@masshvac.net</a>
           </div>
-          <a href="tel:+15083869104" className="flex items-center gap-1.5 text-white font-bold hover:text-white/80 transition-colors ml-auto">
-            <Phone className="w-3 h-3 text-white" />(508) 386-9104
+          <a href="tel:+15087404113" className="flex items-center gap-1.5 text-white font-bold hover:text-white/80 transition-colors ml-auto">
+            <Phone className="w-3 h-3 text-white" />(508) 740-4113
           </a>
         </div>
       </div>
@@ -107,8 +107,8 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+15083869104" className="relative overflow-hidden flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg">
-              <Phone className="w-4 h-4" />(508) 386-9104
+            <a href="tel:+15087404113" className="relative overflow-hidden flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg">
+              <Phone className="w-4 h-4" />(508) 740-4113
             </a>
             <Link href="#contact" className="px-6 py-2.5 border border-gray-300 text-gray-800 font-bold text-sm rounded-lg transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent">
               Free Estimate
@@ -147,8 +147,8 @@ export default function Header() {
             ))}
           </div>
           <div className="p-4 border-t border-gray-200 space-y-3">
-            <a href="tel:+15083869104" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold rounded-lg transition-colors">
-              <Phone className="w-4 h-4" />Call (508) 386-9104
+            <a href="tel:+15087404113" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold rounded-lg transition-colors">
+              <Phone className="w-4 h-4" />Call (508) 740-4113
             </a>
             <Link href="#contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center w-full py-3.5 border border-gray-300 text-gray-800 font-bold rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">
               Get Free Estimate

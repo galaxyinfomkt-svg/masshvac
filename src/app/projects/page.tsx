@@ -80,8 +80,8 @@ export default function ProjectsPage() {
               <p className="text-white/70">Quality workmanship and guaranteed satisfaction.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <a href="tel:+15083869104" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
-                <Phone className="w-5 h-5" />(508) 386-9104
+              <a href="tel:+15087404113" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
+                <Phone className="w-5 h-5" />(508) 740-4113
               </a>
               <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
                 Free Estimate <ArrowRight className="w-5 h-5" />
