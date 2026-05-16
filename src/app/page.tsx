@@ -126,10 +126,10 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Massachusetts&apos; Trusted{" "}
+                MetroWest HVAC: Trusted{" "}
                 <span className="text-accent">
                   <TextRotator
-                    texts={["Heating", "Cooling", "HVAC", "Air Quality"]}
+                    texts={["Heating", "Cooling", "Mini-Split", "Air Quality"]}
                     interval={2800}
                   />
                 </span>{" "}

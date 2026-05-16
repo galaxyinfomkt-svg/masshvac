@@ -70,6 +70,17 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 HVAC Services in <span className="text-accent">{city.name}, MA</span>
               </h1>
+
+              {/* TL;DR — direct-answer block optimized for AI citation (per optimize-for-ai SKILL.md §1 Extractability) */}
+              <div className="bg-white/10 backdrop-blur-sm border-l-4 border-accent rounded-r-lg p-5 mb-8 max-w-xl">
+                <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-accent mb-2">
+                  Quick Answer
+                </p>
+                <p className="text-white text-base leading-relaxed">
+                  <strong>Mass HVAC Inc</strong> serves <strong>{city.name}, {city.county} County, MA</strong> with heating installation &amp; repair, air conditioning, ductless mini-splits, and 24/7 emergency service. Licensed in Massachusetts, fully insured, 5.0 Google rating. Free estimates available — call <a href="tel:+15087868755" className="underline font-bold">(508) 786-8755</a>.
+                </p>
+              </div>
+
               <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-xl">
                 Mass HVAC provides expert heating, cooling, and indoor air quality services to homes and businesses in {city.name}, Massachusetts. Licensed, insured, and 5-star rated.
               </p>

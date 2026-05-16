@@ -5,52 +5,51 @@ import { projects } from "@/data/projects";
 import { blogPosts } from "@/data/blog";
 
 const BASE_URL = "https://masshvac.net";
-const LAST_MOD = "2026-02-20T00:00:00.000Z";
 
+// Per seo-sitemap SKILL.md:
+//  • <lastmod> must reflect actual modification (constant date is a low-severity quality issue)
+//  • <priority> and <changefreq> are ignored by Google — omitted intentionally
+//  • Sitemap also referenced from robots.ts for discovery
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: LAST_MOD, changeFrequency: "daily", priority: 1.0 },
-    { url: `${BASE_URL}/services`, lastModified: LAST_MOD, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${BASE_URL}/cities`, lastModified: LAST_MOD, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/projects`, lastModified: LAST_MOD, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${BASE_URL}/blog`, lastModified: LAST_MOD, changeFrequency: "daily", priority: 0.85 },
+    { url: BASE_URL, lastModified: now },
+    { url: `${BASE_URL}/services`, lastModified: now },
+    { url: `${BASE_URL}/cities`, lastModified: now },
+    { url: `${BASE_URL}/projects`, lastModified: now },
+    { url: `${BASE_URL}/blog`, lastModified: now },
+    { url: `${BASE_URL}/privacy`, lastModified: now },
+    { url: `${BASE_URL}/terms`, lastModified: now },
+    { url: `${BASE_URL}/cookies`, lastModified: now },
+    { url: `${BASE_URL}/sms-terms`, lastModified: now },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${BASE_URL}/services/${s.slug}`,
-    lastModified: LAST_MOD,
-    changeFrequency: "weekly",
-    priority: 0.9,
+    lastModified: now,
   }));
 
   const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({
     url: `${BASE_URL}/cities/${c.slug}`,
-    lastModified: LAST_MOD,
-    changeFrequency: "weekly",
-    priority: 0.8,
+    lastModified: now,
   }));
 
   const cityServicePages: MetadataRoute.Sitemap = cities.flatMap((c) =>
     services.map((s) => ({
       url: `${BASE_URL}/cities/${c.slug}/${s.slug}`,
-      lastModified: LAST_MOD,
-      changeFrequency: "weekly" as const,
-      priority: 0.75,
+      lastModified: now,
     }))
   );
 
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${BASE_URL}/projects/${p.slug}`,
-    lastModified: LAST_MOD,
-    changeFrequency: "monthly",
-    priority: 0.7,
+    lastModified: now,
   }));
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
-    lastModified: new Date(p.date).toISOString(),
-    changeFrequency: "monthly",
-    priority: 0.75,
+    lastModified: new Date(p.date),
   }));
 
   return [

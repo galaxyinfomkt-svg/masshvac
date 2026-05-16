@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
   /* ---- Description (under 160 chars, CTA front-loaded) ---- */
   description:
-    "Top-rated HVAC contractor in Massachusetts. 24/7 heating & cooling service. Licensed & insured. Call (508) 786-8755 for a free estimate.",
+    "MetroWest Massachusetts' top-rated HVAC contractor — expert heating, cooling, mini-split & maintenance. 24/7 emergency service. Licensed & insured. Call (508) 786-8755.",
 
   /* ---- Keywords (trimmed to core terms — Google ignores this tag) ---- */
   keywords: [
@@ -322,6 +322,51 @@ function OrganizationJsonLd() {
       ratingCount: "6",
       reviewCount: "6",
     },
+    // Authority signals — per optimize-for-ai SKILL.md §3 Authority
+    founder: {
+      "@type": "Person",
+      name: "Mass HVAC Founder",
+      jobTitle: "Master HVAC Technician & Owner",
+      worksFor: { "@id": "https://masshvac.net/#organization" },
+      knowsAbout: [
+        "Heating Systems",
+        "Air Conditioning",
+        "Ductless Mini-Splits",
+        "Heat Pumps",
+        "Indoor Air Quality",
+        "Mass Save Rebates",
+      ],
+    },
+    employee: {
+      "@type": "Person",
+      name: "Mass HVAC Service Team",
+      jobTitle: "Licensed HVAC Technicians",
+      worksFor: { "@id": "https://masshvac.net/#organization" },
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Massachusetts HVAC Contractor License",
+        recognizedBy: {
+          "@type": "GovernmentOrganization",
+          name: "Commonwealth of Massachusetts — Department of Public Safety",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name: "EPA Section 608 Refrigerant Certification",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: "Massachusetts Construction Supervisor License",
+      },
+    ],
+    slogan: "Massachusetts' Trusted HVAC Experts — MetroWest Coverage",
+    keywords:
+      "HVAC contractor MetroWest, heating installation, AC repair, ductless mini-split, heat pump, Mass Save rebate, 24/7 emergency HVAC, Milford MA, Framingham MA, Natick MA",
   };
 
   const websiteSchema = {

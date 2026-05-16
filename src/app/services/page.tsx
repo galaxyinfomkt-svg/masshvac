@@ -162,6 +162,59 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Comparison Table — optimized for AI citation (per optimize-for-ai SKILL.md §Comparison articles) */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="mx-auto max-w-5xl px-4">
+          <ScrollReveal className="text-center mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-3">
+              Quick Comparison
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Furnace vs. Heat Pump in <span className="text-accent">MetroWest MA</span>
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              The two most common heating systems we install — compared on cost, efficiency, lifespan, and Mass Save eligibility.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="overflow-hidden rounded-xl border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white">
+              <table className="w-full text-left">
+                <thead className="bg-primary text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Factor</th>
+                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Gas Furnace</th>
+                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Cold-Climate Heat Pump</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-sm">
+                  {[
+                    { factor: "Upfront cost (installed)", a: "$4,500 – $8,000", b: "$10,000 – $18,000 (before rebates)" },
+                    { factor: "Mass Save rebate", a: "$500 – $1,500", a2: "varies", b: "Up to $10,000 + 0% loan" },
+                    { factor: "Annual operating cost (MetroWest avg.)", a: "$1,800 – $2,400 (natural gas)", b: "$1,200 – $1,800 (electric)" },
+                    { factor: "Efficiency", a: "92 – 98% AFUE", b: "300 – 400% (COP 3 – 4)" },
+                    { factor: "Heats below 5°F?", a: "Yes (all temperatures)", b: "Yes — modern cold-climate models rated to –13°F" },
+                    { factor: "Provides cooling?", a: "No (needs separate AC)", b: "Yes (heating + cooling in one)" },
+                    { factor: "Lifespan", a: "15 – 20 years", b: "12 – 18 years" },
+                    { factor: "Best for", a: "Homes already on natural gas", b: "Oil-heated homes, additions, electrification" },
+                  ].map((row) => (
+                    <tr key={row.factor} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 font-semibold text-primary">{row.factor}</td>
+                      <td className="px-6 py-4 text-gray-700">{row.a}</td>
+                      <td className="px-6 py-4 text-gray-700">{row.b}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-500 mt-4 leading-relaxed">
+              Figures reflect typical 2024–2026 MetroWest Massachusetts installations.
+              Mass Save rebate amounts vary by system size and program year — confirm with a free Mass HVAC estimate.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
