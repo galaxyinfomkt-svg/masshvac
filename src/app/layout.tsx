@@ -141,7 +141,7 @@ function OrganizationJsonLd() {
     image:
       "https://masshvac.net/logo.png",
     description:
-      "Mass HVAC Inc is Massachusetts' top-rated HVAC contractor providing heating installation & repair, air conditioning, ductless mini-splits, heat pumps, maintenance, and indoor air quality services. 24/7 emergency service across MetroWest, Worcester & Greater Boston.",
+      "Mass HVAC Inc is MetroWest Massachusetts' top-rated HVAC contractor providing heating installation & repair, air conditioning, ductless mini-splits, heat pumps, maintenance, and indoor air quality services across the MetroWest region.",
     telephone: "+1-508-786-8755",
     email: "info@masshvac.net",
     foundingDate: "2020",
@@ -150,50 +150,23 @@ function OrganizationJsonLd() {
     paymentAccepted: "Cash, Credit Card, Check, Financing",
     areaServed: [
       {
-        "@type": "State",
-        name: "Massachusetts",
-        sameAs: "https://en.wikipedia.org/wiki/Massachusetts",
+        "@type": "AdministrativeArea",
+        name: "MetroWest, Massachusetts",
+        sameAs: "https://en.wikipedia.org/wiki/MetroWest",
       },
-      {
-        "@type": "City",
-        name: "Framingham",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Worcester",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Natick",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Marlborough",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Milford",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Newton",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Wellesley",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
-      {
-        "@type": "City",
-        name: "Hopkinton",
-        containedInPlace: { "@type": "State", name: "Massachusetts" },
-      },
+      { "@type": "City", name: "Framingham", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Natick", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Marlborough", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Milford", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Hopkinton", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Wellesley", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Needham", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Sudbury", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Concord", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Acton", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Hudson", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Westborough", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      { "@type": "City", name: "Shrewsbury", containedInPlace: { "@type": "State", name: "Massachusetts" } },
     ],
     address: {
       "@type": "PostalAddress",

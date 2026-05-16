@@ -12,9 +12,9 @@ const quickLinks = [
 ];
 
 const popularCities = [
-  "Milford", "Framingham", "Natick", "Worcester", "Newton",
-  "Brookline", "Cambridge", "Wellesley", "Marlborough", "Hudson",
+  "Milford", "Framingham", "Natick", "Marlborough", "Hudson",
   "Westborough", "Shrewsbury", "Hopkinton", "Sudbury", "Concord",
+  "Wellesley", "Needham", "Ashland", "Acton", "Holliston",
 ];
 
 export default function Footer() {

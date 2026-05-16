@@ -1,4 +1,6 @@
-export type CityRegion = "metrowest" | "greater-boston" | "south-suburban" | "north-shore" | "central-ma";
+// Mass HVAC services MetroWest only. Other region values are retained for
+// type-safety in legacy template content below but are not used by routing.
+export type CityRegion = "metrowest";
 
 export interface City {
   name: string;
@@ -63,74 +65,11 @@ const cityData: { name: string; region: CityRegion; county: string }[] = [
   { name: "Lunenburg", region: "metrowest", county: "Worcester" },
   { name: "Medway", region: "metrowest", county: "Norfolk" },
   { name: "Norfolk", region: "metrowest", county: "Norfolk" },
-
-  // Greater Boston — dense urban/inner suburban, condos, Victorians, steam heat
-  { name: "Lexington", region: "greater-boston", county: "Middlesex" },
-  { name: "Bedford", region: "greater-boston", county: "Middlesex" },
-  { name: "Burlington", region: "greater-boston", county: "Middlesex" },
-  { name: "Waltham", region: "greater-boston", county: "Middlesex" },
-  { name: "Newton", region: "greater-boston", county: "Middlesex" },
-  { name: "Brookline", region: "greater-boston", county: "Norfolk" },
-  { name: "Cambridge", region: "greater-boston", county: "Middlesex" },
-  { name: "Somerville", region: "greater-boston", county: "Middlesex" },
-  { name: "Medford", region: "greater-boston", county: "Middlesex" },
-  { name: "Malden", region: "greater-boston", county: "Middlesex" },
-  { name: "Melrose", region: "greater-boston", county: "Middlesex" },
-  { name: "Wakefield", region: "greater-boston", county: "Middlesex" },
-  { name: "Reading", region: "greater-boston", county: "Middlesex" },
-  { name: "Stoneham", region: "greater-boston", county: "Middlesex" },
-  { name: "Woburn", region: "greater-boston", county: "Middlesex" },
-  { name: "Winchester", region: "greater-boston", county: "Middlesex" },
-  { name: "Arlington", region: "greater-boston", county: "Middlesex" },
-  { name: "Belmont", region: "greater-boston", county: "Middlesex" },
-  { name: "Watertown", region: "greater-boston", county: "Middlesex" },
-
-  // South Suburban — mix of old & new, coastal influence, ranches and split-levels
-  { name: "Quincy", region: "south-suburban", county: "Norfolk" },
-  { name: "Braintree", region: "south-suburban", county: "Norfolk" },
-  { name: "Weymouth", region: "south-suburban", county: "Norfolk" },
-  { name: "Milton", region: "south-suburban", county: "Norfolk" },
-  { name: "Canton", region: "south-suburban", county: "Norfolk" },
-  { name: "Randolph", region: "south-suburban", county: "Norfolk" },
-  { name: "Stoughton", region: "south-suburban", county: "Norfolk" },
-  { name: "Sharon", region: "south-suburban", county: "Norfolk" },
-  { name: "Walpole", region: "south-suburban", county: "Norfolk" },
-  { name: "Foxborough", region: "south-suburban", county: "Norfolk" },
-  { name: "Dedham", region: "south-suburban", county: "Norfolk" },
-  { name: "Norwood", region: "south-suburban", county: "Norfolk" },
-  { name: "Franklin", region: "south-suburban", county: "Norfolk" },
-  { name: "Bellingham", region: "south-suburban", county: "Norfolk" },
-  { name: "Wrentham", region: "south-suburban", county: "Norfolk" },
-
-  // North Shore — coastal, older maritime architecture, salt air
-  { name: "Lynn", region: "north-shore", county: "Essex" },
-  { name: "Saugus", region: "north-shore", county: "Essex" },
-  { name: "Peabody", region: "north-shore", county: "Essex" },
-  { name: "Salem", region: "north-shore", county: "Essex" },
-  { name: "Beverly", region: "north-shore", county: "Essex" },
-  { name: "Danvers", region: "north-shore", county: "Essex" },
-
-  // Central MA — colder winters, longer heating season, rural, oil heat prevalent
-  { name: "Worcester", region: "central-ma", county: "Worcester" },
-  { name: "Auburn", region: "central-ma", county: "Worcester" },
-  { name: "Millbury", region: "central-ma", county: "Worcester" },
-  { name: "Sutton", region: "central-ma", county: "Worcester" },
-  { name: "Oxford", region: "central-ma", county: "Worcester" },
-  { name: "Webster", region: "central-ma", county: "Worcester" },
-  { name: "Leicester", region: "central-ma", county: "Worcester" },
-  { name: "Spencer", region: "central-ma", county: "Worcester" },
-  { name: "Charlton", region: "central-ma", county: "Worcester" },
-  { name: "Dudley", region: "central-ma", county: "Worcester" },
-  { name: "Northbridge", region: "central-ma", county: "Worcester" },
-  { name: "Uxbridge", region: "central-ma", county: "Worcester" },
-  { name: "Douglas", region: "central-ma", county: "Worcester" },
-  { name: "Blackstone", region: "central-ma", county: "Worcester" },
-  { name: "Paxton", region: "central-ma", county: "Worcester" },
-  { name: "Rutland", region: "central-ma", county: "Worcester" },
-  { name: "Princeton", region: "central-ma", county: "Worcester" },
-  { name: "Leominster", region: "central-ma", county: "Worcester" },
-  { name: "Fitchburg", region: "central-ma", county: "Worcester" },
 ];
+
+// NOTE: Mass HVAC only services MetroWest. Other Massachusetts regions
+// (Greater Boston, South Suburban, North Shore, Central MA) were removed
+// from the service area on 2026-05-12 to align with operational coverage.
 
 function slugify(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-");
@@ -172,62 +111,6 @@ const regionProfiles: Record<CityRegion, {
     coolingFocus: "A surprising number of MetroWest homes were built without central air conditioning. Rather than retrofitting ductwork through finished walls, many homeowners are choosing ductless mini-split systems that provide both heating and cooling from a single unit — with no major construction required.",
     uniqueFact: "The MetroWest corridor between Route 9 and the Mass Pike is one of the fastest-growing residential areas in Massachusetts, with a mix of historic New England architecture and newer developments",
     climateNote: "MetroWest experiences the full range of New England weather, with winter temperatures regularly dropping below 10°F and summer humidity pushing heat indices above 100°F",
-  },
-  "greater-boston": {
-    housingStyle: "dense housing stock including Victorian-era multi-family homes, triple-deckers, condominiums, and brownstones — many with steam radiator heating systems, limited closet space for equipment, and shared walls that complicate installations",
-    commonChallenges: [
-      "Steam radiator systems that are inefficient and difficult to zone",
-      "Multi-family buildings where HVAC upgrades require coordination between units",
-      "Space constraints for outdoor condenser units in small yards",
-      "Noise regulations that restrict outdoor equipment placement",
-      "Historic building restrictions that limit exterior modifications",
-    ],
-    heatingFocus: "Greater Boston's older housing stock presents unique heating challenges. Steam boiler systems are common in pre-war homes and multi-family buildings, and while they can be maintained, many are well past their efficient service life. We specialize in upgrading these systems to modern high-efficiency boilers or, where feasible, converting to forced-air or mini-split heat pump systems that provide both heating and cooling.",
-    coolingFocus: "Space is at a premium in Greater Boston. Ductless mini-splits are the preferred cooling solution because they require no ductwork, the indoor units are compact and wall-mounted, and the outdoor condensers can be bracket-mounted to save ground space. We also work within condo association guidelines to ensure installations comply with building rules.",
-    uniqueFact: "Greater Boston's housing density means that HVAC noise and aesthetics matter as much as performance — outdoor units must be carefully positioned to respect property lines, neighbor proximity, and municipal noise ordinances",
-    climateNote: "Greater Boston's urban heat island effect means summer temperatures are typically 3–5°F higher than surrounding suburban areas, increasing cooling demand and making air conditioning essential rather than optional",
-  },
-  "south-suburban": {
-    housingStyle: "diverse housing from post-war ranches and split-levels to modern subdivisions, with most homes built between 1960 and 2010 — generally well-suited for standard HVAC systems with existing ductwork",
-    commonChallenges: [
-      "Aging central AC systems using phased-out R-22 refrigerant",
-      "Split-level homes with uneven temperatures between levels",
-      "Builder-grade equipment from 2000s developments ready for upgrade",
-      "Finished basements that need dedicated heating and cooling",
-      "Homes with original ductwork that has never been cleaned or replaced",
-    ],
-    heatingFocus: "South suburban communities have a healthy mix of heating systems. Newer subdivisions typically have gas furnaces, while older neighborhoods may still have oil-fired systems. The most common upgrade we perform in this area is replacing aging gas furnaces with modern two-stage or modulating units that dramatically improve comfort and efficiency — especially in split-level homes where single-stage systems create hot and cold zones.",
-    coolingFocus: "Most homes in the south suburban area have central air conditioning, but many systems are reaching 15–20 years old and using obsolete R-22 refrigerant. With R-22 now phased out and expensive, replacing these aging systems with modern high-SEER units is the most cost-effective path forward. We handle complete system replacements including the indoor coil, outdoor condenser, and refrigerant line set.",
-    uniqueFact: "The South Shore and southern suburban corridor is characterized by steady residential growth, with many neighborhoods featuring homes from distinct building eras — each with its own HVAC patterns and upgrade opportunities",
-    climateNote: "Coastal influence from the South Shore moderates temperatures slightly compared to inland areas, but also brings higher humidity that makes air conditioning and dehumidification important for comfort and indoor air quality",
-  },
-  "north-shore": {
-    housingStyle: "historic seaside architecture mixed with post-war suburban development — many homes feature older construction with limited insulation, salt air exposure that accelerates equipment corrosion, and waterfront properties with unique ventilation needs",
-    commonChallenges: [
-      "Salt air corrosion that shortens outdoor equipment lifespan",
-      "Older Victorian and colonial homes with minimal insulation",
-      "Coastal humidity causing indoor moisture and mold issues",
-      "Historic district regulations limiting exterior equipment placement",
-      "Waterfront properties requiring corrosion-resistant equipment",
-    ],
-    heatingFocus: "North Shore homes face the dual challenge of older construction and maritime exposure. Heating systems work harder here because many homes were built before modern insulation standards, and the coastal wind increases heat loss through walls and windows. We recommend high-efficiency systems paired with weatherization improvements when possible. For waterfront properties, we specify corrosion-resistant equipment coatings to protect against salt air damage.",
-    coolingFocus: "Coastal humidity is the defining challenge for North Shore air conditioning. Standard cooling alone is often insufficient — homes near the water need dehumidification to prevent moisture problems, musty odors, and mold growth. We design systems that balance cooling capacity with dehumidification performance, and we install whole-home dehumidifiers when the AC system alone cannot maintain healthy humidity levels.",
-    uniqueFact: "North Shore communities combine rich maritime heritage with modern suburban living — many homes in Salem, Beverly, and Danvers sit within historic districts where exterior modifications require careful planning and sometimes historical commission approval",
-    climateNote: "North Shore temperatures are moderated by the Atlantic Ocean, but coastal humidity and persistent sea breezes create unique HVAC challenges that differ from inland communities — including accelerated corrosion and higher moisture loads",
-  },
-  "central-ma": {
-    housingStyle: "a mix of New England farmhouses, colonials, and ranch-style homes spread across larger lots — many in rural or semi-rural settings with oil or propane heating, well water, and longer distances from utility infrastructure",
-    commonChallenges: [
-      "Heavy dependence on heating oil with volatile, rising prices",
-      "Longer and colder heating season compared to eastern MA",
-      "Homes without natural gas access requiring alternative fuel solutions",
-      "Large, older homes with inadequate insulation and drafty windows",
-      "Rural properties with longer HVAC service response times",
-    ],
-    heatingFocus: "Central Massachusetts experiences some of the coldest temperatures in the state, with winter lows frequently reaching -5°F to -15°F. Heating demand is roughly 15–20% higher than in Greater Boston. Many homes in this region still rely on heating oil, and the transition to cold-climate heat pumps has been accelerating rapidly thanks to Mass Save incentives. For homes that want to stay with fossil fuel, we specialize in oil-to-gas conversions where natural gas is available, and high-efficiency propane systems where it is not.",
-    coolingFocus: "While Central MA summers are shorter than the coast, they can be intense — with temperatures regularly exceeding 90°F and high humidity from inland weather patterns. Many older homes in the region were never equipped with central air conditioning. Ductless mini-splits are particularly popular here because they provide both heating and cooling, reducing the number of systems a homeowner needs to maintain.",
-    uniqueFact: "Central Massachusetts is the heart of the state's agricultural and historic heritage, with many properties featuring century-old farmhouses and barns that present fascinating HVAC retrofit challenges requiring creative solutions",
-    climateNote: "Central MA's inland climate is more extreme than coastal regions — colder in winter by 5–10°F, hotter in summer, and with greater temperature swings between day and night that stress HVAC equipment more heavily",
   },
 };
 
