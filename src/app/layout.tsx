@@ -325,7 +325,8 @@ function OrganizationJsonLd() {
     // Authority signals — per optimize-for-ai SKILL.md §3 Authority
     founder: {
       "@type": "Person",
-      name: "Mass HVAC Founder",
+      "@id": "https://masshvac.net/#founder",
+      name: "Gilliard",
       jobTitle: "Master HVAC Technician & Owner",
       worksFor: { "@id": "https://masshvac.net/#organization" },
       knowsAbout: [
@@ -335,6 +336,8 @@ function OrganizationJsonLd() {
         "Heat Pumps",
         "Indoor Air Quality",
         "Mass Save Rebates",
+        "Oil-to-Gas Conversions",
+        "Cold-Climate Heat Pumps",
       ],
     },
     employee: {
