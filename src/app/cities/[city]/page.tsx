@@ -61,7 +61,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <Image src={heroImage} alt={`Professional HVAC services in ${city.name}, Massachusetts`} fill className="object-cover object-center" priority quality={85} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-28 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl">
             {/* Left — Text */}
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
@@ -98,25 +98,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               </div>
             </div>
 
-            {/* Right — Form (desktop only) */}
-            <div className="hidden lg:block">
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
-                className="w-full border-none rounded-lg"
-                style={{ height: "420px" }}
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="FunilGhl"
-                data-height="420"
-                data-form-id="ko3gg97CJtkDUrqpruBq"
-                title={`Free HVAC Estimate in ${city.name}, MA - Mass HVAC`}
-              />
-            </div>
+            {/* Right column removed — A2P compliance: chat widget is the only
+                phone/SMS opt-in source. See sms-terms for details. */}
           </div>
         </div>
       </section>

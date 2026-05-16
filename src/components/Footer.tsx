@@ -20,16 +20,19 @@ const popularCities = [
 export default function Footer() {
   return (
     <footer>
-      {/* Accent CTA Banner */}
-      <section className="py-12 bg-gradient-to-r from-accent via-accent to-accent-dark relative overflow-hidden noise-texture">
+      {/* Accent CTA Banner — compact, no longer sticking out across the page */}
+      <section className="py-10 bg-gradient-to-r from-accent via-accent to-accent-dark noise-texture">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left">
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-white mb-2">Ready to Start Your HVAC Project?</p>
-              <p className="text-white/80">Expert heating, cooling, and air quality solutions across Massachusetts.</p>
+              <p className="text-xl md:text-2xl font-bold text-white">Ready to Start Your HVAC Project?</p>
+              <p className="text-white/80 text-sm mt-1">Expert heating, cooling &amp; indoor air quality solutions — chat with us or call now.</p>
             </div>
-            <a href="tel:+15087868755" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105 shrink-0">
-              <Phone className="w-5 h-5" />(508) 786-8755
+            <a
+              href="tel:+15087868755"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white font-bold text-sm rounded-lg hover:bg-dark-900 transition-all duration-300 shrink-0"
+            >
+              <Phone className="w-4 h-4" />(508) 786-8755
             </a>
           </div>
         </div>
