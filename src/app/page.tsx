@@ -27,7 +27,6 @@ import { projects } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import TextRotator from "@/components/TextRotator";
-import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -704,7 +703,6 @@ export default function HomePage() {
       <MapSection />
 
       {/* ════════ CONTACT ════════ */}
-      <ContactForm />
 
       {/* ════════════════════════════════════════════════
           JSON-LD Structured Data — Page-Specific Schemas

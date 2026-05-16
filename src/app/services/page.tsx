@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Phone, ArrowRight, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
 import { services } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
 
@@ -248,7 +247,6 @@ export default function ServicesPage() {
       </section>
 
       <MapSection />
-      <ContactForm />
     </>
   );
 }

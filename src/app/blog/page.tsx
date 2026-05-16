@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -109,7 +108,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <ContactForm />
 
       {/* CollectionPage Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

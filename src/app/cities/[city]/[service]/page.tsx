@@ -5,7 +5,6 @@ import { Phone, ArrowRight, MapPin, Shield, Clock, Star, CheckCircle, Flame, Sno
 import { cities, getCityBySlug, getCityServiceContent } from "@/data/cities";
 import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
@@ -266,7 +265,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
 
       <ReviewsWidget />
       <MapSection />
-      <ContactForm />
 
       {/* JSON-LD: Service */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

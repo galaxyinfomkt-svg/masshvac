@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { Phone, ArrowRight, ArrowLeft, AlertCircle, CheckCircle2, Clock, Wrench, Award, TrendingUp } from "lucide-react";
 import { projects, getProjectBySlug } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import type { Metadata } from "next";
 
 export function generateStaticParams() { return projects.map((p) => ({ slug: p.slug })); }
@@ -203,7 +202,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      <ContactForm />
 
       {/* BreadcrumbList JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

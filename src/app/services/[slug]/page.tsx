@@ -6,7 +6,6 @@ import FAQAccordion from "@/components/FAQAccordion";
 import { services, getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/cities";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
@@ -266,7 +265,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <ReviewsWidget />
       <MapSection />
-      <ContactForm />
 
       {/* Service JSON-LD Schema */}
       <script

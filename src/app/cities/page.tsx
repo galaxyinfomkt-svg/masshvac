@@ -4,7 +4,6 @@ import { MapPin, Flame, Snowflake, Wind, Wrench, AirVent, Phone, ArrowRight, Shi
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
 
@@ -123,7 +122,6 @@ export default function CitiesPage() {
       </section>
 
       <MapSection />
-      <ContactForm />
 
       {/* JSON-LD: ItemList of cities */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

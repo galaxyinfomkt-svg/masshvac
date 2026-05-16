@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import type { Metadata } from "next";
 
 export function generateStaticParams() { return blogPosts.map((p) => ({ slug: p.slug })); }
@@ -167,7 +166,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      <ContactForm />
 
       {/* BlogPosting JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

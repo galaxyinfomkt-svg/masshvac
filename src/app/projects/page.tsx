@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Phone, ArrowRight, Zap } from "lucide-react";
 import { projects } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -108,7 +107,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <ContactForm />
 
       {/* CollectionPage Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -5,7 +5,6 @@ import { MapPin, Phone, ArrowRight, Flame, Snowflake, Wind, Wrench, AirVent, Shi
 import { cities, getCityBySlug, getCityContent } from "@/data/cities";
 import { services, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
-import ContactForm from "@/components/ContactForm";
 import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
@@ -260,7 +259,6 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
       <ReviewsWidget />
       <MapSection />
-      <ContactForm />
 
       {/* JSON-LD: LocalBusiness */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
