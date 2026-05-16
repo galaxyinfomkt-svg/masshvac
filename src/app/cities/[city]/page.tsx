@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const city = getCityBySlug(slug);
   if (!city) return {};
-  const title = `HVAC Services in ${city.name}, MA | Mass HVAC`;
-  const description = `Professional HVAC services in ${city.name}, MA. Heating, cooling, mini-splits & maintenance. Licensed & insured. Call (508) 786-8755.`;
+  const title = `HVAC Services in ${city.name}, MA (${city.county} County) | Mass HVAC`;
+  const description = `Mass HVAC serves ${city.name}, ${city.county} County's HVAC needs — heating, cooling, mini-splits & maintenance for ${city.name}'s ${city.name === "Worcester" || city.name === "Lowell" ? "urban" : "MetroWest"} homes. Free estimates. (508) 786-8755.`;
   return {
     title,
     description,

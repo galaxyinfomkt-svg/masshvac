@@ -10,13 +10,13 @@ import type { Metadata } from "next";
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
 export const metadata: Metadata = {
-  title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
+  title: "HVAC Service Areas | 50+ MetroWest Cities | Mass HVAC",
   description:
-    "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
+    "Mass HVAC serves 50+ MetroWest cities. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
   openGraph: {
-    title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
+    title: "HVAC Service Areas | 50+ MetroWest Cities | Mass HVAC",
     description:
-      "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
+      "Mass HVAC serves 50+ MetroWest cities. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
     url: "https://masshvac.net/cities",
     type: "website",
   },
@@ -46,7 +46,7 @@ export default function CitiesPage() {
             Massachusetts HVAC Service <span className="text-accent">Areas</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Mass HVAC proudly serves over 100 cities and towns across Massachusetts with professional heating, cooling, mini-split, and indoor air quality services.
+            Mass HVAC proudly serves 50+ MetroWest cities and towns across Massachusetts with professional heating, cooling, mini-split, and indoor air quality services.
           </p>
           <div className="accent-divider mt-8" />
 
@@ -181,7 +181,7 @@ export default function CitiesPage() {
         "@type": "WebPage",
         name: "Service Areas | HVAC Services in 100+ Massachusetts Cities – Mass HVAC",
         url: "https://masshvac.net/cities",
-        description: "Mass HVAC serves 100+ cities and towns across Massachusetts with expert heating, cooling, mini-split & indoor air quality services.",
+        description: "Mass HVAC serves 50+ MetroWest cities with expert heating, cooling, mini-split & indoor air quality services.",
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: ["h1", "h2"],

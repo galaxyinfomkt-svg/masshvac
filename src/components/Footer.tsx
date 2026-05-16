@@ -46,7 +46,7 @@ export default function Footer() {
               <div className="inline-block bg-white rounded-xl p-3 mb-5 mx-auto md:mx-0 shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
                 <Image src="/logo.png" alt="Mass HVAC Inc" width={160} height={50} className="h-10 w-auto object-contain" />
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 100+ cities across Massachusetts. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 50+ MetroWest cities. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
               <p className="text-gray-500 text-xs">Fully Licensed &amp; Insured</p>
             </div>
 

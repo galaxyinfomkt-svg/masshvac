@@ -41,7 +41,7 @@ const faqData = [
   },
   {
     q: "What areas does Mass HVAC serve?",
-    a: "Mass HVAC serves over 100 cities and towns across Massachusetts including Milford, Framingham, Natick, Worcester, Newton, Brookline, Cambridge, Wellesley, Marlborough, and many more.",
+    a: "Mass HVAC serves 50+ cities across the MetroWest Massachusetts region — including Milford, Framingham, Natick, Wellesley, Marlborough, Hudson, Westborough, Shrewsbury, Hopkinton, Sudbury, Concord, Needham, and many more towns west of Boston.",
   },
   {
     q: "Do you offer free estimates?",
@@ -61,14 +61,11 @@ const faqData = [
   },
 ];
 
+// MetroWest only — must match slugs in src/data/cities.ts to avoid 404s
 const areaCities = [
   "Milford",
   "Framingham",
   "Natick",
-  "Worcester",
-  "Newton",
-  "Brookline",
-  "Cambridge",
   "Wellesley",
   "Marlborough",
   "Hudson",
@@ -77,11 +74,15 @@ const areaCities = [
   "Hopkinton",
   "Sudbury",
   "Concord",
-  "Lexington",
-  "Quincy",
-  "Waltham",
-  "Somerville",
-  "Medford",
+  "Needham",
+  "Ashland",
+  "Acton",
+  "Holliston",
+  "Northborough",
+  "Southborough",
+  "Wayland",
+  "Weston",
+  "Maynard",
 ];
 
 export default function HomePage() {
@@ -112,7 +113,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3 mb-6">
                 <div className="inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
                   <MapPin className="w-4 h-4" />
-                  Serving 100+ MA Cities
+                  Serving 50+ MetroWest Cities
                 </div>
                 <div className="inline-flex items-center gap-2 glass-premium text-white px-4 py-2 rounded-full text-sm">
                   <div className="flex text-accent">
@@ -633,7 +634,7 @@ export default function HomePage() {
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               Mass HVAC provides professional heating, cooling, and indoor air
-              quality services to over 100 cities and towns across the
+              quality services to 50+ MetroWest cities and towns across the
               Commonwealth.
             </p>
             <div className="accent-divider mt-6" />

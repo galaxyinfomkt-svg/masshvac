@@ -63,7 +63,7 @@ const posts = [
   {
     id: "8",
     title: "LOCAL\n& TRUSTED",
-    subtitle: "Serving 100+ Cities Across Massachusetts",
+    subtitle: "Serving 50+ MetroWest Cities",
     badge: "YOUR NEIGHBORS",
     image:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg",

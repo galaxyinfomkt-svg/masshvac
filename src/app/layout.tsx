@@ -332,7 +332,7 @@ function OrganizationJsonLd() {
     alternateName: "Mass HVAC",
     url: "https://masshvac.net",
     description:
-      "Massachusetts' top-rated HVAC contractor — heating, cooling, mini-splits, maintenance & indoor air quality. 24/7 emergency service. Licensed & insured. Serving 100+ cities across MA.",
+      "Massachusetts' top-rated HVAC contractor — heating, cooling, mini-splits, maintenance & indoor air quality. 24/7 emergency service. Licensed & insured. Serving 50+ MetroWest cities.",
     publisher: {
       "@id": "https://masshvac.net/#organization",
     },

@@ -168,7 +168,7 @@ export default async function Image() {
               textAlign: "center",
             }}
           >
-            Licensed & Insured · 24/7 Emergency Service · Free Estimates · Serving 100+ MA Cities
+            Licensed & Insured · 24/7 Emergency Service · Free Estimates · Serving 50+ MetroWest Cities
           </div>
         </div>
 
