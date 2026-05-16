@@ -28,8 +28,8 @@ export default function Footer() {
               <p className="text-2xl md:text-3xl font-bold text-white mb-2">Ready to Start Your HVAC Project?</p>
               <p className="text-white/80">Expert heating, cooling, and air quality solutions across Massachusetts.</p>
             </div>
-            <a href="tel:+15087404113" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105 shrink-0">
-              <Phone className="w-5 h-5" />(508) 740-4113
+            <a href="tel:+15087868755" className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-dark-900 transition-all duration-300 hover:scale-105 shrink-0">
+              <Phone className="w-5 h-5" />(508) 786-8755
             </a>
           </div>
         </div>
@@ -68,9 +68,9 @@ export default function Footer() {
               <p className="text-xs font-bold uppercase tracking-widest mb-4 text-accent">Contact Us</p>
               <ul className="space-y-4 text-gray-400">
                 <li>
-                  <a href="tel:+15087404113" className="flex items-center gap-3 justify-center md:justify-start hover:text-accent transition-colors">
+                  <a href="tel:+15087868755" className="flex items-center gap-3 justify-center md:justify-start hover:text-accent transition-colors">
                     <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center shrink-0"><Phone className="w-4 h-4 text-white" /></div>
-                    <div><p className="text-xs text-gray-500">Phone</p><p className="font-bold text-white">(508) 740-4113</p></div>
+                    <div><p className="text-xs text-gray-500">Phone</p><p className="font-bold text-white">(508) 786-8755</p></div>
                   </a>
                 </li>
                 <li>
@@ -112,6 +112,29 @@ export default function Footer() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* IMPORTANT INFORMATION — legal & compliance hub */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 py-10 lg:py-12 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.25em] text-accent mb-5">
+              Important Information
+            </p>
+            <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-5">
+              <Link href="/#about" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">About</Link>
+              <Link href="/#contact" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Contact</Link>
+              <Link href="/privacy" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Privacy Policy</Link>
+              <Link href="/terms" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Terms &amp; Conditions</Link>
+              <Link href="/cookies" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Cookie Policy</Link>
+              <Link href="/sms-terms" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">SMS Terms</Link>
+            </nav>
+            <p className="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              By using this website, submitting a form, or sending us an SMS, you agree to our{" "}
+              <Link href="/privacy" className="underline hover:text-accent">Privacy Policy</Link>,{" "}
+              <Link href="/terms" className="underline hover:text-accent">Terms &amp; Conditions</Link>, and{" "}
+              <Link href="/cookies" className="underline hover:text-accent">Cookie Policy</Link>. Message frequency varies. Msg &amp; data rates may apply. Reply <strong className="text-white">STOP</strong> to opt out or <strong className="text-white">HELP</strong> for help.
+            </p>
           </div>
         </div>
 

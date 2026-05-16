@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
   /* ---- Description (under 160 chars, CTA front-loaded) ---- */
   description:
-    "Top-rated HVAC contractor in Massachusetts. 24/7 heating & cooling service. Licensed & insured. Call (508) 740-4113 for a free estimate.",
+    "Top-rated HVAC contractor in Massachusetts. 24/7 heating & cooling service. Licensed & insured. Call (508) 786-8755 for a free estimate.",
 
   /* ---- Keywords (trimmed to core terms — Google ignores this tag) ---- */
   keywords: [
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Mass HVAC Inc",
     title: "Mass HVAC Inc | Heating & Cooling in Massachusetts",
     description:
-      "Top-rated HVAC contractor in MA. Heating, AC, mini-splits & more. 24/7 emergency service. Licensed & insured. Call (508) 740-4113.",
+      "Top-rated HVAC contractor in MA. Heating, AC, mini-splits & more. 24/7 emergency service. Licensed & insured. Call (508) 786-8755.",
     url: "https://masshvac.net",
   },
 
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mass HVAC Inc | #1 Heating & Cooling in Massachusetts",
     description:
-      "Professional HVAC services across Massachusetts. Heating, AC, mini-splits, heat pumps & more. 24/7 emergency service. 5-star Google rated. Call (508) 740-4113 for a free estimate.",
+      "Professional HVAC services across Massachusetts. Heating, AC, mini-splits, heat pumps & more. 24/7 emergency service. 5-star Google rated. Call (508) 786-8755 for a free estimate.",
   },
 
   /* ---- Robots / Crawling ---- */
@@ -142,7 +142,7 @@ function OrganizationJsonLd() {
       "https://masshvac.net/logo.png",
     description:
       "Mass HVAC Inc is Massachusetts' top-rated HVAC contractor providing heating installation & repair, air conditioning, ductless mini-splits, heat pumps, maintenance, and indoor air quality services. 24/7 emergency service across MetroWest, Worcester & Greater Boston.",
-    telephone: "+1-508-740-4113",
+    telephone: "+1-508-786-8755",
     email: "info@masshvac.net",
     foundingDate: "2020",
     priceRange: "$$",
@@ -368,7 +368,7 @@ function OrganizationJsonLd() {
         "@type": "CommunicateAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "tel:+15087404113",
+          urlTemplate: "tel:+15087868755",
         },
         description: "Call Mass HVAC for a free HVAC estimate",
       },

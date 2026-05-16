@@ -201,7 +201,7 @@ function TemplateA({ post }: { post: (typeof posts)[0] }) {
             marginTop: "6px",
           }}
         >
-          (508) 740-4113 · Licensed & Insured
+          (508) 786-8755 · Licensed & Insured
         </span>
       </div>
 
@@ -349,7 +349,7 @@ function TemplateB({ post }: { post: (typeof posts)[0] }) {
               color: "rgba(255,255,255,0.5)",
             }}
           >
-            (508) 740-4113
+            (508) 786-8755
           </span>
         </div>
       </div>
@@ -507,7 +507,7 @@ function TemplateC({ post }: { post: (typeof posts)[0] }) {
               marginTop: "6px",
             }}
           >
-            (508) 740-4113 · MASSACHUSETTS
+            (508) 786-8755 · MASSACHUSETTS
           </span>
         </div>
       </div>

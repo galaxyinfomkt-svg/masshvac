@@ -156,7 +156,7 @@ export default async function Image() {
                 letterSpacing: "1px",
               }}
             >
-              (508) 740-4113
+              (508) 786-8755
             </span>
           </div>
 

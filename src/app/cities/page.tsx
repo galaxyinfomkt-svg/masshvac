@@ -12,11 +12,11 @@ const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 export const metadata: Metadata = {
   title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
   description:
-    "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 740-4113.",
+    "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
   openGraph: {
     title: "HVAC Service Areas | 100+ MA Cities | Mass HVAC",
     description:
-      "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 740-4113.",
+      "Mass HVAC serves 100+ cities across Massachusetts. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
     url: "https://masshvac.net/cities",
     type: "website",
   },
@@ -153,7 +153,7 @@ export default function CitiesPage() {
         "@context": "https://schema.org",
         "@type": "HVACBusiness",
         name: "Mass HVAC Inc",
-        telephone: "+1-508-740-4113",
+        telephone: "+1-508-786-8755",
         url: "https://masshvac.net",
         address: {
           "@type": "PostalAddress",

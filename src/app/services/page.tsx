@@ -11,7 +11,7 @@ const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 export const metadata: Metadata = {
   title: "HVAC Services in Massachusetts | Mass HVAC",
   description:
-    "Complete HVAC services across MA — heating, AC, mini-splits, maintenance & air quality. Licensed & insured. Call (508) 740-4113 for a free estimate.",
+    "Complete HVAC services across MA — heating, AC, mini-splits, maintenance & air quality. Licensed & insured. Call (508) 786-8755 for a free estimate.",
   alternates: {
     canonical: "https://masshvac.net/services",
   },
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                 name: "Does Mass HVAC offer 24/7 emergency HVAC service?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Mass HVAC offers 24/7 emergency heating and cooling repair throughout Massachusetts. Whether your furnace breaks down at 2 AM or your AC stops working on the hottest day of the year, our licensed technicians are ready to respond. Call (508) 740-4113 anytime.",
+                  text: "Yes. Mass HVAC offers 24/7 emergency heating and cooling repair throughout Massachusetts. Whether your furnace breaks down at 2 AM or your AC stops working on the hottest day of the year, our licensed technicians are ready to respond. Call (508) 786-8755 anytime.",
                 },
               },
               {
@@ -236,11 +236,11 @@ export default function ServicesPage() {
               <p className="text-white/80">No heat at 2 AM? AC died on the hottest day? We&apos;re available 24/7.</p>
             </div>
             <a
-              href="tel:+15087404113"
+              href="tel:+15087868755"
               className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105 shrink-0 shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
             >
               <Phone className="w-5 h-5" />
-              (508) 740-4113
+              (508) 786-8755
             </a>
           </div>
         </div>

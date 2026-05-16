@@ -289,7 +289,7 @@ We are not a national franchise — we are a local Massachusetts company that se
 
 **${profile.uniqueFact}.**
 
-**Call (508) 740-4113 today for a free HVAC estimate in ${cityName}, MA.**`;
+**Call (508) 786-8755 today for a free HVAC estimate in ${cityName}, MA.**`;
   }
 
   if (template === 1) {
@@ -317,7 +317,7 @@ ${profile.coolingFocus}
 
 ${profile.uniqueFact}. Mass HVAC understands these nuances because we are local. We do not just service ${cityName} — we are invested in this community. Every recommendation we make is based on what your specific home needs, not on a one-size-fits-all approach.
 
-**Ready for reliable HVAC service in ${cityName}? Call Mass HVAC at (508) 740-4113 for a free estimate.**`;
+**Ready for reliable HVAC service in ${cityName}? Call Mass HVAC at (508) 786-8755 for a free estimate.**`;
   }
 
   if (template === 2) {
@@ -349,7 +349,7 @@ ${profile.coolingFocus}
 
 ${profile.uniqueFact}. This is the kind of local knowledge that matters when making HVAC decisions — and it is knowledge that a national chain simply does not have.
 
-**Contact Mass HVAC today at (508) 740-4113 for professional HVAC service in ${cityName}.**`;
+**Contact Mass HVAC today at (508) 786-8755 for professional HVAC service in ${cityName}.**`;
   }
 
   // template === 3
@@ -384,7 +384,7 @@ We serve ${cityName} directly from our base in Milford, MA — just a short driv
 - **Licensed & insured** — fully compliant with Massachusetts regulations
 - **All major brands serviced** — Carrier, Lennox, Trane, Mitsubishi, Daikin, Fujitsu, and more
 
-**Call Mass HVAC at (508) 740-4113 for expert HVAC service in ${cityName}, MA.**`;
+**Call Mass HVAC at (508) 786-8755 for expert HVAC service in ${cityName}, MA.**`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -564,7 +564,7 @@ Mass HVAC provides structured maintenance programs for residential and commercia
 **Why maintenance matters in ${cityName}:**
 Equipment that receives annual professional maintenance lasts 5–7 years longer than neglected systems, according to HVAC industry data. For a system that costs $5,000–$15,000 to replace, that is a significant return on a modest annual investment.
 
-Call (508) 740-4113 to enroll in our ${cityName} area maintenance program.`;
+Call (508) 786-8755 to enroll in our ${cityName} area maintenance program.`;
     },
 
     "indoor-air-quality": () => {
@@ -612,7 +612,7 @@ Mass HVAC provides professional indoor air quality assessment and improvement se
 
 Many of our ${cityName} indoor air quality projects start with a professional air quality assessment. We measure particulate levels, humidity, CO2 concentration, and other key indicators to identify exactly what your home needs — rather than guessing.
 
-Contact Mass HVAC at (508) 740-4113 for an indoor air quality consultation in ${cityName}.`;
+Contact Mass HVAC at (508) 786-8755 for an indoor air quality consultation in ${cityName}.`;
     },
   };
 
@@ -636,7 +636,7 @@ ${body}
 - **Transparent pricing** — free estimates with no hidden fees or upsells
 - **Satisfaction guaranteed** — we stand behind every job we complete
 
-**Ready for ${serviceName.toLowerCase()} in ${cityName}? Call Mass HVAC at (508) 740-4113.**`;
+**Ready for ${serviceName.toLowerCase()} in ${cityName}? Call Mass HVAC at (508) 786-8755.**`;
   }
 
   return `## ${serviceName} in ${cityName}, Massachusetts
@@ -655,5 +655,5 @@ We are based in Milford, MA — close to ${cityName} and all of ${city.county} C
 - **Established relationships with local suppliers** for fast parts availability
 - **A reputation built on referrals** from satisfied ${cityName} homeowners
 
-**Call (508) 740-4113 for a free ${serviceName.toLowerCase()} estimate in ${cityName}, MA.**`;
+**Call (508) 786-8755 for a free ${serviceName.toLowerCase()} estimate in ${cityName}, MA.**`;
 }

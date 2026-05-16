@@ -29,8 +29,8 @@ export default function MapSection() {
                 </div>
               </div>
             ))}
-            <a href="tel:+15087404113" className="group flex items-center justify-center gap-2 w-full p-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]">
-              <Phone className="w-5 h-5" />Call (508) 740-4113
+            <a href="tel:+15087868755" className="group flex items-center justify-center gap-2 w-full p-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]">
+              <Phone className="w-5 h-5" />Call (508) 786-8755
             </a>
           </ScrollReveal>
 
