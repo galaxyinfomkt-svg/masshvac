@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="absolute inset-0 noise-texture" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 w-full">
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Text */}
             <div>
               {/* Badges */}
@@ -176,9 +176,30 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right column removed — A2P compliance requires the chat widget
-                to be the ONLY phone/SMS opt-in source. Lead capture happens
-                via the global chat widget loaded in layout.tsx. */}
+            {/* Right — Bare iframe form (desktop only, lazy-loaded to avoid
+                blocking LCP with reCAPTCHA + LeadConnector JS ~5MB) */}
+            <div className="hidden lg:block">
+              <LazyIframe
+                src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
+                className="w-full border-none rounded-lg"
+                style={{ height: "420px" }}
+                id="hero-form-ko3gg97CJtkDUrqpruBq"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="FunilGhl"
+                data-height="420"
+                data-layout-iframe-id="hero-form-ko3gg97CJtkDUrqpruBq"
+                data-form-id="ko3gg97CJtkDUrqpruBq"
+                title="Free HVAC Estimate - Mass HVAC Inc Massachusetts"
+                delayMs={3000}
+                placeholderHeight="420px"
+              />
+            </div>
           </div>
         </div>
       </section>
