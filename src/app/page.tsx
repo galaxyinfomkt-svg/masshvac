@@ -310,8 +310,8 @@ export default function HomePage() {
                 guarantee.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
-                As a fully licensed and insured HVAC contractor serving over 100
-                cities and towns in Massachusetts, we bring expertise in{" "}
+                As a fully licensed and insured HVAC contractor serving 50+
+                MetroWest cities and towns in Massachusetts, we bring expertise in{" "}
                 <Link
                   href="/services/heating-installation-repair"
                   className="text-accent hover:underline"
@@ -351,7 +351,7 @@ export default function HomePage() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "100+", label: "Cities Served in MA" },
+                  { value: "50+", label: "MetroWest Cities Served" },
                   { value: "5.0", label: "5-Star Google Rating" },
                   { value: "100%", label: "Licensed & Insured" },
                   { value: "24/7", label: "Emergency Response" },

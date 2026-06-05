@@ -15,7 +15,7 @@ export default function MapSection() {
           <ScrollReveal direction="left" className="space-y-4">
             {[
               { icon: Clock, title: "Fast Response", desc: "Usually within 60 minutes" },
-              { icon: MapPin, title: "100+ Cities Served", desc: "MetroWest, Boston & Central MA" },
+              { icon: MapPin, title: "50+ MetroWest Cities", desc: "Worcester, Middlesex & Norfolk Counties" },
               { icon: Shield, title: "Licensed & Insured", desc: "Full MA HVAC licensure" },
               { icon: Star, title: "5-Star Rated", desc: "On Google Reviews" },
             ].map((card) => (

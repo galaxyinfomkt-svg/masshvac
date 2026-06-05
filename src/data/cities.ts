@@ -397,7 +397,7 @@ ${profile.coolingFocus}
 
 ### The Mass HVAC Difference in ${cityName}
 
-We serve ${cityName} directly from our base in Milford, MA — just a short drive away. That means faster response times, local parts availability, and technicians who understand the building codes and housing patterns specific to ${city.county} County.
+${cityName === "Milford" ? `Mass HVAC is headquartered right here in Milford, MA — this is our home town. That means we know every neighborhood, every street, and the housing patterns specific to ${city.county} County better than any outside contractor.` : `We serve ${cityName} directly from our base in Milford, MA — just a short drive away. That means faster response times, local parts availability, and technicians who understand the building codes and housing patterns specific to ${city.county} County.`}
 
 - **24/7 emergency service** — we do not close when the weather gets bad
 - **Free estimates** — transparent pricing with no hidden fees
@@ -662,13 +662,13 @@ ${body}
 
   return `${localBlock}## ${serviceName} in ${cityName}, Massachusetts
 
-${cityName} residents trust Mass HVAC for professional ${serviceName.toLowerCase()}. Serving ${city.county} County and the surrounding communities, we bring decades of combined experience to every heating, cooling, and air quality project.
+${cityName} residents trust Mass HVAC for professional ${serviceName.toLowerCase()}. Serving ${city.county} County and the surrounding communities, we bring years of hands-on experience to every heating, cooling, and air quality project.
 
 ${body}
 
 ### The Mass HVAC Advantage in ${cityName}
 
-We are based in Milford, MA — close to ${cityName} and all of ${city.county} County. That proximity means:
+${cityName === "Milford" ? `We are headquartered right here in Milford, MA — we are your local HVAC company. That proximity means:` : `We are based in Milford, MA — close to ${cityName} and all of ${city.county} County. That proximity means:`}
 
 - **Faster response times** for emergencies and scheduled service
 - **Knowledge of local building codes** and permit requirements
