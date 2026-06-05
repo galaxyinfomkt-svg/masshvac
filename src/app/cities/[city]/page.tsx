@@ -271,54 +271,16 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <ReviewsWidget />
       <MapSection />
 
-      {/* JSON-LD: LocalBusiness */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HVACBusiness",
-        name: "Mass HVAC Inc",
-        telephone: "+1-508-786-8755",
-        url: "https://masshvac.net",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Milford",
-          addressRegion: "MA",
-          postalCode: "01757",
-          addressCountry: "US",
-        },
-        areaServed: {
-          "@type": "City",
-          name: city.name,
-          containedInPlace: { "@type": "State", name: "Massachusetts" },
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          bestRating: "5",
-          worstRating: "1",
-          ratingCount: "6",
-          reviewCount: "6",
-        },
-        priceRange: "$$",
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          opens: "00:00",
-          closes: "23:59",
-        },
-      }) }} />
-
-      {/* JSON-LD: Service */}
+      {/* JSON-LD: Service — aggregateRating intentionally OMITTED here.
+          It lives only on the Organization schema (layout.tsx), where the
+          reviews are actually rendered. Provider references the org by @id
+          so Google can resolve ratings without duplicating them per page. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
         name: `HVAC Services in ${city.name}, MA`,
-        description: `Professional heating, cooling & HVAC services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 786-8755.`,
-        provider: {
-          "@type": "HVACBusiness",
-          name: "Mass HVAC Inc",
-          telephone: "+1-508-786-8755",
-          url: "https://masshvac.net",
-        },
+        description: `Professional heating, cooling & HVAC services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured. Call (508) 786-8755.`,
+        provider: { "@id": "https://masshvac.net/#organization" },
         areaServed: {
           "@type": "City",
           name: city.name,

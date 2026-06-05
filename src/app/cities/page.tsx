@@ -148,31 +148,18 @@ export default function CitiesPage() {
         ],
       }) }} />
 
-      {/* JSON-LD: LocalBusiness */}
+      {/* JSON-LD: LocalBusiness reference — aggregateRating lives on the
+          canonical Organization schema (layout.tsx) where reviews render.
+          Here we only widen areaServed via @id reference. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "HVACBusiness",
-        name: "Mass HVAC Inc",
-        telephone: "+1-508-786-8755",
-        url: "https://masshvac.net",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Milford",
-          addressRegion: "MA",
-          postalCode: "01757",
-          addressCountry: "US",
-        },
+        "@id": "https://masshvac.net/#organization",
         areaServed: cities.map((city) => ({
           "@type": "City",
           name: city.name,
           containedInPlace: { "@type": "State", name: "Massachusetts" },
         })),
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "5.0",
-          reviewCount: "6",
-          bestRating: "5",
-        },
       }) }} />
 
       {/* JSON-LD: WebPage */}

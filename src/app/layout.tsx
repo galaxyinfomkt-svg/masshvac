@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import { reviewSchema, reviewCount, averageRating } from "@/data/reviews";
 import "./globals.css";
 
 const inter = Inter({
@@ -316,12 +317,13 @@ function OrganizationJsonLd() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: averageRating.toFixed(1),
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "6",
-      reviewCount: "6",
+      ratingCount: String(reviewCount),
+      reviewCount: String(reviewCount),
     },
+    review: reviewSchema,
     // Authority signals — per optimize-for-ai SKILL.md §3 Authority
     founder: {
       "@type": "Person",
