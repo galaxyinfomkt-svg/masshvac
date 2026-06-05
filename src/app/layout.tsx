@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { reviewSchema, reviewCount, averageRating } from "@/data/reviews";
+import { cities } from "@/data/cities";
+import { FOUNDER_NAME, MA_HVAC_LICENSE_NUMBER, SOCIAL_PROFILES } from "@/data/company";
 import "./globals.css";
 
 const inter = Inter({
@@ -149,25 +151,19 @@ function OrganizationJsonLd() {
     priceRange: "$$",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card, Check, Financing",
+    // areaServed is derived from the actual cities array — adding a city
+    // to data/cities.ts automatically widens the Organization's service area.
     areaServed: [
       {
         "@type": "AdministrativeArea",
         name: "MetroWest, Massachusetts",
         sameAs: "https://en.wikipedia.org/wiki/MetroWest",
       },
-      { "@type": "City", name: "Framingham", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Natick", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Marlborough", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Milford", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Hopkinton", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Wellesley", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Needham", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Sudbury", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Concord", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Acton", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Hudson", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Westborough", containedInPlace: { "@type": "State", name: "Massachusetts" } },
-      { "@type": "City", name: "Shrewsbury", containedInPlace: { "@type": "State", name: "Massachusetts" } },
+      ...cities.map((c) => ({
+        "@type": "City",
+        name: c.name,
+        containedInPlace: { "@type": "State", name: "Massachusetts" },
+      })),
     ],
     address: {
       "@type": "PostalAddress",
@@ -224,11 +220,7 @@ function OrganizationJsonLd() {
       "Energy Efficiency",
       "Mass Save Rebates",
     ],
-    sameAs: [
-      "https://www.facebook.com/masshvacinc",
-      "https://www.instagram.com/masshvacinc",
-      "https://www.google.com/maps/place/Mass+HVAC+Inc",
-    ],
+    sameAs: SOCIAL_PROFILES,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "HVAC Services",
@@ -328,7 +320,7 @@ function OrganizationJsonLd() {
     founder: {
       "@type": "Person",
       "@id": "https://masshvac.net/#founder",
-      name: "Gilliard",
+      name: FOUNDER_NAME,
       jobTitle: "Master HVAC Technician & Owner",
       worksFor: { "@id": "https://masshvac.net/#organization" },
       knowsAbout: [
@@ -353,6 +345,9 @@ function OrganizationJsonLd() {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "license",
         name: "Massachusetts HVAC Contractor License",
+        // identifier is omitted when MA_HVAC_LICENSE_NUMBER is empty so the
+        // schema stays valid until Luiz fills the number.
+        ...(MA_HVAC_LICENSE_NUMBER ? { identifier: MA_HVAC_LICENSE_NUMBER } : {}),
         recognizedBy: {
           "@type": "GovernmentOrganization",
           name: "Commonwealth of Massachusetts — Department of Public Safety",

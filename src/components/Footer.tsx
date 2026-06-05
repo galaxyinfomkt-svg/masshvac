@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Clock, Mail, Star, ExternalLink } from "lucide-react";
 import { services } from "@/data/services";
+import { MA_HVAC_LICENSE_NUMBER } from "@/data/company";
 
 const quickLinks = [
   { href: "/services", label: "Our Services" },
@@ -48,6 +49,13 @@ export default function Footer() {
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">Licensed HVAC contractor serving 50+ MetroWest cities. Professional heating, cooling, and indoor air quality services for homes and businesses.</p>
               <p className="text-gray-500 text-xs">Fully Licensed &amp; Insured</p>
+              {MA_HVAC_LICENSE_NUMBER ? (
+                <p className="text-gray-500 text-xs mt-1">MA HVAC License #{MA_HVAC_LICENSE_NUMBER}</p>
+              ) : (
+                // TODO(Luiz): preencher MA_HVAC_LICENSE_NUMBER em src/app/layout.tsx
+                // para que esta linha apareça automaticamente no footer.
+                null
+              )}
             </div>
 
             <div className="text-center md:text-left">
