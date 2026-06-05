@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone, ArrowRight, MapPin, Shield, Clock, Star, CheckCircle, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
 import { cities, getCityBySlug, getCityServiceContent, cityHasLocalContent } from "@/data/cities";
-import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity } from "@/data/services";
+import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity, formatRange } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
@@ -54,6 +54,30 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   const ServiceIcon = serviceIcons[serviceIndex] || Wrench;
   const serviceImages = serviceImagePool[service.slug] || cityHeroImages;
   const heroImage = getImageForCity(`${city.slug}-${service.slug}`, serviceImages);
+
+  // Build the FAQ once. Visible accordion AND FAQPage JSON-LD consume the
+  // SAME array — any drift between visible content and schema is impossible.
+  // Price ranges come from services.ts; if a service has no range yet
+  // (TODO Luiz), the answer falls back to "free quote on request".
+  const tuneUp = service.tuneUpRange ? formatRange(service.tuneUpRange) : "a free written quote";
+  const repair = service.repairRange ? formatRange(service.repairRange) : "free diagnostic with written quote";
+  const install = service.installRange ? formatRange(service.installRange) : "a free in-home estimate";
+
+  const faqItems: { q: string; a: string }[] = [
+    {
+      q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
+      a: `${city.name} homeowners typically pay ${tuneUp} for ${service.shortName.toLowerCase()} tune-ups, ${repair} for common repairs, and ${install} for a complete new installation. Final pricing depends on system size, brand, and site conditions; Mass HVAC provides written estimates with no surprise fees. Call (508) 786-8755 for a free quote.`,
+    },
+    {
+      q: `Does Mass HVAC offer 24/7 emergency ${service.shortName.toLowerCase()} service in ${city.name}?`,
+      a: `Yes — Mass HVAC dispatches 24/7 emergency ${service.shortName.toLowerCase()} service to ${city.name}, MA and the surrounding ${city.county} County area. Our techs carry common parts on the truck for same-visit repair on most calls. Call (508) 786-8755 day or night.`,
+    },
+    ...(service.extraFaq ? [service.extraFaq] : []),
+    {
+      q: `Is Mass HVAC licensed and insured to perform ${service.shortName.toLowerCase()} work in ${city.name}?`,
+      a: `Yes. Mass HVAC holds a Massachusetts HVAC contractor license, EPA Section 608 refrigerant certification, and a Massachusetts Construction Supervisor license, and carries full general liability and workers' comp insurance. All ${service.shortName.toLowerCase()} work in ${city.name} is performed by licensed technicians and pulled with the correct local permits.`,
+    },
+  ];
 
   return (
     <>
@@ -256,20 +280,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>
-            <FAQAccordion items={[
-              {
-                q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
-                a: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 786-8755 for a personalized quote.`,
-              },
-              {
-                q: `Does Mass HVAC serve ${city.name}, Massachusetts?`,
-                a: `Yes! Mass HVAC proudly serves ${city.name}, MA and surrounding areas with professional ${service.name.toLowerCase()} services. We offer same-day service and 24/7 emergency response.`,
-              },
-              {
-                q: `Why choose Mass HVAC for ${service.name.toLowerCase()} in ${city.name}?`,
-                a: `Mass HVAC is a licensed and insured HVAC contractor with a 5.0 Google rating. We offer transparent pricing, 24/7 emergency service, and a 100% satisfaction guarantee for all ${service.name.toLowerCase()} work in ${city.name}, MA.`,
-              },
-            ]} />
+            <FAQAccordion items={faqItems} />
           </ScrollReveal>
         </div>
       </section>
@@ -304,15 +315,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         ],
       }) }} />
 
-      {/* JSON-LD: FAQPage */}
+      {/* JSON-LD: FAQPage — derived from the SAME faqItems array rendered in
+          the accordion above, so visible content and schema can never drift. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: [
-          { "@type": "Question", name: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`, acceptedAnswer: { "@type": "Answer", text: `The cost of ${service.name.toLowerCase()} in ${city.name} varies depending on the scope of work. Mass HVAC provides free, no-obligation estimates. Call (508) 786-8755 for a personalized quote.` } },
-          { "@type": "Question", name: `Does Mass HVAC serve ${city.name}, Massachusetts?`, acceptedAnswer: { "@type": "Answer", text: `Yes! Mass HVAC proudly serves ${city.name}, MA and surrounding areas with professional ${service.name.toLowerCase()} services. We offer same-day service and 24/7 emergency response.` } },
-          { "@type": "Question", name: `Why choose Mass HVAC for ${service.name.toLowerCase()} in ${city.name}?`, acceptedAnswer: { "@type": "Answer", text: `Mass HVAC is a licensed and insured HVAC contractor with a 5.0 Google rating. We offer transparent pricing, 24/7 emergency service, and a 100% satisfaction guarantee for all ${service.name.toLowerCase()} work in ${city.name}, MA.` } },
-        ],
+        mainEntity: faqItems.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
       }) }} />
 
       {/* JSON-LD: WebPage with SpeakableSpecification */}

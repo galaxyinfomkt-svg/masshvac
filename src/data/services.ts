@@ -1,3 +1,11 @@
+/** A price band, e.g. { low: 89, high: 149, unit: "tune-up" }. */
+export interface PriceRange {
+  low: number;
+  high: number;
+  /** Short unit label used in copy: "tune-up", "repair", "installed", etc. */
+  unit: string;
+}
+
 export interface Service {
   slug: string;
   name: string;
@@ -10,6 +18,23 @@ export interface Service {
   painPoints: string[];
   solutions: string[];
   content: string;
+  /** Tune-up / inspection price band (per visit). */
+  tuneUpRange?: PriceRange;
+  /** Typical repair price band (parts + labor, common fixes). */
+  repairRange?: PriceRange;
+  /** Installed-system price band (residential, average sizing). */
+  installRange?: PriceRange;
+  /** Rebate band if applicable (e.g. Mass Save heat pump incentives). */
+  rebateRange?: PriceRange;
+  /** Typical install duration (e.g. "1 day", "1–3 days"). */
+  installDuration?: string;
+  /** One extra AEO-friendly Q&A specific to this service. */
+  extraFaq?: { q: string; a: string };
+}
+
+/** Format a PriceRange as "$89–$149 per tune-up". */
+export function formatRange(r: PriceRange): string {
+  return `$${r.low.toLocaleString()}–$${r.high.toLocaleString()} per ${r.unit}`;
 }
 
 export const services: Service[] = [
@@ -49,6 +74,16 @@ Whether your furnace stopped working at 2 AM or you're planning a proactive upgr
 - Free estimates on new installations
 - Energy-efficient systems that qualify for Mass Save® rebates
 - 100% satisfaction guarantee on all work`,
+    // TODO(Luiz): confirmar faixas reais — números atuais alinham com Milford city hub
+    tuneUpRange: { low: 89, high: 149, unit: "tune-up" },
+    repairRange: { low: 150, high: 500, unit: "repair" },
+    // TODO(Luiz): confirmar faixa de instalação de furnace (residencial padrão)
+    installRange: { low: 4500, high: 9500, unit: "installed system" },
+    installDuration: "1 day for most furnaces; 1–2 days for boiler replacement",
+    extraFaq: {
+      q: "How long does a furnace installation take in Massachusetts?",
+      a: "Most residential furnace replacements in Massachusetts are completed in one day — including removal of the old unit, installation of the new system, gas and electrical hookup, and commissioning. Full boiler replacements typically take one to two days. We pull permits, coordinate inspection, and leave the work area clean.",
+    },
   },
   {
     slug: "air-conditioning-installation-repair",
@@ -87,6 +122,16 @@ From emergency AC repairs when your system breaks down on the hottest day of the
 - Ductwork inspection and sealing
 - Smart thermostat installation and programming
 - Emergency same-day repair service`,
+    // TODO(Luiz): confirmar faixas reais de AC
+    tuneUpRange: { low: 89, high: 149, unit: "AC tune-up" },
+    repairRange: { low: 175, high: 600, unit: "repair (parts + labor)" },
+    // TODO(Luiz): confirmar faixa de central AC residencial (depende de tonelagem + ductos novos vs existentes)
+    installRange: { low: 5500, high: 12000, unit: "installed system" },
+    installDuration: "1 day with existing ductwork; 2–3 days for new ducts",
+    extraFaq: {
+      q: "What size central AC do I need for my Massachusetts home?",
+      a: "Sizing is done with a Manual J load calculation — typically 1 ton of AC per 600–800 sq ft of conditioned space, adjusted for insulation, window area, and orientation. We never quote an AC by square footage alone; oversized units short-cycle and fail to dehumidify, undersized units never reach setpoint. Free in-home sizing is part of every estimate.",
+    },
   },
   {
     slug: "heat-pumps-ductless-mini-splits",
@@ -125,6 +170,17 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
 - Whisper-quiet operation
 - Eligible for massive Mass Save® rebates
 - Up to 40% more efficient than traditional HVAC`,
+    // TODO(Luiz): confirmar faixas de mini-split (single-zone vs multi-zone)
+    tuneUpRange: { low: 119, high: 199, unit: "mini-split tune-up" },
+    repairRange: { low: 200, high: 700, unit: "repair" },
+    installRange: { low: 4500, high: 18000, unit: "installed system (single-zone to whole-home multi-zone)" },
+    // Mass Save rebates per program guidelines (2025-2026 window)
+    rebateRange: { low: 1250, high: 10000, unit: "Mass Save rebate" },
+    installDuration: "1 day single-zone; 2–4 days multi-zone whole-home",
+    extraFaq: {
+      q: "How big is the Mass Save heat pump rebate in Massachusetts?",
+      a: "Mass Save rebates for cold-climate heat pumps and ductless mini-splits range from $1,250 to $10,000+ per home, depending on system size, whether you go partial- or whole-home, and your utility. Whole-home installations replacing fossil-fuel heating qualify for the top of the range. We help you pre-qualify and submit the paperwork as part of every install.",
+    },
   },
   {
     slug: "hvac-maintenance-tune-ups",
@@ -167,6 +223,14 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
 - 15% discount on all repairs
 
 **The numbers don't lie:** Regular maintenance can reduce energy bills by 15-25%, extend equipment life by 5-10 years, and prevent up to 95% of all HVAC breakdowns.`,
+    // TODO(Luiz): confirmar preço do plano de manutenção (per visit vs anual)
+    tuneUpRange: { low: 89, high: 149, unit: "visit" },
+    repairRange: { low: 150, high: 500, unit: "repair" },
+    installDuration: "60–90 minutes per visit (2 visits per year recommended)",
+    extraFaq: {
+      q: "How often should I service my HVAC system in Massachusetts?",
+      a: "Twice a year is the manufacturer-recommended cadence in New England: a heating tune-up in early fall and a cooling tune-up in spring. Most equipment warranties require documented annual maintenance to remain valid. Skipping it is the single most common reason a $5,000–$15,000 system fails 5–7 years early.",
+    },
   },
   {
     slug: "indoor-air-quality",
@@ -208,6 +272,15 @@ Mass HVAC offers comprehensive indoor air quality solutions that work with your 
 - Air quality testing and assessment
 
 Don't let the air in your home compromise your family's health. Contact Mass HVAC for a free indoor air quality assessment.`,
+    // TODO(Luiz): confirmar faixas reais de IAQ (duct cleaning, UV light, ERV, etc.)
+    tuneUpRange: { low: 99, high: 199, unit: "IAQ assessment" },
+    repairRange: { low: 150, high: 600, unit: "filter / UV bulb / minor service" },
+    installRange: { low: 400, high: 6500, unit: "installed (UV light to whole-home ERV / duct cleaning)" },
+    installDuration: "Same-day for filters and UV; 1 day for whole-home ERV or duct cleaning",
+    extraFaq: {
+      q: "How much does professional duct cleaning cost in Massachusetts?",
+      a: "Professional whole-home duct cleaning in Massachusetts typically runs $400–$900 depending on the number of vents, the size of the system, and whether sanitizing or mold remediation is required. The EPA recommends cleaning when there's visible mold, vermin, or substantial debris — not on a fixed schedule.",
+    },
   },
 ];
 
