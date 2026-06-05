@@ -125,16 +125,23 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                MetroWest HVAC: Trusted{" "}
+              {/* H1 is a stable string so search engines see the full keyword
+                  set (heating + cooling). The animated rotator is moved to a
+                  visual sub-headline below — flashy without narrowing the
+                  page's primary keyword target to "Heating" alone. */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                MetroWest&apos;s Trusted{" "}
+                <span className="text-accent">Heating &amp; Cooling</span> Experts
+              </h1>
+              <p className="text-lg sm:text-xl text-white/80 font-semibold mb-6">
+                Specialists in{" "}
                 <span className="text-accent">
                   <TextRotator
-                    texts={["Heating", "Cooling", "Mini-Split", "Air Quality"]}
+                    texts={["Heating", "Cooling", "Mini-Splits", "Air Quality"]}
                     interval={2800}
                   />
-                </span>{" "}
-                Experts
-              </h1>
+                </span>
+              </p>
 
               <p className="text-lg text-white/70 max-w-lg leading-relaxed mb-8">
                 Expert heating, cooling &amp; indoor air quality solutions for
