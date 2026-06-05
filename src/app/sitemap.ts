@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
-import { cities } from "@/data/cities";
+import { cities, cityHasLocalContent } from "@/data/cities";
 import { projects } from "@/data/projects";
 import { blogPosts } from "@/data/blog";
 
@@ -35,12 +35,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  const cityServicePages: MetadataRoute.Sitemap = cities.flatMap((c) =>
-    services.map((s) => ({
-      url: `${BASE_URL}/cities/${c.slug}/${s.slug}`,
-      lastModified: now,
-    }))
-  );
+  // Only include deep pages whose city has hand-written local content.
+  // Pages without it are noindex'd in generateMetadata — emitting them in
+  // the sitemap would tell Google to crawl URLs we explicitly excluded
+  // from the index, wasting crawl budget and causing GSC warnings.
+  const cityServicePages: MetadataRoute.Sitemap = cities
+    .filter(cityHasLocalContent)
+    .flatMap((c) =>
+      services.map((s) => ({
+        url: `${BASE_URL}/cities/${c.slug}/${s.slug}`,
+        lastModified: now,
+      }))
+    );
 
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${BASE_URL}/projects/${p.slug}`,

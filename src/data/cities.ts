@@ -1,3 +1,5 @@
+import { projects } from "./projects";
+
 // Mass HVAC services MetroWest only. Other region values are retained for
 // type-safety in legacy template content below but are not used by routing.
 export type CityRegion = "metrowest";
@@ -8,6 +10,18 @@ export interface City {
   region: CityRegion;
   county: string;
   description: string;
+  /** USPS ZIP codes for this city — surfaces in the local block. */
+  zipCodes?: string[];
+  /** Named neighborhoods inside the city (verified locally, never invented). */
+  neighborhoods?: string[];
+  /** Landmarks or anchor places used to ground the page locally. */
+  landmarks?: string[];
+  /** A UNIQUE 1–2 paragraph intro written for this city. Triggers indexability. */
+  localIntro?: string;
+  /** City-specific FAQ entries (replace generic FAQ when present). */
+  localFaq?: { q: string; a: string }[];
+  /** Slug from projects.ts of a real project to showcase on this city. */
+  featuredProjectSlug?: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -75,13 +89,78 @@ function slugify(name: string): string {
   return name.toLowerCase().replace(/\s+/g, "-");
 }
 
-export const cities: City[] = cityData.map((c) => ({
-  name: c.name,
-  slug: slugify(c.name),
-  region: c.region,
-  county: c.county,
-  description: `Professional HVAC services in ${c.name}, MA. Mass HVAC provides expert heating, cooling, and indoor air quality solutions for homes and businesses in ${c.name} and surrounding ${c.county} County communities.`,
-}));
+/* ------------------------------------------------------------------ */
+/*  Tier 1 local enrichment — facts with HIGH confidence only          */
+/*  (ZIP codes from USPS, project slugs from projects.ts).             */
+/*                                                                     */
+/*  neighborhoods / landmarks / localIntro / localFaq are deliberately */
+/*  NOT populated yet — adding fabricated local content would be worse */
+/*  than the current boilerplate. Ana to fill these via the            */
+/*  neil-patel-seo-aeo skill, city-by-city.                            */
+/* ------------------------------------------------------------------ */
+const localContent: Record<string, Partial<City>> = {
+  milford: {
+    zipCodes: ["01757"],
+    featuredProjectSlug: "boiler-replacement-milford",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq for Milford — sede da empresa, prioridade máxima)
+  },
+  framingham: {
+    zipCodes: ["01701", "01702", "01703"],
+    featuredProjectSlug: "residential-furnace-install-framingham",
+    // TODO(Ana: localIntro, neighborhoods (Saxonville, Nobscot, Downtown?), landmarks, localFaq)
+  },
+  natick: {
+    zipCodes: ["01760"],
+    featuredProjectSlug: "central-ac-install-natick",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  marlborough: {
+    zipCodes: ["01752"],
+    featuredProjectSlug: "commercial-rooftop-unit-marlborough",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  hudson: {
+    zipCodes: ["01749"],
+    featuredProjectSlug: "heat-pump-installation-hudson",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  shrewsbury: {
+    zipCodes: ["01545"],
+    featuredProjectSlug: "oil-to-gas-conversion-shrewsbury",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  hopkinton: {
+    zipCodes: ["01748"],
+    featuredProjectSlug: "emergency-heating-repair-hopkinton",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  westborough: {
+    zipCodes: ["01581"],
+    featuredProjectSlug: "commercial-hvac-install-westborough",
+    // TODO(Ana: localIntro, neighborhoods, landmarks, localFaq)
+  },
+  ashland: {
+    zipCodes: ["01721"],
+    // TODO(Ana: featuredProjectSlug (sem projeto em Ashland ainda — opcional adicionar), localIntro, neighborhoods, landmarks, localFaq)
+  },
+  holliston: {
+    zipCodes: ["01746"],
+    // TODO(Ana: featuredProjectSlug (sem projeto em Holliston ainda — opcional adicionar), localIntro, neighborhoods, landmarks, localFaq)
+  },
+};
+
+export const cities: City[] = cityData.map((c) => {
+  const slug = slugify(c.name);
+  const local = localContent[slug] ?? {};
+  return {
+    name: c.name,
+    slug,
+    region: c.region,
+    county: c.county,
+    description: `Professional HVAC services in ${c.name}, MA. Mass HVAC provides expert heating, cooling, and indoor air quality solutions for homes and businesses in ${c.name} and surrounding ${c.county} County communities.`,
+    ...local,
+  };
+});
 
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find((c) => c.slug === slug);
@@ -115,6 +194,63 @@ const regionProfiles: Record<CityRegion, {
 };
 
 /* ------------------------------------------------------------------ */
+/*  Indexability gate — only cities with hand-written local content    */
+/*  (localIntro OR named neighborhoods) are allowed to be indexed by   */
+/*  search engines on their deep pages. Everything else returns        */
+/*  robots:{ index:false, follow:true } via generateMetadata so links  */
+/*  still flow internally without exposing thin/duplicate pages.       */
+/* ------------------------------------------------------------------ */
+export function cityHasLocalContent(city: City | undefined): boolean {
+  if (!city) return false;
+  return Boolean(city.localIntro) || (Array.isArray(city.neighborhoods) && city.neighborhoods.length > 0);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Local content block — prepended to template output when any        */
+/*  enrichment fields are present. Safe to call on any city; returns   */
+/*  empty string when there is nothing to inject.                      */
+/* ------------------------------------------------------------------ */
+function getLocalBlock(city: City): string {
+  const parts: string[] = [];
+
+  if (city.localIntro) {
+    parts.push(`## HVAC in ${city.name}, MA — Local Coverage\n\n${city.localIntro}`);
+  }
+
+  if (city.neighborhoods && city.neighborhoods.length > 0) {
+    parts.push(
+      `### Neighborhoods We Serve in ${city.name}\n\n` +
+        city.neighborhoods.map((n) => `- ${n}`).join("\n")
+    );
+  }
+
+  if (city.landmarks && city.landmarks.length > 0) {
+    parts.push(
+      `Our ${city.name} service area covers ${city.landmarks.join(", ")} and surrounding streets.`
+    );
+  }
+
+  if (city.zipCodes && city.zipCodes.length > 0) {
+    const zips = city.zipCodes.join(", ");
+    const label = city.zipCodes.length > 1 ? "ZIP codes" : "ZIP code";
+    parts.push(
+      `**Service area:** ${city.name}, MA — ${label} ${zips} and the surrounding ${city.county} County area.`
+    );
+  }
+
+  if (city.featuredProjectSlug) {
+    const proj = projects.find((p) => p.slug === city.featuredProjectSlug);
+    if (proj) {
+      parts.push(
+        `### Recent ${city.name} Project\n\n**${proj.title}** (${proj.systemBrand}, ${proj.duration}) — ${proj.description}`
+      );
+    }
+  }
+
+  return parts.length > 0 ? parts.join("\n\n") + "\n\n" : "";
+}
+
+/* ------------------------------------------------------------------ */
 /*  Deterministic template selector                                    */
 /* ------------------------------------------------------------------ */
 function hashString(str: string): number {
@@ -135,6 +271,7 @@ export function getCityContent(cityName: string): string {
   if (!city) return "";
   const profile = regionProfiles[city.region];
   const template = hashString(city.slug) % 4;
+  const localBlock = getLocalBlock(city);
 
   // Challenge list varies by template
   const challengeSubsets = [
@@ -146,7 +283,7 @@ export function getCityContent(cityName: string): string {
   const challenges = challengeSubsets[template];
 
   if (template === 0) {
-    return `## Your Trusted HVAC Partner in ${cityName}, Massachusetts
+    return `${localBlock}## Your Trusted HVAC Partner in ${cityName}, Massachusetts
 
 ${cityName} is part of ${city.county} County, an area known for ${profile.housingStyle}. ${profile.climateNote}. That makes a reliable, properly sized HVAC system essential — not a luxury.
 
@@ -176,7 +313,7 @@ We are not a national franchise — we are a local Massachusetts company that se
   }
 
   if (template === 1) {
-    return `## Professional HVAC Services for ${cityName} Homes & Businesses
+    return `${localBlock}## Professional HVAC Services for ${cityName} Homes & Businesses
 
 If you own a home or business in ${cityName}, Massachusetts, you know that a working HVAC system is not optional — it is a year-round necessity. ${profile.climateNote}. For properties in ${city.county} County, that means your heating and cooling equipment works harder than almost anywhere else in the country.
 
@@ -204,7 +341,7 @@ ${profile.uniqueFact}. Mass HVAC understands these nuances because we are local.
   }
 
   if (template === 2) {
-    return `## Expert Heating & Cooling in ${cityName}, MA
+    return `${localBlock}## Expert Heating & Cooling in ${cityName}, MA
 
 ${cityName}, located in ${city.county} County, Massachusetts, presents unique comfort challenges for homeowners. ${profile.climateNote}. The area's housing stock — ${profile.housingStyle} — means that every HVAC project requires careful evaluation and custom solutions.
 
@@ -236,7 +373,7 @@ ${profile.uniqueFact}. This is the kind of local knowledge that matters when mak
   }
 
   // template === 3
-  return `## ${cityName}, MA — Complete HVAC Services by Mass HVAC
+  return `${localBlock}## ${cityName}, MA — Complete HVAC Services by Mass HVAC
 
 When it comes to heating, cooling, and indoor air quality in ${cityName}, Massachusetts, homeowners deserve a contractor who understands the local landscape. ${profile.uniqueFact}.
 
@@ -282,6 +419,7 @@ export function getCityServiceContent(
   if (!city) return "";
   const profile = regionProfiles[city.region];
   const template = hashString(city.slug + serviceSlug) % 3;
+  const localBlock = getLocalBlock(city);
 
   const serviceSpecific: Record<string, () => string> = {
     "heating-installation-repair": () => {
@@ -505,7 +643,7 @@ Contact Mass HVAC at (508) 786-8755 for an indoor air quality consultation in ${
   const template2 = hashString(city.slug + serviceSlug) % 2;
 
   if (template2 === 0) {
-    return `## ${serviceName} in ${cityName}, MA
+    return `${localBlock}## ${serviceName} in ${cityName}, MA
 
 Looking for professional ${serviceName.toLowerCase()} in ${cityName}, Massachusetts? Mass HVAC is the trusted local contractor for residential and commercial HVAC services in ${cityName} and throughout ${city.county} County.
 
@@ -522,7 +660,7 @@ ${body}
 **Ready for ${serviceName.toLowerCase()} in ${cityName}? Call Mass HVAC at (508) 786-8755.**`;
   }
 
-  return `## ${serviceName} in ${cityName}, Massachusetts
+  return `${localBlock}## ${serviceName} in ${cityName}, Massachusetts
 
 ${cityName} residents trust Mass HVAC for professional ${serviceName.toLowerCase()}. Serving ${city.county} County and the surrounding communities, we bring decades of combined experience to every heating, cooling, and air quality project.
 

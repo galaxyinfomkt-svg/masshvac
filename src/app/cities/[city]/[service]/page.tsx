@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone, ArrowRight, MapPin, Shield, Clock, Star, CheckCircle, Flame, Snowflake, Wind, Wrench, AirVent } from "lucide-react";
-import { cities, getCityBySlug, getCityServiceContent } from "@/data/cities";
+import { cities, getCityBySlug, getCityServiceContent, cityHasLocalContent } from "@/data/cities";
 import { services, getServiceBySlug, serviceImagePool, cityHeroImages, getImageForCity } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -24,9 +24,20 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   if (!city || !service) return {};
   const title = `${service.shortName} in ${city.name}, MA | Mass HVAC`;
   const description = `Expert ${service.shortName.toLowerCase()} in ${city.name}, MA. Fast, reliable service. Licensed & insured. Call (508) 786-8755 for a free estimate.`;
+
+  // Defensive noindex for thin/template deep pages.
+  // 50 cities × 5 services = 250 routes; without hand-written local content
+  // (localIntro or named neighborhoods) the page body is largely shared
+  // boilerplate. We keep these pages live and link-followable so internal
+  // PageRank and the user experience are unaffected, but we exclude them
+  // from the search index until Ana enriches the city in data/cities.ts.
+  // The /cities/[city] HUB stays indexable regardless.
+  const isIndexable = cityHasLocalContent(city);
+
   return {
     title,
     description,
+    ...(isIndexable ? {} : { robots: { index: false, follow: true } }),
     openGraph: { title, description, url: `https://masshvac.net/cities/${city.slug}/${service.slug}`, type: "website" },
     alternates: { canonical: `https://masshvac.net/cities/${city.slug}/${service.slug}` },
   };
