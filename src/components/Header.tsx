@@ -71,8 +71,10 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Mass HVAC Inc - Professional HVAC Services Massachusetts"
-              width={180}
-              height={60}
+              width={144}
+              height={48}
+              sizes="144px"
+              quality={80}
               className="h-12 w-auto object-contain"
               priority
             />
@@ -127,7 +129,7 @@ export default function Header() {
         <div className="h-[3px] bg-gradient-to-r from-accent to-accent-dark" />
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between p-5 border-b border-gray-200">
-            <Image src="/logo.png" alt="Mass HVAC" width={150} height={50} className="h-10 w-auto object-contain" />
+            <Image src="/logo.png" alt="Mass HVAC" width={120} height={40} sizes="120px" quality={80} className="h-10 w-auto object-contain" />
             <button type="button" onClick={() => setMobileOpen(false)} className="p-2 rounded-lg hover:bg-gray-100" aria-label="Close menu"><X className="w-5 h-5 text-gray-800" /></button>
           </div>
           <div className="flex-1 overflow-y-auto py-4 px-3">

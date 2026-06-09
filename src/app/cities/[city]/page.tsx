@@ -58,7 +58,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     <>
       {/* Hero — Text left + Form right */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <Image src={heroImage} alt={`Professional HVAC services in ${city.name}, Massachusetts`} fill className="object-cover object-center" priority quality={85} />
+        <Image src={heroImage} alt={`Professional HVAC services in ${city.name}, Massachusetts`} fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-28 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

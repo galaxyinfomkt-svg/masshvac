@@ -98,9 +98,11 @@ export default function HomePage() {
           src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg"
           alt="Professional HVAC service in Massachusetts"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
-          quality={90}
+          fetchPriority="high"
+          quality={80}
         />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="absolute inset-0 noise-texture" />
@@ -247,13 +249,16 @@ export default function HomePage() {
                       </div>
                     )}
 
-                    {/* Image */}
+                    {/* Image — quality lowered from default 75 to 65 since this is
+                        a thumb (h-48 / 192px tall) shown below the fold. */}
                     <div className="relative h-48 overflow-hidden">
                       <Image
                         src={service.heroImage}
                         alt={`${service.name} in Massachusetts - Mass HVAC`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                        quality={65}
+                        loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

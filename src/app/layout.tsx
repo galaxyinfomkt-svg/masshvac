@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import DeferredChatWidget from "@/components/DeferredChatWidget";
 import { reviewSchema, reviewCount, averageRating } from "@/data/reviews";
 import { cities } from "@/data/cities";
 import { FOUNDER_NAME, MA_HVAC_LICENSE_NUMBER, SOCIAL_PROFILES } from "@/data/company";
@@ -438,17 +439,14 @@ export default function RootLayout({
         {/* JSON-LD Structured Data */}
         <OrganizationJsonLd />
 
-        {/* Form embed script */}
+        {/* Form embed script — needed for LeadConnector iframe in hero forms. */}
         <Script
           src="https://link.msgsndr.com/js/form_embed.js"
           strategy="lazyOnload"
         />
 
-        {/* Reviews widget script */}
-        <Script
-          src="https://reputationhub.site/reputation/assets/review-widget.js"
-          strategy="lazyOnload"
-        />
+        {/* Reviews widget script REMOVED — ReviewsWidget now renders cards SSR
+            from data/reviews.ts; the reputationhub iframe was retired. */}
 
         {/* Google Tag Manager — uncomment and replace GTM-XXXXX when ready
         <Script id="gtm" strategy="afterInteractive">
@@ -478,13 +476,10 @@ export default function RootLayout({
         <Footer />
         <FloatingButtons />
 
-        {/* Chat widget — global, bottom right */}
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a08522f0d6444ff0b67b12b"
-          strategy="lazyOnload"
-        />
+        {/* Chat widget — defers until the user shows engagement (interaction,
+            scroll >50px, or 6s idle). Frees the critical path on mobile so
+            the hero and LCP don't compete with ~250 KB of widget JS. */}
+        <DeferredChatWidget />
       </body>
     </html>
   );
