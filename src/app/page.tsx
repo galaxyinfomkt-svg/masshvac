@@ -289,25 +289,39 @@ export default function HomePage() {
             {services.map((service, i) => {
               const Icon = serviceIcons[i];
               const isFeatured = i === 0;
+              // Price hook — only shown when services.ts has a real range.
+              // Uses tuneUpRange (lowest commitment, easiest to commit to).
+              // Mini-split shows rebate band instead (highest emotional pull).
+              const priceHook =
+                service.slug === "heat-pumps-ductless-mini-splits" && service.rebateRange
+                  ? `Up to $${service.rebateRange.high.toLocaleString()} Mass Save rebate`
+                  : service.tuneUpRange
+                    ? `From $${service.tuneUpRange.low}`
+                    : null;
               return (
                 <ScrollReveal key={service.slug} delay={i * 0.08}>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className={`group relative block bg-white rounded-xl overflow-hidden card-premium border border-gray-100 ${
+                  {/* Card uses a relative wrapper + an absolutely-positioned
+                      Link covering the whole surface ("stretched link"
+                      pattern). The Call link sits above the Link in stacking
+                      order so the phone tap dials instead of navigating.
+                      Avoids nested anchors (invalid HTML) and the Next.js
+                      Server-Component restriction on onClick handlers. */}
+                  <div
+                    className={`group relative flex flex-col bg-white rounded-xl overflow-hidden card-premium border border-gray-100 h-full ${
                       isFeatured
                         ? "ring-2 ring-accent"
                         : "shadow-[0_4px_6px_rgba(0,0,0,0.07)]"
                     }`}
                   >
                     {isFeatured && (
-                      <div className="absolute top-4 right-4 z-10 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold">
+                      <div className="absolute top-4 right-4 z-20 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold shadow-[0_4px_12px_rgba(200,16,46,0.4)]">
                         Most Requested
                       </div>
                     )}
 
                     {/* Image — quality lowered from default 75 to 65 since this is
                         a thumb (h-48 / 192px tall) shown below the fold. */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden shrink-0">
                       <Image
                         src={service.heroImage}
                         alt={`${service.name} in Massachusetts - Mass HVAC`}
@@ -317,11 +331,16 @@ export default function HomePage() {
                         loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      {priceHook && (
+                        <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur text-primary px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
+                          {priceHook}
+                        </div>
+                      )}
                     </div>
 
                     {/* Content */}
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       {/* Overlapping icon badge */}
                       <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center -mt-12 relative z-10 shadow-[0_4px_15px_rgba(200,16,46,0.3)] group-hover:scale-110 transition-transform">
                         <Icon className="w-6 h-6 text-white" />
@@ -334,15 +353,39 @@ export default function HomePage() {
                       >
                         {service.name}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-1">
                         {service.description}
                       </p>
-                      <div className="flex items-center text-accent font-semibold text-sm">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+
+                      {/* CTA row */}
+                      <div className="flex items-center justify-between gap-3 pt-3 border-t border-gray-100">
+                        <span className="inline-flex items-center text-accent font-bold text-sm">
+                          Get a Quote
+                          <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                        {/* z-20 lifts the phone link above the stretched Link
+                            so tap goes to tel:, not to the service page. */}
+                        <a
+                          href="tel:+15087868755"
+                          className="relative z-20 inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-accent font-semibold transition-colors"
+                          aria-label={`Call about ${service.shortName.toLowerCase()}`}
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          Call
+                        </a>
                       </div>
                     </div>
-                  </Link>
+
+                    {/* Stretched link — covers the whole card, sits below
+                        the phone link (z-10 vs z-20). Empty anchor text is
+                        fine since the visible "Get a Quote" CTA acts as
+                        accessible name via aria-label here. */}
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="absolute inset-0 z-10"
+                      aria-label={`Learn more about ${service.name}`}
+                    />
+                  </div>
                 </ScrollReveal>
               );
             })}
