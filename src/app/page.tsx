@@ -14,7 +14,6 @@ import {
   AirVent,
   Zap,
   Award,
-  MapPin,
   PhoneCall,
   FileText,
   CalendarCheck,
@@ -24,9 +23,9 @@ import {
 } from "lucide-react";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
+import { averageRating, reviewCount } from "@/data/reviews";
+import { MA_HVAC_LICENSE_NUMBER } from "@/data/company";
 import ScrollReveal from "@/components/ScrollReveal";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import TextRotator from "@/components/TextRotator";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -111,78 +110,85 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Text */}
             <div>
-              {/* Badges */}
-              <div className="flex flex-wrap gap-3 mb-6">
-                <div className="inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  <MapPin className="w-4 h-4" />
-                  Serving 50+ MetroWest Cities
-                </div>
-                <div className="inline-flex items-center gap-2 glass-premium text-white px-4 py-2 rounded-full text-sm">
-                  <div className="flex text-accent">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                    ))}
-                  </div>
-                  <span>5.0 Rating</span>
-                </div>
+              {/* Top urgency badge — single, prominent. Pulses subtly to draw
+                  the eye and signal "we answer the phone NOW", which is the
+                  #1 reason an HVAC customer picks a contractor over another. */}
+              <div className="inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-5 shadow-[0_4px_15px_rgba(200,16,46,0.4)] animate-pulse-glow">
+                <Zap className="w-4 h-4" />
+                24/7 EMERGENCY &middot; SAME-DAY SERVICE
               </div>
 
-              {/* H1 is a stable string so search engines see the full keyword
-                  set (heating + cooling). The animated rotator is moved to a
-                  visual sub-headline below — flashy without narrowing the
-                  page's primary keyword target to "Heating" alone. */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+              {/* H1 stays as a stable string for SEO (Google sees the full
+                  Heating & Cooling phrase). TextRotator removed from the
+                  hero — it added animation but no info; the new sub-headline
+                  below converts harder. */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5">
                 MetroWest&apos;s Trusted{" "}
                 <span className="text-accent">Heating &amp; Cooling</span> Experts
               </h1>
-              <p className="text-lg sm:text-xl text-white/80 font-semibold mb-6">
-                Specialists in{" "}
-                <span className="text-accent">
-                  <TextRotator
-                    texts={["Heating", "Cooling", "Mini-Splits", "Air Quality"]}
-                    interval={2800}
-                  />
+
+              {/* Conversion-focused sub-headline — short, scannable, addresses
+                  the customer's actual question ("can someone come today?"). */}
+              <p className="text-lg sm:text-xl text-white/85 leading-relaxed mb-6 max-w-xl">
+                Heat out? AC broken? Need a mini-split quote? We answer the
+                phone, reply within 15 minutes, and stand behind every job
+                across MetroWest, MA.
+              </p>
+
+              {/* Proof row — concrete, not generic. Rating + count derive
+                  from data/reviews.ts so it stays accurate as reviews grow. */}
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-8 text-white/90 text-sm">
+                <span className="inline-flex items-center gap-2">
+                  <span className="flex text-accent">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </span>
+                  <strong className="font-bold">{averageRating.toFixed(1)}</strong>
+                  <span className="text-white/70">on Google ({reviewCount}+ reviews)</span>
                 </span>
-              </p>
+                <span className="hidden sm:inline text-white/30">|</span>
+                <span className="inline-flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-accent" />
+                  <span className="text-white/85">
+                    Licensed &amp; Insured{MA_HVAC_LICENSE_NUMBER ? ` · MA #${MA_HVAC_LICENSE_NUMBER}` : ""}
+                  </span>
+                </span>
+              </div>
 
-              <p className="text-lg text-white/70 max-w-lg leading-relaxed mb-8">
-                Expert heating, cooling &amp; indoor air quality solutions for
-                Massachusetts homes and businesses. Fast response. Fair prices.
-                Guaranteed results.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              {/* CTA buttons — primary (phone) is bolder + larger, since calls
+                  convert ~5× higher than form fills for HVAC emergencies.
+                  Secondary anchors to the form section below the hero. */}
+              <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <a
                   href="tel:+15087868755"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-accent to-accent-dark relative overflow-hidden shimmer-line text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+                  className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-gradient-to-r from-accent to-accent-dark relative overflow-hidden shimmer-line text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_8px_25px_rgba(200,16,46,0.4)]"
                 >
                   <Phone className="w-5 h-5" />
-                  (508) 786-8755
+                  Call (508) 786-8755
                 </a>
                 <Link
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/30 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
+                  href="#quote"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-primary"
                 >
-                  Get Free Estimate <ArrowRight className="w-5 h-5" />
+                  Get Free Quote <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
 
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-6 text-white/70 text-sm">
+              {/* Bottom trust strip — specific commitments, not generic
+                  adjectives. Drives confidence at the moment of decision. */}
+              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-white/75 text-sm">
                 {[
-                  { icon: Shield, label: "Licensed & Insured" },
-                  { icon: Clock, label: "Same-Day Service" },
-                  { icon: CheckCircle2, label: "Free Estimates" },
+                  { icon: Clock, label: "Reply within 15 min" },
+                  { icon: CheckCircle2, label: "Free in-home estimate" },
+                  { icon: ThumbsUp, label: "No-pressure quote" },
                 ].map((badge) => (
-                  <span key={badge.label} className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-accent/15 shadow-[0_2px_8px_rgba(200,16,46,0.15)] rounded-full flex items-center justify-center">
-                      <badge.icon className="w-4 h-4 text-accent" />
-                    </div>
+                  <li key={badge.label} className="inline-flex items-center gap-2">
+                    <badge.icon className="w-4 h-4 text-accent shrink-0" />
                     {badge.label}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             {/* Right — Bare iframe form (desktop only, lazy-loaded to avoid
