@@ -81,7 +81,7 @@ export default function ProjectsPage() {
               <a href="tel:+15087868755" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
                 <Phone className="w-5 h-5" />(508) 786-8755
               </a>
-              <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
+              <Link href="/#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
                 Free Estimate <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

@@ -19,8 +19,9 @@ const navLinks = [
   { href: "/services", label: "Services", hasDropdown: true },
   { href: "/cities", label: "Service Areas" },
   { href: "/projects", label: "Projects" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
+  { href: "#quote", label: "Contact" },
 ];
 
 export default function Header() {
@@ -112,7 +113,7 @@ export default function Header() {
             <a href="tel:+15087868755" className="relative overflow-hidden flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg">
               <Phone className="w-4 h-4" />(508) 786-8755
             </a>
-            <Link href="#contact" className="px-6 py-2.5 border border-gray-300 text-gray-800 font-bold text-sm rounded-lg transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent">
+            <Link href="/#quote" className="px-6 py-2.5 border border-gray-300 text-gray-800 font-bold text-sm rounded-lg transition-all duration-300 hover:bg-accent hover:text-white hover:border-accent">
               Free Estimate
             </Link>
           </div>
@@ -152,7 +153,7 @@ export default function Header() {
             <a href="tel:+15087868755" className="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-accent to-accent-dark text-white font-bold rounded-lg transition-colors">
               <Phone className="w-4 h-4" />Call (508) 786-8755
             </a>
-            <Link href="#contact" onClick={() => setMobileOpen(false)} className="flex items-center justify-center w-full py-3.5 border border-gray-300 text-gray-800 font-bold rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">
+            <Link href="/#quote" onClick={() => setMobileOpen(false)} className="flex items-center justify-center w-full py-3.5 border border-gray-300 text-gray-800 font-bold rounded-lg hover:bg-accent hover:text-white hover:border-accent transition-colors">
               Get Free Estimate
             </Link>
           </div>

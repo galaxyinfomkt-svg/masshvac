@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 (508) 786-8755
               </a>
               <Link
-                href="#contact"
+                href="/#quote"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black"
               >
                 Free Estimate <ArrowRight className="w-5 h-5" />

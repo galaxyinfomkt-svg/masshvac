@@ -12,9 +12,12 @@
  *
  * NOTE: review text preserved verbatim, including the customers' own
  * spelling variations of the owner's name ("Gilliard" / "Giliard" /
- * "Gilliad") and the Portuguese-language review by Robert Rangel Silva.
- * Do NOT edit the text — these are real, attributed reviews and any
- * modification breaks both attribution and schema validity.
+ * "Gilliad"). The Portuguese review by Robert Rangel Silva was translated
+ * to English at the owner's request so the site stays English-only for
+ * Massachusetts homeowners; the original PT text is kept in a comment
+ * for auditability.
+ * Do NOT edit the rest of the text — these are real, attributed reviews
+ * and any modification breaks both attribution and schema validity.
  */
 
 export interface Review {
@@ -59,7 +62,8 @@ export const reviews: Review[] = [
     author: "Robert Rangel Silva",
     rating: 5,
     dateISO: "2025-05-03",
-    text: "Atendimento ao cliente excelente ❄️🔥",
+    // Original (PT): "Atendimento ao cliente excelente ❄️🔥"
+    text: "Excellent customer service ❄️🔥",
     source: "Google",
   },
   {

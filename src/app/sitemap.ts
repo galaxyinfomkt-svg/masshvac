@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services`, lastModified: now },
     { url: `${BASE_URL}/cities`, lastModified: now },
     { url: `${BASE_URL}/projects`, lastModified: now },
+    { url: `${BASE_URL}/reviews`, lastModified: now },
     { url: `${BASE_URL}/blog`, lastModified: now },
     { url: `${BASE_URL}/privacy`, lastModified: now },
     { url: `${BASE_URL}/terms`, lastModified: now },

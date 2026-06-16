@@ -8,8 +8,9 @@ const quickLinks = [
   { href: "/services", label: "Our Services" },
   { href: "/cities", label: "Service Areas" },
   { href: "/projects", label: "Projects" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/blog", label: "Blog" },
-  { href: "#contact", label: "Contact Us" },
+  { href: "#quote", label: "Contact Us" },
 ];
 
 const popularCities = [
@@ -134,7 +135,7 @@ export default function Footer() {
             </p>
             <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-5">
               <Link href="/#about" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">About</Link>
-              <Link href="/#contact" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Contact</Link>
+              <Link href="/#quote" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Contact</Link>
               <Link href="/privacy" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Privacy Policy</Link>
               <Link href="/terms" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Terms &amp; Conditions</Link>
               <Link href="/cookies" className="text-sm font-semibold text-white hover:text-accent transition underline-offset-4 hover:underline">Cookie Policy</Link>

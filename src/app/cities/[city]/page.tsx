@@ -103,7 +103,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <a href="tel:+15087868755" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
                   <Phone className="w-5 h-5" />(508) 786-8755
                 </a>
-                <Link href="#contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
+                <Link href="/#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
                   Free Estimate <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

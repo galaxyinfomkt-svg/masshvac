@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <a href="tel:+15087868755" className="flex items-center justify-center gap-2 w-full py-3 bg-accent hover:bg-accent-dark text-white font-bold text-sm rounded-lg transition-all mb-2">
                     <Phone className="w-4 h-4" />(508) 786-8755
                   </a>
-                  <Link href="#contact" className="flex items-center justify-center gap-2 w-full py-3 border-2 border-white text-white font-medium text-sm rounded-lg hover:bg-white hover:text-black transition-all">
+                  <Link href="/#quote" className="flex items-center justify-center gap-2 w-full py-3 border-2 border-white text-white font-medium text-sm rounded-lg hover:bg-white hover:text-black transition-all">
                     Free Estimate <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
