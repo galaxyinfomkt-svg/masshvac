@@ -220,6 +220,56 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════════════════════════════
+          QUOTE — Mobile-only inline form. The desktop hero already
+          has the form on the right column; on mobile that form was
+          `hidden lg:block` (invisible), so customers landed and saw
+          nothing but a phone button. This section is the mobile lead
+          path. Anchor #contact aliased so legacy CTAs keep working.
+          ════════════════════════════════════════════════ */}
+      <section id="quote" className="lg:hidden bg-gradient-to-b from-primary-dark to-primary py-12">
+        <div id="contact" aria-hidden className="-mt-12 pt-12" />
+        <div className="mx-auto max-w-xl px-4">
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent text-white px-3 py-1.5 rounded-full text-xs font-bold mb-3">
+              <Zap className="w-3.5 h-3.5" />
+              Reply within 15 minutes
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+              Get Your Free <span className="text-accent">HVAC Quote</span>
+            </h2>
+            <p className="text-white/70 text-sm">
+              30-second form &middot; no obligation &middot; same-day response
+            </p>
+          </div>
+          <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+            <LazyIframe
+              src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
+              className="w-full border-none"
+              style={{ height: "480px" }}
+              id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-activation-type="alwaysActivated"
+              data-deactivation-type="neverDeactivate"
+              data-form-name="FunilGhl"
+              data-height="480"
+              data-layout-iframe-id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
+              data-form-id="ko3gg97CJtkDUrqpruBq"
+              title="Free HVAC Estimate Form - Mass HVAC"
+              delayMs={1500}
+              placeholderHeight="480px"
+            />
+          </div>
+          <p className="text-center text-white/60 text-xs mt-4">
+            Prefer to talk?{" "}
+            <a href="tel:+15087868755" className="text-accent font-bold underline">
+              Call (508) 786-8755
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════
           SERVICES — 3-col grid with overlapping icon badges
           ════════════════════════════════════════════════ */}
       <section id="services" className="py-20 bg-white">

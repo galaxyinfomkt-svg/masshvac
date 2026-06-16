@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import MobileStickyBar from "@/components/MobileStickyBar";
 import DeferredChatWidget from "@/components/DeferredChatWidget";
 import { reviewSchema, reviewCount, averageRating } from "@/data/reviews";
 import { cities } from "@/data/cities";
@@ -459,7 +460,7 @@ export default function RootLayout({
         */}
       </head>
 
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased pb-14 lg:pb-0">
         {/* Google Tag Manager noscript — uncomment when GTM is active
         <noscript>
           <iframe
@@ -475,6 +476,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <FloatingButtons />
+        <MobileStickyBar />
 
         {/* Chat widget — defers until the user shows engagement (interaction,
             scroll >50px, or 6s idle). Frees the critical path on mobile so
