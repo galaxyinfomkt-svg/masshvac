@@ -41,7 +41,7 @@ export default function CitiesPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             MetroWest HVAC Service <span className="text-accent">Areas</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Mass HVAC is based in Milford, MA and serves these 50 towns with heating, cooling, heat pump and indoor air quality service. Pick your town for local details.</p>
           <div className="accent-divider mt-8" />
 

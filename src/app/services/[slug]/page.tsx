@@ -75,7 +75,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="max-w-3xl">
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="mb-8">
-              <ol className="flex items-center gap-2 text-sm text-white/50">
+              <ol className="flex items-center gap-2 text-sm text-white/80">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
                     Home
@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {service.name}
             </h1>
-            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-xl">{service.description}</p>
+            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-xl">{service.description}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={TEL_HREF}

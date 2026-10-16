@@ -27,7 +27,7 @@ export default function ProjectsPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Our <span className="text-accent">Projects</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Browse our portfolio of completed HVAC projects. From emergency repairs to full system installations.
           </p>
           <div className="accent-divider mt-8" />
@@ -37,6 +37,7 @@ export default function ProjectsPage() {
       {/* Grid */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
+          <h2 className="sr-only">Completed HVAC projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.slug} delay={i * 0.05}>

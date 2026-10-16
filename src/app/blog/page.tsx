@@ -29,7 +29,7 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             HVAC <span className="text-accent">Blog</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Plain-English guides for MetroWest homeowners on heating, cooling, rebates and air quality.
           </p>
           <div className="accent-divider mt-8" />

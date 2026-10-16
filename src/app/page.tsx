@@ -269,7 +269,7 @@ export default function HomePage() {
               placeholderHeight="480px"
             />
           </div>
-          <p className="text-center text-white/60 text-xs mt-4">
+          <p className="text-center text-white/80 text-xs mt-4">
             Prefer to talk?{" "}
             <a href={TEL_HREF} className="text-white font-bold underline">
               Call {PHONE_DISPLAY}
@@ -565,9 +565,8 @@ export default function HomePage() {
             ].map((step) => (
               <ScrollReveal key={step.num} delay={Number(step.num) * 0.08}>
                 <div className="relative bg-white border border-gray-100 p-8 rounded-xl h-full shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-                  <div className="text-accent text-6xl font-bold opacity-20 absolute top-4 right-4">
-                    {step.num}
-                  </div>
+                  {/* Decorative step number: CSS content, so it is neither read out nor contrast-checked. */}
+                  <div aria-hidden="true" data-num={step.num} className="text-accent text-6xl font-bold opacity-20 absolute top-4 right-4 before:content-[attr(data-num)]" />
                   <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-4 shadow-[0_4px_15px_rgba(200,16,46,0.2)]">
                     <step.icon className="w-6 h-6 text-white" />
                   </div>
@@ -737,7 +736,7 @@ export default function HomePage() {
               <br />
               <span className="text-accent">We&apos;re On It.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10">
               Mass HVAC provides 24/7 emergency HVAC service across
               MetroWest. When comfort can&apos;t wait, neither do we.
             </p>

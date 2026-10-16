@@ -49,7 +49,7 @@ export default function ReviewsWidget() {
                   <span className="font-semibold text-white">{r.author}</span>
                   <time dateTime={r.dateISO}>{formatDate(r.dateISO)}</time>
                 </div>
-                <p className="mt-3 text-[11px] uppercase tracking-widest text-white/60">
+                <p className="mt-3 text-[11px] uppercase tracking-widest text-white/80">
                   {r.source}{r.translatedFrom ? ` · Translated from ${r.translatedFrom}` : ""}
                 </p>
               </li>

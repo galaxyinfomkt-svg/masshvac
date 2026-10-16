@@ -68,7 +68,7 @@ export default function ServicesPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex items-center justify-center gap-2 text-sm text-white/50">
+            <ol className="flex items-center justify-center gap-2 text-sm text-white/80">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -81,7 +81,7 @@ export default function ServicesPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Our HVAC <span className="text-accent">Services</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
             From emergency repairs to full system installations — expert heating, cooling, and indoor air quality
             solutions for homes and businesses across MetroWest.
           </p>
@@ -215,7 +215,7 @@ export default function ServicesPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Need Emergency HVAC Service?</h2>
-              <p className="text-white/80">No heat at 2 AM? AC died on the hottest day? We&apos;re available 24/7.</p>
+              <p className="text-white">No heat at 2 AM? AC died on the hottest day? We&apos;re available 24/7.</p>
             </div>
             <a
               href="tel:+15087868755"
