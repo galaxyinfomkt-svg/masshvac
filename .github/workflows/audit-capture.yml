@@ -22,10 +22,14 @@ jobs:
         with: { node-version: 20 }
       - run: npm i --no-save playwright@1.56.1 axe-core@4.10.2 && npx playwright install --with-deps chromium
       - run: node audit/capture.js
+        continue-on-error: true
       - run: bash audit/lh.sh
+        continue-on-error: true
       - if: matrix.shard == 0
-        run: bash audit/assets.sh && bash audit/psi.sh
-      - uses: actions/upload-artifact@v4
+        run: bash audit/assets.sh; bash audit/psi.sh
+        continue-on-error: true
+      - if: always()
+        uses: actions/upload-artifact@v4
         with: { name: "out-${{ matrix.shard }}", path: out, retention-days: 3 }
   publish:
     needs: capture

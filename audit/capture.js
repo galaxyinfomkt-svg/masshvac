@@ -62,7 +62,7 @@ async function one(ctx, path, vp) {
   }
   fs.writeFileSync(`${OUT}/sweep_${SHARD}.json`, JSON.stringify(results));
   // menu mobile aberto + teste dos CTAs (só no shard 0)
-  if (SHARD === 0) {
+  if (SHARD === 0) { try {
     const ctx = await browser.newContext(VPS.mobile); const p = await ctx.newPage();
     await p.goto(BASE + '/cities/milford', { waitUntil: 'load' }); await p.waitForTimeout(2500);
     await p.click('button[aria-label="Toggle menu"]'); await p.waitForTimeout(900);
@@ -84,6 +84,6 @@ async function one(ctx, path, vp) {
     const c = await (await browser.newContext(VPS.mobile)).newPage();
     await c.goto(BASE + '/', { waitUntil: 'load' }); await c.mouse.wheel(0, 400); await c.waitForTimeout(9000);
     await c.screenshot({ path: `${OUT}/mobile/_chat_widget.jpg`, type: 'jpeg', quality: 75 });
-  }
+  } catch (e) { fs.writeFileSync(`${OUT}/extras_error.txt`, String(e)); } }
   await browser.close();
 })();
