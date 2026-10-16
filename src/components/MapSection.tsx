@@ -1,5 +1,7 @@
 import { MapPin, Clock, Shield, Star, Phone } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { PHONE_DISPLAY, TEL_HREF } from "@/data/company";
+import { averageRating } from "@/data/reviews";
 
 export default function MapSection() {
   return (
@@ -7,30 +9,30 @@ export default function MapSection() {
       <div className="mx-auto max-w-7xl px-4">
         <ScrollReveal className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Our <span className="text-accent">Service Area</span></h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">MetroWest fast, reliable HVAC service to 50+ MetroWest cities and towns.</p>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">Based in Milford, serving 50 towns across MetroWest and nearby.</p>
           <div className="accent-divider mt-6" />
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <ScrollReveal direction="left" className="space-y-4">
             {[
-              { icon: Clock, title: "Fast Response", desc: "Usually within 60 minutes" },
-              { icon: MapPin, title: "50+ MetroWest Cities", desc: "Worcester, Middlesex & Norfolk Counties" },
-              { icon: Shield, title: "Licensed & Insured", desc: "Full MA HVAC licensure" },
-              { icon: Star, title: "5-Star Rated", desc: "On Google Reviews" },
+              { icon: Clock, title: "24/7 Emergency Calls", desc: "Same-day service on most weekday calls" },
+              { icon: MapPin, title: "50 Towns Served", desc: "Worcester, Middlesex & Norfolk Counties" },
+              { icon: Shield, title: "Licensed & Insured", desc: "Permits pulled for installation work" },
+              { icon: Star, title: `${averageRating.toFixed(1)} on Google`, desc: "Read our reviews" },
             ].map((card) => (
               <div key={card.title} className="group flex items-center gap-4 p-5 bg-white border border-gray-100 card-premium rounded-xl hover:shadow-[0_10px_25px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 transition-all duration-300">
                 <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0">
-                  <card.icon className="w-5 h-5 text-white" />
+                  <card.icon className="w-5 h-5 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-bold text-primary text-sm">{card.title}</p>
-                  <p className="text-xs text-gray-400">{card.desc}</p>
+                  <p className="text-xs text-gray-600">{card.desc}</p>
                 </div>
               </div>
             ))}
-            <a href="tel:+15087868755" className="group flex items-center justify-center gap-2 w-full p-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]">
-              <Phone className="w-5 h-5" />Call (508) 786-8755
+            <a href={TEL_HREF} className="group flex items-center justify-center gap-2 w-full p-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]">
+              <Phone className="w-5 h-5" aria-hidden="true" />Call {PHONE_DISPLAY}
             </a>
           </ScrollReveal>
 

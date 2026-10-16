@@ -1,22 +1,23 @@
-"use client";
-
 import { Phone } from "lucide-react";
+import { PHONE_DISPLAY, TEL_HREF } from "@/data/company";
 
 /**
- * Desktop-only floating phone button. On mobile, MobileStickyBar takes
- * over — a full-width split bar with Call + Get Quote is more useful
- * than a small floating pill, and avoids stacking two CTAs at the
- * bottom of a small screen.
+ * Desktop-only floating phone button (mobile uses MobileStickyBar).
+ * Was rendering as a full-width bar overflowing the viewport because the
+ * unlayered `.animate-pulse-glow { position: relative }` beat Tailwind's
+ * layered `fixed`. Custom utilities now live in @layer components.
  */
 export default function FloatingButtons() {
   return (
+    <aside aria-label="Call us">
     <a
-      href="tel:+15087868755"
-      className="hidden lg:flex fixed bottom-6 left-6 z-40 items-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-accent to-accent-dark border border-accent-light/30 text-white font-bold rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-all duration-300 hover:scale-110 animate-pulse-glow group"
-      aria-label="Call Mass HVAC"
+      href={TEL_HREF}
+      className="hidden lg:flex fixed bottom-6 left-6 z-40 w-max items-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-accent to-accent-dark border border-accent-light/30 text-white font-bold rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-105 animate-pulse-glow"
+      aria-label={`Call Mass HVAC at ${PHONE_DISPLAY}`}
     >
-      <Phone className="w-5 h-5 group-hover:animate-bounce" />
-      <span className="text-sm">(508) 786-8755</span>
+      <Phone className="w-5 h-5" aria-hidden="true" />
+      <span className="text-sm">{PHONE_DISPLAY}</span>
     </a>
+    </aside>
   );
 }

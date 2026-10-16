@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "SMS Terms & Opt-In Methods",
-  description:
-    "Mass HVAC Inc SMS Terms — how customers opt-in to receive text messages, what we send, frequency, opt-out keywords, and our zero-third-party-sharing pledge.",
-  alternates: { canonical: "https://masshvac.net/sms-terms" },
-};
+  description: "Mass HVAC Inc SMS Terms — how customers opt-in to receive text messages, what we send, frequency, opt-out keywords, and our zero-third-party-sharing pledge.",
+  path: "/sms-terms",
+});
 
 export default function SmsTerms() {
   return (
@@ -27,7 +28,7 @@ export default function SmsTerms() {
         <li><strong>Sending phone number:</strong> (508) 786-8755</li>
         <li><strong>Office address:</strong> Milford, MA 01757</li>
         <li><strong>Customer service email:</strong> info@masshvac.net</li>
-        <li><strong>Website:</strong> <a href="https://masshvac.net">masshvac.net</a></li>
+        <li><strong>Website:</strong> <a href={SITE_URL}>masshvac.net</a></li>
       </ul>
 
       <h2>2. How customers opt in to receive SMS</h2>
@@ -40,7 +41,7 @@ export default function SmsTerms() {
 
       <h3>Method A: Website Chat Widget</h3>
       <ul>
-        <li><strong>Verifiable URL:</strong> <a href="https://masshvac.net">https://masshvac.net</a></li>
+        <li><strong>Verifiable URL:</strong> <a href={SITE_URL}>https://masshvac.net</a></li>
         <li>
           <strong>Description:</strong> Chat widget embedded on every page of
           our website. The visitor must enter their phone number to start a
@@ -59,7 +60,7 @@ export default function SmsTerms() {
 
       <h3>Method B: Website Lead Form (Free Estimate Request)</h3>
       <ul>
-        <li><strong>Verifiable URL:</strong> <a href="https://masshvac.net">https://masshvac.net</a></li>
+        <li><strong>Verifiable URL:</strong> <a href={SITE_URL}>https://masshvac.net</a></li>
         <li>
           <strong>Description:</strong> Our chat-gated lead form collects
           name, email, project details, and a phone number. Submitting the

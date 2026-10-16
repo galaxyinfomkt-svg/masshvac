@@ -22,6 +22,12 @@ export interface City {
   localFaq?: { q: string; a: string }[];
   /** Slug from projects.ts of a real project to showcase on this city. */
   featuredProjectSlug?: string;
+  /**
+   * Electric utility when it is NOT a standard Mass Save electric sponsor
+   * (municipal light plant) or otherwise worth naming. Only set for towns
+   * the research pack marks VERIFIED/LIKELY. Does not affect indexability.
+   */
+  electricUtility?: { name: string; municipal: boolean; programUrl?: string };
 }
 
 /* ------------------------------------------------------------------ */
@@ -149,9 +155,38 @@ const localContent: Record<string, Partial<City>> = {
   },
 };
 
+/* ------------------------------------------------------------------ */
+/*  Electric utilities — municipal light plants (MLPs) and Unitil.     */
+/*  Source: research fact pack §5 / §5b (mass.gov MLP list, utility    */
+/*  sites). Only VERIFIED / LIKELY towns are listed. MLP customers are */
+/*  generally eligible for Mass Save heat-pump rebates only if they    */
+/*  heat with gas from a Mass Save sponsor; otherwise the MLP's own    */
+/*  program applies. Kept separate from localContent so it never       */
+/*  affects cityHasLocalContent().                                     */
+/* ------------------------------------------------------------------ */
+const hudsonLight = { name: "Hudson Light & Power Department", municipal: true, programUrl: "https://www.hudsonlight.com" };
+const littletonElectric = { name: "Littleton Electric Light & Water Department", municipal: true, programUrl: "https://www.lelwd.com/greenrewards/heating-cooling/" };
+
+const utilities: Record<string, NonNullable<City["electricUtility"]>> = {
+  hudson: hudsonLight,
+  stow: hudsonLight,
+  concord: { name: "Concord Municipal Light Plant", municipal: true, programUrl: "https://concordma.gov/3024/Heat-Pump-Rebates-for-Your-Home" },
+  wellesley: { name: "Wellesley Municipal Light Plant", municipal: true, programUrl: "https://www.wellesleyma.gov/1641/Heat-Pump-Program" },
+  littleton: littletonElectric,
+  boxborough: littletonElectric,
+  shrewsbury: { name: "Shrewsbury Electric & Cable Operations (SELCO)", municipal: true, programUrl: "https://www.selco.shrewsburyma.gov/heatpump" },
+  holden: { name: "Holden Municipal Light Department", municipal: true },
+  sterling: { name: "Sterling Municipal Light Department", municipal: true, programUrl: "https://nextzero.org/" },
+  boylston: { name: "Boylston Municipal Light Department", municipal: true, programUrl: "https://nextzero.org/boylston/heating-cooling/" },
+  "west-boylston": { name: "West Boylston Municipal Lighting Plant", municipal: true, programUrl: "https://nextzero.org/west-boylston/heating-cooling/" },
+  groton: { name: "Groton Electric Light Department", municipal: true, programUrl: "https://www.grotonelectric.org/" },
+  lunenburg: { name: "Unitil", municipal: false, programUrl: "https://unitil.com" },
+};
+
 export const cities: City[] = cityData.map((c) => {
   const slug = slugify(c.name);
   const local = localContent[slug] ?? {};
+  const utility = utilities[slug];
   return {
     name: c.name,
     slug,
@@ -159,6 +194,7 @@ export const cities: City[] = cityData.map((c) => {
     county: c.county,
     description: `Professional HVAC services in ${c.name}, MA. Mass HVAC provides expert heating, cooling, and indoor air quality solutions for homes and businesses in ${c.name} and surrounding ${c.county} County communities.`,
     ...local,
+    ...(utility ? { electricUtility: utility } : {}),
   };
 });
 
@@ -178,7 +214,7 @@ const regionProfiles: Record<CityRegion, {
   climateNote: string;
 }> = {
   metrowest: {
-    housingStyle: "colonial-era and mid-century homes, many built between 1950 and 1985, with basements, attached garages, and original HVAC systems that are nearing or past their expected lifespan",
+    housingStyle: "colonial-style and mid-century homes, many built between 1950 and 1985, with basements, attached garages, and original HVAC systems that are nearing or past their expected lifespan",
     commonChallenges: [
       "Aging furnaces and boilers over 20 years old that waste energy",
       "Oil-heated homes ready for gas or heat pump conversion",
@@ -186,9 +222,9 @@ const regionProfiles: Record<CityRegion, {
       "No central AC in homes built before the 1990s",
       "Converted attics and additions with no HVAC connection",
     ],
-    heatingFocus: "Many MetroWest homes still rely on aging oil furnaces or steam boilers from the 1980s and 1990s. With natural gas now available on most streets, oil-to-gas conversions are one of our most requested services in this area. For homes without gas access, cold-climate heat pumps provide an excellent all-electric alternative that qualifies for generous Mass Save rebates.",
+    heatingFocus: "Many MetroWest homes still rely on aging oil furnaces or steam boilers from the 1980s and 1990s. Where natural gas service is available, some homeowners convert from oil to gas; many others are moving straight to cold-climate heat pumps, which are now the focus of Mass Save incentives. For homes without gas access, cold-climate heat pumps provide an efficient all-electric alternative.",
     coolingFocus: "A surprising number of MetroWest homes were built without central air conditioning. Rather than retrofitting ductwork through finished walls, many homeowners are choosing ductless mini-split systems that provide both heating and cooling from a single unit — with no major construction required.",
-    uniqueFact: "The MetroWest corridor between Route 9 and the Mass Pike is one of the fastest-growing residential areas in Massachusetts, with a mix of historic New England architecture and newer developments",
+    uniqueFact: "Much of the housing stock in this part of New England predates modern energy codes, so insulation, air sealing and ductwork condition can vary widely from one house to the next",
     climateNote: "MetroWest experiences the full range of New England weather, with winter temperatures regularly dropping below 10°F and summer humidity pushing heat indices above 100°F",
   },
 };
@@ -264,6 +300,27 @@ function hashString(str: string): number {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Rebate copy — utility-aware. MLP towns get the municipal-utility   */
+/*  explanation; everyone else gets the 2026 Mass Save numbers.        */
+/* ------------------------------------------------------------------ */
+function getRebateParagraph(city: City): string {
+  const u = city.electricUtility;
+  if (u && u.municipal) {
+    return `**Rebates in ${city.name}:** electricity in ${city.name} comes from ${u.name}, a municipal utility. Mass Save heat-pump rebates generally apply here only if you heat with natural gas from a Mass Save sponsor; otherwise ${u.name} runs its own heat-pump rebate program. We'll walk you through which program fits your home.`;
+  }
+  const utilityNote = u ? `Electricity in ${city.name} comes from ${u.name}, a Mass Save sponsor. ` : "";
+  return `**Rebates in ${city.name}:** ${utilityNote}Mass Save's 2026 whole-home heat pump rebate is up to $8,500 ($2,650 per ton, for homes that meet weatherization requirements), with more for income-eligible households, and the 0% HEAT Loan can finance up to $25,000. Rebates require installation by a Mass Save network contractor and qualifying equipment. We'll walk you through which program fits your home.`;
+}
+
+function getRebateBullet(city: City): string {
+  const u = city.electricUtility;
+  if (u && u.municipal) {
+    return `Heat pump rebates for most ${city.name} homes run through ${u.name}'s own program (see below)`;
+  }
+  return "May qualify for Mass Save heat pump rebates (up to $8,500 whole-home in 2026; more for income-eligible households)";
+}
+
+/* ------------------------------------------------------------------ */
 /*  City page content — 4 templates × 5 regions = 20 variations       */
 /* ------------------------------------------------------------------ */
 export function getCityContent(cityName: string): string {
@@ -272,6 +329,7 @@ export function getCityContent(cityName: string): string {
   const profile = regionProfiles[city.region];
   const template = hashString(city.slug) % 4;
   const localBlock = getLocalBlock(city);
+  const heatingFocus = `${profile.heatingFocus}\n\n${getRebateParagraph(city)}`;
 
   // Challenge list varies by template
   const challengeSubsets = [
@@ -295,7 +353,7 @@ ${challenges.map((c) => `- ${c}`).join("\n")}
 
 ### Heating Services in ${cityName}, MA
 
-${profile.heatingFocus}
+${heatingFocus}
 
 Whether you need a routine furnace tune-up, an emergency repair on a cold January night, or a complete heating system replacement, Mass HVAC is the call to make in ${cityName}. We carry parts for all major brands and back every job with our satisfaction guarantee.
 
@@ -327,7 +385,7 @@ ${challenges.map((c) => `- ${c}`).join("\n")}
 
 ### Heating Solutions for ${cityName} Residents
 
-${profile.heatingFocus}
+${heatingFocus}
 
 ### Keeping ${cityName} Cool in Summer
 
@@ -345,7 +403,7 @@ ${profile.uniqueFact}. Mass HVAC understands these nuances because we are local.
 
 ${cityName}, located in ${city.county} County, Massachusetts, presents unique comfort challenges for homeowners. ${profile.climateNote}. The area's housing stock — ${profile.housingStyle} — means that every HVAC project requires careful evaluation and custom solutions.
 
-Mass HVAC brings professional-grade heating, cooling, and air quality services to ${cityName} and all of ${city.county} County. Whether you are dealing with an aging furnace, an uncomfortable home, or you simply want to reduce your energy bills, we have the expertise to help.
+Mass HVAC brings professional-grade heating, cooling, and air quality services to ${cityName} and neighboring towns. Whether you are dealing with an aging furnace, an uncomfortable home, or you simply want to reduce your energy bills, we have the expertise to help.
 
 ### The ${cityName} HVAC Landscape
 
@@ -357,7 +415,7 @@ These are not just theoretical concerns — they are the real-world problems we 
 
 ### How We Approach Heating in ${cityName}
 
-${profile.heatingFocus}
+${heatingFocus}
 
 Our approach always starts with a proper assessment. We do not quote a system without first understanding your home's heating load, insulation levels, and existing infrastructure. This ensures the system we recommend is correctly sized — not oversized (which wastes money) or undersized (which cannot keep up).
 
@@ -387,7 +445,7 @@ ${challenges.map((c) => `- ${c}`).join("\n")}
 
 ### Heating That Keeps Up With ${cityName} Winters
 
-${profile.heatingFocus}
+${heatingFocus}
 
 Every heating installation we perform includes a Manual J load calculation, proper equipment sizing, and a thorough commissioning process. This is not a shortcut industry — doing it right the first time saves our ${cityName} customers thousands in energy costs and future repairs.
 
@@ -420,10 +478,13 @@ export function getCityServiceContent(
   const profile = regionProfiles[city.region];
   const template = hashString(city.slug + serviceSlug) % 3;
   const localBlock = getLocalBlock(city);
+  const heatingFocus = `${profile.heatingFocus}\n\n${getRebateParagraph(city)}`;
+  const rebateParagraph = getRebateParagraph(city);
+  const rebateBullet = getRebateBullet(city);
 
   const serviceSpecific: Record<string, () => string> = {
     "heating-installation-repair": () => {
-      if (template === 0) return `${profile.heatingFocus}
+      if (template === 0) return `${heatingFocus}
 
 In ${cityName}, we handle all aspects of residential and commercial heating:
 
@@ -431,13 +492,13 @@ In ${cityName}, we handle all aspects of residential and commercial heating:
 - **High-efficiency furnace installation** — 95%+ AFUE models from Carrier, Lennox, and Trane
 - **Boiler repair and replacement** — steam and hot water systems
 - **Heating system tune-ups** — our 21-point inspection catches problems before they become emergencies
-- **Oil-to-gas conversions** — popular in ${city.county} County where gas lines are available
+- **Oil-to-gas conversions** — an option where natural gas service is available
 - **Heat pump heating** — cold-climate models that work down to -13°F
 
 Every heating installation in ${cityName} includes a Manual J load calculation to ensure your system is properly sized for your home's specific characteristics — square footage, insulation levels, window area, and more.`;
       if (template === 1) return `${cityName} homeowners know that a reliable heating system is non-negotiable during Massachusetts winters. ${profile.climateNote}. When your furnace or boiler fails, you need a contractor who responds fast, diagnoses accurately, and fixes it right the first time.
 
-Mass HVAC provides comprehensive heating services in ${cityName} and throughout ${city.county} County:
+Mass HVAC provides comprehensive heating services in ${cityName} and neighboring towns:
 
 - **Emergency repair** — our technicians carry common parts on every truck for same-visit repairs
 - **System replacement** — we properly size every installation using industry-standard calculations
@@ -445,12 +506,13 @@ Mass HVAC provides comprehensive heating services in ${cityName} and throughout 
 - **Preventive maintenance** — catch cracked heat exchangers, worn ignitors, and other issues before they leave you without heat
 - **Zone control** — solve the "hot downstairs, cold upstairs" problem with dampers and multiple thermostats
 
-${profile.heatingFocus}`;
+${heatingFocus}`;
       return `When it comes to heating installation and repair in ${cityName}, MA, the difference between a good job and a bad one comes down to proper sizing, quality equipment, and experienced installation. Mass HVAC delivers all three.
 
-${profile.heatingFocus}
+${heatingFocus}
 
 **Heating services available in ${cityName}:**
+
 - Furnace installation, repair, and replacement (gas, oil, and propane)
 - Boiler service for steam and hot water systems
 - Cold-climate heat pump installations
@@ -467,7 +529,7 @@ Homes in ${city.county} County feature ${profile.housingStyle}. Our technicians 
 For ${cityName} homeowners, our AC services include:
 
 - **Central AC installation** — new systems for homes with or without existing ductwork
-- **AC system replacement** — upgrade from R-22 to modern R-410A refrigerant systems
+- **AC system replacement** — replace aging R-22 units with new systems that use lower-GWP R-454B or R-32 refrigerant (R-410A equipment is being phased out and is not eligible for Mass Save heat pump rebates in 2026)
 - **Emergency AC repair** — same-day service when possible, especially during heat waves
 - **Seasonal tune-ups** — our cooling inspection keeps your system running efficiently all summer
 - **Smart thermostat installation** — optimize cooling schedules for maximum efficiency
@@ -501,22 +563,24 @@ We never install an air conditioning system without first performing a cooling l
     },
 
     "heat-pumps-ductless-mini-splits": () => {
-      if (template === 0) return `Ductless mini-split heat pumps are rapidly becoming the most popular HVAC upgrade in ${cityName} and across ${city.county} County. These systems provide both heating and cooling from a single unit, with individual room control and energy efficiency that far exceeds traditional HVAC systems.
+      if (template === 0) return `Ductless mini-split heat pumps are one of the most popular HVAC upgrades in ${cityName} and across MetroWest. These systems provide both heating and cooling from a single unit, with individual room control and energy efficiency that far exceeds traditional HVAC systems.
 
 **Why mini-splits are ideal for ${cityName} homes:**
 - No ductwork required — perfect for older homes in ${cityName} without existing ducts
 - Heats AND cools — year-round comfort from one system
 - Individual zone control — set different temperatures in different rooms
 - Up to 40% more efficient than traditional forced-air systems
-- Qualifies for substantial Mass Save rebates (often $1,250–$10,000+)
+- ${rebateBullet}
 - Cold-climate models work effectively down to -13°F
 
-We are certified installers for Mitsubishi, Fujitsu, and Daikin — the three leading mini-split brands in New England. Our installations in ${cityName} include proper equipment sizing, professional mounting, and clean refrigerant line routing that preserves your home's appearance.
+We install and service major brands including Mitsubishi, Fujitsu, Daikin, Carrier and Lennox. Our installations in ${cityName} include proper equipment sizing, professional mounting, and clean refrigerant line routing that preserves your home's appearance.
 
-${profile.housingStyle.charAt(0).toUpperCase() + profile.housingStyle.slice(1)} make mini-splits especially relevant here — many of these homes have rooms or additions that existing ductwork simply cannot reach.`;
+${profile.housingStyle.charAt(0).toUpperCase() + profile.housingStyle.slice(1)} make mini-splits especially relevant here — many of these homes have rooms or additions that existing ductwork simply cannot reach.
+
+${rebateParagraph}`;
       if (template === 1) return `If you are a ${cityName} homeowner considering a ductless mini-split, you are not alone. Mini-split installations are the fastest-growing HVAC segment in Massachusetts, driven by exceptional efficiency, flexible installation, and generous state incentives.
 
-Mass HVAC has installed hundreds of mini-split systems across ${city.county} County. We know which models perform best in each application, how to route line sets cleanly through ${cityName}'s various housing types, and how to maximize your Mass Save rebate eligibility.
+Mass HVAC installs mini-split systems in homes across MetroWest. We know which models perform best in each application, how to route line sets cleanly through ${cityName}'s various housing types, and which rebate program applies to your home.
 
 **Common mini-split applications in ${cityName}:**
 - Whole-home heating and cooling replacement (multi-zone systems)
@@ -525,7 +589,9 @@ Mass HVAC has installed hundreds of mini-split systems across ${city.county} Cou
 - Home office climate control for year-round remote work comfort
 - Oil or propane system replacement with all-electric heat pump technology
 
-${profile.housingStyle.charAt(0).toUpperCase() + profile.housingStyle.slice(1)} present the perfect use case for ductless technology. The ability to add heating and cooling to any room without tearing into walls or ceilings makes mini-splits the go-to solution for ${cityName} homeowners who want modern comfort without major construction.`;
+${profile.housingStyle.charAt(0).toUpperCase() + profile.housingStyle.slice(1)} present the perfect use case for ductless technology. The ability to add heating and cooling to any room without tearing into walls or ceilings makes mini-splits the go-to solution for ${cityName} homeowners who want modern comfort without major construction.
+
+${rebateParagraph}`;
       return `Cold-climate heat pump technology has changed the HVAC game for ${cityName} homeowners. Modern inverter-driven mini-splits from Mitsubishi, Fujitsu, and Daikin maintain full heating capacity at temperatures well below zero — making them viable as a primary heating source even during the worst Massachusetts winters.
 
 Mass HVAC specializes in mini-split design and installation for ${city.county} County homes. We handle everything from single-zone installations for a problem room to complete multi-zone systems that replace your entire heating and cooling infrastructure.
@@ -535,9 +601,11 @@ Mass HVAC specializes in mini-split design and installation for ${city.county} C
 - Precise room-by-room temperature control via wireless remotes or smartphone apps
 - Exceptional energy efficiency — SEER ratings up to 33
 - Ultra-quiet operation — indoor units produce as little as 19 dB
-- Mass Save rebates of $1,250–$10,000+ depending on system size and configuration
+- ${rebateBullet}
 
 ${profile.coolingFocus}
+
+${rebateParagraph}
 
 Contact Mass HVAC to schedule a free mini-split consultation for your ${cityName} home.`;
     },
@@ -555,8 +623,8 @@ Contact Mass HVAC to schedule a free mini-split consultation for your ${cityName
 - Priority emergency service for plan members — you go to the front of the line
 - 15% discount on all repair parts and labor for members
 
-The most important benefit of our maintenance program is safety. During a routine tune-up in a nearby ${city.county} County home, our technician discovered a cracked heat exchanger that was leaking carbon monoxide — a potentially fatal condition that had no visible symptoms. Annual maintenance catches these issues before they become emergencies.`;
-      if (template === 1) return `${cityName} homeowners who invest in annual HVAC maintenance save an average of 15–20% on their energy bills and experience 70% fewer emergency breakdowns compared to those who skip preventive care. Those are not estimates — they are industry statistics backed by decades of data.
+The most important benefit of our maintenance program is safety. A tune-up can catch problems like a cracked heat exchanger before they become dangerous. Annual maintenance catches these issues before they become emergencies.`;
+      if (template === 1) return `For ${cityName} homeowners, annual HVAC maintenance can save up to 15% on energy and can prevent many common breakdowns.
 
 Mass HVAC's maintenance program is designed specifically for ${city.county} County homes and the demands of Massachusetts weather:
 
@@ -583,7 +651,7 @@ Mass HVAC provides structured maintenance programs for residential and commercia
 - Written report with findings, measurements, and recommendations
 
 **Why maintenance matters in ${cityName}:**
-Equipment that receives annual professional maintenance lasts 5–7 years longer than neglected systems, according to HVAC industry data. For a system that costs $5,000–$15,000 to replace, that is a significant return on a modest annual investment.
+Regular professional maintenance can extend equipment life by several years. For a system that costs $5,000–$15,000 to replace, that is a significant return on a modest annual investment.
 
 Call (508) 786-8755 to enroll in our ${cityName} area maintenance program.`;
     },
@@ -594,15 +662,15 @@ Call (508) 786-8755 to enroll in our ${cityName} area maintenance program.`;
 ${city.county} County homes face specific air quality challenges:
 
 - **Tight construction** — energy-efficient homes seal in pollutants along with conditioned air
-- **Seasonal allergens** — Massachusetts pollen counts are among the highest in the Northeast
-- **Pet dander** — a major concern for the majority of ${cityName} households with pets
+- **Seasonal allergens** — long spring and fall pollen seasons
+- **Pet dander** — a common concern in ${cityName} households with pets
 - **Basement moisture** — humidity and mold are common in homes with below-grade living space
 - **Aging ductwork** — years of accumulated dust, debris, and potential mold growth
 
 Mass HVAC provides comprehensive indoor air quality solutions for ${cityName} homes:
 
 - **Duct cleaning** — professional HEPA-filtered equipment removes years of buildup
-- **Air purification** — whole-home systems including bipolar ionization and UV germicidal lights
+- **Air cleaning** — whole-home media air cleaners, plus UV lights that can reduce microbial growth on the cooling coil
 - **Humidity control** — humidifiers for dry winters, dehumidifiers for humid summers
 - **Ventilation** — Energy Recovery Ventilators (ERV) that bring in fresh air without energy waste
 - **Filtration upgrades** — MERV-13 to MERV-16 media air cleaners for superior particle capture`;
@@ -611,10 +679,10 @@ Mass HVAC provides comprehensive indoor air quality solutions for ${cityName} ho
 Mass HVAC offers a full spectrum of indoor air quality services for ${cityName} residents:
 
 **Air Duct Cleaning**
-Professional truck-mounted HEPA cleaning removes years of accumulated dust, allergens, pet dander, and potential mold from your duct system. If you have never had your ducts cleaned — or if it has been more than 5 years — a professional cleaning can dramatically improve the air your family breathes.
+Professional truck-mounted HEPA cleaning removes years of accumulated dust, allergens, pet dander, and potential mold from your duct system. If your ducts have visible dust buildup, debris or mold, a professional cleaning removes it at the source.
 
 **Whole-Home Air Purification**
-We install bipolar ionization systems (iWave), UV germicidal lights, and high-efficiency media air cleaners that work silently within your existing HVAC system to neutralize bacteria, viruses, mold spores, and odors.
+We install high-efficiency media air cleaners (MERV 13 and up) that work within your existing HVAC system to capture fine particles like pollen, dust and pet dander, and UV lights that can reduce microbial growth on the cooling coil.
 
 **Humidity Management**
 Massachusetts homes face dry air in winter (causing static, cracked skin, and respiratory irritation) and excess humidity in summer (causing mold, musty odors, and discomfort). Whole-home humidifiers and dehumidifiers maintain optimal 40–50% humidity year-round.
@@ -626,9 +694,9 @@ Energy Recovery Ventilators (ERVs) bring fresh outdoor air into your ${cityName}
 Mass HVAC provides professional indoor air quality assessment and improvement services to ${cityName} and ${city.county} County homes:
 
 - **Duct cleaning** — remove contaminants from your air distribution system
-- **Air purifiers** — whole-home solutions that eliminate 99%+ of airborne pathogens
+- **Air cleaners** — whole-home MERV 13 media filtration that captures fine particles like pollen, dust and pet dander
 - **Humidity control** — prevent both dry air damage and moisture-related mold growth
-- **HEPA filtration** — medical-grade air cleaning for sensitive residents
+- **HEPA filtration** — high-efficiency particle capture for allergy-sensitive households
 - **ERV ventilation** — fresh air exchange without energy penalty
 
 Many of our ${cityName} indoor air quality projects start with a professional air quality assessment. We measure particulate levels, humidity, CO2 concentration, and other key indicators to identify exactly what your home needs — rather than guessing.
@@ -645,7 +713,7 @@ Contact Mass HVAC at (508) 786-8755 for an indoor air quality consultation in ${
   if (template2 === 0) {
     return `${localBlock}## ${serviceName} in ${cityName}, MA
 
-Looking for professional ${serviceName.toLowerCase()} in ${cityName}, Massachusetts? Mass HVAC is the trusted local contractor for residential and commercial HVAC services in ${cityName} and throughout ${city.county} County.
+Looking for professional ${serviceName.toLowerCase()} in ${cityName}, Massachusetts? Mass HVAC is the trusted local contractor for residential and commercial HVAC services in ${cityName} and neighboring MetroWest towns.
 
 ${body}
 
@@ -668,7 +736,7 @@ ${body}
 
 ### The Mass HVAC Advantage in ${cityName}
 
-${cityName === "Milford" ? `We are headquartered right here in Milford, MA — we are your local HVAC company. That proximity means:` : `We are based in Milford, MA — close to ${cityName} and all of ${city.county} County. That proximity means:`}
+${cityName === "Milford" ? `We are headquartered right here in Milford, MA — we are your local HVAC company. That proximity means:` : `We are based in Milford, MA — close to ${cityName} and its neighboring towns. That proximity means:`}
 
 - **Faster response times** for emergencies and scheduled service
 - **Knowledge of local building codes** and permit requirements

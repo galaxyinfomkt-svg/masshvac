@@ -18,29 +18,37 @@ import {
   FileText,
   CalendarCheck,
   ThumbsUp,
-  Users,
-  Thermometer,
 } from "lucide-react";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { averageRating, reviewCount } from "@/data/reviews";
-import { MA_HVAC_LICENSE_NUMBER } from "@/data/company";
+import { MA_HIC_NUMBER, PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
+import { buildMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import LazyIframe from "@/components/LazyIframe";
 
+export const metadata: Metadata = buildMetadata({
+  title: "HVAC Contractor in Milford & MetroWest, MA | Mass HVAC Inc",
+  absoluteTitle: true,
+  description:
+    "Heating, AC, heat pump and mini-split installation and repair in Milford and MetroWest, MA. Free written estimates, 24/7 emergency calls. Call (508) 786-8755.",
+  path: "/",
+});
+
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
 const faqData = [
   {
     q: "How quickly can Mass HVAC respond to an emergency?",
-    a: "We offer 24/7 emergency HVAC service across Massachusetts with typical response times under 60 minutes for most MetroWest and Greater Boston locations.",
+    a: "We take emergency calls 24/7 for homes in Milford and across MetroWest. Call (508) 786-8755 and we will tell you when a technician can get there.",
   },
   {
     q: "What areas does Mass HVAC serve?",
-    a: "Mass HVAC serves 50+ cities across the MetroWest Massachusetts region — including Milford, Framingham, Natick, Wellesley, Marlborough, Hudson, Westborough, Shrewsbury, Hopkinton, Sudbury, Concord, Needham, and many more towns west of Boston.",
+    a: "Mass HVAC is based in Milford and serves 50 towns in MetroWest and nearby areas, including Milford, Framingham, Natick, Wellesley, Marlborough, Hudson, Westborough, Shrewsbury, Hopkinton, Sudbury, Concord, Needham, and many more towns west of Boston.",
   },
   {
     q: "Do you offer free estimates?",
@@ -48,11 +56,11 @@ const faqData = [
   },
   {
     q: "What HVAC brands do you install and service?",
-    a: "We are factory-trained on all major HVAC brands including Carrier, Lennox, Trane, Rheem, Goodman, Daikin, Mitsubishi, and more.",
+    a: "We install and service major brands including Carrier, Lennox, Trane, Rheem, Goodman, Daikin and Mitsubishi.",
   },
   {
     q: "Are your HVAC technicians licensed and insured?",
-    a: "Absolutely. All Mass HVAC technicians are fully licensed in Massachusetts and we carry comprehensive insurance for your protection.",
+    a: "Yes. Mass HVAC is licensed and insured, and we pull the required local permits for installation work.",
   },
   {
     q: "How often should I have my HVAC system serviced?",
@@ -95,7 +103,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg"
-          alt="Professional HVAC service in Massachusetts"
+          alt="Mass HVAC technician at a MetroWest home"
           fill
           sizes="100vw"
           className="object-cover"
@@ -124,15 +132,15 @@ export default function HomePage() {
                   below converts harder. */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-5">
                 MetroWest&apos;s Trusted{" "}
-                <span className="text-accent">Heating &amp; Cooling</span> Experts
+                <span className="text-[#FF5A5A]">Heating &amp; Cooling</span> Experts
               </h1>
 
               {/* Conversion-focused sub-headline — short, scannable, addresses
                   the customer's actual question ("can someone come today?"). */}
               <p className="text-lg sm:text-xl text-white/85 leading-relaxed mb-6 max-w-xl">
                 Heat out? AC broken? Need a mini-split quote? We answer the
-                phone, reply within 15 minutes, and stand behind every job
-                across MetroWest, MA.
+                phone, give you a written estimate, and stand behind every job
+                across Milford and MetroWest, MA.
               </p>
 
               {/* Proof row — concrete, not generic. Rating + count derive
@@ -145,13 +153,13 @@ export default function HomePage() {
                     ))}
                   </span>
                   <strong className="font-bold">{averageRating.toFixed(1)}</strong>
-                  <span className="text-white/70">on Google ({reviewCount}+ reviews)</span>
+                  <span className="text-white/80">on Google ({reviewCount} reviews)</span>
                 </span>
                 <span className="hidden sm:inline text-white/30">|</span>
                 <span className="inline-flex items-center gap-2">
                   <Shield className="w-4 h-4 text-accent" />
                   <span className="text-white/85">
-                    Licensed &amp; Insured{MA_HVAC_LICENSE_NUMBER ? ` · MA #${MA_HVAC_LICENSE_NUMBER}` : ""}
+                    Licensed &amp; Insured{MA_HIC_NUMBER ? ` · MA HIC #${MA_HIC_NUMBER}` : ""}
                   </span>
                 </span>
               </div>
@@ -161,11 +169,11 @@ export default function HomePage() {
                   Secondary anchors to the form section below the hero. */}
               <div className="flex flex-col sm:flex-row gap-3 mb-8">
                 <a
-                  href="tel:+15087868755"
+                  href={TEL_HREF}
                   className="inline-flex items-center justify-center gap-3 px-7 py-4 bg-gradient-to-r from-accent to-accent-dark relative overflow-hidden shimmer-line text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_8px_25px_rgba(200,16,46,0.4)]"
                 >
-                  <Phone className="w-5 h-5" />
-                  Call (508) 786-8755
+                  <Phone className="w-5 h-5" aria-hidden="true" />
+                  Call {PHONE_DISPLAY}
                 </a>
                 <Link
                   href="#quote"
@@ -179,7 +187,7 @@ export default function HomePage() {
                   adjectives. Drives confidence at the moment of decision. */}
               <ul className="flex flex-wrap gap-x-6 gap-y-2 text-white/75 text-sm">
                 {[
-                  { icon: Clock, label: "Reply within 15 min" },
+                  { icon: Clock, label: "Same-day reply" },
                   { icon: CheckCircle2, label: "Free in-home estimate" },
                   { icon: ThumbsUp, label: "No-pressure quote" },
                 ].map((badge) => (
@@ -210,7 +218,7 @@ export default function HomePage() {
                 data-height="420"
                 data-layout-iframe-id="hero-form-ko3gg97CJtkDUrqpruBq"
                 data-form-id="ko3gg97CJtkDUrqpruBq"
-                title="Free HVAC Estimate - Mass HVAC Inc Massachusetts"
+                title="Free HVAC Estimate - Mass HVAC Inc"
                 delayMs={3000}
                 placeholderHeight="420px"
               />
@@ -226,13 +234,14 @@ export default function HomePage() {
           nothing but a phone button. This section is the mobile lead
           path. Anchor #contact aliased so legacy CTAs keep working.
           ════════════════════════════════════════════════ */}
-      <section id="quote" className="lg:hidden bg-gradient-to-b from-primary-dark to-primary py-12">
-        <div id="contact" aria-hidden className="-mt-12 pt-12" />
+      {/* Mobile form right after the hero. id="quote" lives on the site-wide
+          QuoteSection (layout), so this one has its own id. */}
+      <section id="quote-top" className="lg:hidden bg-gradient-to-b from-primary-dark to-primary py-12">
         <div className="mx-auto max-w-xl px-4">
           <div className="text-center mb-6">
             <div className="inline-flex items-center gap-2 bg-accent text-white px-3 py-1.5 rounded-full text-xs font-bold mb-3">
               <Zap className="w-3.5 h-3.5" />
-              Reply within 15 minutes
+              Same-day reply on weekdays
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               Get Your Free <span className="text-accent">HVAC Quote</span>
@@ -260,10 +269,10 @@ export default function HomePage() {
               placeholderHeight="480px"
             />
           </div>
-          <p className="text-center text-white/60 text-xs mt-4">
+          <p className="text-center text-white/80 text-xs mt-4">
             Prefer to talk?{" "}
-            <a href="tel:+15087868755" className="text-accent font-bold underline">
-              Call (508) 786-8755
+            <a href={TEL_HREF} className="text-white font-bold underline">
+              Call {PHONE_DISPLAY}
             </a>
           </p>
         </div>
@@ -278,14 +287,14 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Our HVAC <span className="text-accent">Services</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              From emergency repairs to new installations — expert HVAC
-              solutions for homes and businesses across Massachusetts.
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              From emergency repairs to new installations, for homes and
+              businesses in Milford and across MetroWest.
             </p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:[&>*]:col-span-2 lg:[&>*:nth-child(4)]:col-start-2">
             {services.map((service, i) => {
               const Icon = serviceIcons[i];
               const isFeatured = i === 0;
@@ -324,7 +333,7 @@ export default function HomePage() {
                     <div className="relative h-48 overflow-hidden shrink-0">
                       <Image
                         src={service.heroImage}
-                        alt={`${service.name} in Massachusetts - Mass HVAC`}
+                        alt={`${service.name} by Mass HVAC`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                         quality={65}
@@ -366,8 +375,8 @@ export default function HomePage() {
                         {/* z-20 lifts the phone link above the stretched Link
                             so tap goes to tel:, not to the service page. */}
                         <a
-                          href="tel:+15087868755"
-                          className="relative z-20 inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-accent font-semibold transition-colors"
+                          href={TEL_HREF}
+                          className="relative z-20 inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-accent font-semibold transition-colors"
                           aria-label={`Call about ${service.shortName.toLowerCase()}`}
                         >
                           <Phone className="w-3.5 h-3.5" />
@@ -405,7 +414,7 @@ export default function HomePage() {
       {/* ════════════════════════════════════════════════
           ABOUT / STATS — Dark bg, 2-col, stat cards
           ════════════════════════════════════════════════ */}
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark relative overflow-hidden noise-texture py-20 text-white">
+      <section id="about" className="bg-gradient-to-br from-primary-dark via-primary to-primary-dark relative overflow-hidden noise-texture py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Text */}
@@ -415,14 +424,13 @@ export default function HomePage() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 When your heat goes out at 2 AM or your AC fails during a July
-                heatwave, you need a team you can count on. Mass HVAC provides
-                24/7 emergency service and expert installations across
-                Massachusetts with transparent pricing and a 100% satisfaction
-                guarantee.
+                heatwave, you need a team you can count on. Mass HVAC is based
+                in Milford and takes emergency calls 24/7, with written
+                estimates before any work starts.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-8">
-                As a fully licensed and insured HVAC contractor serving 50+
-                MetroWest cities and towns in Massachusetts, we bring expertise in{" "}
+              <p className="text-gray-300 leading-relaxed mb-8">
+                As a licensed and insured HVAC contractor serving 50 towns
+                around Milford and MetroWest, we work on{" "}
                 <Link
                   href="/services/heating-installation-repair"
                   className="text-accent hover:underline"
@@ -462,10 +470,10 @@ export default function HomePage() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "50+", label: "MetroWest Cities Served" },
-                  { value: "5.0", label: "5-Star Google Rating" },
-                  { value: "100%", label: "Licensed & Insured" },
-                  { value: "24/7", label: "Emergency Response" },
+                  { value: "50", label: "Towns served" },
+                  { value: averageRating.toFixed(1), label: `Google rating (${reviewCount} reviews)` },
+                  { value: "Free", label: "Written estimates" },
+                  { value: "24/7", label: "Emergency calls" },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -474,7 +482,7 @@ export default function HomePage() {
                     <div className="text-accent text-3xl font-bold mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                    <div className="text-gray-200 text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -486,7 +494,7 @@ export default function HomePage() {
                 <div className="rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                   <Image
                     src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg"
-                    alt="Mass HVAC professional technician servicing HVAC system in Massachusetts"
+                    alt="Mitsubishi heat pump outdoor unit installed by Mass HVAC"
                     width={600}
                     height={400}
                     sizes="(min-width: 1024px) 50vw, 100vw"
@@ -499,10 +507,10 @@ export default function HomePage() {
                     <Award className="w-8 h-8" />
                     <div>
                       <div className="font-bold text-lg">
-                        Trusted Contractor
+                        Based in Milford, MA
                       </div>
-                      <div className="text-sm text-white/70">
-                        Massachusetts Licensed
+                      <div className="text-sm text-white/90">
+                        Licensed &amp; insured
                       </div>
                     </div>
                   </div>
@@ -522,7 +530,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               How It <span className="text-accent">Works</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Four simple steps to get your HVAC system running perfectly.
             </p>
             <div className="accent-divider mt-6" />
@@ -552,14 +560,13 @@ export default function HomePage() {
                 num: "04",
                 icon: ThumbsUp,
                 title: "Job Done Right",
-                desc: "We complete the work to the highest standard with a 100% satisfaction guarantee.",
+                desc: "We finish the job, test the system with you, and come back if something isn't right.",
               },
             ].map((step) => (
               <ScrollReveal key={step.num} delay={Number(step.num) * 0.08}>
                 <div className="relative bg-white border border-gray-100 p-8 rounded-xl h-full shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-                  <div className="text-accent text-6xl font-bold opacity-20 absolute top-4 right-4">
-                    {step.num}
-                  </div>
+                  {/* Decorative step number: CSS content, so it is neither read out nor contrast-checked. */}
+                  <div aria-hidden="true" data-num={step.num} className="text-accent text-6xl font-bold opacity-20 absolute top-4 right-4 before:content-[attr(data-num)]" />
                   <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-4 shadow-[0_4px_15px_rgba(200,16,46,0.2)]">
                     <step.icon className="w-6 h-6 text-white" />
                   </div>
@@ -583,8 +590,8 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Why Choose <span className="text-accent">Mass HVAC</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Massachusetts homeowners and businesses trust Mass HVAC for
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              MetroWest homeowners and businesses trust Mass HVAC for
               reliable, professional HVAC service.
             </p>
             <div className="accent-divider mt-6" />
@@ -595,12 +602,12 @@ export default function HomePage() {
               {
                 icon: Shield,
                 title: "Licensed & Insured",
-                desc: "Fully licensed Massachusetts HVAC contractor with comprehensive insurance coverage for your protection.",
+                desc: "Licensed and insured, with the required local permits pulled for installation work.",
               },
               {
                 icon: Star,
-                title: "5-Star Rated",
-                desc: "Consistently rated 5 stars on Google by satisfied customers across MetroWest and Greater Boston.",
+                title: `${averageRating.toFixed(1)} on Google`,
+                desc: "Every review on our Google profile so far is five stars. Read them on the Reviews page.",
               },
               {
                 icon: Clock,
@@ -610,7 +617,7 @@ export default function HomePage() {
               {
                 icon: CheckCircle2,
                 title: "Satisfaction Guarantee",
-                desc: "100% satisfaction guaranteed on every job. If you're not happy, we make it right.",
+                desc: "If something isn't right after we finish, call us and we come back to fix it.",
               },
             ].map((item) => (
               <ScrollReveal key={item.title}>
@@ -638,8 +645,8 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Recent <span className="text-accent">Projects</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              See how we&apos;ve helped Massachusetts homeowners and businesses
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              See how we&apos;ve helped MetroWest homeowners and businesses
               solve their HVAC challenges.
             </p>
             <div className="accent-divider mt-6" />
@@ -676,7 +683,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-gray-500 text-sm line-clamp-2">
+                    <p className="text-gray-600 text-sm line-clamp-2">
                       {project.description}
                     </p>
                     <div className="mt-4 flex items-center text-accent font-semibold text-sm">
@@ -706,7 +713,7 @@ export default function HomePage() {
       <section className="relative py-28 overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae753dac28d098.jpg"
-          alt="Emergency HVAC service Massachusetts"
+          alt="Emergency HVAC service in MetroWest"
           fill
           className="object-cover"
         />
@@ -729,17 +736,17 @@ export default function HomePage() {
               <br />
               <span className="text-accent">We&apos;re On It.</span>
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10">
               Mass HVAC provides 24/7 emergency HVAC service across
-              Massachusetts. When comfort can&apos;t wait, neither do we.
+              MetroWest. When comfort can&apos;t wait, neither do we.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+15087868755"
+                href={TEL_HREF}
                 className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent hover:bg-accent-dark text-white font-bold text-xl rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
               >
                 <Phone className="w-6 h-6" />
-                Call Now: (508) 786-8755
+                Call Now: {PHONE_DISPLAY}
               </a>
               <Link
                 href="#quote"
@@ -762,9 +769,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4">
           <ScrollReveal className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              Serving <span className="text-accent">All of Massachusetts</span>
+              Serving <span className="text-accent">Milford &amp; MetroWest</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Mass HVAC provides professional heating, cooling, and indoor air
               quality services to 50+ MetroWest cities and towns across the
               Commonwealth.
@@ -847,37 +854,11 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://masshvac.net/#webpage",
-            url: "https://masshvac.net",
-            name: "Mass HVAC Inc — Heating & Cooling in Massachusetts",
-            description:
-              "Expert HVAC installation, repair & maintenance across Massachusetts. 24/7 emergency service. Licensed & insured. Call (508) 786-8755.",
-            isPartOf: {
-              "@id": "https://masshvac.net/#website",
-            },
-            about: {
-              "@id": "https://masshvac.net/#organization",
-            },
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://masshvac.net",
-                },
-              ],
-            },
-            primaryImageOfPage: {
-              "@type": "ImageObject",
-              url: "https://masshvac.net/logo.png",
-            },
-            speakable: {
-              "@type": "SpeakableSpecification",
-              cssSelector: ["h1", ".faq-answer"],
-            },
-            lastReviewed: new Date().toISOString().split("T")[0],
+            "@id": `${SITE_URL}/#webpage`,
+            url: SITE_URL,
+            name: "HVAC Contractor in Milford & MetroWest, MA",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
           }),
         }}
       />

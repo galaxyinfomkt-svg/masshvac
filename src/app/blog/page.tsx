@@ -4,18 +4,14 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import ScrollReveal from "@/components/ScrollReveal";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 
-export const metadata: Metadata = {
-  title: "HVAC Blog | Tips, Guides & News – Mass HVAC",
-  description: "Expert HVAC tips, guides, and news for Massachusetts homeowners. Learn about heating, cooling, energy efficiency, and indoor air quality.",
-  openGraph: {
-    title: "HVAC Blog | Tips, Guides & News – Mass HVAC",
-    description: "Expert HVAC tips, guides, and news for Massachusetts homeowners. Learn about heating, cooling, energy efficiency, and indoor air quality.",
-    type: "website",
-    url: "https://masshvac.net/blog",
-  },
-  alternates: { canonical: "https://masshvac.net/blog" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "HVAC Tips & Guides for MetroWest Homeowners",
+  description: "Plain-English HVAC guides for MetroWest, MA homeowners: furnaces, AC, heat pumps, Mass Save rebates, maintenance and indoor air quality.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const [featured, ...rest] = blogPosts;
@@ -24,7 +20,7 @@ export default function BlogPage() {
     <>
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg" alt="HVAC tips and guides for Massachusetts homeowners" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg" alt="" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
@@ -33,8 +29,8 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             HVAC <span className="text-accent">Blog</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            Tips, guides, and insights to help Massachusetts homeowners make smart decisions about heating, cooling, and air quality.
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            Plain-English guides for MetroWest homeowners on heating, cooling, rebates and air quality.
           </p>
           <div className="accent-divider mt-8" />
         </div>
@@ -46,7 +42,7 @@ export default function BlogPage() {
           <ScrollReveal>
             <Link href={`/blog/${featured.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 bg-white rounded-xl overflow-hidden border border-gray-100 card-premium">
               <div className="relative h-72 lg:h-auto overflow-hidden">
-                <Image src={featured.image} alt={featured.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src={featured.image} alt={featured.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full">Featured</span>
                 </div>
@@ -58,13 +54,13 @@ export default function BlogPage() {
                   ))}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">{featured.title}</h2>
-                <p className="text-gray-500 leading-relaxed mb-6">{featured.excerpt}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{featured.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 bg-accent rounded-full flex items-center justify-center"><span className="text-white text-xs font-bold">MH</span></div>
                     <div>
                       <p className="text-sm font-semibold text-gray-700">{featured.author}</p>
-                      <p className="text-xs text-gray-400">{new Date(featured.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</p>
+                      <p className="text-xs text-gray-600">{new Date(`${featured.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}</p>
                     </div>
                   </div>
                   <span className="inline-flex items-center text-accent font-bold text-sm">
@@ -86,7 +82,7 @@ export default function BlogPage() {
               <ScrollReveal key={post.slug} delay={i * 0.08}>
                 <Link href={`/blog/${post.slug}`} className="group block bg-white rounded-xl overflow-hidden border border-gray-100 card-premium">
                   <div className="relative h-52 overflow-hidden">
-                    <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={post.image} alt={post.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -95,10 +91,10 @@ export default function BlogPage() {
                       ))}
                     </div>
                     <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">{post.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-                    <div className="flex items-center justify-between text-xs text-gray-400">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+                    <div className="flex items-center justify-between text-xs text-gray-600">
                       <span>{post.author}</span>
-                      <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                      <span>{new Date(`${post.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}</span>
                     </div>
                   </div>
                 </Link>
@@ -113,20 +109,20 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "HVAC Blog | Tips, Guides & News – Mass HVAC",
-        description: "Expert HVAC tips, guides, and news for Massachusetts homeowners.",
-        url: "https://masshvac.net/blog",
+        name: "HVAC Blog for MetroWest, MA Homeowners",
+        description: "HVAC guides for MetroWest, MA homeowners.",
+        url: `${SITE_URL}/blog`,
         publisher: {
           "@type": "Organization",
           name: "Mass HVAC Inc",
-          logo: { "@type": "ImageObject", url: "https://masshvac.net/logo.png" },
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
         },
         mainEntity: {
           "@type": "ItemList",
           itemListElement: blogPosts.map((post, index) => ({
             "@type": "ListItem",
             position: index + 1,
-            url: `https://masshvac.net/blog/${post.slug}`,
+            url: `${SITE_URL}/blog/${post.slug}`,
             name: post.title,
           })),
         },
@@ -137,8 +133,8 @@ export default function BlogPage() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://masshvac.net/blog" },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
         ],
       }) }} />
 
@@ -146,15 +142,11 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "HVAC Blog | Tips, Guides & News – Mass HVAC",
-        url: "https://masshvac.net/blog",
-        description: "Expert HVAC tips, guides, and news for Massachusetts homeowners.",
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2"],
-        },
-        isPartOf: { "@id": "https://masshvac.net/#website" },
-        about: { "@id": "https://masshvac.net/#organization" },
+        name: "HVAC Blog for MetroWest, MA Homeowners",
+        url: `${SITE_URL}/blog`,
+        description: "HVAC guides for MetroWest, MA homeowners.",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#organization` },
       }) }} />
     </>
   );

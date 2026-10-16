@@ -4,25 +4,21 @@ import { Phone, ArrowRight, Zap } from "lucide-react";
 import { projects } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 
-export const metadata: Metadata = {
-  title: "Our Projects | HVAC Portfolio – Mass HVAC",
-  description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
-  openGraph: {
-    title: "Our Projects | HVAC Portfolio – Mass HVAC",
-    description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
-    type: "website",
-    url: "https://masshvac.net/projects",
-  },
-  alternates: { canonical: "https://masshvac.net/projects" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "HVAC Project Portfolio",
+  description: "Heating, AC, heat pump and ductwork projects by Mass HVAC in Milford and MetroWest, MA. See the work, then call (508) 786-8755.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (
     <>
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c03544725a0db8.jpg" alt="HVAC projects portfolio Massachusetts" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c03544725a0db8.jpg" alt="" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
@@ -31,7 +27,7 @@ export default function ProjectsPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Our <span className="text-accent">Projects</span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Browse our portfolio of completed HVAC projects. From emergency repairs to full system installations.
           </p>
           <div className="accent-divider mt-8" />
@@ -41,12 +37,13 @@ export default function ProjectsPage() {
       {/* Grid */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
+          <h2 className="sr-only">Completed HVAC projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <ScrollReveal key={project.slug} delay={i * 0.05}>
                 <Link href={`/projects/${project.slug}`} className="group block rounded-xl overflow-hidden border border-gray-100 card-premium bg-white">
                   <div className="relative h-64 overflow-hidden">
-                    <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={project.image} alt={project.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
@@ -57,7 +54,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-gray-500 text-sm line-clamp-2 mb-4">{project.description}</p>
+                    <p className="text-gray-600 text-sm line-clamp-2 mb-4">{project.description}</p>
                     <span className="inline-flex items-center text-accent font-semibold text-sm">
                       View Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </span>
@@ -81,7 +78,7 @@ export default function ProjectsPage() {
               <a href="tel:+15087868755" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-primary transition-all duration-300 hover:scale-105">
                 <Phone className="w-5 h-5" />(508) 786-8755
               </a>
-              <Link href="/#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
+              <Link href="#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-accent transition-all duration-300">
                 Free Estimate <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -112,20 +109,20 @@ export default function ProjectsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "Our Projects | HVAC Portfolio – Mass HVAC",
-        description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
-        url: "https://masshvac.net/projects",
+        name: "HVAC Projects in MetroWest, MA",
+        description: "HVAC projects by Mass HVAC in Milford and MetroWest, MA.",
+        url: `${SITE_URL}/projects`,
         publisher: {
           "@type": "Organization",
           name: "Mass HVAC Inc",
-          logo: { "@type": "ImageObject", url: "https://masshvac.net/logo.png" },
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
         },
         mainEntity: {
           "@type": "ItemList",
           itemListElement: projects.map((project, index) => ({
             "@type": "ListItem",
             position: index + 1,
-            url: `https://masshvac.net/projects/${project.slug}`,
+            url: `${SITE_URL}/projects/${project.slug}`,
             name: project.title,
           })),
         },
@@ -136,8 +133,8 @@ export default function ProjectsPage() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-          { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+          { "@type": "ListItem", position: 2, name: "Projects", item: `${SITE_URL}/projects` },
         ],
       }) }} />
 
@@ -145,15 +142,11 @@ export default function ProjectsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Our Projects | HVAC Portfolio – Mass HVAC",
-        url: "https://masshvac.net/projects",
-        description: "See our completed HVAC projects across Massachusetts — furnace installations, AC replacements, mini-splits, duct cleaning & more.",
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2"]
-        },
-        isPartOf: { "@id": "https://masshvac.net/#website" },
-        about: { "@id": "https://masshvac.net/#organization" }
+        name: "HVAC Projects in MetroWest, MA",
+        url: `${SITE_URL}/projects`,
+        description: "HVAC projects by Mass HVAC in Milford and MetroWest, MA.",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#organization` }
       }) }} />
     </>
   );

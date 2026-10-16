@@ -3,48 +3,69 @@
 import { useEffect, useState } from "react";
 import Script from "next/script";
 
+export const OPEN_CHAT_EVENT = "masshvac:open-chat";
+
+type LeadConnectorWindow = Window & {
+  leadConnector?: { chatWidget?: { openWidget?: () => void } };
+};
+
 /**
- * Loads the LeadConnector chat widget ONLY after the user shows engagement
- * — first interaction, first scroll, or a 6-second idle timeout.
+ * LeadConnector (Bee Pro Hub) chat widget.
  *
- * Why: the widget bundle is ~175 KB of JS + ~75 KB of secondary chunks and
- * blocks no critical UX. Loading on `lazyOnload` still ships it during page
- * load, fighting hero/LCP for bandwidth on mobile. Gating it on engagement
- * frees the critical path for real visitors and only pays the cost for
- * sessions that are likely to convert anyway.
+ * Desktop (≥1024px): loads after engagement (interaction, scroll, or 6s idle),
+ * as before.
  *
- * Trigger conditions (whichever fires first):
- *  - any pointerdown / keydown / touchstart
- *  - first scroll past 50px
- *  - 6s after the component mounts (idle fallback)
- *
- * Once loaded, the widget continues to behave exactly like before — global,
- * bottom-right, available everywhere via app/layout.tsx.
+ * Mobile: loads ONLY when the visitor taps "Chat" in MobileStickyBar. In
+ * production the auto-loaded launcher and its "Hi there!" prompt covered the
+ * hero Call button and blocked taps on "Get Quote" on every page.
  */
 export default function DeferredChatWidget() {
   const [shouldLoad, setShouldLoad] = useState(false);
+  const [openRequested, setOpenRequested] = useState(false);
 
   useEffect(() => {
-    if (shouldLoad) return;
+    const onOpen = () => {
+      setShouldLoad(true);
+      setOpenRequested(true);
+    };
+    window.addEventListener(OPEN_CHAT_EVENT, onOpen);
+
+    if (shouldLoad || !window.matchMedia("(min-width: 1024px)").matches) {
+      return () => window.removeEventListener(OPEN_CHAT_EVENT, onOpen);
+    }
 
     const trigger = () => setShouldLoad(true);
-
     const onScroll = () => {
       if (window.scrollY > 50) trigger();
     };
-
-    const events: (keyof WindowEventMap)[] = ["pointerdown", "keydown", "touchstart"];
+    const events = ["pointerdown", "keydown"] as const;
     events.forEach((e) => window.addEventListener(e, trigger, { once: true, passive: true }));
     window.addEventListener("scroll", onScroll, { passive: true });
-
     const idleTimeout = window.setTimeout(trigger, 6000);
 
     return () => {
+      window.removeEventListener(OPEN_CHAT_EVENT, onOpen);
       events.forEach((e) => window.removeEventListener(e, trigger));
       window.removeEventListener("scroll", onScroll);
       window.clearTimeout(idleTimeout);
     };
   }, [shouldLoad]);
+
+  // Once the widget script is up, open it for a visitor who explicitly asked.
+  useEffect(() => {
+    if (!openRequested) return;
+    let tries = 0;
+    const id = window.setInterval(() => {
+      const api = (window as LeadConnectorWindow).leadConnector?.chatWidget;
+      if (api?.openWidget) {
+        api.openWidget();
+        window.clearInterval(id);
+      } else if (++tries > 40) {
+        window.clearInterval(id);
+      }
+    }, 250);
+    return () => window.clearInterval(id);
+  }, [openRequested]);
 
   if (!shouldLoad) return null;
 

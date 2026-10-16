@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms & Conditions",
-  description:
-    "Mass HVAC Inc Terms & Conditions — the agreement between you and Mass HVAC governing the use of our website and services.",
-  alternates: { canonical: "https://masshvac.net/terms" },
-};
+  description: "Mass HVAC Inc Terms & Conditions — the agreement between you and Mass HVAC governing the use of our website and services.",
+  path: "/terms",
+});
 
 export default function TermsConditions() {
   return (
@@ -42,7 +43,7 @@ export default function TermsConditions() {
         <li><strong>Service</strong> refers to the Website and the HVAC services offered by Mass HVAC Inc.</li>
         <li><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company.</li>
         <li><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
-        <li><strong>Website</strong> refers to Mass HVAC Inc, accessible from <a href="https://masshvac.net">masshvac.net</a>.</li>
+        <li><strong>Website</strong> refers to Mass HVAC Inc, accessible from <a href={SITE_URL}>masshvac.net</a>.</li>
         <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service.</li>
       </ul>
 
@@ -233,7 +234,7 @@ export default function TermsConditions() {
       <ul>
         <li>By email: <a href="mailto:info@masshvac.net">info@masshvac.net</a></li>
         <li>By phone: <a href="tel:+15087868755">(508) 786-8755</a></li>
-        <li>By visiting this page on our website: <a href="/">masshvac.net</a></li>
+        <li>By visiting this page on our website: <a href={SITE_URL}>masshvac.net</a></li>
         <li>By mail: Mass HVAC Inc, Milford, MA 01757</li>
       </ul>
     </LegalPage>
