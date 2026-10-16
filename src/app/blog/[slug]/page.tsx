@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </article>
 
             {/* Sidebar */}
-            <aside className="lg:col-span-1">
+            <div className="lg:col-span-1">
               <div className="sticky top-28 space-y-6">
                 <div className="bg-black rounded-xl p-6 border border-white/10">
                   <h2 className="font-bold text-white text-lg mb-2">Need HVAC Help?</h2>
@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   </div>
                 </div>
               </div>
-            </aside>
+            </div>
           </div>
         </div>
       </section>
