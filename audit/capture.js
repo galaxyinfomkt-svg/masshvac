@@ -20,6 +20,10 @@ async function one(ctx, path, vp) {
   await page.waitForTimeout(2500);
   await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 300) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); });
   await page.waitForTimeout(2000);
+  // Abas paralelas estrangulam o IntersectionObserver; com roda do mouse real tudo aparece (verificado).
+  // Registramos quantos ficaram ocultos e então revelamos, para o print refletir o que o usuário vê após rolar.
+  const hiddenBeforeForce = await page.evaluate(() => { const els = [...document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale')].filter(e => getComputedStyle(e).opacity === '0'); els.forEach(e => e.classList.add('revealed')); return els.length; });
+  await page.waitForTimeout(1200);
   const m = await page.evaluate(() => {
     const vw = innerWidth, vis = e => { const s = getComputedStyle(e), b = e.getBoundingClientRect(); return s.display !== 'none' && s.visibility !== 'hidden' && b.width > 0 && b.height > 0; };
     const taps = [...document.querySelectorAll('a[href],button,input,select,textarea,[role=button]')].filter(vis);
@@ -40,7 +44,7 @@ async function one(ctx, path, vp) {
   });
   await page.addScriptTag({ content: axeSrc });
   m.axe = await page.evaluate(async () => (await axe.run(document, { resultTypes: ['violations'] })).violations.map(v => ({ id: v.id, impact: v.impact, help: v.help, n: v.nodes.length, targets: v.nodes.slice(0, 5).map(n => n.target.join(' ')) })));
-  m.status = res.status(); m.loadMs = loadMs; m.errors = errors.slice(0, 20); m.failed = [...new Set(failed)].slice(0, 30);
+  m.status = res.status(); m.hiddenBeforeForce = hiddenBeforeForce; m.loadMs = loadMs; m.errors = errors.slice(0, 20); m.failed = [...new Set(failed)].slice(0, 30);
   const name = path === '/' ? 'home' : path.slice(1).replace(/\//g, '__');
   await page.screenshot({ path: `${OUT}/${vp}/${name}.jpg`, fullPage: true, type: 'jpeg', quality: 58 });
   if (vp === 'desktop') await page.screenshot({ path: `${OUT}/${vp}/${name}__fold.jpg`, type: 'jpeg', quality: 70 });
