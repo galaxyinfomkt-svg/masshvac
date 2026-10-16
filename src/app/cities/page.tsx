@@ -1,27 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Flame, Snowflake, Wind, Wrench, AirVent, Phone, ArrowRight, Shield, Clock, Star } from "lucide-react";
+import { MapPin, Flame, Snowflake, Wind, Wrench, AirVent, Shield, Clock, Star } from "lucide-react";
 import { cities } from "@/data/cities";
 import { services } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
+import { averageRating } from "@/data/reviews";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
-export const metadata: Metadata = {
-  title: "HVAC Service Areas | 50+ MetroWest Cities | Mass HVAC",
-  description:
-    "Mass HVAC serves 50+ MetroWest cities. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
-  openGraph: {
-    title: "HVAC Service Areas | 50+ MetroWest Cities | Mass HVAC",
-    description:
-      "Mass HVAC serves 50+ MetroWest cities. Expert heating, cooling & mini-split services. Licensed & insured. Call (508) 786-8755.",
-    url: "https://masshvac.net/cities",
-    type: "website",
-  },
-  alternates: { canonical: "https://masshvac.net/cities" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "HVAC Service Areas in MetroWest, MA",
+  description: "Mass HVAC is based in Milford, MA and serves 50 towns across MetroWest and nearby, from Framingham and Natick to Westborough and Acton.",
+  path: "/cities",
+});
 
 export default function CitiesPage() {
   const grouped = cities.reduce<Record<string, typeof cities>>((acc, city) => {
@@ -30,24 +25,24 @@ export default function CitiesPage() {
     acc[letter].push(city);
     return acc;
   }, {});
+  Object.values(grouped).forEach((list) => list.sort((x, y) => x.name.localeCompare(y.name)));
   const sortedLetters = Object.keys(grouped).sort();
 
   return (
     <>
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg" alt="HVAC services across Massachusetts" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
+        <Image src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg" alt="" fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-full text-sm font-semibold mb-6">
-            <MapPin className="w-4 h-4" />50+ MetroWest Cities &amp; Towns
+            <MapPin className="w-4 h-4" />{cities.length} Towns Served
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Massachusetts HVAC Service <span className="text-accent">Areas</span>
+            MetroWest HVAC Service <span className="text-accent">Areas</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Mass HVAC proudly serves 50+ MetroWest cities and towns across Massachusetts with professional heating, cooling, mini-split, and indoor air quality services.
-          </p>
+            Mass HVAC is based in Milford, MA and serves these 50 towns with heating, cooling, heat pump and indoor air quality service. Pick your town for local details.</p>
           <div className="accent-divider mt-8" />
 
           {/* Trust badges */}
@@ -55,7 +50,7 @@ export default function CitiesPage() {
             {[
               { icon: Shield, text: "Licensed & Insured" },
               { icon: Clock, text: "24/7 Emergency Service" },
-              { icon: Star, text: "5.0 Google Rating" },
+              { icon: Star, text: `${averageRating.toFixed(1)} Google Rating` },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-white/70 text-sm">
                 <Icon className="w-4 h-4 text-accent" />
@@ -67,7 +62,7 @@ export default function CitiesPage() {
       </section>
 
       {/* Services bar */}
-      <section className="py-4 bg-surface border-b border-gray-100 sticky top-[64px] z-30 backdrop-blur-md bg-surface/95">
+      <section className="py-4 bg-surface border-b border-gray-100 sticky top-[72px] z-30 backdrop-blur-md bg-surface/95">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-wrap justify-center gap-2">
             {services.map((s, i) => {
@@ -88,7 +83,7 @@ export default function CitiesPage() {
           {/* Alphabet navigation */}
           <div className="flex flex-wrap justify-center gap-1.5 mb-16">
             {sortedLetters.map((letter) => (
-              <a key={letter} href={`#letter-${letter}`} className="w-9 h-9 flex items-center justify-center rounded-lg bg-surface text-primary font-bold text-sm hover:bg-accent hover:text-white transition-all duration-200">
+              <a key={letter} href={`#letter-${letter}`} className="w-11 h-11 flex items-center justify-center rounded-lg bg-surface text-primary font-bold text-sm hover:bg-accent hover:text-white transition-all duration-200">
                 {letter}
               </a>
             ))}
@@ -99,7 +94,7 @@ export default function CitiesPage() {
               <ScrollReveal key={letter}>
                 <div id={`letter-${letter}`}>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-4xl font-bold text-accent/30">{letter}</span>
+                    <h2 className="text-4xl font-bold text-accent">{letter}</h2>
                     <div className="flex-1 h-px bg-gray-100" />
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -110,7 +105,7 @@ export default function CitiesPage() {
                         className="group p-4 bg-surface border border-gray-100 rounded-xl hover:bg-accent hover:text-white transition-all duration-200 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] hover:-translate-y-0.5"
                       >
                         <p className="font-semibold text-primary group-hover:text-white transition-colors text-sm">{city.name}</p>
-                        <p className="text-[11px] text-gray-400 group-hover:text-white/70 transition-colors mt-0.5">MA &bull; HVAC Services</p>
+                        <p className="text-xs text-gray-600 group-hover:text-white/90 transition-colors mt-0.5">MA &bull; HVAC Services</p>
                       </Link>
                     ))}
                   </div>
@@ -127,14 +122,14 @@ export default function CitiesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "ItemList",
-        name: "Mass HVAC Service Areas in Massachusetts",
-        description: "Complete list of cities and towns served by Mass HVAC Inc for heating, cooling, and HVAC services in Massachusetts.",
+        name: "Mass HVAC Service Areas in MetroWest, MA",
+        description: "Towns served by Mass HVAC Inc of Milford, MA for heating, cooling and HVAC service.",
         numberOfItems: cities.length,
         itemListElement: cities.map((city, i) => ({
           "@type": "ListItem",
           position: i + 1,
           name: `${city.name}, MA`,
-          url: `https://masshvac.net/cities/${city.slug}`,
+          url: `${SITE_URL}/cities/${city.slug}`,
         })),
       }) }} />
 
@@ -143,39 +138,11 @@ export default function CitiesPage() {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://masshvac.net/cities" },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/cities` },
         ],
       }) }} />
 
-      {/* JSON-LD: LocalBusiness reference — aggregateRating lives on the
-          canonical Organization schema (layout.tsx) where reviews render.
-          Here we only widen areaServed via @id reference. */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "HVACBusiness",
-        "@id": "https://masshvac.net/#organization",
-        areaServed: cities.map((city) => ({
-          "@type": "City",
-          name: city.name,
-          containedInPlace: { "@type": "State", name: "Massachusetts" },
-        })),
-      }) }} />
-
-      {/* JSON-LD: WebPage */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Service Areas | HVAC Services in 50+ MetroWest Massachusetts Cities – Mass HVAC",
-        url: "https://masshvac.net/cities",
-        description: "Mass HVAC serves 50+ MetroWest cities with expert heating, cooling, mini-split & indoor air quality services.",
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2"],
-        },
-        isPartOf: { "@id": "https://masshvac.net/#website" },
-        about: { "@id": "https://masshvac.net/#organization" },
-      }) }} />
     </>
   );
 }

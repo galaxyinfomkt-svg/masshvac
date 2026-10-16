@@ -9,6 +9,20 @@ import FAQAccordion from "@/components/FAQAccordion";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
+import LeadForm from "@/components/LeadForm";
+import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
+import { averageRating } from "@/data/reviews";
+import { buildMetadata } from "@/lib/seo";
+import { renderMarkdown } from "@/lib/markdown";
+
+/** Search-style labels per service ("furnace repair natick" beats "Heating in Natick"). */
+const SEARCH_LABEL: Record<string, string> = {
+  "heating-installation-repair": "Furnace & Heating Repair",
+  "air-conditioning-installation-repair": "AC Repair & Installation",
+  "heat-pumps-ductless-mini-splits": "Heat Pumps & Mini-Splits",
+  "hvac-maintenance-tune-ups": "HVAC Tune-Ups",
+  "indoor-air-quality": "Indoor Air Quality",
+};
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
@@ -22,25 +36,18 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: cs, service: ss } = await params;
   const city = getCityBySlug(cs), service = getServiceBySlug(ss);
   if (!city || !service) return {};
-  const title = `${service.shortName} in ${city.name}, MA | Mass HVAC`;
-  const description = `Expert ${service.shortName.toLowerCase()} in ${city.name}, MA. Fast, reliable service. Licensed & insured. Call (508) 786-8755 for a free estimate.`;
-
-  // Defensive noindex for thin/template deep pages.
-  // 50 cities × 5 services = 250 routes; without hand-written local content
-  // (localIntro or named neighborhoods) the page body is largely shared
-  // boilerplate. We keep these pages live and link-followable so internal
-  // PageRank and the user experience are unaffected, but we exclude them
-  // from the search index until Ana enriches the city in data/cities.ts.
-  // The /cities/[city] HUB stays indexable regardless.
+  const label = SEARCH_LABEL[service.slug] ?? service.shortName;
+  // Defensive noindex for thin/template deep pages: indexable only once the
+  // city has hand-written local content (localIntro or neighborhoods).
   const isIndexable = cityHasLocalContent(city);
-
-  return {
-    title,
-    description,
-    ...(isIndexable ? {} : { robots: { index: false, follow: true } }),
-    openGraph: { title, description, url: `https://masshvac.net/cities/${city.slug}/${service.slug}`, type: "website" },
-    alternates: { canonical: `https://masshvac.net/cities/${city.slug}/${service.slug}` },
-  };
+  return buildMetadata({
+    title: `${label} in ${city.name}, MA`,
+    description: `${label} in ${city.name}, MA from Mass HVAC, based in Milford. Written estimates, 24/7 emergency calls. Call ${PHONE_DISPLAY}.`,
+    path: `/cities/${city.slug}/${service.slug}`,
+    image: service.heroImage,
+    imageAlt: `${label} in ${city.name}, MA`,
+    noindex: !isIndexable,
+  });
 }
 
 export default async function CityServicePage({ params }: { params: Promise<{ city: string; service: string }> }) {
@@ -66,36 +73,36 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   const faqItems: { q: string; a: string }[] = [
     {
       q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
-      a: `${city.name} homeowners typically pay ${tuneUp} for ${service.shortName.toLowerCase()} tune-ups, ${repair} for common repairs, and ${install} for a complete new installation. Final pricing depends on system size, brand, and site conditions; Mass HVAC provides written estimates with no surprise fees. Call (508) 786-8755 for a free quote.`,
+      a: `${city.name} homeowners typically pay ${tuneUp} for ${service.shortName.toLowerCase()} tune-ups, ${repair} for common repairs, and ${install} for a complete new installation. Final pricing depends on system size, brand, and site conditions; Mass HVAC gives you a written estimate before any work starts. Call ${PHONE_DISPLAY} for a free quote.`,
     },
     {
       q: `Does Mass HVAC offer 24/7 emergency ${service.shortName.toLowerCase()} service in ${city.name}?`,
-      a: `Yes — Mass HVAC dispatches 24/7 emergency ${service.shortName.toLowerCase()} service to ${city.name}, MA and the surrounding ${city.county} County area. Our techs carry common parts on the truck for same-visit repair on most calls. Call (508) 786-8755 day or night.`,
+      a: `Yes. We take emergency ${service.shortName.toLowerCase()} calls 24/7 for homes in ${city.name} and nearby towns. Our techs carry common parts on the truck, so many repairs are done on the first visit. Call ${PHONE_DISPLAY}.`,
     },
     ...(service.extraFaq ? [service.extraFaq] : []),
     {
-      q: `Is Mass HVAC licensed and insured to perform ${service.shortName.toLowerCase()} work in ${city.name}?`,
-      a: `Yes. Mass HVAC holds a Massachusetts HVAC contractor license, EPA Section 608 refrigerant certification, and a Massachusetts Construction Supervisor license, and carries full general liability and workers' comp insurance. All ${service.shortName.toLowerCase()} work in ${city.name} is performed by licensed technicians and pulled with the correct local permits.`,
+      q: `Is Mass HVAC licensed and insured for ${service.shortName.toLowerCase()} work in ${city.name}?`,
+      a: `Yes. Mass HVAC is licensed and insured, and we pull the required ${city.name} permits for installation work.`,
     },
   ];
 
   return (
     <>
       {/* Hero — Text left + Form right */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative overflow-hidden">
         <Image src={heroImage} alt={`${service.name} in ${city.name}, Massachusetts - Mass HVAC`} fill sizes="100vw" className="object-cover object-center" priority fetchPriority="high" quality={75} />
         <div className="absolute inset-0 hero-overlay-premium" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-28 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-16 lg:pt-40 lg:pb-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — Text */}
             <div>
               {/* Breadcrumb pills */}
               <div className="flex flex-wrap items-center gap-2 mb-6">
-                <Link href="/cities" className="px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full hover:bg-white/20 transition-colors">Service Areas</Link>
-                <span className="text-white/30">/</span>
-                <Link href={`/cities/${city.slug}`} className="px-3 py-1 bg-white/10 text-white/70 text-sm rounded-full hover:bg-white/20 transition-colors">{city.name}, MA</Link>
-                <span className="text-white/30">/</span>
-                <span className="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full font-medium">{service.shortName}</span>
+                <Link href="/cities" className="px-3 py-2 bg-white/15 text-white text-sm rounded-full hover:bg-white/25 transition-colors">Service Areas</Link>
+                <span className="text-white/60" aria-hidden="true">/</span>
+                <Link href={`/cities/${city.slug}`} className="px-3 py-2 bg-white/15 text-white text-sm rounded-full hover:bg-white/25 transition-colors">{city.name}, MA</Link>
+                <span className="text-white/60" aria-hidden="true">/</span>
+                <span className="px-3 py-2 bg-white text-primary text-sm rounded-full font-semibold" aria-current="page">{service.shortName}</span>
               </div>
 
               <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mb-5 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
@@ -103,10 +110,10 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-                {service.name} in <span className="text-accent">{city.name}, MA</span>
+                {SEARCH_LABEL[service.slug] ?? service.name} in <span className="text-[#FF5A5A]">{city.name}, MA</span>
               </h1>
               <p className="text-white/80 text-lg leading-relaxed mb-6 max-w-xl">
-                Looking for professional {service.name.toLowerCase()} in {city.name}, Massachusetts? Mass HVAC is the trusted local choice. Licensed, insured, and 5-star rated.
+                Need {service.name.toLowerCase()} in {city.name}? Mass HVAC is based in Milford, close by. Licensed, insured, {averageRating.toFixed(1)} on Google, and you get a written estimate before any work starts.
               </p>
 
               {/* Trust badges */}
@@ -114,43 +121,30 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
                 {[
                   { icon: Shield, text: "Licensed & Insured" },
                   { icon: Clock, text: "24/7 Emergency" },
-                  { icon: Star, text: "5.0 Google Rating" },
+                  { icon: Star, text: `${averageRating.toFixed(1)} Google Rating` },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-white/80 text-sm">
-                    <Icon className="w-4 h-4 text-accent" />
+                  <div key={text} className="flex items-center gap-2 text-white/90 text-sm">
+                    <Icon className="w-4 h-4 text-[#FF5A5A]" aria-hidden="true" />
                     <span>{text}</span>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+15087868755" className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-                  <Phone className="w-5 h-5" />(508) 786-8755
+                <a href={TEL_HREF} className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                  <Phone className="w-5 h-5" aria-hidden="true" />{PHONE_DISPLAY}
                 </a>
-                <Link href="/#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
-                  Free Estimate <ArrowRight className="w-5 h-5" />
-                </Link>
+                <a href="#quote" className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-lg transition-all duration-300 hover:bg-white hover:text-black">
+                  Free Estimate <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
             {/* Right — Form (desktop only) */}
             <div className="hidden lg:block">
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
-                className="w-full border-none rounded-lg"
-                style={{ height: "420px" }}
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="FunilGhl"
-                data-height="420"
-                data-form-id="ko3gg97CJtkDUrqpruBq"
-                title={`Free ${service.shortName} Estimate in ${city.name}, MA - Mass HVAC`}
-              />
+              <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+                <LeadForm instance="city-service-hero" height={460} delayMs={2000} title={`Free ${service.shortName} Estimate in ${city.name}, MA`} />
+              </div>
             </div>
           </div>
         </div>
@@ -161,23 +155,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
             <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
-              {content.split("\n\n").map((block, i) => {
-                if (block.startsWith("## ")) return <h2 key={i} className="text-3xl font-bold text-primary mt-8 mb-4">{block.replace("## ", "")}</h2>;
-                if (block.startsWith("### ")) return <h3 key={i} className="text-2xl font-bold text-primary mt-6 mb-3">{block.replace("### ", "")}</h3>;
-                if (block.startsWith("- ")) {
-                  return (
-                    <ul key={i} className="space-y-2 my-4">
-                      {block.split("\n").filter((l) => l.startsWith("- ")).map((item, j) => (
-                        <li key={j} className="flex items-start gap-3 text-gray-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
-                          <span dangerouslySetInnerHTML={{ __html: item.replace(/^- /, "").replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary'>$1</strong>") }} />
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return <p key={i} className="text-gray-600 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: block.replace(/\*\*(.*?)\*\*/g, "<strong class='text-primary'>$1</strong>") }} />;
-              })}
+              <div className="md-content">{renderMarkdown(content)}</div>
             </div>
           </ScrollReveal>
         </div>
@@ -195,7 +173,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               { title: "Licensed & Insured", desc: `Fully licensed contractor serving ${city.name} with comprehensive insurance coverage.` },
               { title: "24/7 Emergency Service", desc: "Fast response day or night, including weekends and holidays." },
               { title: "Free Estimates", desc: "Transparent, upfront pricing with no hidden fees." },
-              { title: "100% Satisfaction", desc: `Every ${service.name.toLowerCase()} job in ${city.name} backed by our guarantee.` },
+              { title: "Written Estimates", desc: `You get the ${service.shortName.toLowerCase()} price in writing before any work starts.` },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 0.1}>
                 <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-gray-100 card-premium">
@@ -218,7 +196,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <div className="flex flex-wrap justify-center gap-3">
               {services.filter((s) => s.slug !== service.slug).map((s) => (
                 <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
-                  {s.icon} {s.shortName} in {city.name}
+                  {SEARCH_LABEL[s.slug] ?? s.shortName} in {city.name}
                 </Link>
               ))}
             </div>
@@ -233,7 +211,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <h2 className="text-2xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
               <MapPin className="w-5 h-5 text-accent" />{service.shortName} in Nearby Cities
             </h2>
-            <p className="text-gray-500 text-sm mb-8">We also provide {service.name.toLowerCase()} in these nearby Massachusetts communities.</p>
+            <p className="text-gray-500 text-sm mb-8">We also provide {service.name.toLowerCase()} in these nearby MetroWest towns.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {nearby.map((c) => (
                 <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
@@ -276,7 +254,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary">Frequently Asked Questions About <span className="text-accent">{service.shortName}</span> in {city.name}</h2>
-            <p className="text-gray-500 mt-3">Common questions about {service.name.toLowerCase()} in {city.name}, Massachusetts.</p>
+            <p className="text-gray-500 mt-3">Common questions about {service.name.toLowerCase()} in {city.name}, MA.</p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>
@@ -293,14 +271,13 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@context": "https://schema.org",
         "@type": "Service",
         name: `${service.name} in ${city.name}, MA`,
-        description: `Professional ${service.name.toLowerCase()} services in ${city.name}, Massachusetts by Mass HVAC Inc. Licensed, insured, 5-star rated. Call (508) 786-8755.`,
+        description: `${service.name} in ${city.name}, MA by Mass HVAC Inc of Milford.`,
         image: heroImage,
         serviceType: service.name,
-        url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
-        provider: { "@id": "https://masshvac.net/#organization" },
+        url: `${SITE_URL}/cities/${city.slug}/${service.slug}`,
+        provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: { "@type": "City", name: city.name, containedInPlace: { "@type": "State", name: "Massachusetts" } },
         availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: "+1-508-786-8755", contactType: "customer service" } },
-        offers: { "@type": "Offer", availability: "https://schema.org/InStock", areaServed: { "@type": "City", name: city.name } },
       }) }} />
 
       {/* JSON-LD: BreadcrumbList */}
@@ -308,10 +285,10 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://masshvac.net/cities" },
-          { "@type": "ListItem", position: 3, name: `${city.name}, MA`, item: `https://masshvac.net/cities/${city.slug}` },
-          { "@type": "ListItem", position: 4, name: service.shortName, item: `https://masshvac.net/cities/${city.slug}/${service.slug}` },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/cities` },
+          { "@type": "ListItem", position: 3, name: `${city.name}, MA`, item: `${SITE_URL}/cities/${city.slug}` },
+          { "@type": "ListItem", position: 4, name: service.shortName, item: `${SITE_URL}/cities/${city.slug}/${service.slug}` },
         ],
       }) }} />
 
@@ -327,21 +304,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         })),
       }) }} />
 
-      {/* JSON-LD: WebPage with SpeakableSpecification */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: `${service.name} in ${city.name}, MA – Mass HVAC`,
-        url: `https://masshvac.net/cities/${city.slug}/${service.slug}`,
-        description: `Professional ${service.name.toLowerCase()} in ${city.name}, Massachusetts. Fast service, fair pricing, 5-star rated, satisfaction guaranteed. Call (508) 786-8755 for a free estimate.`,
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", "h2", "p"],
-        },
-        isPartOf: { "@id": "https://masshvac.net/#website" },
-        about: { "@id": "https://masshvac.net/#organization" },
-        lastReviewed: "2026-02-20",
-      }) }} />
     </>
   );
 }

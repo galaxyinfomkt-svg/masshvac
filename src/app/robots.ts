@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const disallowPaths = ["/api/", "/_next/", "/admin/"];
+  // Never block /_next/: it serves the CSS, JS and every next/image URL that
+// Googlebot needs to render pages and index images.
+  const disallowPaths = ["/api/", "/admin/"];
 
   return {
     rules: [

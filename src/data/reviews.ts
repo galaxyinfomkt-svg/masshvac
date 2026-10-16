@@ -27,7 +27,13 @@ export interface Review {
   dateISO: string;
   text: string;
   source: "Google";
+  /** Shown as "Translated from …" so a translated quote is never passed off as verbatim. */
+  translatedFrom?: string;
 }
+
+// Removed 2026-10-16: the April 2025 review by "LUIZ ALBERTO" (Galaxy IT & Marketing,
+// the company's marketing agency). The FTC Consumer Reviews Rule (16 CFR 465.5)
+// prohibits disseminating reviews from a business's agents without disclosure.
 
 export const reviews: Review[] = [
   {
@@ -65,13 +71,7 @@ export const reviews: Review[] = [
     // Original (PT): "Atendimento ao cliente excelente ❄️🔥"
     text: "Excellent customer service ❄️🔥",
     source: "Google",
-  },
-  {
-    author: "LUIZ ALBERTO",
-    rating: 5,
-    dateISO: "2025-04-24",
-    text: "bring comfort back to my home, thanks Gilliad and team",
-    source: "Google",
+    translatedFrom: "Portuguese",
   },
 ];
 
@@ -80,18 +80,3 @@ export const reviewCount = reviews.length;
 export const averageRating = Number(
   (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
 );
-
-/** Schema.org Review[] for the Organization JSON-LD. */
-export const reviewSchema = reviews.map((r) => ({
-  "@type": "Review",
-  author: { "@type": "Person", name: r.author },
-  datePublished: r.dateISO,
-  reviewRating: {
-    "@type": "Rating",
-    ratingValue: r.rating,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  reviewBody: r.text,
-  publisher: { "@type": "Organization", name: r.source },
-}));

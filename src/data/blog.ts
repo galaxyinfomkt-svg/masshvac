@@ -4,6 +4,8 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   date: string;
+  /** Last substantive content update (ISO date). Drives dateModified and the sitemap. */
+  updated?: string;
   author: string;
   tags: string[];
   image: string;
@@ -18,6 +20,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Is your furnace struggling to keep up with Massachusetts winters? Here are 7 warning signs it's time for a replacement — before you're left without heat.",
     date: "2025-11-15",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Heating", "Furnace", "Tips"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
@@ -54,7 +57,7 @@ A healthy furnace flame is blue. A yellow or flickering flame can indicate a car
 
 ### 7. Your Home Is Dusty or Dry
 
-An aging furnace can't properly filter and humidify air. If you notice increased dust, dry skin, or static electricity, your furnace may be failing.
+An aging furnace with worn components and leaky ductwork can circulate more dust, and forced-air heat dries out indoor air. If you notice increased dust, dry skin, or static electricity, your heating system may need attention.
 
 ### What to Do Next
 
@@ -68,6 +71,7 @@ If you're experiencing any of these signs, don't wait for a complete breakdown o
     excerpt:
       "Regular AC maintenance keeps your system running efficiently and prevents costly breakdowns. Here's exactly how often you should service your air conditioner.",
     date: "2025-09-20",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Air Conditioning", "Maintenance", "Tips"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
@@ -105,10 +109,10 @@ Between annual tune-ups, there are things you can do yourself:
 
 Neglecting AC maintenance doesn't just risk a breakdown — it costs you money every day your system runs inefficiently:
 
-- **5-15% efficiency loss per year** without maintenance
+- **Lost efficiency:** regular maintenance can save up to 15% on energy
 - **Higher energy bills** from a system working harder than necessary
-- **Shortened lifespan** — well-maintained ACs last 15-20 years vs. 10-12 without maintenance
-- **Voided warranty** — most manufacturers require annual maintenance to honor warranties
+- **Shortened lifespan:** regular maintenance can extend equipment life by several years
+- **Voided warranty:** most manufacturers require annual maintenance to honor warranties
 
 ### Mass HVAC Maintenance Plans
 
@@ -122,6 +126,7 @@ Our maintenance plans make it easy (and affordable) to keep your system in peak 
     excerpt:
       "Thinking about a heat pump vs. traditional AC for your Massachusetts home? We break down the pros, cons, costs, and rebates to help you decide.",
     date: "2025-08-10",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Heat Pumps", "Air Conditioning", "Energy Efficiency"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
@@ -152,18 +157,19 @@ Today's cold-climate heat pumps (like Mitsubishi Hyper-Heat) are rated to operat
 | Lifespan | 15-20 years | 15-20 years |
 | Maintenance | 2 systems to maintain | 1 system to maintain |
 
-### Massachusetts Rebates Make Heat Pumps a No-Brainer
+### Massachusetts Rebates Help Offset the Cost
 
-Massachusetts offers some of the most generous heat pump incentives in the country through the Mass Save® program:
+Massachusetts offers generous heat pump incentives through the Mass Save® program (2026 offer):
 
-- **Up to $10,000+ in rebates** for whole-home heat pump systems
-- **0% interest financing** available through Mass Save
-- **Federal tax credits** of up to $2,000 per year
-- Additional incentives for low-income households
+- **Up to $8,500 in rebates** for whole-home air-source heat pump systems ($2,650 per ton, for homes that meet the weatherization requirements)
+- **Enhanced rebates of up to $16,000** for income-eligible households
+- **0% HEAT Loan financing** of up to $25,000
+
+Rebates require installation by a Mass Save network contractor and qualifying equipment. New systems use lower-GWP R-454B or R-32 refrigerant; R-410A equipment is being phased out and is not eligible for Mass Save heat pump rebates in 2026. If your electricity comes from a municipal light plant (for example in Hudson, Concord or Shrewsbury), your town's own rebate program usually applies instead.
 
 ### Our Recommendation
 
-For most Massachusetts homeowners, a **heat pump is the better long-term investment**. You get heating and cooling from one system, lower operating costs, significant rebates, and reduced carbon footprint.
+For most Massachusetts homeowners, a **heat pump is the better long-term investment**. You get heating and cooling from one system, lower operating costs, available rebates, and a reduced carbon footprint.
 
 However, some situations still favor traditional AC:
 - You recently installed a new high-efficiency furnace
@@ -182,12 +188,13 @@ Every home is different. Mass HVAC offers free in-home consultations where we as
     excerpt:
       "Massachusetts homeowners pay some of the highest energy costs in the country. Here's how regular HVAC maintenance can significantly reduce your bills.",
     date: "2025-07-05",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Maintenance", "Energy Efficiency", "Tips"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
     metaTitle: "How HVAC Maintenance Lowers Energy Bills in MA | Mass HVAC",
     metaDescription:
-      "Massachusetts energy costs are among the highest in the US. Learn how regular HVAC maintenance can cut your heating and cooling bills by 15-25%.",
+      "Massachusetts energy costs are among the highest in the US. Learn how regular HVAC maintenance can save up to 15% on your heating and cooling energy use.",
     content: `Massachusetts residents pay some of the highest energy costs in the United States. According to the U.S. Energy Information Administration, the average Massachusetts household spends over $2,500 per year on heating alone. But here's the good news: regular HVAC maintenance can cut those costs significantly.
 
 ### The Hidden Cost of Neglected HVAC Systems
@@ -200,7 +207,7 @@ Your HVAC system loses efficiency every year it goes without maintenance. Here's
 - **Loose electrical connections** waste energy and create safety hazards
 - **Worn parts** cause the system to cycle more frequently
 
-The result? A system that was 95% efficient when installed may be running at only 70-80% efficiency after a few years without maintenance.
+The result? A system that goes a few years without maintenance can run noticeably less efficiently than it did when it was installed.
 
 ### Real Numbers: What Maintenance Saves
 
@@ -211,18 +218,18 @@ Let's look at actual savings for a typical Massachusetts home:
 - Annual cooling cost: $600
 - Total: $3,100
 
-**With regular maintenance (15-25% savings):**
-- Annual heating cost: $1,875-$2,125
-- Annual cooling cost: $450-$510
-- Total: $2,325-$2,635
+**With regular maintenance (up to 15% savings):**
+- Annual heating cost: as low as $2,125
+- Annual cooling cost: as low as $510
+- Total: as low as $2,635
 
-**Annual savings: $465-$775**
+**Annual savings: up to $465**
 
-Over a 10-year period, that's **$4,650-$7,750 in savings** — far exceeding the cost of maintenance.
+Over a 10-year period, that's **up to $4,650 in savings**, which can more than cover the cost of maintenance.
 
 ### 5 Maintenance Tasks That Save the Most Money
 
-1. **Filter replacement** (DIY, every 1-3 months) — Saves 5-15% on energy
+1. **Filter replacement** (DIY, every 1-3 months): keeps airflow and efficiency up
 2. **Annual professional tune-up** — Optimizes entire system performance
 3. **Duct sealing** — Leaky ducts waste 20-30% of conditioned air
 4. **Thermostat programming** — Proper scheduling saves 10-15%
@@ -230,12 +237,12 @@ Over a 10-year period, that's **$4,650-$7,750 in savings** — far exceeding the
 
 ### Mass HVAC Maintenance Plans
 
-Our maintenance plans pay for themselves through energy savings alone. Starting at just a few dollars per month, you get:
+Our maintenance plans can help offset their cost through energy savings. Plans include:
 
 - Bi-annual tune-ups (heating + cooling)
 - Priority emergency service
 - 15% discount on all repairs
-- Extended equipment life
+- Longer equipment life (maintenance can extend it by several years)
 - Peace of mind
 
 **Stop overpaying for heating and cooling. Call Mass HVAC to enroll in a maintenance plan today.**`,
@@ -246,6 +253,7 @@ Our maintenance plans pay for themselves through energy savings alone. Starting 
     excerpt:
       "Ductless mini-splits are perfect for Massachusetts homes — especially older properties. Learn about benefits, costs, rebates, and installation.",
     date: "2025-06-15",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Mini-Splits", "Heat Pumps", "Guide"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd623359c780.jpg",
@@ -275,15 +283,15 @@ These components are connected by a small conduit (refrigerant line, power cable
 ### Costs and Rebates
 
 **Typical costs:**
-- Single-zone system: $3,000-$5,000 installed
+- Single-zone system: $4,500-$7,500 installed (before rebates)
 - Multi-zone system (3-4 zones): $8,000-$15,000 installed
 
-**Massachusetts rebates (Mass Save®):**
-- Up to $10,000+ for qualifying whole-home heat pump systems
-- Additional rebates for income-eligible households
-- 0% interest financing available
+**Massachusetts rebates (Mass Save®, 2026 offer):**
+- Up to $8,500 for qualifying whole-home heat pump systems ($2,650 per ton; the home must meet weatherization requirements)
+- Enhanced rebates of up to $16,000 for income-eligible households
+- 0% HEAT Loan financing of up to $25,000
 
-After rebates, many homeowners pay 50-70% less than the list price.
+Rebates require installation by a Mass Save network contractor and qualifying equipment (R-410A systems are not eligible in 2026). Homes served by a municipal light plant usually use their town's own rebate program instead.
 
 ### The Installation Process
 
@@ -291,7 +299,7 @@ After rebates, many homeowners pay 50-70% less than the list price.
 2. **System design** — We determine optimal placement for indoor and outdoor units
 3. **Installation** — Most systems installed in 1-2 days
 4. **Testing** — We verify performance and walk you through operation
-5. **Rebate filing** — We help you apply for all available rebates
+5. **Rebate guidance**: we explain which rebate programs your home may qualify for
 
 ### Is a Mini-Split Right for You?
 
@@ -311,10 +319,11 @@ Mini-splits are an excellent choice if:
     excerpt:
       "Sealed-up winter homes can trap pollutants inside. Here are 5 proven ways to improve your indoor air quality during the cold months.",
     date: "2025-05-01",
+    updated: "2026-10-16",
     author: "Mass HVAC Team",
     tags: ["Indoor Air Quality", "Winter", "Health"],
     image: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg",
-    metaTitle: "5 Indoor Air Quality Tips for New England Winters | Mass HVAC",
+    metaTitle: "Indoor Air Quality Tips for New England Winters | Mass HVAC",
     metaDescription:
       "Improve your indoor air quality this winter. 5 expert tips for Massachusetts homeowners to breathe easier when your home is sealed up tight.",
     content: `During New England winters, we seal our homes tight to keep the cold out. But in doing so, we also trap pollutants, allergens, and stale air inside. The EPA estimates that indoor air can be 2-5 times more polluted than outdoor air — and in winter, that problem gets worse.
@@ -325,7 +334,7 @@ Here are 5 effective ways to improve your indoor air quality during the cold mon
 
 The filter in your furnace or air handler is your first line of defense against airborne pollutants. Most homes come with basic fiberglass filters (MERV 1-4) that only catch large particles.
 
-**Upgrade to a MERV 11-13 filter** to capture dust, pollen, mold spores, pet dander, and even some bacteria. Change it every 1-2 months during heavy use periods.
+**Upgrade to a MERV 11-13 filter** to capture fine particles like dust, pollen, mold spores and pet dander. Change it every 1-2 months during heavy use periods.
 
 ### 2. Install a Whole-Home Humidifier
 
@@ -340,7 +349,7 @@ A whole-home humidifier integrates with your HVAC system to maintain optimal hum
 
 ### 3. Consider UV Germicidal Lights
 
-UV-C lights installed in your HVAC system kill mold, bacteria, and viruses as air passes through. They're especially effective at preventing mold growth on the evaporator coil — a common problem that affects both air quality and system efficiency.
+UV-C lights installed near your cooling coil can reduce microbial growth on the evaporator coil, a common problem that affects both air quality and system efficiency. They work alongside good filtration, not in place of it.
 
 ### 4. Schedule a Duct Cleaning
 

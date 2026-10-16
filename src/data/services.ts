@@ -43,10 +43,10 @@ export const services: Service[] = [
     name: "Heating Installation & Repair",
     shortName: "Heating",
     description:
-      "Expert furnace and boiler installation, repair, and replacement services across Massachusetts. Stay warm all winter with Mass HVAC.",
-    metaTitle: "Heating Installation & Repair in MA | Mass HVAC",
+      "Expert furnace and boiler installation, repair, and replacement services in Milford and across MetroWest. Stay warm all winter with Mass HVAC.",
+    metaTitle: "Heating Repair & Installation, MetroWest MA",
     metaDescription:
-      "Professional heating installation, repair & replacement in Massachusetts. Furnaces, boilers & more. 24/7 emergency service. Call Mass HVAC today!",
+      "Furnace, boiler and heat pump repair and installation in Milford and MetroWest, MA. 24/7 emergency calls, written estimates. Call (508) 786-8755.",
     icon: "🔥",
     heroImage:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
@@ -69,10 +69,11 @@ export const services: Service[] = [
 Whether your furnace stopped working at 2 AM or you're planning a proactive upgrade before the cold season hits, our licensed technicians are ready. We work with all major brands including Carrier, Lennox, Trane, and Goodman to deliver heating solutions that are efficient, reliable, and built for New England's toughest weather.
 
 **Why choose Mass HVAC for heating?**
+
 - Licensed & insured technicians with years of experience
 - Same-day emergency service available 24/7
 - Free estimates on new installations
-- Energy-efficient systems that qualify for Mass Save® rebates
+- Cold-climate heat pump options that may qualify for Mass Save® rebates
 - 100% satisfaction guarantee on all work`,
     // TODO(Luiz): confirmar faixas reais — números atuais alinham com Milford city hub
     tuneUpRange: { low: 89, high: 149, unit: "tune-up" },
@@ -91,9 +92,9 @@ Whether your furnace stopped working at 2 AM or you're planning a proactive upgr
     shortName: "Cooling",
     description:
       "Professional AC installation, repair, and maintenance in Massachusetts. Beat the summer heat with Mass HVAC's cooling experts.",
-    metaTitle: "AC Installation & Repair in MA | Mass HVAC",
+    metaTitle: "AC Repair & Installation, MetroWest MA",
     metaDescription:
-      "Expert air conditioning installation, repair & maintenance in Massachusetts. Central AC, ductless systems & more. Fast service. Call Mass HVAC!",
+      "Central AC and ductless AC repair, replacement and tune-ups in Milford and MetroWest, MA. Same-day service on most calls. Call (508) 786-8755.",
     icon: "❄️",
     heroImage:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
@@ -116,6 +117,7 @@ Whether your furnace stopped working at 2 AM or you're planning a proactive upgr
 From emergency AC repairs when your system breaks down on the hottest day of the year, to planned installations of high-efficiency central air systems, our team delivers fast, professional service you can count on.
 
 **Our AC services include:**
+
 - Central air conditioning installation & replacement
 - AC repair for all makes and models
 - Seasonal tune-ups and maintenance plans
@@ -139,9 +141,9 @@ From emergency AC repairs when your system breaks down on the hottest day of the
     shortName: "Mini-Splits",
     description:
       "Ductless mini-split and heat pump installation in Massachusetts. Year-round comfort with one efficient system.",
-    metaTitle: "Ductless Mini-Split & Heat Pump Installation MA – Mass HVAC",
+    metaTitle: "Heat Pumps & Mini-Splits, MetroWest MA",
     metaDescription:
-      "Ductless mini-split & heat pump installation in Massachusetts. Energy-efficient heating & cooling in one system. Huge rebates available. Call Mass HVAC!",
+      "Ductless mini-split and cold-climate heat pump installation in Milford and MetroWest, MA. Heating and cooling in one system. Call (508) 786-8755.",
     icon: "🌡️",
     heroImage:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
@@ -157,29 +159,31 @@ From emergency AC repairs when your system breaks down on the hottest day of the
       "Hyper-heat models rated for sub-zero Massachusetts temperatures",
       "Zone control — set different temperatures for each room",
       "Up to 40% energy savings compared to traditional systems",
-      "Help navigating Mass Save® rebates (up to $10,000+)",
+      "Guidance on Mass Save® heat pump rebates (up to $8,500 for whole-home systems; more for income-eligible households)",
     ],
     content: `Ductless mini-split heat pumps are the fastest-growing HVAC solution in Massachusetts — and for good reason. They provide both heating and cooling from a single, ultra-efficient system, with no ductwork required.
 
-At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG mini-split systems. Whether you need to climate-control a single room or your entire home, we design custom solutions that maximize comfort and minimize energy costs.
+At Mass HVAC, we install and service major brands including Mitsubishi, Fujitsu, Daikin, Carrier and Lennox. Whether you need to climate-control a single room or your entire home, we design custom solutions that maximize comfort and minimize energy costs.
 
 **Why homeowners love mini-splits:**
+
 - Heat AND cool with one system — year-round comfort
 - No ductwork needed — perfect for older Massachusetts homes
 - Individual room control — no more thermostat wars
 - Whisper-quiet operation
-- Eligible for massive Mass Save® rebates
+- May qualify for Mass Save® heat pump rebates (up to $8,500 whole-home; more for income-eligible households)
 - Up to 40% more efficient than traditional HVAC`,
     // TODO(Luiz): confirmar faixas de mini-split (single-zone vs multi-zone)
     tuneUpRange: { low: 119, high: 199, unit: "mini-split tune-up" },
     repairRange: { low: 200, high: 700, unit: "repair" },
     installRange: { low: 4500, high: 18000, unit: "installed system (single-zone to whole-home multi-zone)" },
-    // Mass Save rebates per program guidelines (2025-2026 window)
-    rebateRange: { low: 1250, high: 10000, unit: "Mass Save rebate" },
+    // Mass Save 2026 ASHP offer: partial-home $1,125/ton; whole-home $2,650/ton capped at $8,500
+    // (standard customers; income-eligible Enhanced customers can get up to $16,000).
+    rebateRange: { low: 1125, high: 8500, unit: "Mass Save rebate" },
     installDuration: "1 day single-zone; 2–4 days multi-zone whole-home",
     extraFaq: {
       q: "How big is the Mass Save heat pump rebate in Massachusetts?",
-      a: "Mass Save rebates for cold-climate heat pumps and ductless mini-splits range from $1,250 to $10,000+ per home, depending on system size, whether you go partial- or whole-home, and your utility. Whole-home installations replacing fossil-fuel heating qualify for the top of the range. We help you pre-qualify and submit the paperwork as part of every install.",
+      a: "For 2026, Mass Save's whole-home air-source heat pump rebate is $2,650 per ton, capped at $8,500, for standard customers whose homes meet the weatherization requirements. Partial-home systems earn $1,125 per ton. Income-eligible households can qualify for enhanced rebates of up to $16,000, and the 0% HEAT Loan can finance up to $25,000. Rebates require installation by a Mass Save network contractor and qualifying equipment (R-410A systems are not eligible in 2026). If your electricity comes from a municipal light plant, your town's own program usually applies instead. We'll help you figure out which program fits your home.",
     },
   },
   {
@@ -188,9 +192,9 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
     shortName: "Maintenance",
     description:
       "Preventative HVAC maintenance and seasonal tune-ups in Massachusetts. Extend system life and lower energy bills.",
-    metaTitle: "HVAC Maintenance & Tune-Ups in MA – Mass HVAC",
+    metaTitle: "HVAC Maintenance & Tune-Ups, MetroWest MA",
     metaDescription:
-      "Professional HVAC maintenance & seasonal tune-ups in Massachusetts. Prevent breakdowns, extend system life & save on energy. Schedule with Mass HVAC!",
+      "Seasonal furnace, AC and heat pump tune-ups in Milford and MetroWest, MA. Catch problems early and keep warranties valid. Book at (508) 786-8755.",
     icon: "🔧",
     heroImage:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
@@ -211,6 +215,7 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
     content: `Regular HVAC maintenance is the single best investment you can make to protect your comfort, your wallet, and your family's safety. At Mass HVAC, our comprehensive tune-up plans keep your heating and cooling systems running at peak performance year after year.
 
 **Our maintenance plans include:**
+
 - Bi-annual tune-ups (heating check in fall, cooling check in spring)
 - 21-point system inspection
 - Filter replacement
@@ -222,14 +227,14 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
 - Priority emergency service for plan members
 - 15% discount on all repairs
 
-**The numbers don't lie:** Regular maintenance can reduce energy bills by 15-25%, extend equipment life by 5-10 years, and prevent up to 95% of all HVAC breakdowns.`,
+**Why it matters:** Regular maintenance can save up to 15% on energy, can extend equipment life by several years, and can prevent many common breakdowns.`,
     // TODO(Luiz): confirmar preço do plano de manutenção (per visit vs anual)
     tuneUpRange: { low: 89, high: 149, unit: "visit" },
     repairRange: { low: 150, high: 500, unit: "repair" },
     installDuration: "60–90 minutes per visit (2 visits per year recommended)",
     extraFaq: {
       q: "How often should I service my HVAC system in Massachusetts?",
-      a: "Twice a year is the manufacturer-recommended cadence in New England: a heating tune-up in early fall and a cooling tune-up in spring. Most equipment warranties require documented annual maintenance to remain valid. Skipping it is the single most common reason a $5,000–$15,000 system fails 5–7 years early.",
+      a: "Twice a year is the manufacturer-recommended cadence in New England: a heating tune-up in early fall and a cooling tune-up in spring. Most equipment warranties require documented annual maintenance to remain valid. Skipping it is a common reason a $5,000–$15,000 system wears out years earlier than it should.",
     },
   },
   {
@@ -238,9 +243,9 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
     shortName: "Air Quality",
     description:
       "Indoor air quality solutions in Massachusetts — duct cleaning, air purifiers, humidifiers, and filtration systems.",
-    metaTitle: "Indoor Air Quality Solutions in MA | Mass HVAC",
+    metaTitle: "Indoor Air Quality Services, MetroWest MA",
     metaDescription:
-      "Improve your indoor air quality in Massachusetts. Duct cleaning, air purifiers, humidifiers & advanced filtration. Breathe easier with Mass HVAC!",
+      "Air purifiers, humidifiers, dehumidifiers, filtration and duct cleaning for MetroWest, MA homes. Free in-home estimate. Call (508) 786-8755.",
     icon: "💨",
     heroImage:
       "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg",
@@ -253,8 +258,8 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
     ],
     solutions: [
       "Professional duct cleaning to remove years of dust, allergens, and debris",
-      "HEPA and media air filtration systems for whole-home purification",
-      "UV germicidal lights that kill mold, bacteria, and viruses in your HVAC system",
+      "MERV 13 / HEPA filtration that captures fine particles like pollen, dust and pet dander",
+      "UV lights that can reduce microbial growth on the cooling coil",
       "Whole-home humidifiers and dehumidifiers for balanced moisture",
       "ERV/HRV ventilation systems for fresh air without energy loss",
     ],
@@ -263,6 +268,7 @@ At Mass HVAC, we're certified installers of Mitsubishi, Fujitsu, Daikin, and LG 
 Mass HVAC offers comprehensive indoor air quality solutions that work with your existing HVAC system to create a healthier, more comfortable home environment.
 
 **Our IAQ solutions:**
+
 - Professional duct cleaning and sanitizing
 - Whole-home HEPA air filtration
 - UV germicidal light installation
@@ -271,9 +277,9 @@ Mass HVAC offers comprehensive indoor air quality solutions that work with your 
 - Energy Recovery Ventilators (ERV)
 - Air quality testing and assessment
 
-Don't let the air in your home compromise your family's health. Contact Mass HVAC for a free indoor air quality assessment.`,
+Don't let the air in your home compromise your family's health. Contact Mass HVAC for a free in-home estimate; detailed IAQ testing is available.`,
     // TODO(Luiz): confirmar faixas reais de IAQ (duct cleaning, UV light, ERV, etc.)
-    tuneUpRange: { low: 99, high: 199, unit: "IAQ assessment" },
+    tuneUpRange: { low: 99, high: 199, unit: "detailed IAQ test" },
     repairRange: { low: 150, high: 600, unit: "filter / UV bulb / minor service" },
     installRange: { low: 400, high: 6500, unit: "installed (UV light to whole-home ERV / duct cleaning)" },
     installDuration: "Same-day for filters and UV; 1 day for whole-home ERV or duct cleaning",

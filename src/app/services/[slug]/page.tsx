@@ -9,6 +9,10 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
+import { formatRange } from "@/data/services";
+import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
+import { buildMetadata } from "@/lib/seo";
+import { renderMarkdown } from "@/lib/markdown";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -18,18 +22,39 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
-  return {
+  return buildMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
-    openGraph: {
-      title: service.metaTitle,
-      description: service.metaDescription,
-      url: `https://masshvac.net/services/${service.slug}`,
-      type: "website",
-      images: [{ url: service.heroImage, width: 1200, height: 630, alt: service.name }],
+    path: `/services/${service.slug}`,
+    image: service.heroImage,
+    imageAlt: service.name,
+  });
+}
+
+function serviceFaq(service: NonNullable<ReturnType<typeof getServiceBySlug>>) {
+  const n = service.name.toLowerCase();
+  const sn = service.shortName.toLowerCase();
+  const costParts = [
+    service.tuneUpRange && `${formatRange(service.tuneUpRange)} per ${service.tuneUpRange.unit}`,
+    service.repairRange && `${formatRange(service.repairRange)} per ${service.repairRange.unit}`,
+    service.installRange && `${formatRange(service.installRange)} per ${service.installRange.unit}`,
+  ].filter(Boolean);
+  const items = [
+    {
+      q: `How much does ${n} cost in MetroWest, MA?`,
+      a: `Typical ranges we see: ${costParts.join("; ")}. Your price depends on the system size, brand and the condition of your home, so we give you a written estimate before any work starts. Call ${PHONE_DISPLAY} for a free estimate.`,
     },
-    alternates: { canonical: `https://masshvac.net/services/${service.slug}` },
-  };
+    {
+      q: `Do you offer emergency ${sn} service?`,
+      a: `Yes. We take emergency calls 24/7 for homes in Milford and across MetroWest. Call ${PHONE_DISPLAY} and we will tell you when a technician can get there.`,
+    },
+    {
+      q: `What areas do you serve for ${n}?`,
+      a: `We are based in Milford, MA and serve 50 towns around it, including Framingham, Natick, Marlborough, Hudson, Hopkinton, Westborough, Shrewsbury, Ashland and Holliston. See the full list on our Service Areas page.`,
+    },
+    ...(service.extraFaq ? [service.extraFaq] : []),
+  ];
+  return items;
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -38,12 +63,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
 
   const popularCities = cities.slice(0, 20);
+  const faqItems = serviceFaq(service);
 
   return (
     <>
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <Image src={service.heroImage} alt={`${service.name} in Massachusetts — Mass HVAC`} fill className="object-cover object-center" priority />
+        <Image src={service.heroImage} alt={`${service.name} by Mass HVAC`} fill sizes="100vw" quality={75} className="object-cover object-center" priority fetchPriority="high" />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
@@ -73,11 +99,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-xl">{service.description}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+15087868755"
+                href={TEL_HREF}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold text-lg rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
               >
                 <Phone className="w-5 h-5" />
-                (508) 786-8755
+                {PHONE_DISPLAY}
               </a>
               <Link
                 href="/#quote"
@@ -144,36 +170,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h2 className="text-3xl font-bold text-primary mb-8">
                 About Our {service.shortName} <span className="text-accent">Services</span>
               </h2>
-              {service.content.split("\n\n").map((paragraph, i) => {
-                if (paragraph.startsWith("**") && paragraph.endsWith("**"))
-                  return (
-                    <h3 key={i} className="text-2xl font-bold text-primary mt-8 mb-4">
-                      {paragraph.replace(/\*\*/g, "")}
-                    </h3>
-                  );
-                if (paragraph.startsWith("- ")) {
-                  const items = paragraph.split("\n").filter((l) => l.startsWith("- "));
-                  return (
-                    <ul key={i} className="space-y-2 my-4">
-                      {items.map((item, j) => (
-                        <li key={j} className="flex items-start gap-3 text-gray-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: item.replace(/^- \*?\*?/, "").replace(/\*?\*?$/, ""),
-                            }}
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return (
-                  <p key={i} className="text-gray-600 leading-relaxed mb-4">
-                    {paragraph}
-                  </p>
-                );
-              })}
+              <div className="md-content">{renderMarkdown(service.content)}</div>
             </div>
           </ScrollReveal>
         </div>
@@ -187,7 +184,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               {service.shortName} Available In <span className="text-accent">Your City</span>
             </h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              We proudly serve communities throughout Massachusetts. Find {service.shortName.toLowerCase()} services near you.
+              We serve Milford and 49 nearby MetroWest towns. Find {service.shortName.toLowerCase()} service near you.
             </p>
           </ScrollReveal>
           <div className="flex flex-wrap justify-center gap-2">
@@ -219,22 +216,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </h2>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
-          <FAQAccordion
-            items={[
-              {
-                q: `How much does ${service.name.toLowerCase()} cost in Massachusetts?`,
-                a: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 786-8755 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
-              },
-              {
-                q: `Does Mass HVAC offer emergency ${service.shortName.toLowerCase()} service?`,
-                a: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 786-8755 anytime, day or night.`,
-              },
-              {
-                q: `What areas does Mass HVAC serve for ${service.name.toLowerCase()}?`,
-                a: `Mass HVAC provides ${service.name.toLowerCase()} services across Massachusetts, including Milford, Framingham, Worcester, Natick, Hopkinton, Franklin, Bellingham, and dozens of other communities. We cover all of Central and Eastern MA.`,
-              },
-            ]}
-          />
+          <FAQAccordion items={faqItems} />
         </div>
       </section>
 
@@ -277,18 +259,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             description: service.metaDescription,
             url: `https://masshvac.net/services/${service.slug}`,
             provider: {
-              "@id": "https://masshvac.net/#organization",
+              "@id": `${SITE_URL}/#organization`,
             },
-            areaServed: { "@type": "State", name: "Massachusetts" },
-            offers: {
-              "@type": "Offer",
-              availability: "https://schema.org/InStock",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "USD",
-              },
-              areaServed: { "@type": "State", name: "Massachusetts" },
-            },
+            areaServed: { "@type": "AdministrativeArea", name: "MetroWest, Massachusetts" },
             image: service.heroImage,
             serviceType: service.name,
             availableChannel: {
@@ -311,8 +284,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://masshvac.net/services" },
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
               {
                 "@type": "ListItem",
                 position: 3,
@@ -324,63 +297,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         }}
       />
 
-      {/* FAQ JSON-LD Schema */}
+      {/* FAQ JSON-LD — same array as the visible accordion */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: `How much does ${service.name.toLowerCase()} cost in Massachusetts?`,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: `The cost of ${service.name.toLowerCase()} varies based on system size, complexity, and specific needs. Mass HVAC offers free estimates on all ${service.shortName.toLowerCase()} projects. Contact us at (508) 786-8755 for a personalized quote. Many of our installations qualify for Mass Save rebates.`,
-                },
-              },
-              {
-                "@type": "Question",
-                name: `Does Mass HVAC offer emergency ${service.shortName.toLowerCase()} service?`,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: `Yes, Mass HVAC provides 24/7 emergency ${service.shortName.toLowerCase()} service throughout Massachusetts. Our licensed technicians respond quickly to get your system back up and running. Call (508) 786-8755 anytime, day or night.`,
-                },
-              },
-              {
-                "@type": "Question",
-                name: `What areas does Mass HVAC serve for ${service.name.toLowerCase()}?`,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: `Mass HVAC provides ${service.name.toLowerCase()} services across Massachusetts, including Milford, Framingham, Worcester, Natick, Hopkinton, Franklin, Bellingham, and dozens of other communities. We cover all of Central and Eastern MA.`,
-                },
-              },
-            ],
+            mainEntity: faqItems.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
           }),
         }}
       />
 
-      {/* WebPage JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: service.metaTitle,
-            url: `https://masshvac.net/services/${service.slug}`,
-            description: service.metaDescription,
-            speakable: {
-              "@type": "SpeakableSpecification",
-              cssSelector: ["h1", "h2", "p"],
-            },
-            isPartOf: { "@id": "https://masshvac.net/#website" },
-            about: { "@id": "https://masshvac.net/#organization" },
-            lastReviewed: "2026-02-20",
-          }),
-        }}
-      />
     </>
   );
 }

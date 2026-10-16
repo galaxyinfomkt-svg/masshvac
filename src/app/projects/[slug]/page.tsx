@@ -5,6 +5,8 @@ import { Phone, ArrowRight, ArrowLeft, AlertCircle, CheckCircle2, Clock, Wrench,
 import { projects, getProjectBySlug } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import type { Metadata } from "next";
+import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() { return projects.map((p) => ({ slug: p.slug })); }
 
@@ -12,12 +14,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  return {
-    title: `${project.title} in ${project.city} – Mass HVAC`,
-    description: project.description,
-    openGraph: { title: `${project.title} – Mass HVAC`, description: project.description, url: `https://masshvac.net/projects/${project.slug}`, type: "article", images: [{ url: project.image, width: 1200, height: 630, alt: project.title }] },
-    alternates: { canonical: `https://masshvac.net/projects/${project.slug}` },
-  };
+  const city = project.city.replace(/,?\s*MA$/, "");
+  // Keep "<title> | Mass HVAC" within ~60 characters: drop ", MA" first, then "in".
+  const title = [`${project.title} in ${city}, MA`, `${project.title} in ${city}`, `${project.title}, ${city}`]
+    .find((t) => t.length + " | Mass HVAC".length <= 60) ?? project.title;
+  const extra = ` Mass HVAC of Milford serves ${city} and MetroWest, MA.`;
+  const description = project.description.length < 110 && project.description.length + extra.length <= 160
+    ? project.description + extra
+    : project.description;
+  return buildMetadata({
+    title,
+    description,
+    path: `/projects/${project.slug}`,
+    image: project.image,
+    imageAlt: project.title,
+  });
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,19 +41,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     <>
       {/* Hero */}
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <Image src={project.image} alt={project.title} fill className="object-cover object-center" priority />
+        <Image src={project.image} alt="" fill sizes="100vw" quality={75} className="object-cover object-center" priority fetchPriority="high" />
         <div className="absolute inset-0 hero-overlay-premium" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="max-w-3xl">
-            <Link href="/projects" className="inline-flex items-center gap-1.5 text-white/50 hover:text-white text-sm mb-6 transition-colors">
+            <Link href="/projects" className="inline-flex items-center gap-1.5 py-2 text-white/85 hover:text-white text-sm mb-4 transition-colors">
               <ArrowLeft className="w-4 h-4" />Back to Projects
             </Link>
             <div className="flex items-center gap-2 mb-4">
               <span className="px-3 py-1 bg-accent text-white text-xs font-bold rounded-full uppercase tracking-wider">{project.service}</span>
-              <span className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">{project.city}</span>
-              <span className="px-3 py-1 bg-white/10 text-white/70 text-xs rounded-full">{project.scope}</span>
+              <span className="px-3 py-1 bg-white/15 text-white text-xs rounded-full">{project.city}</span>
+              <span className="px-3 py-1 bg-white/15 text-white text-xs rounded-full">{project.scope}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">{project.title}</h1>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href={TEL_HREF} className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg">
+                <Phone className="w-4 h-4" aria-hidden="true" />Call {PHONE_DISPLAY}
+              </a>
+              <a href="#quote" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-colors">
+                Get a Similar Quote <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -54,7 +73,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="lg:col-span-3">
               <ScrollReveal>
                 <div className="relative h-80 md:h-[480px] rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.15)] mb-10">
-                  <Image src={project.image} alt={project.title} fill className="object-cover" />
+                  <Image src={project.image} alt={project.title} fill sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
                 </div>
               </ScrollReveal>
 
@@ -123,7 +142,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <div className="lg:col-span-2">
               <div className="sticky top-28 space-y-6">
                 <div className="bg-surface rounded-xl p-7">
-                  <h3 className="font-bold text-primary mb-5 text-sm uppercase tracking-wider">Project Details</h3>
+                  <h2 className="font-bold text-primary mb-5 text-sm uppercase tracking-wider">Project Details</h2>
                   <div className="space-y-5">
                     {[
                       { icon: Wrench, label: "Service", value: project.service },
@@ -134,7 +153,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       { label: "Result", value: "Completed Successfully", color: "text-emerald-600" },
                     ].map((d) => (
                       <div key={d.label}>
-                        <p className="text-[11px] text-gray-400 uppercase tracking-wider font-semibold mb-1">{d.label}</p>
+                        <p className="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">{d.label}</p>
                         <p className={`font-bold ${d.color || "text-primary"}`}>{d.value}</p>
                       </div>
                     ))}
@@ -142,14 +161,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 </div>
 
                 <div className="bg-black rounded-xl p-7 border border-white/10">
-                  <h3 className="font-bold text-accent text-lg mb-2">Need Similar Work?</h3>
-                  <p className="text-white/50 text-sm mb-6">Get a free estimate for your {project.service.toLowerCase()} project.</p>
-                  <a href="tel:+15087868755" className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
-                    <Phone className="w-4 h-4" />(508) 786-8755
+                  <h2 className="font-bold text-white text-lg mb-2">Need Similar Work?</h2>
+                  <p className="text-white/80 text-sm mb-6">Get a free estimate for your {project.service.toLowerCase()} project.</p>
+                  <a href={TEL_HREF} className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.02] mb-3">
+                    <Phone className="w-4 h-4" aria-hidden="true" />{PHONE_DISPLAY}
                   </a>
-                  <Link href="/#quote" className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all">
-                    Free Estimate <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  <a href="#quote" className="flex items-center justify-center gap-2 w-full py-3.5 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all">
+                    Free Estimate <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -166,7 +185,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
               {related.map((proj) => (
                 <Link key={proj.slug} href={`/projects/${proj.slug}`} className="group block rounded-xl overflow-hidden border border-gray-100 card-premium bg-white">
                   <div className="relative h-48 overflow-hidden">
-                    <Image src={proj.image} alt={proj.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={proj.image} alt={proj.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <span className="absolute bottom-3 left-3 px-2 py-0.5 bg-accent text-white text-xs font-bold rounded-full">{proj.service}</span>
                   </div>
@@ -208,9 +227,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-          { "@type": "ListItem", position: 2, name: "Projects", item: "https://masshvac.net/projects" },
-          { "@type": "ListItem", position: 3, name: project.title, item: `https://masshvac.net/projects/${project.slug}` },
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Projects", item: `${SITE_URL}/projects` },
+          { "@type": "ListItem", position: 3, name: project.title, item: `${SITE_URL}/projects/${project.slug}` },
         ],
       }) }} />
 
@@ -221,17 +240,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         name: project.title,
         description: project.description,
         image: project.image,
-        author: { "@id": "https://masshvac.net/#organization" },
+        author: { "@id": `${SITE_URL}/#organization` },
         about: {
           "@type": "Service",
           name: project.service,
-          provider: { "@id": "https://masshvac.net/#organization" },
+          provider: { "@id": `${SITE_URL}/#organization` },
         },
         locationCreated: {
           "@type": "Place",
-          name: `${project.city}, Massachusetts`,
+          name: project.city,
         },
-        publisher: { "@id": "https://masshvac.net/#organization" },
+        publisher: { "@id": `${SITE_URL}/#organization` },
       }) }} />
     </>
   );

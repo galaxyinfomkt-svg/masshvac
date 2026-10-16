@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 import LegalPage from "@/components/LegalPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Cookie Policy",
-  description:
-    "Mass HVAC Inc Cookie Policy — what cookies are, how we use them, and how you can control them on our website.",
-  alternates: { canonical: "https://masshvac.net/cookies" },
-};
+  description: "Mass HVAC Inc Cookie Policy — what cookies are, how we use them, and how you can control them on our website.",
+  path: "/cookies",
+});
 
 export default function CookiePolicy() {
   return (
@@ -15,7 +16,7 @@ export default function CookiePolicy() {
         This Cookie Policy explains how <strong>Mass HVAC Inc</strong>{" "}
         (&quot;Company&quot;, &quot;We&quot;, &quot;Us&quot;, &quot;Our&quot;)
         uses cookies and similar technologies to recognize You when You visit
-        our website at <a href="https://masshvac.net">masshvac.net</a>. It
+        our website at <a href={SITE_URL}>masshvac.net</a>. It
         explains what these technologies are and why we use them, as well as
         Your rights to control our use of them.
       </p>
@@ -140,7 +141,7 @@ export default function CookiePolicy() {
       <ul>
         <li>By email: <a href="mailto:info@masshvac.net">info@masshvac.net</a></li>
         <li>By phone: <a href="tel:+15087868755">(508) 786-8755</a></li>
-        <li>By visiting this page on our website: <a href="/">masshvac.net</a></li>
+        <li>By visiting this page on our website: <a href={SITE_URL}>masshvac.net</a></li>
         <li>By mail: Mass HVAC Inc, Milford, MA 01757</li>
       </ul>
     </LegalPage>

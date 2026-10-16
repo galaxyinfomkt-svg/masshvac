@@ -5,32 +5,16 @@ import { services } from "@/data/services";
 import ScrollReveal from "@/components/ScrollReveal";
 import MapSection from "@/components/MapSection";
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/data/company";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
-export const metadata: Metadata = {
-  title: "HVAC Services in Massachusetts | Mass HVAC",
-  description:
-    "Complete HVAC services across MA — heating, AC, mini-splits, maintenance & air quality. Licensed & insured. Call (508) 786-8755 for a free estimate.",
-  alternates: {
-    canonical: "https://masshvac.net/services",
-  },
-  openGraph: {
-    title: "HVAC Services in Massachusetts | Mass HVAC",
-    description:
-      "Expert heating, cooling, ductless mini-split, maintenance & indoor air quality services across MA. Licensed, insured & available 24/7. Free estimates.",
-    url: "https://masshvac.net/services",
-    type: "website",
-    images: [
-      {
-        url: "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Mass HVAC Professional HVAC Services in Massachusetts",
-      },
-    ],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "HVAC Services in Milford & MetroWest, MA",
+  description: "Heating, AC, heat pumps, ductless mini-splits, maintenance and indoor air quality for Milford and MetroWest, MA homes. Call (508) 786-8755.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
@@ -43,8 +27,8 @@ export default function ServicesPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://masshvac.net" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://masshvac.net/services" },
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+              { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
             ],
           }),
         }}
@@ -59,71 +43,14 @@ export default function ServicesPage() {
             "@type": "ItemList",
             name: "HVAC Services by Mass HVAC",
             description:
-              "Complete HVAC services in Massachusetts including heating, cooling, mini-splits, maintenance & indoor air quality.",
+              "HVAC services in Milford and MetroWest, MA: heating, cooling, heat pumps, mini-splits, maintenance and indoor air quality.",
             numberOfItems: services.length,
             itemListElement: services.map((service, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: service.name,
-              url: `https://masshvac.net/services/${service.slug}`,
+              url: `${SITE_URL}/services/${service.slug}`,
             })),
-          }),
-        }}
-      />
-
-      {/* FAQ JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What HVAC services does Mass HVAC offer in Massachusetts?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Mass HVAC provides comprehensive HVAC services including heating installation & repair, air conditioning installation & repair, ductless mini-split systems, preventive maintenance plans, and indoor air quality solutions. We serve homeowners and businesses across Massachusetts.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Does Mass HVAC offer 24/7 emergency HVAC service?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Mass HVAC offers 24/7 emergency heating and cooling repair throughout Massachusetts. Whether your furnace breaks down at 2 AM or your AC stops working on the hottest day of the year, our licensed technicians are ready to respond. Call (508) 786-8755 anytime.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How much does HVAC service cost in Massachusetts?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "HVAC service costs vary depending on the type of work needed. Mass HVAC offers free estimates on all new installations and competitive pricing on repairs and maintenance. Many of our high-efficiency installations qualify for Mass Save rebates, helping offset costs. Contact us for a personalized quote.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
-
-      {/* WebPage JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "HVAC Services in Massachusetts | Mass HVAC",
-            url: "https://masshvac.net/services",
-            description: "Complete HVAC services across Massachusetts — heating, cooling, mini-splits, maintenance & indoor air quality.",
-            speakable: {
-              "@type": "SpeakableSpecification",
-              cssSelector: ["h1", "h2"],
-            },
-            isPartOf: { "@id": "https://masshvac.net/#website" },
-            about: { "@id": "https://masshvac.net/#organization" },
           }),
         }}
       />
@@ -132,7 +59,7 @@ export default function ServicesPage() {
       <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <Image
           src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg"
-          alt="Professional HVAC services in Massachusetts by Mass HVAC"
+          alt=""
           fill
           className="object-cover object-center"
           priority
@@ -156,7 +83,7 @@ export default function ServicesPage() {
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
             From emergency repairs to full system installations — expert heating, cooling, and indoor air quality
-            solutions for homes and businesses across Massachusetts.
+            solutions for homes and businesses across MetroWest.
           </p>
           <div className="accent-divider mt-8" />
         </div>
@@ -178,19 +105,20 @@ export default function ServicesPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="overflow-hidden rounded-xl border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white">
-              <table className="w-full text-left">
+            <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.06)] bg-white" role="region" aria-label="Furnace vs. heat pump comparison" tabIndex={0}>
+              <table className="w-full min-w-[560px] text-left">
+                <caption className="sr-only">Gas furnace compared with a cold-climate heat pump for MetroWest homes</caption>
                 <thead className="bg-primary text-white">
                   <tr>
-                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Factor</th>
-                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Gas Furnace</th>
-                    <th className="px-6 py-4 text-sm font-bold uppercase tracking-wider">Cold-Climate Heat Pump</th>
+                    <th scope="col" className="px-4 sm:px-6 py-4 text-sm font-bold uppercase tracking-wider">Factor</th>
+                    <th scope="col" className="px-4 sm:px-6 py-4 text-sm font-bold uppercase tracking-wider">Gas Furnace</th>
+                    <th scope="col" className="px-4 sm:px-6 py-4 text-sm font-bold uppercase tracking-wider">Cold-Climate Heat Pump</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100 text-sm">
                   {[
                     { factor: "Upfront cost (installed)", a: "$4,500 – $8,000", b: "$10,000 – $18,000 (before rebates)" },
-                    { factor: "Mass Save rebate", a: "$500 – $1,500", a2: "varies", b: "Up to $10,000 + 0% loan" },
+                    { factor: "Mass Save incentives (2026)", a: "None for standard customers (income-eligible households only)", b: "Up to $8,500 whole-home; more for income-eligible households; 0% HEAT Loan up to $25,000" },
                     { factor: "Annual operating cost (MetroWest avg.)", a: "$1,800 – $2,400 (natural gas)", b: "$1,200 – $1,800 (electric)" },
                     { factor: "Efficiency", a: "92 – 98% AFUE", b: "300 – 400% (COP 3 – 4)" },
                     { factor: "Heats below 5°F?", a: "Yes (all temperatures)", b: "Yes — modern cold-climate models rated to –13°F" },
@@ -199,17 +127,17 @@ export default function ServicesPage() {
                     { factor: "Best for", a: "Homes already on natural gas", b: "Oil-heated homes, additions, electrification" },
                   ].map((row) => (
                     <tr key={row.factor} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 font-semibold text-primary">{row.factor}</td>
-                      <td className="px-6 py-4 text-gray-700">{row.a}</td>
-                      <td className="px-6 py-4 text-gray-700">{row.b}</td>
+                      <th scope="row" className="px-4 sm:px-6 py-4 font-semibold text-primary">{row.factor}</th>
+                      <td className="px-4 sm:px-6 py-4 text-gray-700">{row.a}</td>
+                      <td className="px-4 sm:px-6 py-4 text-gray-700">{row.b}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <p className="text-xs text-gray-500 mt-4 leading-relaxed">
-              Figures reflect typical 2024–2026 MetroWest Massachusetts installations.
-              Mass Save rebate amounts vary by system size and program year — confirm with a free Mass HVAC estimate.
+              Figures reflect typical 2024–2026 MetroWest installations.
+              Mass Save amounts are from the 2026 program (masssave.com) and require a Mass Save network installer; towns with a municipal electric utility (e.g. Hudson, Concord, Shrewsbury, Wellesley) run their own rebate programs.
             </p>
           </ScrollReveal>
         </div>
@@ -220,10 +148,10 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Comprehensive HVAC Solutions for <span className="text-accent">Massachusetts</span>
+              HVAC Services for <span className="text-accent">Milford &amp; MetroWest</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Licensed, insured, and trusted by homeowners across MA. Every service backed by our satisfaction guarantee.
+              Licensed and insured, with a written estimate before any work starts.
             </p>
           </ScrollReveal>
 
@@ -235,13 +163,14 @@ export default function ServicesPage() {
                 <ScrollReveal key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className={`group grid grid-cols-1 md:grid-cols-2 bg-white rounded-xl overflow-hidden card-premium ${isEven ? "" : "md:direction-rtl"}`}
+                    className="group grid grid-cols-1 md:grid-cols-2 bg-white rounded-xl overflow-hidden card-premium"
                   >
                     <div className={`relative h-72 md:h-auto overflow-hidden ${isEven ? "" : "md:order-2"}`}>
                       <Image
                         src={service.heroImage}
-                        alt={`${service.name} services in Massachusetts by Mass HVAC`}
+                        alt={`${service.name} by Mass HVAC`}
                         fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

@@ -3,68 +3,36 @@ import { services } from "@/data/services";
 import { cities, cityHasLocalContent } from "@/data/cities";
 import { projects } from "@/data/projects";
 import { blogPosts } from "@/data/blog";
+import { SITE_URL } from "@/data/company";
 
-const BASE_URL = "https://masshvac.net";
+/**
+ * <lastmod> must reflect real content changes (a build timestamp on every URL
+ * teaches Google to ignore it). Bump CONTENT_UPDATED when page copy changes;
+ * blog posts use their own `updated`/`date`.
+ */
+const CONTENT_UPDATED = new Date("2026-10-16");
+const LEGAL_UPDATED = new Date("2026-05-01");
 
-// Per seo-sitemap SKILL.md:
-//  • <lastmod> must reflect actual modification (constant date is a low-severity quality issue)
-//  • <priority> and <changefreq> are ignored by Google — omitted intentionally
-//  • Sitemap also referenced from robots.ts for discovery
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: now },
-    { url: `${BASE_URL}/services`, lastModified: now },
-    { url: `${BASE_URL}/cities`, lastModified: now },
-    { url: `${BASE_URL}/projects`, lastModified: now },
-    { url: `${BASE_URL}/reviews`, lastModified: now },
-    { url: `${BASE_URL}/blog`, lastModified: now },
-    { url: `${BASE_URL}/privacy`, lastModified: now },
-    { url: `${BASE_URL}/terms`, lastModified: now },
-    { url: `${BASE_URL}/cookies`, lastModified: now },
-    { url: `${BASE_URL}/sms-terms`, lastModified: now },
-  ];
-
-  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${BASE_URL}/services/${s.slug}`,
-    lastModified: now,
-  }));
-
-  const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({
-    url: `${BASE_URL}/cities/${c.slug}`,
-    lastModified: now,
-  }));
-
-  // Only include deep pages whose city has hand-written local content.
-  // Pages without it are noindex'd in generateMetadata — emitting them in
-  // the sitemap would tell Google to crawl URLs we explicitly excluded
-  // from the index, wasting crawl budget and causing GSC warnings.
-  const cityServicePages: MetadataRoute.Sitemap = cities
-    .filter(cityHasLocalContent)
-    .flatMap((c) =>
-      services.map((s) => ({
-        url: `${BASE_URL}/cities/${c.slug}/${s.slug}`,
-        lastModified: now,
-      }))
-    );
-
-  const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${BASE_URL}/projects/${p.slug}`,
-    lastModified: now,
-  }));
-
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${BASE_URL}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
-  }));
+  const page = (path: string, lastModified = CONTENT_UPDATED) => ({ url: `${SITE_URL}${path}`, lastModified });
 
   return [
-    ...staticPages,
-    ...servicePages,
-    ...cityPages,
-    ...cityServicePages,
-    ...projectPages,
-    ...blogPages,
+    page(""),
+    page("/services"),
+    page("/cities"),
+    page("/projects"),
+    page("/reviews"),
+    page("/blog"),
+    page("/privacy", LEGAL_UPDATED),
+    page("/terms", LEGAL_UPDATED),
+    page("/cookies", LEGAL_UPDATED),
+    page("/sms-terms", LEGAL_UPDATED),
+    ...services.map((s) => page(`/services/${s.slug}`)),
+    ...cities.map((c) => page(`/cities/${c.slug}`)),
+    // Deep city×service pages are noindex until the city has hand-written
+    // local content — keep noindexed URLs out of the sitemap.
+    ...cities.filter(cityHasLocalContent).flatMap((c) => services.map((s) => page(`/cities/${c.slug}/${s.slug}`))),
+    ...projects.map((p) => page(`/projects/${p.slug}`)),
+    ...blogPosts.map((p) => page(`/blog/${p.slug}`, new Date(p.updated ?? p.date))),
   ];
 }
