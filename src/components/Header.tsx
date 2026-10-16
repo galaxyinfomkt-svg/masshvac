@@ -79,7 +79,7 @@ export default function Header() {
       </a>
 
       {/* Top Bar — desktop only (on mobile the sticky bottom bar already carries Call) */}
-      <div className={`hidden lg:block fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-gradient-to-r from-accent to-accent-dark`}>
+      <aside aria-label="Contact information" className={`hidden lg:block fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${scrolled ? "h-0 opacity-0 pointer-events-none" : "h-10 opacity-100"} bg-gradient-to-r from-accent to-accent-dark`}>
         <div className="mx-auto max-w-7xl px-4 h-full flex items-center justify-between text-xs text-white">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" aria-hidden="true" />{locationText}</span>
@@ -89,7 +89,7 @@ export default function Header() {
             <Phone className="w-3 h-3" aria-hidden="true" />{PHONE_DISPLAY}
           </a>
         </div>
-      </div>
+      </aside>
 
       {/* Main Header */}
       <header className={`fixed left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-xl border-b border-gray-200/60 top-0 ${scrolled ? "shadow-lg" : "lg:top-10"}`}>

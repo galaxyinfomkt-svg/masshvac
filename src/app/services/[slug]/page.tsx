@@ -183,7 +183,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h2 className="text-2xl md:text-3xl font-bold text-primary">
               {service.shortName} Available In <span className="text-accent">Your City</span>
             </h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+            <p className="text-gray-600 mt-3 max-w-xl mx-auto">
               We serve Milford and 49 nearby MetroWest towns. Find {service.shortName.toLowerCase()} service near you.
             </p>
           </ScrollReveal>

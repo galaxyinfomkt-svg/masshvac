@@ -99,7 +99,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Furnace vs. Heat Pump in <span className="text-accent">MetroWest MA</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               The two most common heating systems we install — compared on cost, efficiency, lifespan, and Mass Save eligibility.
             </p>
           </ScrollReveal>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-500 mt-4 leading-relaxed">
+            <p className="text-xs text-gray-600 mt-4 leading-relaxed">
               Figures reflect typical 2024–2026 MetroWest installations.
               Mass Save amounts are from the 2026 program (masssave.com) and require a Mass Save network installer; towns with a municipal electric utility (e.g. Hudson, Concord, Shrewsbury, Wellesley) run their own rebate programs.
             </p>
@@ -150,7 +150,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               HVAC Services for <span className="text-accent">Milford &amp; MetroWest</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Licensed and insured, with a written estimate before any work starts.
             </p>
           </ScrollReveal>
@@ -182,9 +182,9 @@ export default function ServicesPage() {
                       <h3 className="text-2xl md:text-3xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
                         {service.name}
                       </h3>
-                      <p className="text-gray-500 leading-relaxed mb-6">{service.description}</p>
+                      <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
                       <div className="mb-6">
-                        <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                        <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-3">
                           Common Issues We Solve:
                         </p>
                         <ul className="space-y-2">

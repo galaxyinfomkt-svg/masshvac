@@ -54,13 +54,13 @@ export default function BlogPage() {
                   ))}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 group-hover:text-accent transition-colors">{featured.title}</h2>
-                <p className="text-gray-500 leading-relaxed mb-6">{featured.excerpt}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{featured.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 bg-accent rounded-full flex items-center justify-center"><span className="text-white text-xs font-bold">MH</span></div>
                     <div>
                       <p className="text-sm font-semibold text-gray-700">{featured.author}</p>
-                      <p className="text-xs text-gray-400">{new Date(`${featured.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}</p>
+                      <p className="text-xs text-gray-600">{new Date(`${featured.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}</p>
                     </div>
                   </div>
                   <span className="inline-flex items-center text-accent font-bold text-sm">
@@ -91,8 +91,8 @@ export default function BlogPage() {
                       ))}
                     </div>
                     <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">{post.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-                    <div className="flex items-center justify-between text-xs text-gray-400">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
+                    <div className="flex items-center justify-between text-xs text-gray-600">
                       <span>{post.author}</span>
                       <span>{new Date(`${post.date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}</span>
                     </div>

@@ -33,7 +33,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                 className={`w-full flex items-center justify-between gap-4 p-6 text-left text-lg font-bold transition-colors ${isOpen ? "text-accent" : "text-primary"}`}
               >
                 {faq.q}
-                <ChevronDown aria-hidden="true" className={`w-5 h-5 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-accent" : "text-gray-500"}`} />
+                <ChevronDown aria-hidden="true" className={`w-5 h-5 shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180 text-accent" : "text-gray-600"}`} />
               </button>
             </h3>
             <div id={panelId} role="region" aria-labelledby={btnId} hidden={!isOpen}>

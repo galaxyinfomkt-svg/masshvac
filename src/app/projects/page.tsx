@@ -53,7 +53,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-gray-500 text-sm line-clamp-2 mb-4">{project.description}</p>
+                    <p className="text-gray-600 text-sm line-clamp-2 mb-4">{project.description}</p>
                     <span className="inline-flex items-center text-accent font-semibold text-sm">
                       View Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </span>

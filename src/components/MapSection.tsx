@@ -9,7 +9,7 @@ export default function MapSection() {
       <div className="mx-auto max-w-7xl px-4">
         <ScrollReveal className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Our <span className="text-accent">Service Area</span></h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Based in Milford, serving 50 towns across MetroWest and nearby.</p>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">Based in Milford, serving 50 towns across MetroWest and nearby.</p>
           <div className="accent-divider mt-6" />
         </ScrollReveal>
 

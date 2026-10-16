@@ -122,7 +122,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div className="mx-auto max-w-7xl px-4">
           <ScrollReveal className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">Our Services in <span className="text-accent">{city.name}, MA</span></h2>
-            <p className="text-gray-500 mt-3">Click any service for details specific to {city.name}.</p>
+            <p className="text-gray-600 mt-3">Click any service for details specific to {city.name}.</p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:[&>*]:col-span-2 lg:[&>*:nth-child(4)]:col-start-2">
@@ -135,7 +135,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors mb-2">{service.shortName}</h3>
-                    <p className="text-sm text-gray-500 mb-4">{service.name} in {city.name}, MA</p>
+                    <p className="text-sm text-gray-600 mb-4">{service.name} in {city.name}, MA</p>
                     <span className="inline-flex items-center text-accent font-semibold text-sm">
                       Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </span>
@@ -176,7 +176,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-gray-100 card-premium">
                   <CheckCircle className="w-8 h-8 text-accent mb-3" />
                   <h3 className="font-bold text-primary mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.desc}</p>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -191,7 +191,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <h2 className="text-2xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
               <MapPin className="w-5 h-5 text-accent" />HVAC Services in Nearby Cities
             </h2>
-            <p className="text-gray-500 text-sm mb-8">We also serve these nearby MetroWest towns.</p>
+            <p className="text-gray-600 text-sm mb-8">We also serve these nearby MetroWest towns.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {nearby.map((c) => (
                 <Link key={c.slug} href={`/cities/${c.slug}`} className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
@@ -228,7 +228,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary">Frequently Asked Questions About <span className="text-accent">HVAC in {city.name}</span></h2>
-            <p className="text-gray-500 mt-3">Common questions about our HVAC services in {city.name}, Massachusetts.</p>
+            <p className="text-gray-600 mt-3">Common questions about our HVAC services in {city.name}, Massachusetts.</p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>

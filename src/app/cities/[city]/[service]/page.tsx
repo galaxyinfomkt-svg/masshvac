@@ -179,7 +179,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
                 <div className="p-6 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-gray-100 card-premium">
                   <CheckCircle className="w-8 h-8 text-accent mb-3" />
                   <h3 className="font-bold text-primary mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.desc}</p>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -192,7 +192,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         <div className="mx-auto max-w-7xl px-4 text-center">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-primary mb-2">Other HVAC Services in <span className="text-accent">{city.name}, MA</span></h2>
-            <p className="text-gray-500 text-sm mb-8">Explore all our professional HVAC services available in {city.name}.</p>
+            <p className="text-gray-600 text-sm mb-8">Explore all our professional HVAC services available in {city.name}.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {services.filter((s) => s.slug !== service.slug).map((s) => (
                 <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="px-5 py-2.5 bg-surface border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
@@ -211,7 +211,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <h2 className="text-2xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
               <MapPin className="w-5 h-5 text-accent" />{service.shortName} in Nearby Cities
             </h2>
-            <p className="text-gray-500 text-sm mb-8">We also provide {service.name.toLowerCase()} in these nearby MetroWest towns.</p>
+            <p className="text-gray-600 text-sm mb-8">We also provide {service.name.toLowerCase()} in these nearby MetroWest towns.</p>
             <div className="flex flex-wrap justify-center gap-3">
               {nearby.map((c) => (
                 <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="px-5 py-2.5 bg-white border border-gray-100 text-gray-600 font-medium rounded-full hover:bg-accent hover:text-white transition-all duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.06)] text-sm">
@@ -254,7 +254,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary">Frequently Asked Questions About <span className="text-accent">{service.shortName}</span> in {city.name}</h2>
-            <p className="text-gray-500 mt-3">Common questions about {service.name.toLowerCase()} in {city.name}, MA.</p>
+            <p className="text-gray-600 mt-3">Common questions about {service.name.toLowerCase()} in {city.name}, MA.</p>
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>

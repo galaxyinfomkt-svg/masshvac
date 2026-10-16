@@ -287,7 +287,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Our HVAC <span className="text-accent">Services</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               From emergency repairs to new installations, for homes and
               businesses in Milford and across MetroWest.
             </p>
@@ -376,7 +376,7 @@ export default function HomePage() {
                             so tap goes to tel:, not to the service page. */}
                         <a
                           href={TEL_HREF}
-                          className="relative z-20 inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-accent font-semibold transition-colors"
+                          className="relative z-20 inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-accent font-semibold transition-colors"
                           aria-label={`Call about ${service.shortName.toLowerCase()}`}
                         >
                           <Phone className="w-3.5 h-3.5" />
@@ -428,7 +428,7 @@ export default function HomePage() {
                 in Milford and takes emergency calls 24/7, with written
                 estimates before any work starts.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-8">
+              <p className="text-gray-300 leading-relaxed mb-8">
                 As a licensed and insured HVAC contractor serving 50 towns
                 around Milford and MetroWest, we work on{" "}
                 <Link
@@ -530,7 +530,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               How It <span className="text-accent">Works</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Four simple steps to get your HVAC system running perfectly.
             </p>
             <div className="accent-divider mt-6" />
@@ -591,7 +591,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Why Choose <span className="text-accent">Mass HVAC</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               MetroWest homeowners and businesses trust Mass HVAC for
               reliable, professional HVAC service.
             </p>
@@ -646,7 +646,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Recent <span className="text-accent">Projects</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               See how we&apos;ve helped MetroWest homeowners and businesses
               solve their HVAC challenges.
             </p>
@@ -684,7 +684,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="p-5">
-                    <p className="text-gray-500 text-sm line-clamp-2">
+                    <p className="text-gray-600 text-sm line-clamp-2">
                       {project.description}
                     </p>
                     <div className="mt-4 flex items-center text-accent font-semibold text-sm">
@@ -772,7 +772,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Serving <span className="text-accent">Milford &amp; MetroWest</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Mass HVAC provides professional heating, cooling, and indoor air
               quality services to 50+ MetroWest cities and towns across the
               Commonwealth.

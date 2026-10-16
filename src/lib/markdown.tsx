@@ -11,12 +11,16 @@ import Link from "next/link";
  * parsers that leaked literal "**" and "- " into rendered pages.
  *
  * Heading levels are normalised so the content never skips a level after the
- * page H1: the shallowest heading found becomes <h2>.
+ * page H1: the shallowest heading found becomes <h2>, and no heading steps
+ * down more than one level from the one before it.
  */
 export function renderMarkdown(src: string): ReactNode[] {
   const lines = src.replace(/\r\n/g, "\n").split("\n");
   const levels = lines.map((l) => /^(#{2,4})\s/.exec(l)?.[1].length).filter((n): n is number => !!n);
   const shift = levels.length ? Math.min(...levels) - 2 : 0;
+  // Never step down more than one level from the previous heading (an ###
+  // before the first ## would otherwise follow the page H1 directly).
+  let prevLevel = 1;
 
   const out: ReactNode[] = [];
   let para: string[] = [];
@@ -32,7 +36,7 @@ export function renderMarkdown(src: string): ReactNode[] {
     if (!table) return;
     const [head, ...body] = table;
     out.push(
-      <div key={key()} className="md-table">
+      <div key={key()} className="md-table" role="region" aria-label="Table (scrolls sideways)" tabIndex={0}>
         <table>
           <thead>
             <tr>{head.map((c, i) => <th key={i} scope="col">{inline(c)}</th>)}</tr>
@@ -74,7 +78,8 @@ export function renderMarkdown(src: string): ReactNode[] {
     if (h) {
       flushPara();
       flushList();
-      const level = Math.min(Math.max(h[1].length - shift, 2), 4);
+      const level = Math.min(Math.max(h[1].length - shift, 2), 4, prevLevel + 1);
+      prevLevel = level;
       const Tag = (`h${level}`) as "h2" | "h3" | "h4";
       out.push(<Tag key={key()}>{inline(h[2])}</Tag>);
       continue;

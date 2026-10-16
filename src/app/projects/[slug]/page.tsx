@@ -95,7 +95,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <h3 className="text-xl font-bold text-red-700">The Challenge</h3>
                   </div>
                   {project.problem.split("\n\n").map((para, i) => (
-                    <p key={i} className="text-red-800/70 leading-relaxed mb-3 last:mb-0">{para}</p>
+                    <p key={i} className="text-red-800 leading-relaxed mb-3 last:mb-0">{para}</p>
                   ))}
                 </div>
               </ScrollReveal>
@@ -110,7 +110,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     <h3 className="text-xl font-bold text-emerald-700">Our Solution</h3>
                   </div>
                   {project.solution.split("\n\n").map((para, i) => (
-                    <p key={i} className="text-emerald-800/70 leading-relaxed mb-3 last:mb-0">{para}</p>
+                    <p key={i} className="text-emerald-800 leading-relaxed mb-3 last:mb-0">{para}</p>
                   ))}
                 </div>
               </ScrollReveal>
@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       {project.results.map((result, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
-                          <span className="text-blue-800/70 leading-relaxed">{result}</span>
+                          <span className="text-blue-800 leading-relaxed">{result}</span>
                         </li>
                       ))}
                     </ul>
@@ -150,7 +150,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       { icon: Clock, label: "Duration", value: project.duration },
                       { icon: Award, label: "Equipment", value: project.systemBrand },
                       { label: "Scope", value: project.scope },
-                      { label: "Result", value: "Completed Successfully", color: "text-emerald-600" },
+                      { label: "Result", value: "Completed Successfully", color: "text-emerald-700" },
                     ].map((d) => (
                       <div key={d.label}>
                         <p className="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">{d.label}</p>
@@ -191,7 +191,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   </div>
                   <div className="p-4">
                     <h3 className="font-bold text-primary group-hover:text-accent transition-colors">{proj.title}</h3>
-                    <p className="text-gray-400 text-sm">{proj.city}</p>
+                    <p className="text-gray-600 text-sm">{proj.city}</p>
                   </div>
                 </Link>
               ))}
