@@ -1,0 +1,26 @@
+TimeoutError: page.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('nav[aria-label="Quick contact actions"] a[href="#quote"]')
+    - locator resolved to <a href="#quote" aria-label="Get a free HVAC quote" class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-white text-primary font-bold text-sm border-l border-gray-200">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <chat-widget class="hydrated" data-active="false" source="custom-code" data-loader-instance-id="loader-1792173647494-pmr0hd1uf">…</chat-widget> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <chat-widget class="hydrated" data-active="false" source="custom-code" data-loader-instance-id="loader-1792173647494-pmr0hd1uf">…</chat-widget> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    58 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <chat-widget class="hydrated" data-active="false" source="custom-code" data-loader-instance-id="loader-1792173647494-pmr0hd1uf">…</chat-widget> intercepts pointer events
+     - retrying click action
+       - waiting 500ms

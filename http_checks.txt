@@ -1,0 +1,43 @@
+== http://masshvac.net
+HTTP/1.0 308 Permanent Redirect
+Content-Type: text/plain
+Location: https://masshvac.net/
+== http://www.masshvac.net
+HTTP/1.0 308 Permanent Redirect
+Content-Type: text/plain
+Location: https://www.masshvac.net/
+== https://www.masshvac.net
+HTTP/2 308 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+location: https://masshvac.net/
+== https://masshvac.net/index.html
+HTTP/2 404 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+x-vercel-cache: HIT
+== https://masshvac.net/cities/Milford
+HTTP/2 404 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+x-vercel-cache: MISS
+== https://masshvac.net/?utm_source=x
+HTTP/2 200 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+x-vercel-cache: HIT
+== https://masshvac.net/sitemap.xml
+HTTP/2 200 
+cache-control: public, max-age=0, must-revalidate
+content-type: application/xml
+x-vercel-cache: HIT
+== https://masshvac.net/robots.txt
+HTTP/2 200 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+x-vercel-cache: HIT
+== https://masshvac.net/nao-existe
+HTTP/2 404 
+cache-control: public, max-age=0, must-revalidate
+content-type: text/html; charset=utf-8
+x-vercel-cache: HIT
