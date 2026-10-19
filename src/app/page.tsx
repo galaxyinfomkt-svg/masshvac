@@ -121,7 +121,7 @@ export default function HomePage() {
               {/* Top urgency badge — single, prominent. Pulses subtly to draw
                   the eye and signal "we answer the phone NOW", which is the
                   #1 reason an HVAC customer picks a contractor over another. */}
-              <div className="inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-5 shadow-[0_4px_15px_rgba(200,16,46,0.4)] animate-pulse-glow">
+              <div className="relative inline-flex items-center gap-2 bg-accent text-white px-4 py-2 rounded-full text-sm font-bold mb-5 shadow-[0_4px_15px_rgba(200,16,46,0.4)] animate-pulse-glow">
                 <Zap className="w-4 h-4" />
                 24/7 EMERGENCY &middot; SAME-DAY SERVICE
               </div>
