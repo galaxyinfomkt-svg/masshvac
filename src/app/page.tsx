@@ -205,7 +205,7 @@ export default function HomePage() {
               <LazyIframe
                 src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
                 className="w-full border-none rounded-lg"
-                style={{ height: "420px" }}
+                style={{ height: "640px" }}
                 id="hero-form-ko3gg97CJtkDUrqpruBq"
                 data-layout="{'id':'INLINE'}"
                 data-trigger-type="alwaysShow"
@@ -215,12 +215,25 @@ export default function HomePage() {
                 data-deactivation-type="neverDeactivate"
                 data-deactivation-value=""
                 data-form-name="FunilGhl"
-                data-height="420"
+                data-height="640"
                 data-layout-iframe-id="hero-form-ko3gg97CJtkDUrqpruBq"
                 data-form-id="ko3gg97CJtkDUrqpruBq"
                 title="Free HVAC Estimate - Mass HVAC Inc"
                 delayMs={3000}
-                placeholderHeight="420px"
+                placeholder={
+                  <div
+                    className="flex w-full flex-col items-center justify-center rounded-lg bg-white px-6 text-center shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
+                    style={{ minHeight: "640px" }}
+                    role="status"
+                  >
+                    <p className="text-lg font-semibold text-primary">Get Your Free HVAC Estimate</p>
+                    <p className="mt-2 text-sm text-gray-600">Loading the form&hellip;</p>
+                    <a href={TEL_HREF} className="mt-4 font-bold text-accent underline">
+                      Or call {PHONE_DISPLAY}
+                    </a>
+                  </div>
+                }
+                placeholderHeight="640px"
               />
             </div>
           </div>
@@ -244,7 +257,7 @@ export default function HomePage() {
               Same-day reply on weekdays
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-              Get Your Free <span className="text-accent">HVAC Quote</span>
+              Get Your Free <span className="text-accent-on-dark">HVAC Quote</span>
             </h2>
             <p className="text-white/70 text-sm">
               30-second form &middot; no obligation &middot; same-day response
@@ -254,19 +267,31 @@ export default function HomePage() {
             <LazyIframe
               src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
               className="w-full border-none"
-              style={{ height: "480px" }}
+              style={{ height: "764px" }}
               id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
               data-activation-type="alwaysActivated"
               data-deactivation-type="neverDeactivate"
               data-form-name="FunilGhl"
-              data-height="480"
+              data-height="764"
               data-layout-iframe-id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
               data-form-id="ko3gg97CJtkDUrqpruBq"
               title="Free HVAC Estimate Form - Mass HVAC"
               delayMs={1500}
-              placeholderHeight="480px"
+              placeholder={
+                <div
+                  className="flex w-full flex-col items-center justify-center px-6 text-center"
+                  style={{ minHeight: "764px" }}
+                  role="status"
+                >
+                  <p className="text-sm text-gray-600">Loading the form&hellip;</p>
+                  <a href={TEL_HREF} className="mt-3 font-bold text-accent underline">
+                    Or call {PHONE_DISPLAY}
+                  </a>
+                </div>
+              }
+              placeholderHeight="764px"
             />
           </div>
           <p className="text-center text-white/80 text-xs mt-4">
@@ -303,7 +328,7 @@ export default function HomePage() {
               // Mini-split shows rebate band instead (highest emotional pull).
               const priceHook =
                 service.slug === "heat-pumps-ductless-mini-splits" && service.rebateRange
-                  ? `Up to $${service.rebateRange.high.toLocaleString()} Mass Save rebate`
+                  ? `Up to $${service.rebateRange.high.toLocaleString("en-US")} Mass Save rebate`
                   : service.tuneUpRange
                     ? `From $${service.tuneUpRange.low}`
                     : null;
@@ -342,7 +367,7 @@ export default function HomePage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       {priceHook && (
-                        <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur text-primary px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
+                        <div className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur text-primary px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
                           {priceHook}
                         </div>
                       )}
@@ -420,7 +445,7 @@ export default function HomePage() {
             {/* Left — Text */}
             <ScrollReveal direction="left">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                About <span className="text-accent">Mass HVAC Inc</span>
+                About <span className="text-accent-on-dark">Mass HVAC Inc</span>
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 When your heat goes out at 2 AM or your AC fails during a July
@@ -433,35 +458,35 @@ export default function HomePage() {
                 around Milford and MetroWest, we work on{" "}
                 <Link
                   href="/services/heating-installation-repair"
-                  className="text-accent hover:underline"
+                  className="text-accent-on-dark underline underline-offset-2 hover:text-white"
                 >
                   heating
                 </Link>
                 ,{" "}
                 <Link
                   href="/services/air-conditioning-installation-repair"
-                  className="text-accent hover:underline"
+                  className="text-accent-on-dark underline underline-offset-2 hover:text-white"
                 >
                   air conditioning
                 </Link>
                 ,{" "}
                 <Link
                   href="/services/heat-pumps-ductless-mini-splits"
-                  className="text-accent hover:underline"
+                  className="text-accent-on-dark underline underline-offset-2 hover:text-white"
                 >
                   ductless mini-splits
                 </Link>
                 ,{" "}
                 <Link
                   href="/services/hvac-maintenance-tune-ups"
-                  className="text-accent hover:underline"
+                  className="text-accent-on-dark underline underline-offset-2 hover:text-white"
                 >
                   maintenance
                 </Link>
                 , and{" "}
                 <Link
                   href="/services/indoor-air-quality"
-                  className="text-accent hover:underline"
+                  className="text-accent-on-dark underline underline-offset-2 hover:text-white"
                 >
                   indoor air quality
                 </Link>{" "}
@@ -479,7 +504,7 @@ export default function HomePage() {
                     key={stat.label}
                     className="glass-premium p-5 rounded-xl"
                   >
-                    <div className="text-accent text-3xl font-bold mb-1">
+                    <div className="text-accent-on-dark text-3xl font-bold mb-1">
                       {stat.value}
                     </div>
                     <div className="text-gray-200 text-sm">{stat.label}</div>
@@ -734,7 +759,7 @@ export default function HomePage() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               No Heat? No AC?
               <br />
-              <span className="text-accent">We&apos;re On It.</span>
+              <span className="text-accent-on-dark">We&apos;re On It.</span>
             </h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10">
               Mass HVAC provides 24/7 emergency HVAC service across
@@ -743,10 +768,12 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={TEL_HREF}
-                className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-accent hover:bg-accent-dark text-white font-bold text-xl rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+                className="inline-flex items-center justify-center gap-3 px-6 sm:px-10 py-5 bg-accent hover:bg-accent-dark text-white font-bold text-lg sm:text-xl rounded-lg transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
               >
                 <Phone className="w-6 h-6" />
-                Call Now: {PHONE_DISPLAY}
+                <span>
+                  Call Now: <span className="whitespace-nowrap">{PHONE_DISPLAY}</span>
+                </span>
               </a>
               <Link
                 href="#quote"

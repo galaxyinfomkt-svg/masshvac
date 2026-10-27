@@ -28,11 +28,11 @@ export default function ReviewsWidget() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+          <ul className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto">
             {reviews.map((r, i) => (
               <li
                 key={`${r.author}-${i}`}
-                className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+                className="relative mb-6 break-inside-avoid p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
               >
                 <Quote className="absolute top-4 right-4 w-6 h-6 text-accent/30" aria-hidden />
                 <p className="sr-only">Rated {r.rating} out of 5</p>
