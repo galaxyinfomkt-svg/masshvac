@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Phone, ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Phone, ArrowRight, AlertCircle, CheckCircle2, Flame, Snowflake, Wind, Wrench, AirVent, type LucideIcon } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import { services, getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/cities";
@@ -13,6 +13,14 @@ import { formatRange } from "@/data/services";
 import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
 import { buildMetadata } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  "heating-installation-repair": Flame,
+  "air-conditioning-installation-repair": Snowflake,
+  "heat-pumps-ductless-mini-splits": Wind,
+  "hvac-maintenance-tune-ups": Wrench,
+  "indoor-air-quality": AirVent,
+};
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -35,9 +43,9 @@ function serviceFaq(service: NonNullable<ReturnType<typeof getServiceBySlug>>) {
   const n = service.name.toLowerCase();
   const sn = service.shortName.toLowerCase();
   const costParts = [
-    service.tuneUpRange && `${formatRange(service.tuneUpRange)} per ${service.tuneUpRange.unit}`,
-    service.repairRange && `${formatRange(service.repairRange)} per ${service.repairRange.unit}`,
-    service.installRange && `${formatRange(service.installRange)} per ${service.installRange.unit}`,
+    service.tuneUpRange && formatRange(service.tuneUpRange),
+    service.repairRange && formatRange(service.repairRange),
+    service.installRange && formatRange(service.installRange),
   ].filter(Boolean);
   const items = [
     {
@@ -88,11 +96,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
-                <li className="text-accent font-semibold">{service.name}</li>
+                <li aria-current="page" className="text-white font-semibold">{service.name}</li>
               </ol>
             </nav>
 
-            <span className="text-5xl block mb-5">{service.icon}</span>
+            {(() => {
+              const Icon = SERVICE_ICONS[service.slug];
+              return Icon ? (
+                <span className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent shadow-[0_4px_15px_rgba(200,16,46,0.3)]">
+                  <Icon className="h-8 w-8 text-white" aria-hidden="true" />
+                </span>
+              ) : null;
+            })()}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {service.name}
             </h1>

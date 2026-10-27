@@ -34,7 +34,9 @@ export interface Service {
 
 /** Format a PriceRange as "$89–$149 per tune-up". */
 export function formatRange(r: PriceRange): string {
-  return `$${r.low.toLocaleString()}–$${r.high.toLocaleString()} per ${r.unit}`;
+  // Pin the locale: a bare toLocaleString() follows the build machine's language
+  // (pt-BR would print "$4.500" instead of "$4,500").
+  return `$${r.low.toLocaleString("en-US")}–$${r.high.toLocaleString("en-US")} per ${r.unit}`;
 }
 
 export const services: Service[] = [

@@ -10,7 +10,7 @@ const FORM_SRC = `https://api.leadconnectorhq.com/widget/form/${FORM_ID}`;
  */
 export default function LeadForm({
   instance,
-  height = 480,
+  height = 640,
   delayMs = 0,
   title = "Free HVAC Estimate — Mass HVAC Inc",
 }: {
