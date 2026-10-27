@@ -71,6 +71,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   const install = service.installRange ? formatRange(service.installRange) : "a free in-home estimate";
 
   const faqItems: { q: string; a: string }[] = [
+    ...(city.localFaq ?? []).filter((f) => f.services?.includes(service.slug)).map(({ q, a }) => ({ q, a })),
     {
       q: `How much does ${service.name.toLowerCase()} cost in ${city.name}, MA?`,
       a: `${city.name} homeowners typically pay ${tuneUp} for ${service.shortName.toLowerCase()} tune-ups, ${repair} for common repairs, and ${install} for a complete new installation. Final pricing depends on system size, brand, and site conditions; Mass HVAC gives you a written estimate before any work starts. Call ${PHONE_DISPLAY} for a free quote.`,

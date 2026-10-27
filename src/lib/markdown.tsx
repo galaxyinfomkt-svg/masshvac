@@ -37,7 +37,7 @@ export function renderMarkdown(src: string): ReactNode[] {
     const [head, ...body] = table;
     out.push(
       <div key={key()} className="md-table" role="region" aria-label="Table (scrolls sideways)" tabIndex={0}>
-        <table>
+        <table data-cols={head.length}>
           <thead>
             <tr>{head.map((c, i) => <th key={i} scope="col">{inline(c)}</th>)}</tr>
           </thead>

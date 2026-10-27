@@ -42,6 +42,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   const nearby = cities.filter((_, i) => Math.abs(i - cityIndex) > 0 && Math.abs(i - cityIndex) <= 4).slice(0, 8);
 
   const faqItems = [
+    ...(city.localFaq ?? []).map(({ q, a }) => ({ q, a })),
     {
       q: `How much does HVAC service cost in ${city.name}, MA?`,
       a: `A seasonal tune-up usually runs $89–$149 and most common repairs $150–$500. New equipment depends on system size and type, so we give ${city.name} homeowners a free written estimate before any work starts. Call ${PHONE_DISPLAY}.`,
