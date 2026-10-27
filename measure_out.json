@@ -398,38 +398,38 @@
  "/cities/milford": {
   "own_words": 973,
   "own_unique_pct": 99.7,
-  "main_words": 1407,
-  "main_unique_pct": 75.8
+  "main_words": 1168,
+  "main_unique_pct": 91.4
  },
  "/cities/milford/heating-installation-repair": {
-  "own_words": 400,
-  "own_unique_pct": 99.5,
-  "main_words": 812,
-  "main_unique_pct": 56.6
+  "own_words": 502,
+  "own_unique_pct": 99.6,
+  "main_words": 669,
+  "main_unique_pct": 82.8
  },
  "/cities/milford/air-conditioning-installation-repair": {
-  "own_words": 461,
+  "own_words": 513,
   "own_unique_pct": 99.8,
-  "main_words": 875,
-  "main_unique_pct": 59.9
+  "main_words": 682,
+  "main_unique_pct": 83.1
  },
  "/cities/milford/heat-pumps-ductless-mini-splits": {
-  "own_words": 486,
+  "own_words": 544,
   "own_unique_pct": 99.2,
-  "main_words": 900,
-  "main_unique_pct": 60.5
+  "main_words": 713,
+  "main_unique_pct": 83.4
  },
  "/cities/milford/hvac-maintenance-tune-ups": {
-  "own_words": 415,
+  "own_words": 468,
   "own_unique_pct": 100.0,
-  "main_words": 827,
-  "main_unique_pct": 58.0
+  "main_words": 635,
+  "main_unique_pct": 82.5
  },
  "/cities/milford/indoor-air-quality": {
-  "own_words": 428,
-  "own_unique_pct": 99.5,
-  "main_words": 846,
-  "main_unique_pct": 57.5
+  "own_words": 473,
+  "own_unique_pct": 99.6,
+  "main_words": 643,
+  "main_unique_pct": 81.3
  },
  "/cities/wayland": {
   "own_words": 622,

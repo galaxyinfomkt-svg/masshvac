@@ -9,7 +9,9 @@ function formatDate(iso: string): string {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "long", timeZone: "UTC" });
 }
 
-export default function ReviewsWidget() {
+export default function ReviewsWidget({ compact = false }: { compact?: boolean }) {
+  // compact is used on pages that carry their own unique copy, so the text repeated on every page stays small.
+  const shown = compact ? [...reviews].sort((a, b) => a.text.length - b.text.length).slice(0, 2) : reviews;
   return (
     <section className="py-20 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden noise-texture text-white">
       <div className="mx-auto max-w-7xl px-4">
@@ -28,8 +30,8 @@ export default function ReviewsWidget() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <ul className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto">
-            {reviews.map((r, i) => (
+          <ul className={compact ? "columns-1 md:columns-2 gap-6 max-w-3xl mx-auto" : "columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto"}>
+            {shown.map((r, i) => (
               <li
                 key={`${r.author}-${i}`}
                 className="relative mb-6 break-inside-avoid p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
@@ -57,11 +59,13 @@ export default function ReviewsWidget() {
           </ul>
         </ScrollReveal>
 
+        {!compact && (
         <ScrollReveal className="text-center mt-10">
           <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-dark text-white font-bold rounded-lg transition-all duration-300 hover:scale-[1.03]">
             <Star className="w-5 h-5 fill-current" />Leave Us a Review on Google
           </a>
         </ScrollReveal>
+        )}
       </div>
     </section>
   );

@@ -170,6 +170,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+      {!local && (
+        <>
       {/* Why Choose Mass HVAC */}
       <section className="py-16 bg-surface">
         <div className="mx-auto max-w-7xl px-4">
@@ -196,6 +198,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+        </>
+      )}
+
       {/* Nearby Cities */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 text-center">
@@ -218,6 +223,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+      {!local && (
+        <>
       {/* Related Resources */}
       <section className="py-12 bg-surface">
         <div className="mx-auto max-w-4xl px-4 text-center">
@@ -235,6 +242,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+        </>
+      )}
+
       {/* FAQ Section */}
       <section className="py-20 bg-surface">
         <div className="mx-auto max-w-4xl px-4">
@@ -251,8 +261,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
-      <ReviewsWidget />
-      <MapSection />
+      <ReviewsWidget compact={Boolean(local)} />
+      <MapSection compact={Boolean(local)} />
 
       {/* JSON-LD: Service — aggregateRating intentionally OMITTED here.
           It lives only on the Organization schema (layout.tsx), where the

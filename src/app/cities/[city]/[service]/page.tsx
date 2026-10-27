@@ -174,6 +174,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
+      {!localService && (
+        <>
       {/* Why Choose Mass HVAC for this service */}
       <section className="py-16 bg-surface">
         <div className="mx-auto max-w-7xl px-4">
@@ -199,6 +201,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           </div>
         </div>
       </section>
+
+        </>
+      )}
 
       {/* Other services in this city */}
       <section className="py-16 bg-white">
@@ -239,6 +244,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
+      {!localService && (
+        <>
       {/* HVAC Resources */}
       <section className="py-12 bg-white">
         <div className="mx-auto max-w-7xl px-4 text-center">
@@ -262,6 +269,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
+        </>
+      )}
+
       {/* FAQ Section */}
       <section className="py-20 bg-surface">
         <div className="mx-auto max-w-4xl px-4">
@@ -278,8 +288,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
-      <ReviewsWidget />
-      <MapSection />
+      <ReviewsWidget compact={Boolean(localService)} />
+      <MapSection compact={Boolean(localService)} />
 
       {/* JSON-LD: Service */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

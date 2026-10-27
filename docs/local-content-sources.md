@@ -1,40 +1,34 @@
 # Local content: sources and method
 
-Every fact in a city's `localIntro`, `neighborhoods` and `localFaq` must trace to a source that was read, not summarized from memory. This file lists the sources for **Milford** (written 2026-10-27) and the method to repeat for the other cities.
+Every fact in a city's local content must trace to a source that was read, not summarized from memory. The pipeline that produces and checks the content is in `scripts/local-content/` (see its README). This file lists the sources behind the numbers and the decisions made.
 
-A city page becomes indexable as soon as it has `localIntro` or `neighborhoods` (see `cityHasLocalContent` in `src/data/cities.ts`). Do not add either until the facts are verified.
+A city page becomes indexable as soon as it has an entry in `src/data/local/index.ts` (see `cityHasLocalContent` in `src/data/cities.ts`). Add a city only after its content passed `validate.py` and `measure.py`.
 
-## Milford, MA
+## Where the numbers come from (all cities)
 
-| Claim on the page | Source | Notes |
-|---|---|---|
-| About 30,000 residents; Worcester County | Town of Milford Comprehensive Plan 2024, Existing Conditions Brief (MAPC), PDF p. 9: 30,134 (ACS 2018-2022). Census 2020 count: 30,379 (Wikipedia) | Written as "about 30,000" |
-| Close to three quarters of homes built before 1980; only 361 homes built 2010 to 2022 | Same plan, Housing section, PDF p. 44, citing ACS 2022 5-year table S2504 | |
-| 10,472 housing units; 11.8% in two-unit buildings; 7.6% in 3 to 4 unit buildings | Same plan, PDF p. 44, Table 4 "Units by Building Type" (ACS 2022) | The 2020 Census count is 11,956 units; the two datasets differ, so the page uses only the ACS table |
-| 70.5% owner-occupied, 29.5% renter-occupied households | Same plan, Demographics, PDF p. 9 | |
-| Neighborhoods: Downtown, The Plains, Prospect Heights (and their descriptions) | Same plan, Land Use, "Neighborhoods", PDF p. 14 | Quoted from the plan, not invented |
-| Route 16, 85, 109, 140 corridors | Same plan, PDF p. 12, Land Use; Wikipedia "Milford, Massachusetts" | |
-| National Grid is the electric utility | Town of Milford "Community Electricity" page, https://www.milfordma.gov/node/184891 | Official town page. **Gas utility was not confirmed, so the page says nothing about it** |
-| Gas permits: Building & Inspections, 66 Dilla St, only licensed plumbers may apply for plumbing or gas permits; (508) 634-2313 | https://www.milfordma.gov/173/Building-Inspections and https://www.milfordma.gov/176/Gas | The Gas page itself does not say when a permit is required |
-| State rule exempting simple gas control replacement; permits issued to licensed individuals | 248 CMR 3.00 via mass.gov (gas fitting permit guidance) | The FAQ says a new furnace or boiler "normally" needs a permit. That is an inference from the control-replacement exemption, not a quoted rule. **Confirm with Building & Inspections** |
-| Whole-home heat pump rebate: $2,650 per ton up to $8,500; one per account; weatherization conditions; equipment installed in 2026; applications due 2027-02-28; eligible Mass Save heat pump installer | 2026 Residential Air Source Heat Pump Rebate Form (National Grid / Mass Save), https://www.nationalgridus.com/media/pdfs/ma/commercial-trade-partners/masg-0078_rr-hvac_air-source-heat-pump.pdf | **Expires.** Re-check every January |
-| Rental heat minimums: 68 F (7 a.m. to 11 p.m.), 64 F overnight; heating season roughly mid-September to mid-June; landlord pays for heat unless the lease says otherwise | 105 CMR 410.201 via mass.gov "Guidance on Heating Season and Min Temps" and the Attorney General's landlord/tenant guide | Mass.gov and the AG guide differ by a day on the season dates, so the page says "roughly". General information, not legal advice |
+| Figure | Source |
+|---|---|
+| Population, housing units, occupied/vacant, owner vs renter households | U.S. Census Bureau, American Community Survey (ACS) 2022 5-year estimates, tables B01003, B25001, B25002, B25003, read from `data.census.gov` for each town's official GEOID (Census TIGERweb) |
+| Heating fuel mix | ACS B25040 (house heating fuel) |
+| Age of homes, median year built | ACS B25034, B25035 |
+| Type of home (detached, attached, 2 units, 3-4, 5+) | ACS B25024 |
+| Median home value | ACS B25077 |
+| Rank among the towns and the "median town" | Computed by `scripts/local-content/factsheet.py` from the same tables, across the 50 towns served |
+| History and geography | Wikipedia plain text of each town (only history and geography, never its old census figures) |
+| Electric utility | National Grid: the town appears in National Grid's own Massachusetts Electric Company territory list (https://www.nationalgridus.com/media/pronet/supplier_svc_territory.pdf). Municipal utilities and Unitil: from the research already in `src/data/cities.ts`. Any other town: the utility is NOT named |
+| Mass Save 2026 heat pump rebate ($2,650 per ton up to $8,500; partial home $1,125 per ton; weatherization conditions; installed in 2026; applications due 2027-02-28) | 2026 Residential Air Source Heat Pump Rebate Form (National Grid / Mass Save), https://www.nationalgridus.com/media/pdfs/ma/commercial-trade-partners/masg-0078_rr-hvac_air-source-heat-pump.pdf. **Expires: re-check every January** |
+| Rental heat minimums (68 F / 64 F), landlord pays for heat unless the lease says otherwise | 105 CMR 410.201 via mass.gov "Guidance on Heating Season and Min Temps" and the Attorney General's landlord/tenant guide. Season dates differ by a day between the two, so the pages say "roughly mid-September to mid-June" |
 
-### Deliberately left out
-- **The "Recent Milford Project" block** (`featuredProjectSlug: "boiler-replacement-milford"`). The project text claims a 2-hour response, a 48-hour job, ~20% lower gas bills and competitors quoting 5 to 7 days. None of that could be verified, and its photo shows a condenser, not a boiler. Re-enable only after the owner confirms.
-- **Statements about the company** beyond what the site already says (licensed and insured, permits pulled, assessment before quoting). In particular the page does **not** claim that Mass HVAC is a Mass Save heat pump installer. If it is, say so; it is a strong local signal.
-- **Gas utility, median year built, heating fuel mix.** Not found in a primary source.
+## Milford (done by hand, extra official sources)
 
-### Open questions for the owner
-1. Does Mass HVAC offer service in Portuguese? The 2024 plan notes that downtown has many shops serving Milford's Brazilian community, and several reviews are translated from Portuguese.
-2. Is Mass HVAC on the Mass Save heat pump installer list?
-3. Is the Milford boiler project real? (see above)
+- Neighborhoods (Downtown, The Plains, Prospect Heights), the rental-housing note and the Brazilian-community remark: Town of Milford Comprehensive Plan 2024, Existing Conditions Brief (MAPC), PDF p. 14 and p. 45.
+- National Grid as the electric utility: Town of Milford "Community Electricity" page, https://www.milfordma.gov/node/184891.
+- Permits: Town of Milford Building & Inspections, 66 Dilla St, (508) 634-2313; only licensed plumbers may apply for plumbing or gas permits (https://www.milfordma.gov/173/Building-Inspections). The statement that a new gas furnace or boiler "normally" needs a permit is an inference from the control-replacement exemption in 248 CMR 3.00; confirm with the town.
+- The "Steam Boiler Replacement" project in a Milford duplex was confirmed real by the owner on 2026-10-27. Its photo on the site is still an outdoor condenser: replace it.
+- **Correction:** an earlier version of the Milford page used the Comprehensive Plan's own housing figures (10,472 units, "close to three quarters" before 1980). The ACS 2022 tables give 11,950 units and 68.9%, and they are the same source used for every other town, so the page now uses them.
 
-## Method for the next city
+## Deliberately left out
 
-1. Official plan or town site first (MAPC comprehensive plans exist for many MetroWest towns), then Census/ACS, then the town's inspection and permit pages, then the utility's own page.
-2. Download the PDF and extract the text; do not rely on a search-engine summary of it.
-3. Take neighborhood names from the plan or the town, never from a listing site.
-4. For each claim, keep the source URL and the page number in this file.
-5. Write at least 400 words that exist on no other city page. After building, measure how many 8-word runs are unique to the page against 5 other cities; Milford went from about 24% to 51% (heating) and 57% (heat pumps).
-6. Add the city to `utilities` only if the utility is confirmed by an official page.
+- Statements about the company beyond what the site already says (licensed and insured, 24/7 emergency calls, free written estimates, assessment of the heating load before a quote). In particular no claim that Mass HVAC is a Mass Save heat pump installer, no years in business, no counts of jobs or technicians.
+- Gas utility, climate normals, prices and savings: not found in a primary source, or too easy to get wrong.
+- The service language: **English only** (confirmed by the owner).

@@ -3,7 +3,32 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { PHONE_DISPLAY, TEL_HREF } from "@/data/company";
 import { averageRating } from "@/data/reviews";
 
-export default function MapSection() {
+const MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d378360.36716461886!2d-71.5129531!3d42.1943425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x429044bbca3bf46b%3A0x4f82359b87d9fd27!2sMass%20Hvac%20Inc!5e0!3m2!1sen!2sbr!4v1771603708812!5m2!1sen!2sbr";
+
+function MapFrame() {
+  return (
+    <iframe src={MAP_SRC} width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Mass HVAC Service Area Map - Milford Massachusetts" className="w-full" />
+  );
+}
+
+/**
+ * compact: used on pages that carry their own unique copy. It keeps only the map so the
+ * text repeated on every page stays small.
+ */
+export default function MapSection({ compact = false }: { compact?: boolean }) {
+  if (compact) {
+    return (
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-5xl px-4">
+          <h2 className="text-2xl font-bold text-primary mb-6 text-center">Find Us on the Map</h2>
+          <div className="rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(200,16,46,0.08)] border-2 border-accent/50">
+            <MapFrame />
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4">
@@ -39,7 +64,7 @@ export default function MapSection() {
           <ScrollReveal direction="right" className="lg:col-span-2">
             <h3 className="text-xl font-bold text-primary mb-4 text-center">Find Us on the Map</h3>
             <div className="rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(200,16,46,0.08)] border-2 border-accent/50">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d378360.36716461886!2d-71.5129531!3d42.1943425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x429044bbca3bf46b%3A0x4f82359b87d9fd27!2sMass%20Hvac%20Inc!5e0!3m2!1sen!2sbr!4v1771603708812!5m2!1sen!2sbr" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Mass HVAC Service Area Map - Milford Massachusetts" className="w-full" />
+              <MapFrame />
             </div>
           </ScrollReveal>
         </div>
