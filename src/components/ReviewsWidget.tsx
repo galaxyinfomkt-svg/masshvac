@@ -11,7 +11,7 @@ function formatDate(iso: string): string {
 
 export default function ReviewsWidget({ compact = false }: { compact?: boolean }) {
   // compact is used on pages that carry their own unique copy, so the text repeated on every page stays small.
-  const shown = compact ? [...reviews].sort((a, b) => a.text.length - b.text.length).slice(0, 2) : reviews;
+  const shown = compact ? [...reviews].sort((a, b) => a.text.length - b.text.length).slice(0, 1) : reviews;
   return (
     <section className="py-20 bg-gradient-to-b from-dark-950 to-dark-900 relative overflow-hidden noise-texture text-white">
       <div className="mx-auto max-w-7xl px-4">
@@ -30,7 +30,7 @@ export default function ReviewsWidget({ compact = false }: { compact?: boolean }
         </ScrollReveal>
 
         <ScrollReveal>
-          <ul className={compact ? "columns-1 md:columns-2 gap-6 max-w-3xl mx-auto" : "columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto"}>
+          <ul className={compact ? "columns-1 gap-6 max-w-xl mx-auto" : "columns-1 md:columns-2 lg:columns-3 gap-6 max-w-6xl mx-auto"}>
             {shown.map((r, i) => (
               <li
                 key={`${r.author}-${i}`}

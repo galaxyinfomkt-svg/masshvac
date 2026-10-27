@@ -1,0 +1,220 @@
+{
+ "slug": "hudson",
+ "acsYear": 2022,
+ "quickAnswer": "Hudson runs on gas: 65.3% of homes heat with it (4th highest of the 50 towns we serve) and only 13.1% with oil (48th). The town owns its own electric utility, Hudson Light & Power, which changes how heat pump rebates work.",
+ "body": [
+  "## A gas town with its own electric company",
+  "In the Census Bureau's 2022 American Community Survey (ACS 2022), utility gas heats 5,257 of Hudson's 8,055 occupied homes (65.3%), the 4th-highest share among the 50 towns we serve. Fuel oil heats just 1,058 (13.1%), which ranks 48th, and the middle town sits at 36.5%. Electricity heats 1,456 homes (18.1%) and bottled gas 190 (2.4%).",
+  "For a gas home, the questions on a replacement are the age of the existing unit, whether its venting meets current practice, and whether a heat pump might make sense next to it. Oil households have more choices to weigh.",
+  "## Electricity from the town itself",
+  "Hudson's electricity comes from the town itself. According to the town's history, a power plant was built on Cherry Street by 1900, many houses were wired for electricity, and to this day Hudson produces its own power through the Hudson Light and Power Department, a non-profit municipal utility owned by the town.",
+  "That matters for rebates. With a town-owned electric company, the Mass Save heat pump rebate generally reaches only homes that burn natural gas supplied by a Mass Save sponsor. Everyone else looks to the utility's own program. Gas heats 65.3% of Hudson homes, so many households may fall under the first rule. Check masssave.com and the utility before you buy. Details are on our [heat pump page](/cities/hudson/heat-pumps-ductless-mini-splits).",
+  "## Shoe-factory streets and Queen Anne mansions",
+  "From about 1850 until the last shoe factory burned down in 1968, Hudson was a mill town, and before 1866 it was a neighborhood of Marlborough known as Feltonville. By 1860 it had 17 shoe and shoe-related factories, many powered by the Assabet River, and in the 20th century immigrant factory workers usually lived in boarding houses near their jobs. The ACS counts 1,854 homes (21.7%) from 1939 or earlier, which makes Hudson 11th of 50 for pre-war housing, against a middle figure of 16.6%.",
+  "Wealthier citizens built Queen Anne Victorian mansions, and many survive. One of the finest, the 1895 Colonel Adelbert Mossman House on Park Street, is on the National Register of Historic Places. The Goodale Homestead on Chestnut Street, dating from 1702, is the oldest surviving building in town. Houses of that age can have little insulation and unusual framing, and a modern system must be sized for the actual building.",
+  "## What the 1894 fire left behind",
+  "On July 4, 1894, two boys playing with firecrackers started a fire that burned 40 buildings and 5 acres of central Hudson. Nobody was hurt, and the town was substantially rebuilt within a year or two. The town had maintained five volunteer fire companies in the 1880s and 1890s, yet the fire still spread across the center.",
+  "## Apartments, duplexes and mobile homes",
+  "Hudson is 7th of 50 for multi-unit housing: 2,948 homes (34.4%) are in multi-unit buildings, including 513 in two-family houses and 784 in buildings of 3 to 4 units. Renters hold 2,207 households (27.4%). The town ranks 44th of 50 for single-family detached homes and 7th for vacancy (5.9%, against 3.6% for the middle town). It also has 245 mobile homes (2.9%), and manufactured housing can call for its own approach to ducts and outdoor units. Altogether the town holds 19,947 people, the 12th largest population of the 50, living in 8,055 occupied homes.",
+  "| Hudson, MA at a glance (ACS 2022) | Figure |\n| --- | --- |\n| Population | 19,947 |\n| Housing units | 8,560 |\n| Median year homes were built | 1972 |\n| Homes built 1939 or earlier | 21.7% |\n| Renter households | 27.4% |\n| Main heating fuels | Utility gas 65.3%, electricity 18.1% |\n| Electric utility | Hudson Light & Power (municipal) |"
+ ],
+ "faq": [
+  {
+   "q": "Is gas the main heating fuel in Hudson?",
+   "a": "Yes. Utility gas heats 65.3% of occupied Hudson homes, the 4th-highest share of the 50 towns we serve, while oil heats 13.1%, electricity 18.1% and bottled gas 2.4%. Whether the gas main reaches your particular street is something to confirm before you plan around it."
+  },
+  {
+   "q": "Does Mass Save apply to Hudson homes?",
+   "a": "Sometimes. Because the town runs its own electric utility, the Mass Save heat pump rebate is generally limited to homes using natural gas from a Mass Save sponsor, and other homes go through the utility's program. Verify at masssave.com, and ask the utility what its program covers."
+  },
+  {
+   "q": "Do Hudson's oldest houses need a different heating approach?",
+   "a": "Often, yes. Roughly one Hudson home in five (21.7%) is from 1939 or earlier, and houses that old tend to leak more air. The Goodale Homestead on Chestnut Street, from 1702, is the oldest surviving building in town. Before quoting, we assess the heating load of the home, so the new system is sized for the house itself."
+  },
+  {
+   "q": "Who runs electricity in Hudson?",
+   "a": "The Hudson Light and Power Department, a municipal utility owned by the town and run as a non-profit. It matters because heat pump rebates depend on the utility. The town history says a power plant was built on Cherry Street by 1900. Check with the utility before you plan an electric-heat project."
+  }
+ ],
+ "services": {
+  "heating-installation-repair": {
+   "quickAnswer": "Gas heats 5,257 Hudson homes, so most boiler and furnace calls are gas jobs with a permit and an inspection attached. The 1,058 oil homes and the 1,456 electric ones face different questions.",
+   "body": [
+    "## A gas job first",
+    "Hudson ranks 4th of 50 towns for utility gas and 48th for fuel oil. In plain numbers, 5,257 occupied homes heat with gas, against 1,058 with oil or kerosene and 1,456 with electricity. A failed boiler or furnace here is most often a gas appliance, which shapes how the job is run.",
+    "### Gas appliance work",
+    "Only licensed plumbers and gas fitters can pull the permit for new gas equipment in Massachusetts, and the work normally ends with a final inspection. Your town's building department can tell you what it asks for. Venting is the detail that most often changes the price of a swap, since a high-efficiency unit may vent differently from the unit it replaces.",
+    "### The age of the building",
+    "The median Hudson home was built in 1972, and 2,376 homes date from 1960 to 1979. Another 874 are from 1940 to 1959. For houses of those ages, ask for a heating-load figure so the new unit is sized to the house as it stands today, not to the unit on the wall.",
+    "### Oil homes",
+    "The 1,058 oil households are a small group by regional standards, so a nearby gas main is a fair question to ask. Hudson's gas share is 65.3%, but whether a main runs past your own lot is a question for the gas utility. New oil equipment and a heat pump are the other two paths.",
+    "### Electric homes",
+    "Electricity heats 1,456 homes (18.1%). If that is baseboard or an electric furnace, a heat pump is the natural comparison, and our [heat pump page](/cities/hudson/heat-pumps-ductless-mini-splits) covers how the municipal utility affects it.",
+    "### Small buildings and mobile homes",
+    "Hudson counts 513 homes in two-unit buildings, 784 in buildings of 3 to 4 units and 245 mobile homes. A two- or three-family house often has more than one heating system, and a mobile home has its own equipment and space limits. Identify each system before asking for a quote.",
+    "### When the heat fails",
+    "Call (508) 786-8755. Emergency calls are taken at any hour. For the care that prevents a no-heat night, see the [maintenance page](/cities/hudson/hvac-maintenance-tune-ups)."
+   ],
+   "faq": [
+    {
+     "q": "What fuel do most Hudson homes use for heat?",
+     "a": "Utility gas. It heats 65.3% of occupied homes, well above the 41.9% of the middle town among the 50 we serve. Electricity comes next at 18.1%, then fuel oil at 13.1%. Your own house may differ from the town pattern, so the first step is confirming what is connected."
+    },
+    {
+     "q": "Does replacing a gas boiler in Hudson need a permit?",
+     "a": "Normally yes. A licensed plumber or gas fitter pulls the permit for a new gas furnace or boiler, and a final inspection follows. We recommend asking the building department what it needs for your address. The permit step is separate from the equipment price, so ask how it is handled when you compare quotes."
+    },
+    {
+     "q": "Should a Hudson two-family house have one boiler or two?",
+     "a": "It depends on how the house is plumbed and metered. Hudson has 513 homes in two-unit buildings and 784 in 3 to 4 unit buildings, and some are heated centrally while others have a system per unit. We look at the existing layout and the heating load of each unit before recommending a design."
+    }
+   ]
+  },
+  "air-conditioning-installation-repair": {
+   "quickAnswer": "Hudson has 4,767 detached houses, 600 townhouses and 2,948 units in multi-unit buildings, plus 245 mobile homes. Each is cooled differently, so we match central air, ductless or a heat pump to the building.",
+   "body": [
+    "## Cooling choices by housing type",
+    "In the ACS 2022, Hudson has 4,767 single-family detached homes (55.7%), 600 attached townhouses (7.0%) and 245 mobile homes (2.9%). Multi-unit buildings add 2,948 homes (34.4%), among them 1,651 units in buildings of five or more.",
+    "### Detached houses",
+    "A house with a forced-air furnace may be able to use its ducts for a central air conditioner if they are the right size and well sealed. Many older houses were built without central air at all. A house with hot-water radiators or baseboards has no ducts, and ductless heads are the usual solution.",
+    "### Mobile homes",
+    "The 245 mobile homes in town have their own limits: duct runs are usually small and space for equipment is tight. Equipment has to be chosen for the building type, and a ductless unit is often the easier fit.",
+    "### Buildings of 2 to 4 units",
+    "Hudson has 513 homes in two-unit buildings and 784 in buildings with 3 to 4 units. In those buildings, one air conditioner for the whole house rarely suits every apartment. Separate ductless heads let each unit cool on its own schedule, and the cost and approval are normally worked out between the owner and tenants.",
+    "### Larger buildings",
+    "Hudson ranks 7th of 50 for homes in multi-unit buildings. In a larger building, roofs, electrical panels and outdoor space may be shared, so check who owns the equipment before ordering anything.",
+    "### Old brick and newer wood",
+    "The 1,854 homes from 1939 or earlier are the oldest stock, and the 1,686 homes from 2000 on are likely to be tighter. A load calculation done room by room shows the difference, and it matters for the choice of equipment size.",
+    "### Sizing and repairs",
+    "An oversized unit cools quickly, shuts off early and leaves the air clammy. A weak unit may only need a part or a cleaning, and replacement is more likely when a compressor fails on aging equipment. We give both options in writing. For a system that does both seasons, see the [heat pump page](/cities/hudson/heat-pumps-ductless-mini-splits)."
+   ],
+   "faq": [
+    {
+     "q": "Can I put central air in a Hudson house with radiators?",
+     "a": "Not without ducts, which an older radiator house usually lacks. Adding ducts is possible but disruptive. A ductless mini-split or a small-duct system is easier because it needs little wall space. A technician can show how many indoor heads your layout needs, and where the outdoor unit would sit."
+    },
+    {
+     "q": "How do I cool a Hudson mobile home?",
+     "a": "Ductless systems are often the simplest route, since mobile homes have small ducts and little room for equipment. The town has 245 of them. A technician checks the electrical capacity and the placement of the outdoor unit, which has to fit the lot and any park rules. Owners should check the lease or the park rules first."
+    },
+    {
+     "q": "Can tenants in a Hudson multi-unit building add air conditioning?",
+     "a": "Usually with the landlord's permission, since outdoor equipment affects the building. With 27.4% of Hudson households renting, this is common. A ductless unit for one apartment is a typical solution, and the landlord should confirm the wiring and the location. Read your lease before ordering equipment."
+    }
+   ]
+  },
+  "heat-pumps-ductless-mini-splits": {
+   "quickAnswer": "Hudson's electricity comes from a municipal utility, so the Mass Save path is narrower than in most towns. With 1,456 electric-heat homes and 1,058 on oil, the rebate route depends on each home's fuel.",
+   "body": [
+    "## The municipal utility decides the path",
+    "Hudson Light & Power serves the town. In municipal towns the Mass Save heat pump rebate generally reaches only homes heated with natural gas from a sponsor, and others use the utility's own program, whose terms we do not quote. Confirm which applies to you, and see our [heat pump overview](/services/heat-pumps-ductless-mini-splits) for the Mass Save rules.",
+    "### Which Hudson homes might fall under which rule",
+    "Gas heats 5,257 occupied homes (65.3%), so a large group may fit the gas-sponsor rule. The 1,456 electric-heat homes (18.1%) and the 1,058 oil homes (13.1%) are the households most likely to look at the utility's own program. Bottled gas serves 190 more. Which program applies is settled by the heating fuel and the utility, and it is worth asking before you plan around a number.",
+    "### The weatherization test",
+    "A whole-home rebate asks that the house count as weatherized first. In Hudson, 1,686 homes (19.7%) are from 2000 or later, which meets one of the three tests directly, and 638 were built since 2010. The 1,770 homes from 1980 to 1999 and the 5,104 built before 1980 would need an assessment or earlier work.",
+    "### Old houses and heat pumps",
+    "The 1,854 homes from 1939 or earlier are where sizing needs the most care. A cold-climate heat pump works best in a house that holds heat, so insulation and air sealing may come first. We assess the home's heating load before quoting a system.",
+    "### Ducted, ductless or both",
+    "A detached house with sound ducts can take a ducted system. Ductless heads suit radiator houses, additions, mobile homes and apartment units. In buildings of 2 to 4 units, a head per apartment lets each household control its own comfort.",
+    "### Oil homes and partial setups",
+    "Some oil households keep the boiler as backup and run a heat pump for most of the year. That setup is called partial-home and the rebate rules differ. Median home value in Hudson is $458,000, which ranks 38th of 50, so the cost of a new system is worth weighing against the house.",
+    "### Next step",
+    "For cooling-only work, see the [air conditioning page](/cities/hudson/air-conditioning-installation-repair)."
+   ],
+   "faq": [
+    {
+     "q": "Does Mass Save apply to my Hudson home?",
+     "a": "Only in some cases. Hudson is served by a municipal utility, so the Mass Save rebate generally applies to homes that heat with natural gas from a Mass Save sponsor. Others look to the utility's own program. Confirm both with the utility and at masssave.com, since terms can change, and do it before you sign a contract."
+    },
+    {
+     "q": "Which Hudson homes are good heat pump candidates?",
+     "a": "Homes with electric baseboard, oil or bottled gas have the clearest case, since heat pumps can replace or reduce those fuels. In Hudson that is 1,456 electric homes, 1,058 oil homes and 190 bottled gas homes. Gas homes may add a heat pump mainly for cooling. A heating-load assessment decides."
+    },
+    {
+     "q": "Do Hudson's older houses need insulation before a heat pump?",
+     "a": "Often it helps. About 21.7% of Hudson homes date from 1939 or earlier, and older construction usually leaks more air. Air sealing and insulation reduce the load, so a smaller system can do the job, and a whole-home rebate may also require weatherization. Ask for an energy assessment before choosing equipment."
+    }
+   ]
+  },
+  "hvac-maintenance-tune-ups": {
+   "quickAnswer": "Hudson has 5,848 owner households and 2,207 renter households, with gas, electric, oil and bottled gas in use. Gas dominates, so most visits are combustion safety checks, and the other fuels each need their own routine.",
+   "body": [
+    "## Gas first, then everything else",
+    "Utility gas heats 5,257 Hudson homes, so a gas furnace or boiler check is the town's standard visit. It covers the burner, heat exchanger, venting and controls, with carbon monoxide testing. Owners hold 5,848 households (72.6%) and renters hold 2,207 (27.4%).",
+    "### Oil",
+    "The 1,058 oil households need a cleaning every year. The burner is cleaned, the nozzle and filter are changed and combustion is tested. Doing it in late summer means any part that needs ordering arrives before the cold.",
+    "### Electric, 1,456 homes",
+    "Heat pump homes need clean filters and coils and a clear outdoor unit. Baseboard and electric furnace homes have little to service, but thermostats and fans still deserve a look.",
+    "### Bottled gas, 190 homes",
+    "The checks match those for utility gas, with a look at the tank, regulator and piping added.",
+    "### Rentals and multi-unit buildings",
+    "Hudson ranks 9th of 50 for renter households. A landlord with several units can book all the equipment in one pass. The town has 784 homes in 3 to 4 unit buildings and 513 in two-unit buildings, and small owner-occupied rental houses benefit from a yearly visit before heating season starts.",
+    "### Older distribution systems",
+    "Homes from 1939 or earlier number 1,854. Radiators, valves and old piping can leak or stick even when the boiler is new, and an air vent that does not work can leave a room cold. A tune-up visit includes a look at the whole heat distribution, not only the boiler.",
+    "### A yearly calendar",
+    "Heating checks fit best in late summer or early autumn. Cooling and mini-split checks fit spring. A strange smell, a loud noise, short cycling or a jump in the bill is a reason to call at any time.",
+    "### Preparing for a visit",
+    "Note the fuel, the equipment's age and its make and model, and any change you noticed. See the [heating page](/cities/hudson/heating-installation-repair) if you are weighing repair against replacement."
+   ],
+   "faq": [
+    {
+     "q": "How often should a gas furnace in Hudson be checked?",
+     "a": "Once a year, before the heating season. The visit covers the burner, the heat exchanger, venting and controls, plus carbon monoxide testing. Since gas heats 65.3% of Hudson homes, this is the town's most common maintenance call. A clean, tested system is also less likely to fail during the first cold stretch."
+    },
+    {
+     "q": "Do Hudson oil boilers need yearly cleaning?",
+     "a": "Yes, once a year. Soot builds up in the burner and boiler, and a worn nozzle or clogged filter affects combustion. Only 13.1% of Hudson homes use oil, so the group is small but the need is real. Late summer is a good time, because any part that needs ordering can arrive before the first cold night."
+    },
+    {
+     "q": "Who should schedule maintenance for a Hudson rental?",
+     "a": "The landlord usually owns the heating equipment, so scheduling falls to the landlord or property manager, depending on the lease. With 27.4% of households renting, it helps to settle this in writing. A tune-up before the season lowers the chance of a no-heat call on a cold weekend."
+    }
+   ]
+  },
+  "indoor-air-quality": {
+   "quickAnswer": "Hudson has 1,854 homes from 1939 or earlier and 638 built since 2010, with 2,376 from 1960 to 1979 between them. Age shapes air quality, and so do 2,948 multi-unit homes and 245 mobile homes.",
+   "body": [
+    "## Air quality across very different buildings",
+    "The ACS 2022 splits Hudson's 8,560 housing units into age bands: 1,854 from 1939 or earlier (21.7%), 874 from 1940 to 1959, 2,376 from 1960 to 1979, 1,770 from 1980 to 1999 and 1,686 from 2000 on. Each band has its own air questions.",
+    "### The oldest houses",
+    "Houses from 1939 or earlier predate modern air sealing. Older houses often leak enough to exchange air on their own, which dilutes indoor pollutants but also brings in outdoor dust and pollen. Before renovation in old plaster or paint, ask a qualified specialist about testing.",
+    "### Mid-century houses",
+    "Houses from 1960 to 1979 are the largest group, with 2,376 in Hudson. Their air quality often depends on the condition of ducts and on whether bath and kitchen fans work. A quick check of those is worth more than any new device.",
+    "### Newer, tighter homes",
+    "The 1,686 homes from 2000 or later are usually tighter. Moisture and cooking fumes stay inside unless fans and ventilation remove them. The town ranks 29th of 50 for homes built since 2010, close to the middle of the group.",
+    "### Mobile homes",
+    "Mobile homes (245 in town) have compact interiors, and moisture can build up in compact spaces. Kitchen and bath fans that vent outdoors are the main defense, and a ductless unit's filter needs regular cleaning.",
+    "### Shared buildings",
+    "With 34.4% of homes in multi-unit buildings, air can move between apartments through shared walls and ducts. Sealing gaps and giving each unit its own working fans and clean filters are the realistic steps. Raise shared-ventilation problems with the owner.",
+    "### Dampness near rivers and brooks",
+    "Hudson sits on the Assabet River, and the history mentions Tannery Brook crossing Main Street. Dampness in a basement has a source: groundwater, a pipe or humid air meeting cool masonry. Fix the source and then use a dehumidifier for the air.",
+    "### Filters and ducts",
+    "Duct cleaning is for ducts with visible mold, heavy dirt or renovation dust. Otherwise start with the filter. See the [maintenance page](/cities/hudson/hvac-maintenance-tune-ups)."
+   ],
+   "faq": [
+    {
+     "q": "Is duct cleaning worth it in a Hudson house?",
+     "a": "Only in specific cases: ducts with visible mold, heavy dirt or debris from renovation. For most homes, a better filter changed on schedule and a look at airflow come first. We inspect the ducts and the filter and say what we would do, rather than recommending cleaning by default."
+    },
+    {
+     "q": "Do older Hudson houses have worse air quality?",
+     "a": "Not necessarily, but different problems. Older houses leak more air, which brings in dust and pollen, and old paint or plaster can matter during renovation. About 21.7% of Hudson homes date from 1939 or earlier. Sealing, filters and testing before work help more than any single gadget."
+    },
+    {
+     "q": "How can Hudson apartment tenants reduce shared-air problems?",
+     "a": "Run the bath and kitchen fans, seal visible gaps around pipes and outlets, and keep a clean filter in your unit's system. With 34.4% of Hudson homes in multi-unit buildings, smoke and cooking odors can travel. If the cause is a shared duct or fan, the owner has to fix it."
+    }
+   ]
+  }
+ },
+ "sources": [
+  {
+   "label": "U.S. Census Bureau, ACS 2022 5-year estimates, tables B25040, B25034, B25003, B25024, B25035, B25077",
+   "url": "https://data.census.gov/"
+  },
+  {
+   "label": "Wikipedia: Hudson, Massachusetts",
+   "url": "https://en.wikipedia.org/wiki/Hudson%2C_Massachusetts"
+  }
+ ]
+}

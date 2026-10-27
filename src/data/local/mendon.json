@@ -1,0 +1,219 @@
+{
+  "slug": "mendon",
+  "acsYear": 2022,
+  "quickAnswer": "Mendon has the lowest share of pre-1980 homes of the 50 towns we serve (30.9%), yet fuel oil still heats 67.0% of occupied homes, the 4th-highest share (ACS 2022). Newer houses and oil heat sit side by side here.",
+  "body": [
+    "## The youngest housing stock of the 50 towns",
+    "According to the Census Bureau's 2022 American Community Survey (ACS), only 672 of Mendon's 2,175 housing units (30.9%) were built before 1980. That is the lowest share of the 50 towns we serve, against 57.2% for the middle town. The median home dates from 1988, while the middle town's is 1975, and Mendon is 48th of 50 for oldest median year.",
+    "The biggest age band is 1980 to 1999, with 934 units (42.9%). Another 569 (26.2%) are from 2000 or later, and 115 (5.3%) have gone up since 2010, which ranks 39th. Older homes are scarce: 266 units (12.2%) date from 1940 to 1959, 256 (11.8%) from 1960 to 1979, and 150 (6.9%) from 1939 or earlier, 47th of 50.",
+    "## Two thirds on oil",
+    "Fuel oil or kerosene heats 1,376 occupied homes (67.0%), the 4th-highest share, against 36.5% for the middle town. Bottled or tank gas heats 197 (9.6%), 8th of 50 against 4.5%. Utility gas serves just 202 (9.8%), which ranks 46th, and electricity heats 184 (9.0%). Another 53 burn wood (2.6%) and 42 use other fuels.",
+    "For a replacement decision, this means a boiler or furnace often has to choose between another oil unit, a heat pump or a hybrid. In a newer house the existing distribution, whether ducts or baseboard piping, is more likely to be sound, which can make a change of heat source simpler. Gas is a smaller option, since it needs a main on the street.",
+    "## Mother Mendon and the Route 16 corridor",
+    "Wikipedia says pioneers from Braintree petitioned for a land grant and entered the land in 1662, and Mendon was incorporated as a town in 1667. It was originally 64 square miles, including parts of what became Milford, Bellingham, Hopedale, Uxbridge, Upton, Blackstone, Northbridge and Millville, which is why it is sometimes called \"Mother Mendon.\" Benjamin Albee built a water-powered grist mill on the Mill River in 1664. King Philip's War destroyed it in 1675, and the town was resettled in 1680.",
+    "Today the town covers 18.3 square miles, of which 18.1 are land (water is 0.88%). Wikipedia calls Mendon primarily a bedroom community, with some significant commercial development along Route 16, and lists the Mendon Center Historic District and the North Avenue Rural Historic District among its National Historic Places. A historic building is a custom heating problem, while a commercial building along Route 16 has its own cooling load and ventilation needs.",
+    "## Almost all houses, hardly any apartments",
+    "Single-family detached houses are 2,022 units (93.0%), the 4th-highest share, against 76.7% for the middle town. Attached townhouses add 97 (4.5%), two-unit buildings 15 and buildings of 3 or 4 units 41. There are no units in buildings with 5 or more. Multi-unit buildings together hold only 56 homes (2.6%), 49th of 50.",
+    "Renters are 169 households (8.2%), 43rd of 50 against 16.4% for the middle town, and the vacancy rate is 5.6% (121 units), the 11th highest. For the few rentals, the State Sanitary Code requires the heat to stay at 68 F or above between 7 a.m. and 11 p.m. and 64 F or above overnight in the heating season (105 CMR 410.201), and puts heating costs on the landlord unless the lease says otherwise. That is general information, not legal advice.",
+    "## National Grid and the rebates",
+    "National Grid is the electric utility serving Mendon, according to its Massachusetts Electric Company territory list. That makes the standard Mass Save heat pump rebates available to customers here, with the conditions on the [heat pump page](/cities/mendon/heat-pumps-ductless-mini-splits).",
+    "| Mendon, MA at a glance (ACS 2022) | Figure |\n| --- | --- |\n| Population | 6,238 |\n| Housing units | 2,175 |\n| Median year homes were built | 1988 |\n| Median home value | $558,000 |\n| Homes built before 1980 | 30.9% |\n| Main heating fuels | Fuel oil 67.0%, utility gas 9.8% |\n| Single-family detached homes | 93.0% |"
+  ],
+  "faq": [
+    {
+      "q": "Is a heat pump a good replacement for an oil boiler in Mendon?",
+      "a": "It often deserves a close look, since oil heats 67.0% of occupied homes here and a heat pump ends the fuel deliveries. A hybrid keeps the old boiler for the coldest days. Fit depends on the house, so we assess the home's heating load before quoting a system."
+    },
+    {
+      "q": "Does a house built from 1980 to 1999 need different equipment than a 2000s house?",
+      "a": "It can. Mendon has 934 homes from 1980 to 1999 and 569 from 2000 or later. Insulation, windows and air tightness often differ between the two eras, so the capacity a house needs is a result of the building, not of its square footage."
+    },
+    {
+      "q": "Can I get a system for a house on bottled gas?",
+      "a": "Yes. Bottled or tank gas heats 197 Mendon homes (9.6%), the 8th-highest share among the 50 towns. A tank system needs its regulator and piping checked along with the burner, and any new gas appliance needs a licensed gas fitter."
+    },
+    {
+      "q": "Who do I call when the furnace quits at midnight?",
+      "a": "Dial (508) 786-8755; emergency calls are answered 24 hours a day. Before you call, check the thermostat, the breaker and, for an oil system, the tank gauge. Do not bypass safety switches, since a licensed technician can find the cause safely."
+    }
+  ],
+  "services": {
+    "heating-installation-repair": {
+      "quickAnswer": "Oil heats 1,376 Mendon homes, bottled gas 197 and utility gas only 202. Because gas is the rare fuel here, a boiler or furnace replacement usually means choosing among oil, bottled gas, electricity and a heat pump.",
+      "body": [
+        "## Fuels in a town with little pipe gas",
+        "The 2022 ACS counts 1,376 oil-heated homes, 202 on utility gas, 197 on bottled gas, 184 on electricity, 53 on wood and 42 on other fuels. Mendon ranks 46th of 50 for utility gas share, so a gas conversion depends on a main that is not available on every street. Oil and bottled gas both arrive by delivery, so the tank and fill pipe are part of the heating system.",
+        "### A median year of 1988",
+        "Only 672 units (30.9%) predate 1980. The median Mendon home was built in 1988, so equipment installed with a house may be original or already replaced, and a visit shows which. A replacement can often reuse existing ducts or baseboard piping, if they are sound. Houses built since then tend to hold air better, which lowers the heat the equipment must supply.",
+        "### Permit and inspection",
+        "A licensed plumber or gas fitter has to pull the permit for a new gas boiler or furnace in Massachusetts, and an inspector signs off at the end. Ask the building department how local applications work. Venting and gas piping need as much planning as the unit, and an inspector will look at both.",
+        "### One house, one system",
+        "With 93.0% of homes detached and no units in buildings of 5 or more, most systems probably serve a single household. Just 41 homes sit in buildings of 3 or 4 units, and for those the first question is whether one boiler serves the whole building.",
+        "### Repair or replace",
+        "Replacement is the likelier answer when bills keep recurring, a boiler section leaks or a heat exchanger cracks. A single component on a younger unit is usually a repair job. Either way, set the cost of the fix beside the number of good years the unit has left, and ask what else on it is worn.",
+        "The [maintenance page](/cities/mendon/hvac-maintenance-tune-ups) covers the yearly service that supports whichever fuel you keep."
+      ],
+      "faq": [
+        {
+          "q": "Can I move from oil to utility gas in Mendon?",
+          "a": "Only if a gas main runs to your street or can be extended to it. With utility gas at 9.8% of Mendon homes, mains are far from universal. Ask the gas company first, then price the connection and a new gas boiler against a new oil unit or a heat pump."
+        },
+        {
+          "q": "Does an older boiler have to be replaced?",
+          "a": "Not automatically. Age is only one factor. A unit that has been serviced yearly and runs cleanly can keep going, while a unit with a leaking section, rust or constant repairs cannot. Ask for an inspection report that lists the condition of each part."
+        },
+        {
+          "q": "Is a heat pump realistic if my house has baseboard heat?",
+          "a": "Often yes. Ductless heads suit hot-water houses because they need no ductwork. The existing baseboard can stay as a backup, or the heat pump can carry most of the load. How well the house holds heat decides how far it can go."
+        }
+      ]
+    },
+    "air-conditioning-installation-repair": {
+      "quickAnswer": "Mendon is 93.0% detached houses, with 97 townhouses and 15 homes in two-unit buildings. Detached homes usually leave room for outdoor equipment, and newer houses may already have ductwork that suits central cooling.",
+      "body": [
+        "## Cooling a town of detached houses",
+        "Detached houses are 93.0% of Mendon's housing, 4th of 50 and well above the 76.7% of the middle town. For an owner, that usually means room to set an outdoor condenser away from windows and bedrooms. The 97 townhouses (4.5%) and 15 two-unit homes have tighter choices.",
+        "### Newer homes and ducts",
+        "Mendon counts 934 homes from the 1980 to 1999 band and 569 from 2000 on. Whether a given house has ductwork depends on how it is heated: forced-air houses do, and hot-water houses do not. Where ducts exist, a central air conditioner may be able to share them, but they have to be sized for cooling airflow, so they need a check rather than an assumption.",
+        "### Hot-water houses",
+        "Where heat comes from baseboards or radiators, there are no supply ducts. A ductless mini-split fixes that with one outdoor unit and small indoor heads, plus a hole through the wall for the line set. It is also the option for additions and finished attics.",
+        "### Electric heat and combined systems",
+        "Electricity heats 184 Mendon homes (9.0%). A heat pump serves such a household in both seasons, which makes a cooling purchase part of the heating plan too. The [heat pump page](/cities/mendon/heat-pumps-ductless-mini-splits) covers the rebate side.",
+        "### Businesses on Route 16",
+        "Wikipedia notes significant commercial development along Route 16. Shops and offices have cooling loads shaped by glass, equipment and occupancy rather than by square footage alone, and we serve businesses as well as homes. How often the door opens and how many people are inside shape that load as well.",
+        "### Sizing and faults",
+        "An oversized unit finishes its cycle before it has pulled the damp out of the house. A system that runs but does not cool may have low refrigerant, a dirty coil or a weak capacitor. When a compressor fails on an old unit, the choice often shifts toward replacement."
+      ],
+      "faq": [
+        {
+          "q": "Can I add central air to a Mendon house with baseboard heat?",
+          "a": "Central air needs ducts, and a baseboard house has none, so a ductless mini-split is usually the practical route. It needs only a small line set to each indoor head. How many heads you need follows from the floor plan and from the rooms you most want cooled."
+        },
+        {
+          "q": "Central air or a mini-split: how do I choose?",
+          "a": "The existing heat distribution usually settles it. A forced-air house with sound ducts can take a central unit, and a hot-water house needs ductless heads. Some houses get both. Free written estimates come before any work begins, so the two options can be compared on paper."
+        },
+        {
+          "q": "Does an older air conditioner need replacing before it fails?",
+          "a": "Not necessarily. A unit that still cools, runs quietly and has not needed repairs can continue. When repair bills recur or the refrigerant leaks, replacing it on your schedule is easier than waiting for a hot week to force the decision."
+        }
+      ]
+    },
+    "heat-pumps-ductless-mini-splits": {
+      "quickAnswer": "National Grid serves Mendon, where oil heats 1,376 homes. A little over a quarter of homes (26.2%) were built in 2000 or later and pass the weatherization test by age, while the large 1980 to 1999 group sits in between.",
+      "body": [
+        "## Heat pumps where oil is king",
+        "Under Mass Save's 2026 program, National Grid customers in Mendon can claim $2,650 per ton, up to $8,500 per home, for a whole-home heat pump, once the house passes the weatherization step. Conditions are on our [general heat pump page](/services/heat-pumps-ductless-mini-splits).",
+        "### Where Mendon's age bands land",
+        "The age shortcut covers 569 units built in 2000 or later (26.2%), of which 115 (5.3%) came after 2010. The biggest group, 934 units (42.9%) from 1980 to 1999, falls just short of that cutoff, and only 672 units (30.9%) predate 1980. Houses in that group, and the older ones, are likelier to start with a Home Energy Assessment.",
+        "### What a heat pump would replace",
+        "Oil heats 1,376 homes, bottled gas 197 and wood 53. All three depend on fuel that someone must deliver or load, so a heat pump can displace some or all of it. The 202 homes on utility gas compare against a pipe fuel, a different decision. The 184 electric homes would trade resistance heat for a heat pump.",
+        "### Detached houses and outdoor units",
+        "With 2,022 detached houses, outdoor units generally have room. A ducted heat pump can reuse sound ductwork in a forced-air house. A hot-water house takes ductless heads. Mixed arrangements are common, and the floor plan decides how many indoor units make sense.",
+        "### Adding electric load",
+        "Electricity heats 9.0% of Mendon homes, 33rd of 50, so in most houses a heat pump adds a new electric load. The panel capacity and the service from National Grid are worth checking early, before equipment is chosen, because a full panel can add cost to an otherwise simple job.",
+        "### A hybrid",
+        "Keeping the oil boiler for the coldest nights while a heat pump carries milder weather is an option. It adds a second system to look after, but the boiler is already there.",
+        "The [heating page](/cities/mendon/heating-installation-repair) compares a heat pump with replacing the boiler."
+      ],
+      "faq": [
+        {
+          "q": "Which Mendon homes pass the weatherization test on age?",
+          "a": "Those built in 2000 or later, which covers 569 units. For the other houses, an assessment that recommends little work, or completed past recommendations, is the way through. A tighter house also needs a smaller heat pump, so the assessment helps twice."
+        },
+        {
+          "q": "If a heat pump goes in, does the oil boiler have to go?",
+          "a": "No. The boiler can stay as the cold-night backup while the heat pump takes the milder weather. Keeping it means keeping its annual burner service too, and its tank needs filling. A well-sized heat pump matters more than any label on the cabinet."
+        },
+        {
+          "q": "Will a heat pump cope with a Mendon winter?",
+          "a": "Cold-climate models are designed for New England winters. Results depend on sizing, insulation and distribution. The median Mendon home dates from 1988, but each house still needs its own load check."
+        }
+      ]
+    },
+    "hvac-maintenance-tune-ups": {
+      "quickAnswer": "With oil heating 1,376 Mendon homes and bottled gas another 197, fuel-fired tune-ups lead the calendar. Utility gas, wood, electric and heat pump systems each have their own checks.",
+      "body": [
+        "## What service looks like when two thirds burn oil",
+        "- **Oil, 1,376 homes:** soot is cleaned from the burner and heat exchanger, the nozzle and filter are replaced and the flame is tested.\n- **Bottled gas, 197 homes:** burner, regulator and piping checks.\n- **Utility gas, 202 homes:** burner, venting and controls.\n- **Electric and heat pump homes, 184:** filters, coils, drain and refrigerant side.\n- **Wood, 53 homes:** a boiler or furnace beside a stove needs its own annual visit.",
+        "### Equipment of a certain age",
+        "Mendon has 934 homes from 1980 to 1999. A boiler or furnace in a house of that period may be a replacement already or an original nearing retirement. A yearly visit shows which, by noting rust, leaks and burner condition before cold weather arrives.",
+        "### Owners decide",
+        "Owners hold 1,885 of 2,054 occupied households (91.8%), so service in Mendon is almost always the homeowner's call. A fall check set against a spring cooling check makes a simple twice-yearly rhythm.",
+        "### Empty homes",
+        "The ACS counts 121 vacant units (5.6%). Equipment that sits idle can have dry traps and clogged filters when it is switched back on. A start-up check before reopening is simpler than a cold-night repair.",
+        "### Chimneys and flues",
+        "Oil, bottled gas, utility gas and wood all need a safe path for exhaust. A blocked, cracked or undersized flue can push combustion gases into the living space, so the vent is part of any combustion check. A technician can also see signs of past trouble, such as stains or corrosion.",
+        "### Fuel deliveries",
+        "For oil and bottled gas, the service visit is a good time to look at the tank, fill pipe, vent and gauge. A tank that is rusting, leaning or sitting on soft ground is worth catching before it fails.",
+        "### Heat pumps in the mix",
+        "Mendon has 184 electric homes and 2,022 detached houses with room for outdoor units. Ductless and ducted heat pumps add filters, coils and a condensate drain to the list. Snow and leaves should stay off the outdoor cabinet.",
+        "### Seasons",
+        "- **Early fall:** heating checks.\n- **Late spring:** cooling and mini-split service.\n- **Any time:** a new smell, soot, wet spots or short cycling.",
+        "For repair-versus-replace advice, see the [heating page](/cities/mendon/heating-installation-repair)."
+      ],
+      "faq": [
+        {
+          "q": "How soon should a new oil boiler be serviced?",
+          "a": "Plan the first cleaning about a year after installation, then repeat it each year. With 1,376 oil homes in town, this is the routine that applies to the most households."
+        },
+        {
+          "q": "Do I need a service plan for a heat pump?",
+          "a": "A heat pump does not burn fuel, so there is no soot, but filters, coils and the condensate drain still need attention. An annual look at the refrigerant side catches slow leaks. Mendon has 184 electric homes, a group that may include heat pump owners."
+        },
+        {
+          "q": "What should I check on a bottled-gas system?",
+          "a": "The regulator, the piping and the burner, in addition to the tank. Mendon ranks 8th of 50 for the share of homes on bottled gas, 9.6%. Smell of gas, a hissing regulator or a pilot that keeps going out call for an immediate visit."
+        }
+      ]
+    },
+    "indoor-air-quality": {
+      "quickAnswer": "Mendon's housing is mostly from 1980 on, with 934 units from 1980 to 1999 and 569 from 2000 or later, so tight houses are the main case. Moisture, ventilation and combustion safety matter more than old-house dust.",
+      "body": [
+        "## Air in a town of newer, tighter houses",
+        "The 2022 ACS counts 150 units from 1939 or earlier, 266 from 1940 to 1959, 256 from 1960 to 1979, 934 from 1980 to 1999 and 569 from 2000 on. Mendon ranks 47th of 50 for the share built in 1939 or earlier, so very old houses are the exception.",
+        "### Tight houses need fresh air",
+        "A house built since 1980 generally holds air better, which saves energy but keeps moisture, cooking fumes and furnishing chemicals indoors. Bath fans, a range hood that vents outside and sometimes a ventilator that brings in filtered air all help. Tighter envelopes can also raise humidity in summer.",
+        "### Oil and bottled gas",
+        "Because oil heats 1,376 homes and bottled gas 197, combustion safety deserves attention here. A smell, soot around a burner or a flame that looks ragged calls for service. Carbon monoxide alarms are standard safety gear for any home that burns fuel.",
+        "### Wood smoke and shut-up rooms",
+        "53 Mendon homes burn wood as their main fuel. Smoke that backs into a room carries fine particles, so a stove needs a clean flue and a tight door. Elsewhere, 121 vacant units mean closed-up houses where stale, humid air can build until someone reopens them.",
+        "### Water on the map",
+        "Wikipedia gives Mendon 0.2 square miles of water, 0.88% of the town, and mentions Nipmuc Pond and the Mill River. Whether a given basement stays damp depends on the individual house. A hygrometer reading shows the actual numbers.",
+        "### Older buildings",
+        "The Mendon Center Historic District and North Avenue Rural Historic District hold buildings far older than the typical house here. Old plaster, paint and insulation in such buildings call for specialist testing before any work disturbs them.",
+        "### Options",
+        "- Filter upgrades, changed on a schedule.\n- A dehumidifier or humidifier matched to the system.\n- Added ventilation for a tight house.\n- Ducts cleaned only on visible evidence, such as mold or debris.",
+        "The [maintenance page](/cities/mendon/hvac-maintenance-tune-ups) covers filter and coil care."
+      ],
+      "faq": [
+        {
+          "q": "Does a newer Mendon house need a ventilator?",
+          "a": "Not necessarily, but it can help. Fresh air has to enter somewhere in a house that holds its air, and bath fans, a hood over the range or a ventilator are the usual routes. With 569 homes from 2000 on and 934 from the two decades before, many local houses fall in that group."
+        },
+        {
+          "q": "Is it worth cleaning my ducts?",
+          "a": "Only if you can see a reason, such as mold, debris after a renovation or dust streaming from registers. Otherwise, filters and sealed joints usually matter more. Request a visual check first and decide after you have seen what is inside."
+        },
+        {
+          "q": "What causes a damp basement smell?",
+          "a": "Moisture can enter through the ground, through plumbing or as condensation on cool walls. A dehumidifier controls the air only. Where water is entering, closing the entry point is the lasting fix, and a hygrometer shows if humidity stays high."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "label": "U.S. Census Bureau, ACS 2022 5-year estimates, tables B25040, B25034, B25003, B25024, B25035, B25077",
+      "url": "https://data.census.gov/"
+    },
+    {
+      "label": "Wikipedia: Mendon, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Mendon%2C_Massachusetts"
+    },
+    {
+      "label": "National Grid, Massachusetts Electric Company territory list",
+      "url": "https://www.nationalgridus.com/media/pronet/supplier_svc_territory.pdf"
+    }
+  ]
+}

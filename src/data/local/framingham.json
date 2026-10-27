@@ -1,0 +1,225 @@
+{
+ "slug": "framingham",
+ "acsYear": 2022,
+ "quickAnswer": "Framingham has the highest share of electrically heated homes of the 50 towns we serve (29.1%, ACS 2022) and the highest share of homes built before 1980 (77.3%). For homes on electric resistance heat, a heat pump is often the first replacement worth pricing.",
+ "body": [
+  "## The electric-heat capital of our service area",
+  "According to the Census Bureau's 2022 American Community Survey (ACS), electricity is the main heating source in 8,080 Framingham homes, or 29.1% of occupied homes. The middle town on our list sits at 10.1%, which puts Framingham first of 50. Utility gas still leads with 12,345 homes (44.4%), fuel oil or kerosene heats 6,091 (21.9%), and bottled gas is a footnote at 691 homes (2.5%).",
+  "That mix changes the first question in a replacement. Homes that heat with electricity may use baseboard units or similar resistance equipment. For them an air source heat pump is a natural comparison, because it can often move heat with less electricity than resistance heat uses, and it cools the same rooms in summer. Oil sits at #42 of 50 here, so the oil household is the minority case, and its choices are a new oil boiler, a gas conversion if a main runs past the house, or a heat pump.",
+  "## A post-war city, built mostly before 1980",
+  "Framingham has the highest share of pre-1980 housing among the 50 towns: 22,253 of 28,783 units, or 77.3%, against 57.2% for the middle town. The median home dates to 1964. The biggest single band is 1960 to 1979 (9,762 units, 33.9%), followed by 1940 to 1959 (7,612, 26.4%) and 1939 or earlier (4,879, 17.0%). Newer construction is scarce: 1,730 units (6.0%) date from 2000 or later.",
+  "The town's Wikipedia history explains the shape of it. After World War II Framingham saw a large increase in population and housing during the baby boom, and much of what was built then consisted of split-level and ranch-style houses. Houses of that period can leak air and carry thin insulation. That is why we assess the heating load of the actual house before quoting. A ranch that has been re-insulated needs a different system than the same plan left as built.",
+  "## Renters, apartment blocks and the largest population",
+  "For a landlord, a boiler failure in a cold week is a legal problem as well as a comfort one, because the State Sanitary Code puts heat on the landlord unless the lease says otherwise. The exact temperature minimums are on the [heating page](/cities/framingham/heating-installation-repair). Where tenants pay their own electric bills, a heat pump in a unit can matter to the person who pays the meter.",
+  "For a landlord, a boiler failure in a cold week is a legal problem as well as a comfort one. Under the State Sanitary Code (105 CMR 410.201), a rental unit must be kept at least 68 F from 7 a.m. to 11 p.m. and at least 64 F overnight during the heating season, and the landlord pays for heat unless the lease says otherwise. That is general information, not legal advice. Where tenants pay their own electric bills, a heat pump in a unit can matter to the person who pays the meter.",
+  "## Business districts count too",
+  "The Golden Triangle, on the east side of Framingham, grew from Shoppers World in 1951, the second open-air shopping mall in the country. Framingham and Natick run the district cooperatively with similar zoning, and the town's history page calls it one of the largest shopping districts in New England. The district also holds seven hotels, two car dealerships and large office developments, including the world headquarters of TJX at the junction of Route 30 and Speen Street. We handle businesses as well as homes.",
+  "We have not confirmed which electric utility serves every part of Framingham, so we do not name one. Your electric bill shows who supplies your address, and that supplier decides the rebate route. The [heat pump page](/cities/framingham/heat-pumps-ductless-mini-splits) says what that means for the town's housing.",
+  "We have not confirmed which electric utility serves every part of Framingham, so we do not guess. The Mass Save heat pump rebates run through the utility that serves your address. Amounts and conditions are on the [heat pump page](/cities/framingham/heat-pumps-ductless-mini-splits).",
+  "| Framingham, MA at a glance (ACS 2022) | Figure |\n| --- | --- |\n| Population | 71,805 |\n| Housing units | 28,783 |\n| Median year homes were built | 1964 |\n| Renter households | 44.9% |\n| Homes heated with electricity | 29.1% |\n| Homes in multi-unit buildings | 42.5% |\n| Median home value | $553,200 |"
+ ],
+ "faq": [
+  {
+   "q": "Is electric heat common in Framingham?",
+   "a": "Yes. Electricity is the main heating source in 29.1% of occupied Framingham homes, the highest share of the 50 towns we serve. If you have baseboard or other resistance heat, a heat pump is usually worth pricing, because it heats and cools. We size it from your house, not from a rule of thumb."
+  },
+  {
+   "q": "Does the age of Framingham homes affect what system I need?",
+   "a": "Often, yes. Some 22,253 of the town's 28,783 housing units predate 1980, and the town's history says the post-war boom produced many ranches and split-levels. Houses of that age can leak air and carry thin insulation, so a measured load for the actual house tells you more than the size of the old equipment."
+  },
+  {
+   "q": "Who is responsible for heat in a Framingham apartment?",
+   "a": "Unless the lease says otherwise, the landlord. With 44.9% of households renting, the highest share of the 50 towns, this comes up often. The temperature minimums are on our heating page. Tenants should report an outage to the landlord in writing. This is general information, not legal advice."
+  },
+  {
+   "q": "Do you work on commercial buildings in Framingham, or only houses?",
+   "a": "Both. We serve homes and businesses. The town's Golden Triangle district, on the east side along Route 9, Route 30 and Speen Street, holds large retail and office developments, seven hotels and two car dealerships, and Framingham and Natick run it together as one district with similar zoning. Building owners can call (508) 786-8755 any hour for emergencies."
+  }
+ ],
+ "services": {
+  "heating-installation-repair": {
+   "quickAnswer": "Framingham heats with a three-way split: utility gas, electricity and fuel oil. The right replacement depends on which one is in your basement, and in a town of mostly pre-1980 buildings, on how tight the house is.",
+   "body": [
+    "## Three fuels, three different jobs",
+    "A heating failure in Framingham does not have one standard answer. Gas serves the largest group of homes, electricity the next largest, and oil after that, with 6,091 houses still burning it. A like-for-like gas furnace swap is usually a short job. An oil boiler replacement involves a tank, a flue and a chimney check. Homes with electric baseboard have no central equipment, so a failure there can be a good moment to look at adding a heat pump system.",
+    "### Questions we ask first",
+    "- Which fuel runs the system now, and is a gas main on your street?",
+    "- Is the heat delivered by radiators, baseboard, or ducts?",
+    "- When was the house built, and has it been insulated or air sealed since?",
+    "- Is the building a single house, a condo or a rental with several households?",
+    "### Ranches and split-levels",
+    "Much of the post-war housing here was built as ranches and split-levels, according to the town's own history. These layouts often put the furnace or boiler in a basement or utility space, and the ducts or pipes run out under the floor or ceiling. If those runs are leaky or poorly insulated, a bigger new furnace will not fix the cold bedroom.",
+    "### Multi-family buildings",
+    "Framingham has the highest share of renter households on our list, and a large share of units sit in buildings of five or more. A shared boiler can be a single point of failure for every household on the loop, so the repair has to be planned around when the building can be without heat. Landlords are bound by the State Sanitary Code minimums of 68 F by day and 64 F overnight in the heating season.",
+    "### Permits and inspection",
+    "Only a licensed plumber or gas fitter can pull a gas permit in Massachusetts, and a new gas furnace or boiler normally needs a permit and a final inspection. Ask the building department what it requires, and ask us who is pulling the permit. We are licensed and insured.",
+    "### When the heat is out",
+    "Call (508) 786-8755. We answer emergency calls 24 hours a day and give you a free written estimate before work starts."
+   ],
+   "faq": [
+    {
+     "q": "Should I replace an old oil boiler in Framingham with a heat pump?",
+     "a": "Sometimes. A heat pump can carry most of the heating season, and some households keep the boiler as backup for the coldest days. Gas conversion is another route if a main is available. We compare the options for your address and put them in a written estimate."
+    },
+    {
+     "q": "Who can pull a gas permit for a new furnace?",
+     "a": "Only a licensed plumber or gas fitter. The installation normally needs a permit and a final inspection, so confirm with your contractor who is handling it."
+    },
+    {
+     "q": "My apartment building has one boiler for everyone. What should the owner do when it fails?",
+     "a": "Call right away, since tenants must be kept above the state minimums during the heating season. A temporary plan and a written estimate for replacement can run at the same time."
+    }
+   ]
+  },
+  "air-conditioning-installation-repair": {
+   "quickAnswer": "Cooling in Framingham means a mix of detached houses, townhouses and large apartment buildings, and many older homes were built without central air. Ductless mini-splits fit where ducts do not exist.",
+   "body": [
+    "## Cooling a city of apartments and ranches",
+    "Detached single-family houses are 51.4% of Framingham's housing, and the rest is a long list of other types: 1,717 attached townhouse-style units, 1,412 units in two-unit buildings, 1,870 in buildings of 3 or 4 units, and a large stock of apartments in buildings with five or more units. Each cools differently, and the wrong choice shows up as hot rooms and a high bill.",
+    "### Detached houses with ducts",
+    "Where a forced-air furnace already distributes heat, central air conditioning can often share the same ducts if they are in decent shape and sized for the airflow cooling needs. That is not guaranteed. Ducts that were sized only for winter heating can leave upstairs rooms warm, and we check this before we recommend adding a coil.",
+    "### Homes heated by baseboard",
+    "Electric baseboard and hot-water baseboard come with no ductwork at all. A ductless mini-split puts one outdoor unit and one or more indoor heads where you need them, and a heat pump version also heats. If you are weighing both jobs together, see our [heat pump page](/cities/framingham/heat-pumps-ductless-mini-splits).",
+    "### Apartments and condos",
+    "In a big building the first questions are practical. Where may an outdoor unit go? Does the association or landlord allow it? Is there a place for the condensate to drain? Framingham ranks fourth of 50 for homes in multi-unit buildings, so those questions come up here more than in a typical MetroWest town.",
+    "### Ranches and split-levels",
+    "The median Framingham home dates to 1964, and the town's history describes a post-war run of ranch-style and split-level houses. A one-story ranch puts its rooms on a single level, which is a layout where a few ductless heads can sometimes reach most of the living space. A split-level has half-floors, so one head may not serve every level.",
+    "### Sizing and diagnosis",
+    "Oversizing makes a cooling system short-cycle, and a load calculation from the actual rooms is the cure. Before we propose a replacement we diagnose the old unit, because a weak part is sometimes the whole story.",
+    "### What the ranks suggest",
+    "Framingham is 46th of 50 for the share of detached single-family homes, and 42.5% of its units share a building with another household. In that kind of housing stock, cooling is often a decision shaped by a landlord, an owners' association or a shared roof as much as by one household's budget."
+   ],
+   "faq": [
+    {
+     "q": "Can I add air conditioning to a Framingham ranch with baseboard heat?",
+     "a": "Yes. Ductless mini-splits need only a small wall opening for the line set, so the house does not need ductwork. We choose the number of indoor heads from the layout and the room loads, and a ranch on one level often needs fewer heads than a two-story house of the same size."
+    },
+    {
+     "q": "Can I install an AC in a rented apartment?",
+     "a": "Only with the landlord's or the building's approval, and the answer depends on the building. Tenants should ask in writing before buying equipment, and should ask where an outdoor unit or a window unit is allowed to sit."
+    },
+    {
+     "q": "Does a Framingham two-family house suit ductless cooling?",
+     "a": "It can. The town counts 1,412 units in two-unit buildings, and in a two-family each floor can get its own outdoor unit and indoor heads, so upstairs and downstairs can run on separate settings. Whether it fits depends on wall space, the outdoor unit location and the owner's approval."
+    }
+   ]
+  },
+  "heat-pumps-ductless-mini-splits": {
+   "quickAnswer": "Framingham ranks first of 50 for electrically heated homes, with 8,080 of them, and only 6.0% of its housing dates from 2000 or later. Those two numbers shape what a heat pump job looks like here: many electric-resistance swaps, and many houses that need weatherizing first.",
+   "body": [
+    "## Where heat pumps fit in Framingham's heating mix",
+    "The 2026 Mass Save whole-home rebate is $2,650 per ton, up to $8,500 per home, and the house must be weatherized first. The rest of the program rules are on our [main heat pump page](/services/heat-pumps-ductless-mini-splits).",
+    "We have not confirmed the electric utility for every Framingham address, so the bill in your mailbox decides which rebate route applies.",
+    "### The fuel counts",
+    "- Electricity: 8,080 homes (29.1%), the top share among the 50 towns.",
+    "- Utility gas: 12,345 homes (44.4%).",
+    "- Fuel oil or kerosene: 6,091 homes (21.9%).",
+    "- Bottled gas: 691 homes (2.5%).",
+    "The electric group is the one where a heat pump most often replaces equipment that turns electricity directly into heat. An air source unit can deliver more heat per unit of electricity, which is why that comparison is usually the first one we run for these houses. The 6,091 oil homes face a different question: keep the oil boiler as backup, or retire it.",
+    "### Age bands against the weatherization test",
+    "Only 1,730 units (6.0%) were built in 2000 or later, and the median year built is 1964. Most owners will not pass the age shortcut, so the realistic path is a Home Energy Assessment first. The larger groups, 9,762 units from 1960 to 1979 and 7,612 from 1940 to 1959, are the houses where air sealing and attic work can decide how big the heat pump has to be.",
+    "### Which kind of system",
+    "Detached houses are 51.4% of units, so ducted or ductless systems both come up. Where ducts are sound, a ducted heat pump can replace a furnace. Where heat comes from baseboard or radiators, ductless heads avoid a duct retrofit. The 1,412 units in two-family houses and 1,870 in three- and four-unit buildings often work out as one outdoor unit per floor.",
+    "### Apartments and condos",
+    "With 42.5% of Framingham homes in multi-unit buildings, an outdoor unit may need approval from an association or landlord before anything else. Ask about wall penetrations, condensate drainage and where the electrical feed comes from."
+   ],
+   "faq": [
+    {
+     "q": "I have electric baseboard heat in Framingham. Is a heat pump the obvious upgrade?",
+     "a": "Often it is the first thing worth pricing, because resistance heat gives one unit of heat per unit of electricity and a heat pump can give more. The house still has to be sealed up and sized correctly, so we start with the heating load of the actual rooms, not a rule of thumb."
+    },
+    {
+     "q": "Do Framingham's older homes need weatherizing before a heat pump?",
+     "a": "Many will. With a median build year of 1964 and 77.3% of units built before 1980, few homes meet the 2000-or-later shortcut, so an assessment usually comes first. Air sealing and insulation can also let us install a smaller system, depending on what the assessment finds."
+    },
+    {
+     "q": "Can a heat pump work in a Framingham condo or apartment?",
+     "a": "Often a ductless unit can, if the building allows an outdoor unit and the line set can run through an exterior wall. Ask the association or landlord first. Individual units are common where there is no shared duct system to tie into."
+    }
+   ]
+  },
+  "hvac-maintenance-tune-ups": {
+   "quickAnswer": "Framingham's 6,091 oil-heated homes need an annual burner cleaning, and rental buildings with a shared boiler benefit from a check before October. Maintenance here is mostly about preventing the cold-night call.",
+   "body": [
+    "## Maintenance by fuel, and for landlords",
+    "Framingham splits into three service groups. The 6,091 oil-heated homes need the burner cleaned each year, with a nozzle and filter change and a combustion check. The 12,345 gas homes need the burner, venting and controls inspected. The 8,080 homes on electricity, many of them with heat pumps or resistance heat, need coil, filter and refrigerant-side checks.",
+    "### Landlords and property managers",
+    "Renters are 44.9% of the town's households. When one boiler heats several apartments, a mid-January failure is a legal and a human problem. A pre-season visit can catch the worn igniter, the sticking valve and the leaking fitting that tend to fail on the first cold night.",
+    "### Older systems",
+    "With 77.3% of the housing stock built before 1980, many systems here serve older buildings. The earlier a failing part is spotted, the easier the repair is to schedule.",
+    "### A calendar that works",
+    "- **September and October:** furnace and boiler tune-ups.",
+    "- **April and May:** air conditioner and mini-split checks.",
+    "- **Any month:** call if you notice noise, smells, short cycling, or a bill that jumped.",
+    "### Homeowner checklist",
+    "Replace or clean filters on schedule, keep two or three feet clear around equipment, clear leaves and snow off outdoor units, and confirm the thermostat batteries and settings. These small habits head off many service calls.",
+    "### Heat pump owners",
+    "Heat pumps run in both seasons, so they get more wear than a unit used only in summer. Indoor filters and outdoor coils matter most, and ducted systems also need an airflow check. See the [heat pump page](/cities/framingham/heat-pumps-ductless-mini-splits) for how they fit the town's housing.",
+    "### Large buildings",
+    "Framingham counts 8,961 units in buildings of five or more. In a large building, one missed inspection can leave a whole stack of apartments waiting on a single part. Property managers do well to keep a list of every boiler, rooftop unit and mini-split they are responsible for, with dates of the last visit."
+   ],
+   "faq": [
+    {
+     "q": "How often should I service a gas furnace in Framingham?",
+     "a": "Plan on one visit a year, ahead of the cold months. The technician looks at the burner, the heat exchanger, the venting and the controls. Gas serves 44.4% of Framingham homes, so this is the most common service call on our list."
+    },
+    {
+     "q": "Should my rental building's boiler be serviced every year?",
+     "a": "Yes, ideally before October. A failure in a cold snap affects every tenant on the loop, and Framingham has the highest renter share of the 50 towns, at 44.9%. A written service record also helps a landlord show the system was kept up."
+    },
+    {
+     "q": "Do electric-heat and heat pump homes need maintenance too?",
+     "a": "Yes, though the list is different. Framingham has 8,080 homes heated with electricity. Heat pumps need clean filters and outdoor coils, and a check of the refrigerant side. Baseboard heat needs little, but thermostats and wiring should be looked at if a room runs cold."
+    }
+   ]
+  },
+  "indoor-air-quality": {
+   "quickAnswer": "Framingham's homes run from 4,879 units built in 1939 or earlier to 1,135 built since 2010, and 42.5% share a building with other households. Leaky old houses and tight new ones have different air problems, so we start by looking at the building.",
+   "body": [
+    "## Air quality across the age bands",
+    "Framingham ranks first of 50 for pre-1980 housing, so older, leakier buildings are a natural place to start. Gaps around windows and rim joists let outdoor dust, pollen and damp basement air into living space. At the other end, the 1,135 units built since 2010 are usually much tighter, which keeps energy in but also keeps moisture, cooking fumes and chemicals from furnishings inside unless ventilation is doing its job.",
+    "### Ranches, split-levels and basements",
+    "Mid-century ranches and split-levels often have a lot of their living area close to the ground. Basement and slab moisture can raise humidity, and ducts in a damp space can collect dust. A dehumidifier helps with the air, but a water source has to be fixed at the source.",
+    "### Apartments and shared walls",
+    "In a building with several households, cooking smells, smoke and cleaning products often travel through shared walls, hallways and chases. Sealing gaps and using a kitchen and bath fan that vents outside can help, and a landlord can work with a contractor on building-wide ventilation.",
+    "### Where the split falls",
+    "Framingham's oldest and newest housing sit far apart: 4,879 units from 1939 or earlier against 1,730 from 2000 or later. A house from the earliest band and a unit from the newest band do not need the same fix, and treating them alike wastes money.",
+    "### Humidity and filters",
+    "Keep indoor humidity in a comfortable range, since wood floors and plaster do not like swings. A better filter helps only if the blower can handle the extra resistance, so check before upgrading.",
+    "### Ducts",
+    "Duct cleaning is worth considering after a renovation, a pest problem or mold, and not as a routine job.",
+    "### Older materials",
+    "If you plan renovation in a house of this age, ask a qualified specialist to test for older materials before work begins.",
+    "### What we offer",
+    "- Filtration upgrades and a filter change schedule.",
+    "- Humidifiers and dehumidifiers tied to the system.",
+    "- Ventilation for tight homes.",
+    "- Duct inspection and cleaning where it is warranted."
+   ],
+   "faq": [
+    {
+     "q": "Does my older Framingham house need an air purifier or just better filters?",
+     "a": "Start with the filter, humidity and sources. A better filter and a dry basement solve many problems. A portable purifier or whole-home unit helps where particles are still a concern, for example after renovation dust or in a house near heavy traffic."
+    },
+    {
+     "q": "Is a new tight home worse for air quality?",
+     "a": "It can be, if ventilation is inadequate. Tight homes hold moisture and chemicals inside. A ventilator or good exhaust fans bring fresh air in. Only 3.9% of Framingham's units were built since 2010, so this affects a small slice of the town."
+    },
+    {
+     "q": "Can an apartment dweller improve air quality without the landlord?",
+     "a": "Some. You can run a portable filter, use bath and kitchen fans, and keep humidity in check. Anything touching the building's ducts or ventilation needs the owner. With 42.5% of Framingham homes in multi-unit buildings, many tenants fall in this group."
+    }
+   ]
+  }
+ },
+ "sources": [
+  {
+   "label": "U.S. Census Bureau, ACS 2022 5-year estimates, tables B25040, B25034, B25003, B25024, B25035, B25077",
+   "url": "https://data.census.gov/"
+  },
+  {
+   "label": "Wikipedia: Framingham, Massachusetts",
+   "url": "https://en.wikipedia.org/wiki/Framingham%2C_Massachusetts"
+  }
+ ]
+}

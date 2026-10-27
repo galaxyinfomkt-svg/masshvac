@@ -205,6 +205,25 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </>
       )}
 
+      {localService && (
+        <section className="py-10 bg-white">
+          <nav aria-label={`More HVAC pages for ${city.name}`} className="mx-auto flex max-w-5xl flex-wrap justify-center gap-2 px-4">
+            {services.filter((s) => s.slug !== service.slug).map((s) => (
+              <Link key={s.slug} href={`/cities/${city.slug}/${s.slug}`} className="rounded-full border border-gray-100 bg-surface px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-accent hover:text-white">
+                {s.shortName}
+              </Link>
+            ))}
+            {nearby.map((c) => (
+              <Link key={c.slug} href={`/cities/${c.slug}/${service.slug}`} className="rounded-full border border-gray-100 bg-white px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-accent hover:text-white">
+                {c.name}
+              </Link>
+            ))}
+            <Link href="/cities" className="px-4 py-2 text-sm font-bold text-accent">All cities &rarr;</Link>
+          </nav>
+        </section>
+      )}
+      {!localService && (
+        <>
       {/* Other services in this city */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 text-center">
@@ -243,6 +262,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           </ScrollReveal>
         </div>
       </section>
+
+        </>
+      )}
 
       {!localService && (
         <>

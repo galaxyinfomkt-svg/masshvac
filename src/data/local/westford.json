@@ -1,0 +1,222 @@
+{
+  "slug": "westford",
+  "acsYear": 2022,
+  "quickAnswer": "Westford's houses are younger than almost anywhere we work: only 43.8% were built before 1980, 45th of 50, and the median home dates to 1984. Gas heats 71.3% of homes, the 2nd-highest share.",
+  "body": [
+    "## A town where the median house dates to 1984",
+    "The Census Bureau's 2022 American Community Survey (ACS) puts the median Westford home at 1984, which makes it one of the newest places we serve; only five towns of the 50 have a younger housing stock. Pre-1980 construction accounts for 3,887 of the 8,881 housing units (43.8%), where the middle town is at 57.2%. The biggest single band is 1980 to 1999, with 3,301 homes (37.2%). Another 1,693 (19.1%) are from 2000 or later, and 849 of those (9.6%) from 2010.",
+    "A younger stock changes the questions. Older homes can mean patched piping and plaster walls, while a house from the 1980 to 1999 band may be ducted and have a furnace nearing the end of its life. The older pocket still exists: 1,165 homes (13.1%) date from 1939 or earlier.",
+    "## Gas heats seven in ten homes",
+    "Utility gas heats 6,134 occupied homes (71.3%), the 2nd-highest share among the 50 towns. Fuel oil heats 1,432 (16.6%), the 4th-lowest, electricity 693 (8.1%), bottled gas 236 (2.7%) and wood 77 (0.9%). For the 1,432 oil homes, the choice is another oil system, a gas connection if one is nearby, or a heat pump.",
+    "## From West Chelmsford to a tech suburb",
+    "Wikipedia explains the pattern. Westford began as West Chelmsford, a village of Chelmsford, and was incorporated on September 23, 1729. For a long time it produced granite, apples and worsted yarn. By the end of the Civil War, better roads made it a residential suburb for the Lowell factories, and in the 1970s the 128 Technology Belt turned it into a suburb for high-tech firms in Burlington and Woburn, and later a technology center in its own right. By the 1990s, firms such as Red Hat, NETSCOUT and Samsung had offices there, mostly along Route 110, parallel to I-495. Earlier, the Abbot Worsted Company was said to be the first in the nation to use camel hair for worsted yarns, and in the 1960s the town hosted a research site for Project West Ford.",
+    "Colloquially, the town breaks into Forge Village, Nabnasset, Graniteville, Parker Village and the Center of Town. Westford covers 31.3 square miles in total area, 0.7 of them water, and sits on the edge of the Merrimack Valley, Northern Middlesex County and the MetroWest regions, so gas availability can differ from one address to the next.",
+    "## Single-family and townhouse living",
+    "Detached houses make up 7,180 units (80.8%) and townhouses 701 (7.9%). Only 994 units (11.2%) are in multi-unit buildings, well below the 16.1% of the middle town, and 1,008 households (11.7%) rent. Detached houses often have room for ducted systems, and zoning can matter in multi-level houses.",
+    "The median owner-occupied home is worth $672,200, the 18th-highest value of the 50 towns and above the $579,150 of the middle town. With 24,524 residents, Westford is the 9th-largest of the 50 by population. Owners hold 7,598 households (88.3%), and 275 of the 8,881 housing units (3.1%) are vacant.",
+    "## National Grid and the rebates",
+    "National Grid is the electric utility, per its Massachusetts Electric Company territory list. A home built in 2000 or later meets the weatherization test for a heat pump rebate automatically, and about one Westford home in five is that young. The rest of the rebate story is on the [heat pump page](/cities/westford/heat-pumps-ductless-mini-splits).",
+    "| Westford, MA at a glance (ACS 2022) | Figure |\n| --- | --- |\n| Population | 24,524 |\n| Housing units | 8,881 |\n| Median year homes were built | 1984 |\n| Median home value | $672,200 |\n| Built before 1980 | 43.8% (45th of 50) |\n| Heated with utility gas | 71.3% (2nd of 50) |\n| Heated with fuel oil | 16.6% |\n| Electric utility | National Grid |"
+  ],
+  "faq": [
+    {
+      "q": "Is Westford housing newer than most towns?",
+      "a": "Yes. The median home was built in 1984, and only 43.8% of units predate 1980, the 45th-highest share among the 50 towns. Newer houses can have better insulation and ducts, and systems installed decades ago may be reaching replacement age."
+    },
+    {
+      "q": "Is natural gas common in Westford?",
+      "a": "Very. Utility gas heats 71.3% of occupied homes, the 2nd-highest share of the 50 towns. Oil heats 16.6%. A main on your own street is a separate question, worth settling at the estimate before planning a conversion."
+    },
+    {
+      "q": "Do Westford homes qualify easily for Mass Save heat pump rebates?",
+      "a": "The weatherization test can be easier to meet in a younger town, since a home built in 2000 or later passes automatically and 19.1% of Westford units qualify that way. Other homes need a Home Energy Assessment. You also need an eligible installer and a 2026 install."
+    },
+    {
+      "q": "How many Westford households rent?",
+      "a": "Only 1,008 households (11.7%), against 16.4% for the middle town, and the 38th-highest share of the 50. Renting is a smaller part of the picture here than in most towns we serve. Owners hold 7,598 households (88.3%). Anyone letting a unit in town will find the state heating-season minimums summarized on our maintenance page."
+    }
+  ],
+  "services": {
+    "heating-installation-repair": {
+      "quickAnswer": "Gas heats 71.3% of Westford homes, and the largest age band, 3,301 homes from 1980 to 1999, means some furnaces may be near the age where failures begin. A replacement should follow the house as it is now, and the gas permit must come from a licensed professional.",
+      "body": [
+        "## Replacing a furnace that has done its time",
+        "The largest band of Westford homes dates from 1980 to 1999, so some of the equipment in them may be reaching the age where failures start. A replacement can be a like-for-like gas unit, a higher-efficiency gas furnace or a heat pump with a gas backup.",
+        "### Sizing again",
+        "A newer house can be better insulated than a farmhouse, but its original furnace may have been sized with a rule of thumb. Before quoting, we run the heating-load assessment. It can show that a smaller, modulating unit would do the job, and it avoids oversizing, which can cause short cycling and uneven rooms.",
+        "### What we inspect",
+        "- The ductwork in the basement and attic, for leaks and undersized returns.\n- The venting and the gas line.\n- Thermostat and zone controls, if the house has several zones.\n- The condensate drain on high-efficiency models.",
+        "### Who calls\nWith 88.3% of households owning and 11.7% renting, most calls here come from owners deciding for themselves. Where a tenant is involved, the landlord is the one to ask about the equipment.\n### Oil and bottled gas",
+        "A minority of homes burn oil or bottled gas. If the system fails, a gas connection is possible only where a main reaches the road, and not every street has one. We find out what is available at your address, then price oil, gas and a heat pump together.",
+        "### Permits and inspection",
+        "Swapping gas equipment brings a permit and an inspection at the end, and the Massachusetts rule is that a licensed plumber or gas fitter has to pull the permit. The town's building department can explain local requirements. At the inspection, combustion air and venting get the attention.",
+        "### Older village houses",
+        "The oldest homes in town can have boilers and radiators. Among the 1,165 homes from 1939 or earlier, a boiler job is its own thing, unlike a furnace job in a ducted 1990s house: the piping, the radiators and the flue all get checked.",
+        "### Repair or replace",
+        "A bad igniter, flame sensor or blower motor is a repair. A cracked heat exchanger or a system with repeated faults is not. We say which it is, and the estimate is in writing.",
+        "If the heat stops at night, call (508) 786-8755; the line is staffed around the clock. The [maintenance page](/cities/westford/hvac-maintenance-tune-ups) shows how a yearly visit prevents many failures."
+      ],
+      "faq": [
+        {
+          "q": "My Westford furnace dates from the 1990s. Replace it now?",
+          "a": "Not necessarily. If it runs safely and the heat exchanger is sound, a tune-up can buy time. If repairs are stacking up or the exchanger is cracked, replace it. We inspect before advising."
+        },
+        {
+          "q": "Can I put a heat pump beside the furnace?",
+          "a": "Yes. A heat pump can carry the mild months with the gas furnace taking over on the coldest days. Sizing and controls decide how well the two work together, and gas heating 71.3% of the town makes this a common pairing."
+        },
+        {
+          "q": "What if my Westford home burns oil?",
+          "a": "Oil heats 1,432 homes (16.6%) here, so replacing a burner is not unusual. The options are another oil system, a gas connection if a main reaches the road, or a heat pump. We price them together so you can compare."
+        }
+      ]
+    },
+    "air-conditioning-installation-repair": {
+      "quickAnswer": "Four in five Westford homes are detached houses, so ducted central air is a common option. Systems installed in the 1980s and 1990s may be at replacement age, and zoning can decide comfort in multi-level houses.",
+      "body": [
+        "## Cooling spread-out houses in a suburban town",
+        "Westford's housing is mostly single-family, with four in five homes detached, so a ducted central system is a common approach. Where ducts already exist, they may be reusable. The real question is condition: are the ducts tight, sized correctly and insulated in the attic?",
+        "### Systems from the 1990s",
+        "The largest share of Westford homes went up between 1980 and 1999. Air conditioners and heat pumps installed in that period are now old. Signs they are failing: ice on the coil, weak airflow, rising bills and a compressor that runs without cooling. We test before suggesting replacement.",
+        "### Multi-level comfort",
+        "A two-story colonial with a finished basement often has a hot upstairs and a cool downstairs, even with a new unit. The cause is usually duct design, return air or lack of zoning, not the tonnage. We check airflow and consider separate zones or ductless heads for problem rooms.",
+        "### Townhouses",
+        "Townhouses make up 701 units (7.9%), and another 718 homes sit in buildings of five or more units. Condenser placement may need an association's sign-off, and a written estimate gives the board something to read.",
+        "### Newer than the 1990s\nThere are 1,693 homes from 2000 on, 849 of them since 2010. A newer house can have large windows and open rooms, which may raise the cooling load, and zoning is worth pricing early. Its ducts are usually easier to inspect than a retrofit.\n### Humidity",
+        "A correctly sized air conditioner removes moisture. An oversized one cools the air quickly and shuts off before drying it, leaving a clammy house. Sizing from the house, including the windows and the sun, is the cure.",
+        "### Older homes",
+        "Some Westford houses are old enough to predate central air. Where there are no ducts, ductless mini-splits are the usual answer, with an indoor head per room and no demolition.",
+        "### Repair or replace",
+        "A capacitor, contactor or dirty coil is a repair. A failed compressor on an old unit generally points to replacement. We explain the difference and leave a written estimate.",
+        "For homes that also need new heating, our [heat pump page](/cities/westford/heat-pumps-ductless-mini-splits) covers one unit that does both jobs."
+      ],
+      "faq": [
+        {
+          "q": "Is central air worth replacing in a 1990s Westford house?",
+          "a": "If it is cooling poorly or needs repeated repairs, yes. Compare repair against replacement based on the age and the fault. The ducts may be reusable, which can simplify a replacement."
+        },
+        {
+          "q": "Why is my upstairs hot even with a new unit?",
+          "a": "Usually duct design or airflow, not the size of the unit. A zoning upgrade or a ductless head upstairs can fix it without replacing everything."
+        },
+        {
+          "q": "Can a Westford townhouse use a mini-split instead of central air?",
+          "a": "Often, yes. A ductless unit needs only a small line set to the outdoor condenser. Check the association rules first, because placement and noise limits vary. A written estimate with equipment details makes the request easy to review."
+        }
+      ]
+    },
+    "heat-pumps-ductless-mini-splits": {
+      "quickAnswer": "National Grid serves Westford. Homes built in 2000 or later pass the weatherization test on age alone, and that is 19.1% of the town (1,693 homes). The 1,432 oil homes have the clearest case for a heat pump.",
+      "body": [
+        "## Heat pumps in a younger gas town",
+        "Gas heats 6,134 Westford homes (71.3%), so a heat pump here is mostly a partner for the furnace or a way out of delivered fuel for the 1,432 oil homes (16.6%) and 236 bottled-gas homes (2.7%). Electricity heats 693 homes (8.1%), fewer than the middle town's share of 10.1%.",
+        "### Utility and rebate in brief",
+        "National Grid is the electric utility. The whole-home rebate for 2026 installs is $2,650 per ton, up to $8,500, and it assumes a weatherized house. Every remaining condition lives on our [main heat pump page](/services/heat-pumps-ductless-mini-splits).",
+        "### Age bands against the 2000 line",
+        "Homes from 2000 on, 1,693 of them, clear the age test automatically. The biggest band, 3,301 homes (37.2%) from 1980 to 1999, does not, nor do the 1,901 from 1960 to 1979 or the 1,165 from 1939 or earlier. With a median build year of 1984, most owners will start with an assessment.",
+        "### Oil and bottled gas, in numbers\nThe 1,432 oil homes and 236 bottled-gas homes together are about a fifth of the occupied total, which is the group where a heat pump replaces a delivered fuel. Wood heats 77 homes. Oil sits 47th of 50 for share, so the town is far from the middle town's 36.5%.\n### Ducted or ductless",
+        "- **Ducted:** reuses existing ducts, if they are in good shape.",
+        "- **Ductless:** suits additions, finished basements, bonus rooms and older houses.",
+        "- **Both:** a ducted unit for the main floors and a mini-split for the room that never feels right.",
+        "### Housing types",
+        "Detached houses are 7,180 units (80.8%), townhouses 701 (7.9%), and 718 units (8.1%) sit in buildings of five or more. Townhouse and condo owners may need association approval for an outdoor unit. In every case, the spot for the outdoor unit and the capacity of the electrical panel get checked before a quote. Our [cooling page](/cities/westford/air-conditioning-installation-repair) covers summer use."
+      ],
+      "faq": [
+        {
+          "q": "Does a house built in the 1990s pass the weatherization test on age?",
+          "a": "No. Only homes from 2000 on pass on age, and a 1990s house falls in the biggest local band. It takes one of the other routes described on the main heat pump page, such as an assessment."
+        },
+        {
+          "q": "Can I keep my gas furnace and add a heat pump?",
+          "a": "Yes. A partial-home setup uses the heat pump for most of the year and the furnace on the coldest days. With gas as the fuel in 71.3% of Westford homes, many owners will be in exactly this position."
+        },
+        {
+          "q": "Do heat pumps work in Westford winters?",
+          "a": "Cold-climate models are designed for them. The quality of the installation counts for more than the brand on the cabinet, and the load calculation comes before the equipment. A house that keeps its furnace has a backup for the worst nights as well."
+        }
+      ]
+    },
+    "hvac-maintenance-tune-ups": {
+      "quickAnswer": "Equipment installed in Westford's largest housing band, 1980 to 1999, may be in the second half of its life, which makes yearly gas checks and filter changes worth the visit. Oil homes also need an annual cleaning.",
+      "body": [
+        "## Looking after equipment in its middle age",
+        "More than half of Westford homes date from 1980 onward, and equipment from that era can sit in the awkward middle: too young to scrap, old enough to fail. Maintenance is how you find out which. A tune-up measures how the system is performing and lets you plan a replacement instead of reacting to one.",
+        "### Gas furnaces and boilers",
+        "Gas heats 6,134 Westford homes, so this is the most common visit: burner, heat exchanger, vent, gas pressure, controls and safety switches. High-efficiency furnaces add a condensate drain and trap that can clog and shut the system down.",
+        "### The oil homes",
+        "Westford has a minority of oil-heated homes. For oil, the cleaning is yearly: nozzle, filter, burner and a combustion test. A tank line or filter housing that leaks is worth checking at every visit.",
+        "### Heat pumps and central air",
+        "- Clean or inspect coils and the condensate drain.\n- Check refrigerant-side operation and electrical connections.\n- Keep outdoor units clear of leaves, shrubs and snow.\n- Replace filters on schedule.",
+        "### When to book",
+        "- **Early fall:** furnace and boiler checks.\n- **Spring:** air conditioner and mini-split checks.\n- **Any time:** noises, smells, short cycling or a bill that climbs for no reason.",
+        "### Townhouses and larger buildings\nWith 701 townhouses and 718 homes in buildings of five or more units, some equipment is shared or sits on common ground. Knowing who owns it, and who calls, is half of maintenance.\n### Outdoor equipment",
+        "Outdoor units sit exposed to leaves, drifting snow and landscaping. A quick look in spring and fall helps, including the pad and the line set, and it is a good habit with a heat pump or central air.",
+        "### Rentals",
+        "Of the town's occupied homes, 1,008 are rented (11.7%). For them the state sanitary code sets a heating-season floor of 68 F by day and 64 F overnight, and the landlord pays for heat unless the lease says otherwise. A tune-up before October lowers the odds of a failure that breaks the rule.",
+        "If the check shows a system is finished, our [heating page](/cities/westford/heating-installation-repair) explains what replacement involves."
+      ],
+      "faq": [
+        {
+          "q": "How often should a gas furnace in Westford be serviced?",
+          "a": "Once a year, ideally before the heating season. The visit checks combustion, venting and safety controls, and often finds small problems before they become breakdowns."
+        },
+        {
+          "q": "Does a heat pump need maintenance?",
+          "a": "Yes. Filters, coils, drains and the outdoor unit need attention. A yearly check confirms the refrigerant side is working and helps keep it running well."
+        },
+        {
+          "q": "What should I do before the first cold night?",
+          "a": "Change the filter, clear leaves and snow from around outdoor units, and write down any noise or smell. Then book the visit. With 3,301 homes in the 1980 to 1999 band, plenty of local equipment is of a similar vintage, and a written service history makes the next decision easier."
+        }
+      ]
+    },
+    "indoor-air-quality": {
+      "quickAnswer": "More than half of Westford homes date from 1980 onward, and newer, tighter houses can trap moisture and fumes unless ventilation works, while older houses may leak and gather dust. Filters, humidity control and fresh air are the usual fixes.",
+      "body": [
+        "## Air in tight, newer houses",
+        "More than half of Westford houses date from 1980 or later, with the largest group built between 1980 and 1999. These houses tend to be tighter than older ones. Tight construction saves energy, but it also holds cooking fumes, moisture and furnishing chemicals indoors until ventilation clears them.",
+        "### Ventilation first",
+        "- Bath fans that vent outdoors and actually run.\n- A range hood that exhausts outside.\n- Dryer vents kept clear.\n- An ERV or HRV in a very tight house, which brings in fresh air while limiting energy loss.",
+        "### Filters",
+        "Ducted systems pass all of a house's air through the filter, so a better filter helps, but only if the blower can handle it. Check airflow before moving to a dense filter, and replace on schedule.",
+        "### Humidity",
+        "Winter heating dries the air, and finished basements can hold moisture in summer. A humidifier tied to the furnace and a dehumidifier in the basement help, though a leak or grading problem needs fixing at its source.",
+        "### The age breakdown\nWestford's 3,301 homes from 1980 to 1999 are 37.2% of the stock, with 1,693 more from 2000 on. The 1,901 homes from 1960 to 1979 and the 821 from 1940 to 1959 sit before them, and 1,165 date from 1939 or earlier. Each band deserves a different first question.\n### Wood heat\nWood heats 77 Westford homes (0.9%). Where a stove or fireplace is in use, the flue and a working carbon monoxide alarm matter more than any filter.\n### The older houses",
+        "Homes built before 1940 tend to leak more. They can bring in outdoor air, dust and pollen, and basements can be damp. Before a renovation disturbs old paint or insulation, a qualified specialist should test it.",
+        "### Ducts",
+        "Cleaning is not needed on a schedule. It can be worth it after a renovation, pest problem or mold, and we look first before recommending it.",
+        "### Testing",
+        "A test shows humidity, carbon monoxide or particles at a single moment, so it works best as a way to find the source.",
+        "Our [heating page](/cities/westford/heating-installation-repair) explains how furnace condition affects the air in a house."
+      ],
+      "faq": [
+        {
+          "q": "Are newer Westford homes too tight?",
+          "a": "Some are, especially after air sealing. Signs are condensation on windows, musty smells and lingering cooking odors. Exhaust fans and sometimes an ERV or HRV bring in fresh air."
+        },
+        {
+          "q": "Is a dehumidifier worth it for a finished basement?",
+          "a": "Often, if humidity runs high in summer. It controls the air, but find any leak first. A dehumidifier can mask a water problem rather than solve it."
+        },
+        {
+          "q": "Does a Westford house with a wood stove need anything special?",
+          "a": "Wood heats 77 homes here, a small group. A stove or fireplace needs a clean, sound flue, and a carbon monoxide alarm is a sensible precaution wherever fuel burns. Ventilation also matters in a tight house, since a stove can draw air from the room."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "label": "U.S. Census Bureau, ACS 2022 5-year estimates, tables B25040, B25034, B25003, B25024, B25035, B25077",
+      "url": "https://data.census.gov/"
+    },
+    {
+      "label": "Wikipedia: Westford, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Westford%2C_Massachusetts"
+    },
+    {
+      "label": "National Grid, Massachusetts Electric Company territory list",
+      "url": "https://www.nationalgridus.com/media/pronet/supplier_svc_territory.pdf"
+    }
+  ]
+}

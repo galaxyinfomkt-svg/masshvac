@@ -1,0 +1,214 @@
+{
+  "slug": "harvard",
+  "acsYear": 2022,
+  "quickAnswer": "Harvard has the 2nd-highest vacancy rate of the 50 towns we serve (6.9%), and 92.3% of its households own their homes (ACS 2022). Fuel oil heats 53.4% of occupied homes, so most heating decisions here belong to owners weighing oil, bottled gas, gas or a heat pump.",
+  "body": [
+    "## Many empty homes, few renters",
+    "The Census Bureau's 2022 American Community Survey (ACS) counts 145 vacant units among Harvard's 2,110 housing units, a vacancy rate of 6.9%. Only one town among the 50 we serve has a higher rate, and the middle town sits at 3.6%. At the same time, 1,813 of the 1,965 occupied households (92.3%) own their homes, while 152 (7.7%) rent, which ranks 45th of 50 against 16.4% for the middle town.",
+    "With so few rentals, most heating and cooling decisions in Harvard are made by people who live in the house. The few landlords are covered by the State Sanitary Code, which requires a rental unit to be at least 68 F from 7 a.m. to 11 p.m. and at least 64 F overnight during the heating season (105 CMR 410.201). That is general information, not legal advice.",
+    "## Oil, bottled gas and not much pipe gas",
+    "Fuel oil or kerosene heats 1,049 occupied homes (53.4%), the 16th-highest share, against 36.5% for the middle town. Utility gas serves 443 homes (22.5%) and ranks 37th, while bottled or tank gas serves 141 (7.2%), 13th of 50 against 4.5% for the middle town. Electricity heats 173 homes (8.8%) and wood 34 (1.7%). Another 22 report solar, 74 some other fuel and 29 none.",
+    "For an oil house, a failed boiler usually brings up the same question: another oil boiler, or a heat pump. For a bottled-gas house, it is the same question with a different delivery truck. Utility gas is the exception, and moving to it depends on whether a main passes the property, which only the gas company can say.",
+    "## Shakers, Fruitlands and an observatory ridge",
+    "According to Wikipedia, Harvard is a farming community settled in 1658 and incorporated in 1732, and it has been home to several non-traditional communities. Harvard Shaker Village was the first Shaker settlement in Massachusetts. Residents who broke from the Protestant church built a house in 1769 that became known as the Square House, and the village closed in 1917. Amos Bronson Alcott and Charles Lane tried to found the Fruitlands farm on Prospect Hill in 1843, and Clara Endicott Sears opened it as a museum in 1914.",
+    "The land is largely wooded, with rolling hills, fields and wetlands, and the eastern part of town is on a large ridgeline. The town covers 27.0 square miles, of which 0.6 is water (2.26%), including the 320-acre Bare Hill Pond. For buildings, the useful fact is age: 401 Harvard homes (19.0%) date from 1939 or earlier, 18th of 50, and 754 (35.7%) from 1960 to 1979. In all, 1,400 units (66.4%) predate 1980, 13th of 50 and well above the 57.2% of the middle town.",
+    "## Detached houses, a handful of apartments",
+    "Single-family detached houses are 1,785 units (84.6%), the 10th-highest share, against 76.7% for the middle town. Another 87 units (4.1%) are attached townhouses, 14 sit in two-unit buildings and 78 in buildings of 3 or 4 units. 146 units (6.9%) are in buildings with 5 or more, and multi-unit buildings together hold 238 homes (11.3%), 36th of 50. Newer building is modest but real: 232 homes (11.0%) went up since 2010, 13th of 50.",
+    "## National Grid and the rebates",
+    "National Grid is the electric utility serving Harvard, according to its Massachusetts Electric Company territory list, so the standard Mass Save heat pump rebates are open to customers here. Details and conditions are on the [heat pump page](/cities/harvard/heat-pumps-ductless-mini-splits).",
+    "| Harvard, MA at a glance (ACS 2022) | Figure |\n| --- | --- |\n| Population | 6,835 |\n| Housing units | 2,110 |\n| Median year homes were built | 1971 |\n| Median home value | $696,000 |\n| Vacancy rate | 6.9% |\n| Main heating fuels | Fuel oil 53.4%, utility gas 22.5% |\n| Owner-occupied households | 92.3% |"
+  ],
+  "faq": [
+    {
+      "q": "Should I switch my Harvard oil boiler to a heat pump?",
+      "a": "It is worth pricing, since oil heats 53.4% of occupied homes here and a heat pump removes the fuel delivery. Some owners keep the boiler for the coldest days as a hybrid. The choice depends on how well the house holds heat, so we assess the heating load before quoting any system."
+    },
+    {
+      "q": "How should I look after heating in a house that is empty part of the year?",
+      "a": "Harvard has 145 vacant units, so this is a real situation. Have the system checked before it is needed again, keep a minimum temperature to protect pipes, and ask someone to look in during cold snaps. A heating system that sits idle can fail on its first cold night."
+    },
+    {
+      "q": "Do you service bottled-gas heating in Harvard?",
+      "a": "Yes. We work on heating systems for homes and businesses, and 141 Harvard homes (7.2%) run on bottled or tank gas, the 13th-highest share among the 50 towns. Gas appliances on a tank need a regulator and piping check along with the burner, and any new gas work needs a licensed gas fitter."
+    },
+    {
+      "q": "What if the heat fails at night or on a weekend?",
+      "a": "Call (508) 786-8755. We take emergency calls around the clock. If you burn oil, check the tank gauge first, because an empty tank is the quickest cause to rule out. Leave safety controls alone, and let a licensed technician look at the system."
+    }
+  ],
+  "services": {
+    "heating-installation-repair": {
+      "quickAnswer": "Oil heats 1,049 Harvard homes, bottled gas 141 and utility gas 443, with smaller groups on electricity, wood and solar. A failed boiler or furnace therefore starts from a different fuel depending on the address.",
+      "body": [
+        "## Several fuels, several starting points",
+        "The 2022 ACS counts 1,049 oil-heated homes in Harvard, 443 on utility gas, 173 on electricity, 141 on bottled gas, 34 on wood, 22 on solar and 74 on other fuels, with 29 reporting none. A bottled-gas home depends on deliveries like an oil home does. A home on utility gas is the simplest like-for-like swap. Electric homes can add a heat pump without changing fuel.",
+        "### What 1971 means for replacements",
+        "The median Harvard home was built in 1971, and 1,400 units (66.4%) predate 1980. The system installed when a house was built may long since have been replaced, while the pipes or ducts it was designed around often remain. A boiler replacement can reuse existing radiators or baseboards, while a furnace needs sound ductwork. If the house has gained insulation since, the old equipment may have been oversized.",
+        "### Gas permits",
+        "In Massachusetts a gas permit has to be pulled by a licensed plumber or gas fitter, and a newly installed gas boiler or furnace is expected to pass a final inspection. The building department is the place to ask how permit applications are handled.",
+        "### Detached houses and small buildings",
+        "Harvard has 1,785 detached houses and only 238 units in multi-unit buildings, so most replacements involve one system for one household. In the 78 homes in buildings of 3 or 4 units, ask whether the boiler is shared or each unit has its own before comparing options.",
+        "### Repair or replace",
+        "One bad part in a younger system is a repair job. Repeat failures, a leaking boiler section or a cracked heat exchanger are the signs that point to a new unit. The useful comparison is the repair bill against the years the equipment still has, since a new price alone misleads.",
+        "Our [maintenance page](/cities/harvard/hvac-maintenance-tune-ups) describes the yearly visit that keeps an old burner from quitting in a cold week."
+      ],
+      "faq": [
+        {
+          "q": "Can I switch from oil to gas in Harvard?",
+          "a": "Only where a gas main serves the road or can be extended to it. Utility gas heats 22.5% of Harvard homes and ranks 37th of 50, so ask the gas company about your address before assuming it is possible. The next step is pricing that connection next to a new oil boiler and a heat pump."
+        },
+        {
+          "q": "Can a boiler be replaced without changing the radiators?",
+          "a": "Often yes, since the pipes and radiators are separate from the heat source. A new boiler must be sized for the house and the existing distribution. A change from a boiler to a furnace is different, because a furnace needs ducts that many hot-water houses do not have."
+        },
+        {
+          "q": "What does my home's age mean for the choice?",
+          "a": "Harvard has 754 homes built from 1960 to 1979 and 401 from 1939 or earlier. Older houses leak more air and may have been altered over time, so the load can differ from the original design. Sizing from the house as it stands avoids buying equipment that is too large."
+        }
+      ]
+    },
+    "air-conditioning-installation-repair": {
+      "quickAnswer": "Harvard is 84.6% detached houses, with 87 townhouses and 146 homes in buildings of 5 or more units. Detached houses give outdoor equipment more options, and ductless mini-splits handle houses without usable ducts.",
+      "body": [
+        "## Cooling mostly detached houses",
+        "Detached houses make up 84.6% of Harvard's housing, 10th of 50 and above the 76.7% of the middle town. Detached owners generally have the most freedom to place an outdoor condenser. The 87 townhouses (4.1%) and the 146 units in buildings with 5 or more units often face tighter limits on outdoor space.",
+        "### Townhouses and apartment buildings",
+        "Harvard has 14 homes in two-unit buildings, 78 in buildings of 3 or 4 units and 146 in buildings with 5 or more. In those buildings, outdoor equipment often needs the owner's or association's consent, and wall-mounted indoor heads with a compact outdoor unit can be easier to approve than a large central condenser.",
+        "### Ducts and the age of the house",
+        "Harvard's median home goes back to 1971, an era when central air was not yet standard in many houses. Those with hot-water heat have no supply ducts to reuse. A ductless mini-split cools them with one outdoor unit and small indoor heads, with no ductwork in the walls. Houses with forced-air heat might serve a central unit once the ducts are checked for cooling airflow.",
+        "### The largest bands",
+        "The biggest age group is 754 homes from 1960 to 1979 (35.7%), followed by 418 from 1980 to 1999 (19.8%) and 401 from 1939 or earlier. Those eras differ in insulation and window quality, so cooling capacity should be based on the house rather than on its floor area.",
+        "### Electric homes and heat pumps",
+        "Electricity heats 173 Harvard homes (8.8%). For them a heat pump can both cool and heat, which turns a cooling purchase into a heating upgrade. The [heat pump page](/cities/harvard/heat-pumps-ductless-mini-splits) covers the rebate side.",
+        "### Sizing and faults",
+        "An oversized air conditioner cools quickly, then stops before it removes moisture, which can leave the house clammy. If a unit runs but does not cool, low refrigerant, a dirty coil or a weak capacitor are the usual suspects. A failed compressor on a very old unit tends to settle the repair-or-replace question."
+      ],
+      "faq": [
+        {
+          "q": "Can I cool a house with hot-water heat?",
+          "a": "Yes. A ductless mini-split skips the ducts and runs a slim refrigerant line from the outdoor cabinet to each indoor head. Each indoor head serves an area, so the number needed depends on the layout and on how many rooms you want cooled."
+        },
+        {
+          "q": "Is a window unit enough for a Harvard house?",
+          "a": "For one bedroom it can be. For several rooms, a mini-split is quieter, keeps windows free and can also heat in winter. Set its installed price against buying and replacing several window units over time. Our estimates are written and free, delivered before work starts."
+        },
+        {
+          "q": "Where does the outdoor unit go?",
+          "a": "Away from bedroom windows, with open space around it and above the height where snow drifts or leaves collect. Detached houses on larger lots often offer more choices than a townhouse wall. The exact spot is best settled during a visit to the house."
+        }
+      ]
+    },
+    "heat-pumps-ductless-mini-splits": {
+      "quickAnswer": "National Grid serves Harvard, and oil heats 1,049 of its homes. Just 292 homes (13.8%) were built in 2000 or later, which means the weatherization check is likely the first hurdle for many owners.",
+      "body": [
+        "## Heat pumps in an oil-and-propane town",
+        "Harvard sits in National Grid territory, which opens the 2026 whole-home rebate of $2,650 per ton, capped at $8,500 per home, after the house is weatherized. Conditions are laid out on our [general heat pump page](/services/heat-pumps-ductless-mini-splits).",
+        "### Age and the weatherization test",
+        "The age route covers homes built in 2000 or later: 292 units in Harvard (13.8%), of which 232 (11.0%) went up since 2010. The 1,400 units (66.4%) built before 1980 are likelier to start with a Home Energy Assessment. Harvard ranks 13th of 50 for the share built before 1980, so an assessment can be a common first step.",
+        "### Fuels a heat pump can replace",
+        "Oil heats 1,049 homes and bottled gas 141, ranking 13th of 50. Both come by delivery truck, and a heat pump may displace some or all of those deliveries. Wood (34 homes) and solar (22) are small groups. Utility gas homes (443) compare against a pipe fuel, a different decision. Electric homes (173) would replace resistance heat with a heat pump.",
+        "### Detached houses and ductless",
+        "With 1,785 detached houses, there is usually room for outdoor units. Hot-water houses, additions and rooms that never had ducts suit ductless heads, while a forced-air house can use a ducted unit on sound ductwork. Many houses end up with a mix, and the choice is made room by room.",
+        "### Hot-water houses",
+        "A radiator house has no ducts to reuse, so the easiest heat pump route is usually ductless: one outdoor unit and a head in each living area. The old radiators can stay as the backup, which keeps the existing pipes useful during the coldest hours.",
+        "### Hybrid setups",
+        "Keeping the oil boiler for the coldest nights and letting a heat pump carry milder weather is one option. It means two systems to maintain, but it spreads the risk of a cold-snap failure.",
+        "Our [heating page](/cities/harvard/heating-installation-repair) weighs a heat pump against a new boiler."
+      ],
+      "faq": [
+        {
+          "q": "Does a Harvard home built before 1980 qualify for the rebate?",
+          "a": "Not on age alone. For the 1,400 Harvard units built before 1980, the usual route runs through a Home Energy Assessment. How leaky the house is also changes the heat pump capacity it needs, so the assessment helps twice."
+        },
+        {
+          "q": "Can I keep the oil boiler and add a heat pump?",
+          "a": "Yes. The boiler stays as backup and the heat pump handles milder weather. The burner still needs its yearly cleaning, so maintenance does not vanish. A heat pump that fits the house beats a famous label on the wrong size."
+        },
+        {
+          "q": "How do heat pumps handle a Harvard winter?",
+          "a": "Cold-climate models are designed for New England winters. Performance depends on correct sizing, insulation and how heat is distributed. Harvard is on a ridgeline in its eastern part and largely wooded, but exposure varies house by house, so assess each one individually."
+        }
+      ]
+    },
+    "hvac-maintenance-tune-ups": {
+      "quickAnswer": "Oil heats 1,049 Harvard homes, so yearly burner service is the common task, with bottled gas (141 homes), utility gas (443) and heat pumps each needing their own checks. Empty houses need a start-up look.",
+      "body": [
+        "## Service for an oil-and-bottled-gas town",
+        "- **Oil, 1,049 homes:** soot comes off the burner and heat exchanger, a fresh nozzle and filter go in, and the flame is tested.\n- **Utility gas, 443 homes:** burner, venting and controls inspected.\n- **Bottled gas, 141 homes:** the same, plus the regulator and piping.\n- **Electric and heat pump homes, 173:** filters, coils, drain and refrigerant side.\n- **Wood, 34 homes:** a boiler or furnace beside a stove still needs its own yearly service.",
+        "### Why oil needs a yearly visit",
+        "Oil leaves soot on the burner and heat exchanger. After a year the layer can restrict combustion, and after several years it may force the system to burn more fuel for the same warmth. A clean burner is also easier to diagnose when something goes wrong.",
+        "### Empty and part-time homes",
+        "The ACS counts 145 vacant units in Harvard (6.9%), the second-highest vacancy rate among the 50 towns. A home that stands empty for weeks or months can have dry drains, stale filters or a dead thermostat battery. A start-up check before the heating season is easier than a repair on a freezing night.",
+        "### Owners and a few landlords",
+        "Of 1,965 occupied households, 1,813 are owners and only 152 renters, so the decision to book service mostly sits with the person who lives in the house. A landlord with a rental unit can use the same fall schedule, since a failed boiler in a cold snap leaves a tenant without heat.",
+        "### Rental units",
+        "Harvard has 152 renter households. A landlord can fold the rental boiler into the same early-fall schedule as the owner's own system, which makes a cold-snap failure less likely.",
+        "### Seasons",
+        "- **Early fall:** heating checks.\n- **Late spring:** cooling and mini-split service.\n- **Any time:** a new smell, soot, water around the equipment or repeated short cycling.",
+        "Between visits, shovel snow and rake leaves away from outdoor units. See the [heating page](/cities/harvard/heating-installation-repair) for the point at which repairing an old system stops paying."
+      ],
+      "faq": [
+        {
+          "q": "How often should an oil boiler be serviced?",
+          "a": "Once a year, before the heating season starts. Cleaning, a new nozzle and filter, and a combustion test make up the visit, which is usually far smaller than an emergency on a winter night. With 1,049 oil homes in Harvard, this is the service that applies to the largest group."
+        },
+        {
+          "q": "Does a heat pump need service?",
+          "a": "Yes, but with fewer chores than a burner has: filters, coils inside and outside, and a drain that flows. Looking at the refrigerant side once a year can reveal a slow leak while it is still minor."
+        },
+        {
+          "q": "What should I do for a seasonal home before winter?",
+          "a": "Book the heating check before you arrive, not after. A system that sat idle all summer can wake up with dried traps and clogged filters. Leave a minimum temperature set so pipes stay protected, and ask a neighbor to look in during cold snaps."
+        }
+      ]
+    },
+    "indoor-air-quality": {
+      "quickAnswer": "Harvard's homes range from 401 built in 1939 or earlier to 754 from 1960 to 1979 and 292 from 2000 on. Older houses leak, newer ones hold air, and wooded, wet ground means moisture is worth measuring.",
+      "body": [
+        "## Air quality across Harvard's age bands",
+        "The 2022 ACS counts 401 units from 1939 or earlier, 245 from 1940 to 1959, 754 from 1960 to 1979, 418 from 1980 to 1999 and 292 from 2000 on. A house from before 1940 and one from the 2000s breathe differently, and the filter, fan and humidity plan should match.",
+        "### Older and mid-century houses",
+        "Gaps in older framing let stale air out but also let in dust, pollen and damp from basements and crawlspaces. Before a renovation opens up walls or floors in any of the 1,400 units built before 1980, have a qualified specialist identify older paint, insulation or flooring materials.",
+        "### Tighter newer houses",
+        "The 232 homes built since 2010 are likely to be tighter than older ones. A tight shell keeps cooking fumes and damp air indoors. Ventilation then matters: a range hood that exhausts outside and bath fans that run for long enough.",
+        "### Wooded, wet ground",
+        "Wikipedia describes Harvard as largely wooded, with rolling hills, fields, wetlands and many streams and brooks, and 0.6 square miles of its 27.0 are water. Whether any basement is damp depends on the house and how water drains around it. A hygrometer reading tells you whether the problem is real before you buy a dehumidifier, and a second reading in a different season shows whether it repeats.",
+        "### Wood, oil and combustion",
+        "Wood heats 34 Harvard homes, and 1,049 burn oil. Every combustion appliance needs a working vent, and carbon monoxide alarms are basic safety equipment. A stove or boiler that smokes, smells or leaves soot should be checked before the next heating season.",
+        "### Empty homes and humidity",
+        "Harvard has 145 vacant units, and a closed-up house can build humidity and a stale smell. Letting the system run at a low setting or checking the drains and filters before reopening helps.",
+        "### Options",
+        "- Filtration matched to the system, changed on schedule.\n- A humidifier or dehumidifier that works with the equipment.\n- Added or repaired ventilation for a tight house.\n- Duct cleaning only when ducts are visibly dirty, with the cause of the dirt fixed afterward.",
+        "The [maintenance page](/cities/harvard/hvac-maintenance-tune-ups) covers routine filter and coil care."
+      ],
+      "faq": [
+        {
+          "q": "Do I need my ducts cleaned?",
+          "a": "Visible mold, dust streaming out of registers or debris left behind by a renovation or an animal are the real triggers. Absent those, good filters and sealed joints usually matter more. Request a visual check first, then decide."
+        },
+        {
+          "q": "Why does my basement smell damp?",
+          "a": "Water finds basements through the ground, through leaking pipes, or as condensation on cool walls. A dehumidifier cleans up only the air; where water is coming in, closing the entry point is the lasting fix."
+        },
+        {
+          "q": "Does a tight newer house need mechanical ventilation?",
+          "a": "Not necessarily, but it can help. A house that holds air needs fresh air from somewhere, such as bath fans, a range hood or a dedicated ventilator. Harvard has 232 homes built since 2010 and 292 from 2000 on, the group most likely to benefit."
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "label": "U.S. Census Bureau, ACS 2022 5-year estimates, tables B25040, B25034, B25003, B25024, B25035, B25077",
+      "url": "https://data.census.gov/"
+    },
+    {
+      "label": "Wikipedia: Harvard, Massachusetts",
+      "url": "https://en.wikipedia.org/wiki/Harvard%2C_Massachusetts"
+    },
+    {
+      "label": "National Grid, Massachusetts Electric Company territory list",
+      "url": "https://www.nationalgridus.com/media/pronet/supplier_svc_territory.pdf"
+    }
+  ]
+}
