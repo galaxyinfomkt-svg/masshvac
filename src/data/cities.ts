@@ -1,4 +1,5 @@
 import { projects } from "./projects";
+import { getLocalContent } from "./local";
 
 // Mass HVAC services MetroWest only. Other region values are retained for
 // type-safety in legacy template content below but are not used by routing.
@@ -112,61 +113,9 @@ function slugify(name: string): string {
 const localContent: Record<string, Partial<City>> = {
   milford: {
     zipCodes: ["01757"],
-    // featuredProjectSlug: "boiler-replacement-milford",
-    // ^ Deliberately NOT shown on the (now indexable) Milford pages. The project text
-    // makes specific claims (2-hour response, 48-hour job, ~20% lower gas bills,
-    // competitors quoting 5-7 days) that could not be verified, and its photo shows
-    // a condenser, not a boiler. TODO(owner): confirm the project is real, fix the
-    // photo, and re-enable.
-    // Local content below is built only from public sources that were read in full
-    // (see "Sources" at the end of localIntro, plus: Town of Milford Building &
-    // Inspections and Gas pages; Town of Milford Community Electricity page naming
-    // National Grid as the electric utility; Mass Save / National Grid 2026 residential
-    // air source heat pump rebate form; 105 CMR 410.201 via mass.gov). Neighborhood
-    // names are the ones the 2024 Comprehensive Plan itself lists.
-    neighborhoods: [
-      "**Downtown Milford:** the area around Town Hall and the Milford Town Library, and the traditional walkable neighborhoods that surround it.",
-      "**The Plains:** the area between Sacred Heart Church and the junction of Routes 16 and 109.",
-      "**Prospect Heights:** a section of Milford built by the Draper Corporation of Hopedale, between upper Water Street, Route 140 and Milford Hospital.",
-    ],
-    localIntro: [
-      "Mass HVAC is based right here in Milford (ZIP 01757), a Worcester County town of about 30,000 residents. The age of the housing shapes most of the heating and cooling work in town. According to the Town's 2024 Comprehensive Plan, which draws on the Census Bureau's American Community Survey, close to three quarters of Milford's homes were built before 1980, and only 361 homes were built between 2010 and 2022. Houses of that age were mostly built before today's energy codes, so insulation, air sealing and ductwork can differ a lot from one house to the next.",
-      "Milford is not only single-family homes. About 11.8% of the town's housing units are in two-family buildings, another 7.6% are in buildings of three or four units, and 29.5% of households rent. When a boiler or furnace fails in a duplex or a small rental building, more than one household is without heat, which is why a fast response and a correctly sized replacement matter here.",
-      // Table rows must stay on consecutive lines: renderMarkdown ends a table at a blank line.
-      [
-        "| Milford, MA at a glance | Figure |",
-        "| --- | --- |",
-        "| Homes built before 1980 | Close to three quarters |",
-        "| Homes built 2010 to 2022 | 361 (of 10,472 housing units) |",
-        "| Housing units in two-unit buildings | 11.8% |",
-        "| Housing units in 3 to 4 unit buildings | 7.6% |",
-        "| Owner-occupied / renter-occupied households | 70.5% / 29.5% |",
-        "| Electric utility | National Grid |",
-      ].join("\n"),
-      "We work across Milford's neighborhoods and along the Route 16, 85, 109 and 140 corridors. Sources: [Town of Milford Comprehensive Plan 2024, Existing Conditions Brief (MAPC)](https://www.mapc.org/wp-content/uploads/2024/08/MilfordCompPlan-ExistingCondBrief-8-8-24.pdf), which cites the 2022 American Community Survey; [Town of Milford Community Electricity program](https://www.milfordma.gov/node/184891) for the electric utility.",
-    ].join("\n\n"),
-    localFaq: [
-      {
-        q: "Do I need a permit to replace a furnace or boiler in Milford, MA?",
-        a: "Usually yes. In Milford, gas permits are issued by the town's Building & Inspections department at 66 Dilla St, and only licensed plumbers or gas fitters may apply for them. State rules exempt simple jobs such as replacing the controls on an existing gas appliance, but installing a new gas furnace or boiler normally needs a permit and a final inspection. Ask any contractor who will pull the permit, and call Building & Inspections at (508) 634-2313 if you are unsure.",
-        services: ["heating-installation-repair"],
-      },
-      {
-        q: "Which Mass Save heat pump rebates can Milford homeowners get?",
-        a: "Electricity in Milford is delivered by National Grid, a Mass Save sponsor. For equipment installed in 2026, the whole-home air source heat pump rebate is $2,650 per ton, up to $8,500 per home, with one whole-home rebate per customer account and applications due by February 28, 2027. The home must be sufficiently weatherized first: built in 2000 or later, a Home Energy Assessment that recommends less than $1,000 of work, or earlier recommendations already completed. Income-qualified households may receive more, and the equipment must be installed by an eligible Mass Save heat pump installer. Program terms can change, so confirm them at masssave.com.",
-        services: ["heat-pumps-ductless-mini-splits"],
-      },
-      {
-        q: "Most Milford homes are older. Does that change which system I should choose?",
-        a: "It can. Close to three quarters of Milford's homes were built before 1980, so insulation, air sealing and ductwork vary widely from house to house. Sizing the system to your actual house matters more than the brand: an oversized system wastes money and an undersized one cannot keep up in January. Many older homes also need air sealing or insulation before a whole-home heat pump rebate applies. That is why we start with an assessment of your home's heating load before we quote.",
-        services: ["heating-installation-repair", "air-conditioning-installation-repair", "heat-pumps-ductless-mini-splits"],
-      },
-      {
-        q: "My rental in Milford has no heat. What are the rules?",
-        a: "Under the Massachusetts State Sanitary Code (105 CMR 410.201), during the heating season, roughly mid-September to mid-June, a rental unit must be kept at least 68 degrees F from 7 a.m. to 11 p.m. and at least 64 degrees F overnight. Unless the lease says otherwise, the landlord pays for heat. Tell your landlord in writing. If you own a Milford duplex or rental building and the heat is out, call us 24/7 at (508) 786-8755. This is general information, not legal advice.",
-        services: ["heating-installation-repair", "hvac-maintenance-tune-ups"],
-      },
-    ],
+    // Confirmed real by the owner (2026-10-27). Its page still uses a condenser photo, see docs.
+    featuredProjectSlug: "boiler-replacement-milford",
+    // Page copy lives in src/data/local/milford.json (sourced; see docs/local-content-sources.md).
   },
   framingham: {
     zipCodes: ["01701", "01702", "01703"],
@@ -298,6 +247,7 @@ const regionProfiles: Record<CityRegion, {
 /* ------------------------------------------------------------------ */
 export function cityHasLocalContent(city: City | undefined): boolean {
   if (!city) return false;
+  if (getLocalContent(city.slug)) return true;
   return Boolean(city.localIntro) || (Array.isArray(city.neighborhoods) && city.neighborhoods.length > 0);
 }
 

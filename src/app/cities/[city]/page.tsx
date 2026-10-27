@@ -14,6 +14,7 @@ import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
 import { averageRating } from "@/data/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
+import { getLocalContent } from "@/data/local";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
@@ -36,7 +37,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const city = getCityBySlug(slug);
   if (!city) notFound();
-  const content = getCityContent(city.name);
+  // Sourced, unique local content (src/data/local) replaces the generic template when it exists.
+  const local = getLocalContent(city.slug);
+  const content = local ? local.body.join("\n\n") : getCityContent(city.name);
   const heroImage = getImageForCity(city.slug, cityHeroImages);
   const cityIndex = cities.findIndex((c) => c.slug === city.slug);
   const nearby = cities.filter((_, i) => Math.abs(i - cityIndex) > 0 && Math.abs(i - cityIndex) <= 4).slice(0, 8);
@@ -56,6 +59,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       a: `Heating installation and repair, air conditioning, heat pumps and ductless mini-splits, seasonal maintenance, and indoor air quality. We work on major brands and give free estimates to ${city.name} homeowners and businesses.`,
     },
   ];
+
+  const finalFaq = local ? local.faq : faqItems;
 
   return (
     <>
@@ -79,9 +84,15 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-white mb-2">
                   Quick Answer
                 </p>
-                <p className="text-white text-base leading-relaxed">
-                  <strong>Mass HVAC Inc</strong>, based in Milford, serves <strong>{city.name}, MA</strong> with heating and AC repair and installation, heat pumps, ductless mini-splits and 24/7 emergency calls. Licensed and insured, {averageRating.toFixed(1)} on Google. Free written estimates: call <a href={TEL_HREF} className="underline font-bold">{PHONE_DISPLAY}</a>.
-                </p>
+                {local ? (
+                  <p data-own className="text-white text-base leading-relaxed">
+                    {local.quickAnswer} Free written estimates: call <a href={TEL_HREF} className="underline font-bold">{PHONE_DISPLAY}</a>.
+                  </p>
+                ) : (
+                  <p className="text-white text-base leading-relaxed">
+                    <strong>Mass HVAC Inc</strong>, based in Milford, serves <strong>{city.name}, MA</strong> with heating and AC repair and installation, heat pumps, ductless mini-splits and 24/7 emergency calls. Licensed and insured, {averageRating.toFixed(1)} on Google. Free written estimates: call <a href={TEL_HREF} className="underline font-bold">{PHONE_DISPLAY}</a>.
+                  </p>
+                )}
               </div>
 
               {/* Trust badges */}
@@ -153,7 +164,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
             <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
-              <div className="md-content">{renderMarkdown(content)}</div>
+              <div className="md-content" data-own>{renderMarkdown(content)}</div>
             </div>
           </ScrollReveal>
         </div>
@@ -233,7 +244,9 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>
-            <FAQAccordion items={faqItems} />
+            <div data-own>
+              <FAQAccordion items={finalFaq} />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -274,7 +287,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqItems.map((faq) => ({
+        mainEntity: finalFaq.map((faq) => ({
           "@type": "Question",
           name: faq.q,
           acceptedAnswer: {

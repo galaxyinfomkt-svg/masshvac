@@ -1,0 +1,1802 @@
+{
+ "/cities/marlborough": {
+  "own_words": 656,
+  "own_unique_pct": 17.1,
+  "main_words": 1120,
+  "main_unique_pct": 18.6
+ },
+ "/cities/marlborough/heating-installation-repair": {
+  "own_words": 610,
+  "own_unique_pct": 8.3,
+  "main_words": 1052,
+  "main_unique_pct": 9.6
+ },
+ "/cities/marlborough/air-conditioning-installation-repair": {
+  "own_words": 539,
+  "own_unique_pct": 9.6,
+  "main_words": 984,
+  "main_unique_pct": 10.5
+ },
+ "/cities/marlborough/heat-pumps-ductless-mini-splits": {
+  "own_words": 649,
+  "own_unique_pct": 15.0,
+  "main_words": 1094,
+  "main_unique_pct": 14.0
+ },
+ "/cities/marlborough/hvac-maintenance-tune-ups": {
+  "own_words": 503,
+  "own_unique_pct": 13.9,
+  "main_words": 945,
+  "main_unique_pct": 13.1
+ },
+ "/cities/marlborough/indoor-air-quality": {
+  "own_words": 535,
+  "own_unique_pct": 16.3,
+  "main_words": 983,
+  "main_unique_pct": 14.1
+ },
+ "/cities/hudson": {
+  "own_words": 616,
+  "own_unique_pct": 18.6,
+  "main_words": 1082,
+  "main_unique_pct": 20.1
+ },
+ "/cities/hudson/heating-installation-repair": {
+  "own_words": 555,
+  "own_unique_pct": 10.9,
+  "main_words": 997,
+  "main_unique_pct": 11.3
+ },
+ "/cities/hudson/air-conditioning-installation-repair": {
+  "own_words": 529,
+  "own_unique_pct": 11.7,
+  "main_words": 974,
+  "main_unique_pct": 11.8
+ },
+ "/cities/hudson/heat-pumps-ductless-mini-splits": {
+  "own_words": 648,
+  "own_unique_pct": 12.8,
+  "main_words": 1093,
+  "main_unique_pct": 12.5
+ },
+ "/cities/hudson/hvac-maintenance-tune-ups": {
+  "own_words": 511,
+  "own_unique_pct": 11.3,
+  "main_words": 953,
+  "main_unique_pct": 11.5
+ },
+ "/cities/hudson/indoor-air-quality": {
+  "own_words": 585,
+  "own_unique_pct": 11.8,
+  "main_words": 1033,
+  "main_unique_pct": 11.4
+ },
+ "/cities/framingham": {
+  "own_words": 656,
+  "own_unique_pct": 17.1,
+  "main_words": 1124,
+  "main_unique_pct": 18.5
+ },
+ "/cities/framingham/heating-installation-repair": {
+  "own_words": 577,
+  "own_unique_pct": 8.9,
+  "main_words": 1019,
+  "main_unique_pct": 10.0
+ },
+ "/cities/framingham/air-conditioning-installation-repair": {
+  "own_words": 558,
+  "own_unique_pct": 10.9,
+  "main_words": 1003,
+  "main_unique_pct": 11.2
+ },
+ "/cities/framingham/heat-pumps-ductless-mini-splits": {
+  "own_words": 657,
+  "own_unique_pct": 14.8,
+  "main_words": 1102,
+  "main_unique_pct": 13.9
+ },
+ "/cities/framingham/hvac-maintenance-tune-ups": {
+  "own_words": 503,
+  "own_unique_pct": 13.9,
+  "main_words": 945,
+  "main_unique_pct": 13.1
+ },
+ "/cities/framingham/indoor-air-quality": {
+  "own_words": 535,
+  "own_unique_pct": 16.3,
+  "main_words": 983,
+  "main_unique_pct": 14.1
+ },
+ "/cities/westborough": {
+  "own_words": 626,
+  "own_unique_pct": 18.3,
+  "main_words": 1096,
+  "main_unique_pct": 19.9
+ },
+ "/cities/westborough/heating-installation-repair": {
+  "own_words": 598,
+  "own_unique_pct": 9.6,
+  "main_words": 1040,
+  "main_unique_pct": 10.6
+ },
+ "/cities/westborough/air-conditioning-installation-repair": {
+  "own_words": 531,
+  "own_unique_pct": 11.6,
+  "main_words": 976,
+  "main_unique_pct": 11.8
+ },
+ "/cities/westborough/heat-pumps-ductless-mini-splits": {
+  "own_words": 658,
+  "own_unique_pct": 12.9,
+  "main_words": 1103,
+  "main_unique_pct": 12.6
+ },
+ "/cities/westborough/hvac-maintenance-tune-ups": {
+  "own_words": 520,
+  "own_unique_pct": 9.6,
+  "main_words": 962,
+  "main_unique_pct": 10.6
+ },
+ "/cities/westborough/indoor-air-quality": {
+  "own_words": 587,
+  "own_unique_pct": 11.7,
+  "main_words": 1035,
+  "main_unique_pct": 11.4
+ },
+ "/cities/northborough": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 19.8
+ },
+ "/cities/northborough/heating-installation-repair": {
+  "own_words": 555,
+  "own_unique_pct": 9.7,
+  "main_words": 997,
+  "main_unique_pct": 10.9
+ },
+ "/cities/northborough/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/northborough/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.4
+ },
+ "/cities/northborough/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.5
+ },
+ "/cities/northborough/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 960,
+  "main_unique_pct": 12.5
+ },
+ "/cities/southborough": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 19.9
+ },
+ "/cities/southborough/heating-installation-repair": {
+  "own_words": 565,
+  "own_unique_pct": 8.8,
+  "main_words": 1007,
+  "main_unique_pct": 10.4
+ },
+ "/cities/southborough/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.2,
+  "main_words": 940,
+  "main_unique_pct": 11.3
+ },
+ "/cities/southborough/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.4
+ },
+ "/cities/southborough/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.2
+ },
+ "/cities/southborough/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.0
+ },
+ "/cities/shrewsbury": {
+  "own_words": 644,
+  "own_unique_pct": 17.4,
+  "main_words": 1116,
+  "main_unique_pct": 19.5
+ },
+ "/cities/shrewsbury/heating-installation-repair": {
+  "own_words": 598,
+  "own_unique_pct": 8.6,
+  "main_words": 1040,
+  "main_unique_pct": 9.8
+ },
+ "/cities/shrewsbury/air-conditioning-installation-repair": {
+  "own_words": 536,
+  "own_unique_pct": 9.8,
+  "main_words": 981,
+  "main_unique_pct": 10.6
+ },
+ "/cities/shrewsbury/heat-pumps-ductless-mini-splits": {
+  "own_words": 645,
+  "own_unique_pct": 17.4,
+  "main_words": 1090,
+  "main_unique_pct": 15.4
+ },
+ "/cities/shrewsbury/hvac-maintenance-tune-ups": {
+  "own_words": 497,
+  "own_unique_pct": 17.3,
+  "main_words": 939,
+  "main_unique_pct": 14.9
+ },
+ "/cities/shrewsbury/indoor-air-quality": {
+  "own_words": 571,
+  "own_unique_pct": 14.2,
+  "main_words": 1019,
+  "main_unique_pct": 13.0
+ },
+ "/cities/natick": {
+  "own_words": 647,
+  "own_unique_pct": 19.2,
+  "main_words": 1119,
+  "main_unique_pct": 20.6
+ },
+ "/cities/natick/heating-installation-repair": {
+  "own_words": 610,
+  "own_unique_pct": 8.3,
+  "main_words": 1052,
+  "main_unique_pct": 9.6
+ },
+ "/cities/natick/air-conditioning-installation-repair": {
+  "own_words": 539,
+  "own_unique_pct": 9.6,
+  "main_words": 984,
+  "main_unique_pct": 10.5
+ },
+ "/cities/natick/heat-pumps-ductless-mini-splits": {
+  "own_words": 657,
+  "own_unique_pct": 13.6,
+  "main_words": 1102,
+  "main_unique_pct": 13.4
+ },
+ "/cities/natick/hvac-maintenance-tune-ups": {
+  "own_words": 503,
+  "own_unique_pct": 17.1,
+  "main_words": 945,
+  "main_unique_pct": 15.0
+ },
+ "/cities/natick/indoor-air-quality": {
+  "own_words": 535,
+  "own_unique_pct": 16.3,
+  "main_words": 983,
+  "main_unique_pct": 14.3
+ },
+ "/cities/ashland": {
+  "own_words": 662,
+  "own_unique_pct": 19.2,
+  "main_words": 1134,
+  "main_unique_pct": 20.6
+ },
+ "/cities/ashland/heating-installation-repair": {
+  "own_words": 545,
+  "own_unique_pct": 10.6,
+  "main_words": 987,
+  "main_unique_pct": 11.1
+ },
+ "/cities/ashland/air-conditioning-installation-repair": {
+  "own_words": 511,
+  "own_unique_pct": 11.3,
+  "main_words": 956,
+  "main_unique_pct": 11.6
+ },
+ "/cities/ashland/heat-pumps-ductless-mini-splits": {
+  "own_words": 638,
+  "own_unique_pct": 12.7,
+  "main_words": 1083,
+  "main_unique_pct": 12.7
+ },
+ "/cities/ashland/hvac-maintenance-tune-ups": {
+  "own_words": 493,
+  "own_unique_pct": 14.4,
+  "main_words": 935,
+  "main_unique_pct": 13.4
+ },
+ "/cities/ashland/indoor-air-quality": {
+  "own_words": 515,
+  "own_unique_pct": 12.8,
+  "main_words": 963,
+  "main_unique_pct": 12.1
+ },
+ "/cities/sudbury": {
+  "own_words": 613,
+  "own_unique_pct": 19.1,
+  "main_words": 1085,
+  "main_unique_pct": 20.5
+ },
+ "/cities/sudbury/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/sudbury/air-conditioning-installation-repair": {
+  "own_words": 508,
+  "own_unique_pct": 9.0,
+  "main_words": 953,
+  "main_unique_pct": 10.4
+ },
+ "/cities/sudbury/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/sudbury/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 16.9,
+  "main_words": 911,
+  "main_unique_pct": 15.2
+ },
+ "/cities/sudbury/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/hopkinton": {
+  "own_words": 644,
+  "own_unique_pct": 19.3,
+  "main_words": 1116,
+  "main_unique_pct": 20.7
+ },
+ "/cities/hopkinton/heating-installation-repair": {
+  "own_words": 607,
+  "own_unique_pct": 8.5,
+  "main_words": 1049,
+  "main_unique_pct": 9.7
+ },
+ "/cities/hopkinton/air-conditioning-installation-repair": {
+  "own_words": 539,
+  "own_unique_pct": 9.8,
+  "main_words": 984,
+  "main_unique_pct": 10.6
+ },
+ "/cities/hopkinton/heat-pumps-ductless-mini-splits": {
+  "own_words": 654,
+  "own_unique_pct": 14.9,
+  "main_words": 1099,
+  "main_unique_pct": 14.1
+ },
+ "/cities/hopkinton/hvac-maintenance-tune-ups": {
+  "own_words": 507,
+  "own_unique_pct": 11.8,
+  "main_words": 949,
+  "main_unique_pct": 12.2
+ },
+ "/cities/hopkinton/indoor-air-quality": {
+  "own_words": 522,
+  "own_unique_pct": 15.5,
+  "main_words": 970,
+  "main_unique_pct": 13.8
+ },
+ "/cities/milford": {
+  "own_words": 973,
+  "own_unique_pct": 99.7,
+  "main_words": 1407,
+  "main_unique_pct": 75.8
+ },
+ "/cities/milford/heating-installation-repair": {
+  "own_words": 400,
+  "own_unique_pct": 99.5,
+  "main_words": 812,
+  "main_unique_pct": 56.6
+ },
+ "/cities/milford/air-conditioning-installation-repair": {
+  "own_words": 461,
+  "own_unique_pct": 99.8,
+  "main_words": 875,
+  "main_unique_pct": 59.9
+ },
+ "/cities/milford/heat-pumps-ductless-mini-splits": {
+  "own_words": 486,
+  "own_unique_pct": 99.2,
+  "main_words": 900,
+  "main_unique_pct": 60.5
+ },
+ "/cities/milford/hvac-maintenance-tune-ups": {
+  "own_words": 415,
+  "own_unique_pct": 100.0,
+  "main_words": 827,
+  "main_unique_pct": 58.0
+ },
+ "/cities/milford/indoor-air-quality": {
+  "own_words": 428,
+  "own_unique_pct": 99.5,
+  "main_words": 846,
+  "main_unique_pct": 57.5
+ },
+ "/cities/wayland": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/wayland/heating-installation-repair": {
+  "own_words": 543,
+  "own_unique_pct": 8.2,
+  "main_words": 985,
+  "main_unique_pct": 9.9
+ },
+ "/cities/wayland/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 950,
+  "main_unique_pct": 10.4
+ },
+ "/cities/wayland/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 13.2,
+  "main_words": 1068,
+  "main_unique_pct": 13.3
+ },
+ "/cities/wayland/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/wayland/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/holliston": {
+  "own_words": 635,
+  "own_unique_pct": 17.7,
+  "main_words": 1107,
+  "main_unique_pct": 19.7
+ },
+ "/cities/holliston/heating-installation-repair": {
+  "own_words": 579,
+  "own_unique_pct": 8.4,
+  "main_words": 1021,
+  "main_unique_pct": 9.7
+ },
+ "/cities/holliston/air-conditioning-installation-repair": {
+  "own_words": 537,
+  "own_unique_pct": 10.6,
+  "main_words": 982,
+  "main_unique_pct": 11.0
+ },
+ "/cities/holliston/heat-pumps-ductless-mini-splits": {
+  "own_words": 636,
+  "own_unique_pct": 13.4,
+  "main_words": 1081,
+  "main_unique_pct": 13.2
+ },
+ "/cities/holliston/hvac-maintenance-tune-ups": {
+  "own_words": 489,
+  "own_unique_pct": 11.6,
+  "main_words": 931,
+  "main_unique_pct": 12.1
+ },
+ "/cities/holliston/indoor-air-quality": {
+  "own_words": 514,
+  "own_unique_pct": 16.4,
+  "main_words": 962,
+  "main_unique_pct": 14.3
+ },
+ "/cities/grafton": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 20.2
+ },
+ "/cities/grafton/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/grafton/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/grafton/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 10.8,
+  "main_words": 1078,
+  "main_unique_pct": 11.8
+ },
+ "/cities/grafton/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 10.6,
+  "main_words": 922,
+  "main_unique_pct": 11.7
+ },
+ "/cities/grafton/indoor-air-quality": {
+  "own_words": 554,
+  "own_unique_pct": 11.2,
+  "main_words": 1002,
+  "main_unique_pct": 11.6
+ },
+ "/cities/clinton": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1065,
+  "main_unique_pct": 20.5
+ },
+ "/cities/clinton/heating-installation-repair": {
+  "own_words": 565,
+  "own_unique_pct": 8.8,
+  "main_words": 1007,
+  "main_unique_pct": 10.4
+ },
+ "/cities/clinton/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.2,
+  "main_words": 940,
+  "main_unique_pct": 11.3
+ },
+ "/cities/clinton/heat-pumps-ductless-mini-splits": {
+  "own_words": 625,
+  "own_unique_pct": 12.5,
+  "main_words": 1070,
+  "main_unique_pct": 12.7
+ },
+ "/cities/clinton/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/clinton/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 960,
+  "main_unique_pct": 12.7
+ },
+ "/cities/maynard": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/maynard/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/maynard/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/maynard/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 13.2,
+  "main_words": 1068,
+  "main_unique_pct": 13.3
+ },
+ "/cities/maynard/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/maynard/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/stow": {
+  "own_words": 585,
+  "own_unique_pct": 18.3,
+  "main_words": 1057,
+  "main_unique_pct": 20.7
+ },
+ "/cities/stow/heating-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 966,
+  "main_unique_pct": 11.3
+ },
+ "/cities/stow/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.5,
+  "main_words": 940,
+  "main_unique_pct": 11.4
+ },
+ "/cities/stow/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.4,
+  "main_words": 1068,
+  "main_unique_pct": 13.9
+ },
+ "/cities/stow/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.7
+ },
+ "/cities/stow/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/acton": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1065,
+  "main_unique_pct": 20.5
+ },
+ "/cities/acton/heating-installation-repair": {
+  "own_words": 555,
+  "own_unique_pct": 9.7,
+  "main_words": 997,
+  "main_unique_pct": 10.9
+ },
+ "/cities/acton/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.5,
+  "main_words": 940,
+  "main_unique_pct": 11.4
+ },
+ "/cities/acton/heat-pumps-ductless-mini-splits": {
+  "own_words": 625,
+  "own_unique_pct": 12.5,
+  "main_words": 1070,
+  "main_unique_pct": 12.7
+ },
+ "/cities/acton/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 10.6,
+  "main_words": 922,
+  "main_unique_pct": 11.7
+ },
+ "/cities/acton/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 960,
+  "main_unique_pct": 12.7
+ },
+ "/cities/concord": {
+  "own_words": 605,
+  "own_unique_pct": 19.4,
+  "main_words": 1077,
+  "main_unique_pct": 20.7
+ },
+ "/cities/concord/heating-installation-repair": {
+  "own_words": 558,
+  "own_unique_pct": 8.0,
+  "main_words": 1000,
+  "main_unique_pct": 9.8
+ },
+ "/cities/concord/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 950,
+  "main_unique_pct": 10.4
+ },
+ "/cities/concord/heat-pumps-ductless-mini-splits": {
+  "own_words": 607,
+  "own_unique_pct": 14.5,
+  "main_words": 1052,
+  "main_unique_pct": 14.1
+ },
+ "/cities/concord/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/concord/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/berlin": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/berlin/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/berlin/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/berlin/heat-pumps-ductless-mini-splits": {
+  "own_words": 615,
+  "own_unique_pct": 14.7,
+  "main_words": 1060,
+  "main_unique_pct": 14.2
+ },
+ "/cities/berlin/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/berlin/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/bolton": {
+  "own_words": 613,
+  "own_unique_pct": 19.1,
+  "main_words": 1085,
+  "main_unique_pct": 20.5
+ },
+ "/cities/bolton/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/bolton/air-conditioning-installation-repair": {
+  "own_words": 508,
+  "own_unique_pct": 9.0,
+  "main_words": 953,
+  "main_unique_pct": 10.4
+ },
+ "/cities/bolton/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/bolton/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/bolton/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/lincoln": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 20.2
+ },
+ "/cities/lincoln/heating-installation-repair": {
+  "own_words": 555,
+  "own_unique_pct": 9.7,
+  "main_words": 997,
+  "main_unique_pct": 10.9
+ },
+ "/cities/lincoln/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/lincoln/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.6
+ },
+ "/cities/lincoln/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/lincoln/indoor-air-quality": {
+  "own_words": 554,
+  "own_unique_pct": 11.2,
+  "main_words": 1002,
+  "main_unique_pct": 11.6
+ },
+ "/cities/weston": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/weston/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 7.9,
+  "main_words": 1008,
+  "main_unique_pct": 9.7
+ },
+ "/cities/weston/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 950,
+  "main_unique_pct": 10.4
+ },
+ "/cities/weston/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/weston/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/weston/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/wellesley": {
+  "own_words": 605,
+  "own_unique_pct": 19.4,
+  "main_words": 1077,
+  "main_unique_pct": 20.7
+ },
+ "/cities/wellesley/heating-installation-repair": {
+  "own_words": 568,
+  "own_unique_pct": 7.7,
+  "main_words": 1010,
+  "main_unique_pct": 9.6
+ },
+ "/cities/wellesley/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.2,
+  "main_words": 950,
+  "main_unique_pct": 10.5
+ },
+ "/cities/wellesley/heat-pumps-ductless-mini-splits": {
+  "own_words": 607,
+  "own_unique_pct": 14.5,
+  "main_words": 1052,
+  "main_unique_pct": 14.1
+ },
+ "/cities/wellesley/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/wellesley/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/needham": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/needham/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/needham/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/needham/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/needham/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/needham/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/dover": {
+  "own_words": 613,
+  "own_unique_pct": 19.1,
+  "main_words": 1085,
+  "main_unique_pct": 20.5
+ },
+ "/cities/dover/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1018,
+  "main_unique_pct": 9.6
+ },
+ "/cities/dover/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/dover/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/dover/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 16.9,
+  "main_words": 911,
+  "main_unique_pct": 15.2
+ },
+ "/cities/dover/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/medfield": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/medfield/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 9.3,
+  "main_words": 1008,
+  "main_unique_pct": 10.5
+ },
+ "/cities/medfield/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/medfield/heat-pumps-ductless-mini-splits": {
+  "own_words": 615,
+  "own_unique_pct": 14.7,
+  "main_words": 1060,
+  "main_unique_pct": 14.2
+ },
+ "/cities/medfield/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/medfield/indoor-air-quality": {
+  "own_words": 501,
+  "own_unique_pct": 16.0,
+  "main_words": 949,
+  "main_unique_pct": 14.3
+ },
+ "/cities/millis": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1095,
+  "main_unique_pct": 19.1
+ },
+ "/cities/millis/heating-installation-repair": {
+  "own_words": 543,
+  "own_unique_pct": 8.2,
+  "main_words": 985,
+  "main_unique_pct": 9.9
+ },
+ "/cities/millis/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/millis/heat-pumps-ductless-mini-splits": {
+  "own_words": 615,
+  "own_unique_pct": 14.7,
+  "main_words": 1060,
+  "main_unique_pct": 14.2
+ },
+ "/cities/millis/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/millis/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/sherborn": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1066,
+  "main_unique_pct": 20.5
+ },
+ "/cities/sherborn/heating-installation-repair": {
+  "own_words": 565,
+  "own_unique_pct": 8.8,
+  "main_words": 1007,
+  "main_unique_pct": 10.4
+ },
+ "/cities/sherborn/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.2,
+  "main_words": 940,
+  "main_unique_pct": 11.3
+ },
+ "/cities/sherborn/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.6
+ },
+ "/cities/sherborn/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 10.6,
+  "main_words": 922,
+  "main_unique_pct": 11.7
+ },
+ "/cities/sherborn/indoor-air-quality": {
+  "own_words": 554,
+  "own_unique_pct": 11.2,
+  "main_words": 1002,
+  "main_unique_pct": 11.6
+ },
+ "/cities/boxborough": {
+  "own_words": 643,
+  "own_unique_pct": 18.7,
+  "main_words": 1116,
+  "main_unique_pct": 20.3
+ },
+ "/cities/boxborough/heating-installation-repair": {
+  "own_words": 526,
+  "own_unique_pct": 10.2,
+  "main_words": 968,
+  "main_unique_pct": 11.2
+ },
+ "/cities/boxborough/air-conditioning-installation-repair": {
+  "own_words": 514,
+  "own_unique_pct": 12.2,
+  "main_words": 959,
+  "main_unique_pct": 12.3
+ },
+ "/cities/boxborough/heat-pumps-ductless-mini-splits": {
+  "own_words": 626,
+  "own_unique_pct": 12.3,
+  "main_words": 1071,
+  "main_unique_pct": 12.6
+ },
+ "/cities/boxborough/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.7
+ },
+ "/cities/boxborough/indoor-air-quality": {
+  "own_words": 554,
+  "own_unique_pct": 11.2,
+  "main_words": 1002,
+  "main_unique_pct": 11.6
+ },
+ "/cities/boylston": {
+  "own_words": 605,
+  "own_unique_pct": 18.6,
+  "main_words": 1078,
+  "main_unique_pct": 19.2
+ },
+ "/cities/boylston/heating-installation-repair": {
+  "own_words": 568,
+  "own_unique_pct": 7.1,
+  "main_words": 1010,
+  "main_unique_pct": 9.0
+ },
+ "/cities/boylston/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 9.5,
+  "main_words": 969,
+  "main_unique_pct": 10.2
+ },
+ "/cities/boylston/heat-pumps-ductless-mini-splits": {
+  "own_words": 613,
+  "own_unique_pct": 15.8,
+  "main_words": 1058,
+  "main_unique_pct": 14.5
+ },
+ "/cities/boylston/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 15.2,
+  "main_words": 911,
+  "main_unique_pct": 14.0
+ },
+ "/cities/boylston/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.1,
+  "main_words": 991,
+  "main_unique_pct": 12.3
+ },
+ "/cities/west-boylston": {
+  "own_words": 633,
+  "own_unique_pct": 18.1,
+  "main_words": 1118,
+  "main_unique_pct": 19.4
+ },
+ "/cities/west-boylston/heating-installation-repair": {
+  "own_words": 577,
+  "own_unique_pct": 7.4,
+  "main_words": 1033,
+  "main_unique_pct": 9.2
+ },
+ "/cities/west-boylston/air-conditioning-installation-repair": {
+  "own_words": 520,
+  "own_unique_pct": 8.4,
+  "main_words": 979,
+  "main_unique_pct": 9.6
+ },
+ "/cities/west-boylston/heat-pumps-ductless-mini-splits": {
+  "own_words": 634,
+  "own_unique_pct": 15.3,
+  "main_words": 1093,
+  "main_unique_pct": 14.1
+ },
+ "/cities/west-boylston/hvac-maintenance-tune-ups": {
+  "own_words": 485,
+  "own_unique_pct": 15.7,
+  "main_words": 941,
+  "main_unique_pct": 14.4
+ },
+ "/cities/west-boylston/indoor-air-quality": {
+  "own_words": 517,
+  "own_unique_pct": 15.9,
+  "main_words": 979,
+  "main_unique_pct": 13.9
+ },
+ "/cities/holden": {
+  "own_words": 605,
+  "own_unique_pct": 19.4,
+  "main_words": 1078,
+  "main_unique_pct": 20.7
+ },
+ "/cities/holden/heating-installation-repair": {
+  "own_words": 535,
+  "own_unique_pct": 8.3,
+  "main_words": 978,
+  "main_unique_pct": 10.0
+ },
+ "/cities/holden/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 951,
+  "main_unique_pct": 10.4
+ },
+ "/cities/holden/heat-pumps-ductless-mini-splits": {
+  "own_words": 613,
+  "own_unique_pct": 16.3,
+  "main_words": 1059,
+  "main_unique_pct": 15.1
+ },
+ "/cities/holden/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 919,
+  "main_unique_pct": 12.2
+ },
+ "/cities/holden/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 940,
+  "main_unique_pct": 13.8
+ },
+ "/cities/sterling": {
+  "own_words": 605,
+  "own_unique_pct": 19.4,
+  "main_words": 1078,
+  "main_unique_pct": 20.7
+ },
+ "/cities/sterling/heating-installation-repair": {
+  "own_words": 558,
+  "own_unique_pct": 8.0,
+  "main_words": 1001,
+  "main_unique_pct": 9.8
+ },
+ "/cities/sterling/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 951,
+  "main_unique_pct": 10.4
+ },
+ "/cities/sterling/heat-pumps-ductless-mini-splits": {
+  "own_words": 613,
+  "own_unique_pct": 15.3,
+  "main_words": 1059,
+  "main_unique_pct": 14.6
+ },
+ "/cities/sterling/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 912,
+  "main_unique_pct": 13.4
+ },
+ "/cities/sterling/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 992,
+  "main_unique_pct": 13.1
+ },
+ "/cities/lancaster": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1066,
+  "main_unique_pct": 20.5
+ },
+ "/cities/lancaster/heating-installation-repair": {
+  "own_words": 565,
+  "own_unique_pct": 9.0,
+  "main_words": 1008,
+  "main_unique_pct": 10.5
+ },
+ "/cities/lancaster/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 944,
+  "main_unique_pct": 11.6
+ },
+ "/cities/lancaster/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 10.8,
+  "main_words": 1079,
+  "main_unique_pct": 11.8
+ },
+ "/cities/lancaster/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 930,
+  "main_unique_pct": 10.7
+ },
+ "/cities/lancaster/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 961,
+  "main_unique_pct": 12.7
+ },
+ "/cities/harvard": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1095,
+  "main_unique_pct": 19.2
+ },
+ "/cities/harvard/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 7.9,
+  "main_words": 1009,
+  "main_unique_pct": 9.7
+ },
+ "/cities/harvard/air-conditioning-installation-repair": {
+  "own_words": 505,
+  "own_unique_pct": 9.0,
+  "main_words": 951,
+  "main_unique_pct": 10.4
+ },
+ "/cities/harvard/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1069,
+  "main_unique_pct": 14.1
+ },
+ "/cities/harvard/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 16.9,
+  "main_words": 912,
+  "main_unique_pct": 15.2
+ },
+ "/cities/harvard/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 992,
+  "main_unique_pct": 13.1
+ },
+ "/cities/upton": {
+  "own_words": 613,
+  "own_unique_pct": 19.1,
+  "main_words": 1085,
+  "main_unique_pct": 20.5
+ },
+ "/cities/upton/heating-installation-repair": {
+  "own_words": 576,
+  "own_unique_pct": 7.7,
+  "main_words": 1019,
+  "main_unique_pct": 9.6
+ },
+ "/cities/upton/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 970,
+  "main_unique_pct": 11.0
+ },
+ "/cities/upton/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 13.2,
+  "main_words": 1069,
+  "main_unique_pct": 13.3
+ },
+ "/cities/upton/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 919,
+  "main_unique_pct": 12.2
+ },
+ "/cities/upton/indoor-air-quality": {
+  "own_words": 501,
+  "own_unique_pct": 16.0,
+  "main_words": 950,
+  "main_unique_pct": 14.3
+ },
+ "/cities/mendon": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 20.2
+ },
+ "/cities/mendon/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/mendon/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/mendon/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 10.8,
+  "main_words": 1078,
+  "main_unique_pct": 11.8
+ },
+ "/cities/mendon/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.7
+ },
+ "/cities/mendon/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/hopedale": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/hopedale/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 7.9,
+  "main_words": 1008,
+  "main_unique_pct": 9.7
+ },
+ "/cities/hopedale/air-conditioning-installation-repair": {
+  "own_words": 508,
+  "own_unique_pct": 9.0,
+  "main_words": 953,
+  "main_unique_pct": 10.4
+ },
+ "/cities/hopedale/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/hopedale/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/hopedale/indoor-air-quality": {
+  "own_words": 491,
+  "own_unique_pct": 15.1,
+  "main_words": 939,
+  "main_unique_pct": 13.9
+ },
+ "/cities/littleton": {
+  "own_words": 643,
+  "own_unique_pct": 18.7,
+  "main_words": 1115,
+  "main_unique_pct": 20.3
+ },
+ "/cities/littleton/heating-installation-repair": {
+  "own_words": 559,
+  "own_unique_pct": 8.9,
+  "main_words": 1001,
+  "main_unique_pct": 10.5
+ },
+ "/cities/littleton/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.2,
+  "main_words": 940,
+  "main_unique_pct": 11.3
+ },
+ "/cities/littleton/heat-pumps-ductless-mini-splits": {
+  "own_words": 626,
+  "own_unique_pct": 13.7,
+  "main_words": 1071,
+  "main_unique_pct": 13.5
+ },
+ "/cities/littleton/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 10.6,
+  "main_words": 922,
+  "main_unique_pct": 11.7
+ },
+ "/cities/littleton/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/westford": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1094,
+  "main_unique_pct": 19.2
+ },
+ "/cities/westford/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 7.9,
+  "main_words": 1008,
+  "main_unique_pct": 9.7
+ },
+ "/cities/westford/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/westford/heat-pumps-ductless-mini-splits": {
+  "own_words": 623,
+  "own_unique_pct": 14.5,
+  "main_words": 1068,
+  "main_unique_pct": 14.1
+ },
+ "/cities/westford/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 13.4,
+  "main_words": 911,
+  "main_unique_pct": 13.4
+ },
+ "/cities/westford/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/carlisle": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1065,
+  "main_unique_pct": 20.5
+ },
+ "/cities/carlisle/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/carlisle/air-conditioning-installation-repair": {
+  "own_words": 514,
+  "own_unique_pct": 12.2,
+  "main_words": 959,
+  "main_unique_pct": 12.3
+ },
+ "/cities/carlisle/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.6
+ },
+ "/cities/carlisle/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.7
+ },
+ "/cities/carlisle/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 960,
+  "main_unique_pct": 12.7
+ },
+ "/cities/chelmsford": {
+  "own_words": 649,
+  "own_unique_pct": 18.5,
+  "main_words": 1121,
+  "main_unique_pct": 20.2
+ },
+ "/cities/chelmsford/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/chelmsford/air-conditioning-installation-repair": {
+  "own_words": 495,
+  "own_unique_pct": 10.5,
+  "main_words": 940,
+  "main_unique_pct": 11.4
+ },
+ "/cities/chelmsford/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.3,
+  "main_words": 1078,
+  "main_unique_pct": 12.6
+ },
+ "/cities/chelmsford/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/chelmsford/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/groton": {
+  "own_words": 585,
+  "own_unique_pct": 18.3,
+  "main_words": 1057,
+  "main_unique_pct": 20.3
+ },
+ "/cities/groton/heating-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 966,
+  "main_unique_pct": 11.3
+ },
+ "/cities/groton/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/groton/heat-pumps-ductless-mini-splits": {
+  "own_words": 617,
+  "own_unique_pct": 12.3,
+  "main_words": 1062,
+  "main_unique_pct": 12.6
+ },
+ "/cities/groton/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/groton/indoor-air-quality": {
+  "own_words": 554,
+  "own_unique_pct": 11.2,
+  "main_words": 1002,
+  "main_unique_pct": 11.6
+ },
+ "/cities/ayer": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1065,
+  "main_unique_pct": 20.3
+ },
+ "/cities/ayer/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/ayer/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/ayer/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 10.8,
+  "main_words": 1078,
+  "main_unique_pct": 11.8
+ },
+ "/cities/ayer/hvac-maintenance-tune-ups": {
+  "own_words": 487,
+  "own_unique_pct": 8.8,
+  "main_words": 929,
+  "main_unique_pct": 10.7
+ },
+ "/cities/ayer/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/shirley": {
+  "own_words": 622,
+  "own_unique_pct": 16.9,
+  "main_words": 1092,
+  "main_unique_pct": 18.9
+ },
+ "/cities/shirley/heating-installation-repair": {
+  "own_words": 566,
+  "own_unique_pct": 7.9,
+  "main_words": 1008,
+  "main_unique_pct": 9.7
+ },
+ "/cities/shirley/air-conditioning-installation-repair": {
+  "own_words": 508,
+  "own_unique_pct": 9.0,
+  "main_words": 953,
+  "main_unique_pct": 10.4
+ },
+ "/cities/shirley/heat-pumps-ductless-mini-splits": {
+  "own_words": 615,
+  "own_unique_pct": 14.7,
+  "main_words": 1060,
+  "main_unique_pct": 14.2
+ },
+ "/cities/shirley/hvac-maintenance-tune-ups": {
+  "own_words": 469,
+  "own_unique_pct": 16.9,
+  "main_words": 911,
+  "main_unique_pct": 15.2
+ },
+ "/cities/shirley/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/lunenburg": {
+  "own_words": 632,
+  "own_unique_pct": 16.6,
+  "main_words": 1100,
+  "main_unique_pct": 18.8
+ },
+ "/cities/lunenburg/heating-installation-repair": {
+  "own_words": 586,
+  "own_unique_pct": 7.6,
+  "main_words": 1028,
+  "main_unique_pct": 9.5
+ },
+ "/cities/lunenburg/air-conditioning-installation-repair": {
+  "own_words": 524,
+  "own_unique_pct": 10.3,
+  "main_words": 969,
+  "main_unique_pct": 11.0
+ },
+ "/cities/lunenburg/heat-pumps-ductless-mini-splits": {
+  "own_words": 625,
+  "own_unique_pct": 14.5,
+  "main_words": 1070,
+  "main_unique_pct": 14.1
+ },
+ "/cities/lunenburg/hvac-maintenance-tune-ups": {
+  "own_words": 476,
+  "own_unique_pct": 11.1,
+  "main_words": 918,
+  "main_unique_pct": 12.2
+ },
+ "/cities/lunenburg/indoor-air-quality": {
+  "own_words": 543,
+  "own_unique_pct": 13.6,
+  "main_words": 991,
+  "main_unique_pct": 13.1
+ },
+ "/cities/medway": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1059,
+  "main_unique_pct": 20.3
+ },
+ "/cities/medway/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/medway/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/medway/heat-pumps-ductless-mini-splits": {
+  "own_words": 625,
+  "own_unique_pct": 12.5,
+  "main_words": 1070,
+  "main_unique_pct": 12.7
+ },
+ "/cities/medway/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/medway/indoor-air-quality": {
+  "own_words": 502,
+  "own_unique_pct": 12.3,
+  "main_words": 950,
+  "main_unique_pct": 12.2
+ },
+ "/cities/norfolk": {
+  "own_words": 593,
+  "own_unique_pct": 18.1,
+  "main_words": 1057,
+  "main_unique_pct": 20.1
+ },
+ "/cities/norfolk/heating-installation-repair": {
+  "own_words": 532,
+  "own_unique_pct": 10.1,
+  "main_words": 974,
+  "main_unique_pct": 11.2
+ },
+ "/cities/norfolk/air-conditioning-installation-repair": {
+  "own_words": 498,
+  "own_unique_pct": 11.0,
+  "main_words": 943,
+  "main_unique_pct": 11.7
+ },
+ "/cities/norfolk/heat-pumps-ductless-mini-splits": {
+  "own_words": 633,
+  "own_unique_pct": 12.1,
+  "main_words": 1078,
+  "main_unique_pct": 12.5
+ },
+ "/cities/norfolk/hvac-maintenance-tune-ups": {
+  "own_words": 480,
+  "own_unique_pct": 14.0,
+  "main_words": 922,
+  "main_unique_pct": 13.5
+ },
+ "/cities/norfolk/indoor-air-quality": {
+  "own_words": 512,
+  "own_unique_pct": 13.3,
+  "main_words": 960,
+  "main_unique_pct": 12.7
+ }
+}

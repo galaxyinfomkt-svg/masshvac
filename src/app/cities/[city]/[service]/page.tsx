@@ -14,6 +14,7 @@ import { PHONE_DISPLAY, TEL_HREF, SITE_URL } from "@/data/company";
 import { averageRating } from "@/data/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
+import { getLocalContent } from "@/data/local";
 
 /** Search-style labels per service ("furnace repair natick" beats "Heating in Natick"). */
 const SEARCH_LABEL: Record<string, string> = {
@@ -54,7 +55,12 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
   const { city: cs, service: ss } = await params;
   const city = getCityBySlug(cs), service = getServiceBySlug(ss);
   if (!city || !service) notFound();
-  const content = getCityServiceContent(city.name, service.name, service.slug);
+  // Sourced, unique local content (src/data/local) replaces the generic template when it exists.
+  const local = getLocalContent(city.slug);
+  const localService = local?.services[service.slug];
+  const content = localService
+    ? localService.body.join("\n\n")
+    : getCityServiceContent(city.name, service.name, service.slug);
   const cityIndex = cities.findIndex((c) => c.slug === city.slug);
   const nearby = cities.filter((_, i) => Math.abs(i - cityIndex) > 0 && Math.abs(i - cityIndex) <= 5).slice(0, 5);
   const serviceIndex = services.findIndex((s) => s.slug === service.slug);
@@ -87,6 +93,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
     },
   ];
 
+  const finalFaq = localService ? localService.faq : faqItems;
+
   return (
     <>
       {/* Hero — Text left + Form right */}
@@ -113,9 +121,13 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
                 {SEARCH_LABEL[service.slug] ?? service.name} in <span className="text-[#FF5A5A]">{city.name}, MA</span>
               </h1>
-              <p className="text-white/80 text-lg leading-relaxed mb-6 max-w-xl">
-                Need {service.name.toLowerCase()} in {city.name}? Mass HVAC is based in Milford, close by. Licensed, insured, {averageRating.toFixed(1)} on Google, and you get a written estimate before any work starts.
-              </p>
+              {localService ? (
+                <p data-own className="text-white/80 text-lg leading-relaxed mb-6 max-w-xl">{localService.quickAnswer}</p>
+              ) : (
+                <p className="text-white/80 text-lg leading-relaxed mb-6 max-w-xl">
+                  Need {service.name.toLowerCase()} in {city.name}? Mass HVAC is based in Milford, close by. Licensed, insured, {averageRating.toFixed(1)} on Google, and you get a written estimate before any work starts.
+                </p>
+              )}
 
               {/* Trust badges */}
               <div className="flex flex-wrap gap-4 mb-6">
@@ -156,7 +168,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         <div className="mx-auto max-w-4xl px-4">
           <ScrollReveal>
             <div className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 p-8 md:p-12">
-              <div className="md-content">{renderMarkdown(content)}</div>
+              <div className="md-content" data-own>{renderMarkdown(content)}</div>
             </div>
           </ScrollReveal>
         </div>
@@ -259,7 +271,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
             <div className="accent-divider mt-6" />
           </ScrollReveal>
           <ScrollReveal>
-            <FAQAccordion items={faqItems} />
+            <div data-own>
+              <FAQAccordion items={finalFaq} />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -298,7 +312,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: faqItems.map((f) => ({
+        mainEntity: finalFaq.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
