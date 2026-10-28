@@ -29,7 +29,7 @@ const GEOTAGGED = new Set([
 ]);
 
 export default function imageLoader({ src, width }: { src: string; width: number }) {
-  const id = src.split("?")[0].split("/").pop()?.replace(/\.[a-z]+$/i, "") ?? "";
-  if (GEOTAGGED.has(id)) return `/geo/${id}-${width <= 828 ? 828 : 1200}.jpg`;
+  const id = (src.split("?")[0].split("/").pop() ?? "").replace(/\.[a-z]+$/i, "").replace(/-(828|1200)$/, "");
+  if (GEOTAGGED.has(id) || /^d\d{3}$/.test(id)) return `/geo/${id}-${width <= 828 ? 828 : 1200}.jpg`;
   return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=75`;
 }

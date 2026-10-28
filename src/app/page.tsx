@@ -102,8 +102,8 @@ export default function HomePage() {
           ════════════════════════════════════════════════ */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <Image
-          src="https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg"
-          alt="Mass HVAC technician at a MetroWest home"
+          src="/geo/d055-1200.jpg"
+          alt="Two outdoor condensers on a wall bracket during an install, with gauges and ladders below"
           fill
           sizes="100vw"
           className="object-cover"
