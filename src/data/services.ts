@@ -51,7 +51,7 @@ export const services: Service[] = [
       "Furnace, boiler and heat pump repair and installation in Milford and MetroWest, MA. 24/7 emergency calls, written estimates. Call (508) 786-8755.",
     icon: "🔥",
     heroImage:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
+      "https://masshvac.net/geo/d038-1200.jpg",
     painPoints: [
       "No heat during freezing Massachusetts winters",
       "Skyrocketing energy bills from an outdated furnace",
@@ -99,7 +99,7 @@ Whether your furnace stopped working at 2 AM or you're planning a proactive upgr
       "Central AC and ductless AC repair, replacement and tune-ups in Milford and MetroWest, MA. Same-day service on most calls. Call (508) 786-8755.",
     icon: "❄️",
     heroImage:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
+      "https://masshvac.net/geo/d055-1200.jpg",
     painPoints: [
       "No AC during humid Massachusetts summers",
       "AC running constantly but not cooling the house",
@@ -148,7 +148,7 @@ From emergency AC repairs when your system breaks down on the hottest day of the
       "Ductless mini-split and cold-climate heat pump installation in Milford and MetroWest, MA. Heating and cooling in one system. Call (508) 786-8755.",
     icon: "🌡️",
     heroImage:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
+      "https://masshvac.net/geo/d029-1200.jpg",
     painPoints: [
       "Rooms without ductwork that are too hot or too cold",
       "Old home additions or converted spaces with no HVAC",
@@ -199,7 +199,7 @@ At Mass HVAC, we install and service major brands including Mitsubishi, Fujitsu,
       "Seasonal furnace, AC and heat pump tune-ups in Milford and MetroWest, MA. Catch problems early and keep warranties valid. Book at (508) 786-8755.",
     icon: "🔧",
     heroImage:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
+      "https://masshvac.net/geo/d071-1200.jpg",
     painPoints: [
       "HVAC system breaking down at the worst possible time",
       "Energy bills creeping up year after year",
@@ -250,7 +250,7 @@ At Mass HVAC, we install and service major brands including Mitsubishi, Fujitsu,
       "Air purifiers, humidifiers, dehumidifiers, filtration and duct cleaning for MetroWest, MA homes. Free in-home estimate. Call (508) 786-8755.",
     icon: "💨",
     heroImage:
-      "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg",
+      "https://masshvac.net/geo/d012-1200.jpg",
     painPoints: [
       "Allergies or respiratory issues worsening at home",
       "Dusty air and visible particles in sunlight",
@@ -298,44 +298,47 @@ export function getServiceBySlug(slug: string): Service | undefined {
 
 export const serviceImagePool: Record<string, string[]> = {
   "heating-installation-repair": [
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae753dac28d098.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531d83aecc9666cf028.jpg",
+    "https://masshvac.net/geo/d038-1200.jpg",
+    "https://masshvac.net/geo/d039-1200.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg",
+    "https://masshvac.net/geo/d017-1200.jpg",
   ],
   "air-conditioning-installation-repair": [
+    "https://masshvac.net/geo/d055-1200.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae752c1728d099.jpg",
     "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
     "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae75c64728d09a.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498f886003707.jpg",
   ],
   "heat-pumps-ductless-mini-splits": [
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc19c80e9796b.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd623359c780.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae752c1728d099.jpg",
+    "https://masshvac.net/geo/d029-1200.jpg",
+    "https://masshvac.net/geo/d003-1200.jpg",
+    "https://masshvac.net/geo/d012-1200.jpg",
+    "https://masshvac.net/geo/d008-1200.jpg",
+    "https://masshvac.net/geo/d010-1200.jpg",
   ],
   "hvac-maintenance-tune-ups": [
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc1302fe9796c.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e5cde03d06c.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c03544725a0db8.jpg",
+    "https://masshvac.net/geo/d055-1200.jpg",
+    "https://masshvac.net/geo/d071-1200.jpg",
+    "https://masshvac.net/geo/d038-1200.jpg",
+    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae752c1728d099.jpg",
   ],
   "indoor-air-quality": [
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf143b5e9eeb.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf89fa5e9ee1.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdf801d5e9ee3.jpg",
-    "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc121bee97966.jpg",
+    "https://masshvac.net/geo/d012-1200.jpg",
+    "https://masshvac.net/geo/d003-1200.jpg",
+    "https://masshvac.net/geo/d010-1200.jpg",
+    "https://masshvac.net/geo/d039-1200.jpg",
   ],
 };
 
 export const cityHeroImages: string[] = [
-  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885313a2afd32ac59c785.jpg",
-  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg",
-  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/699885315ba498e66200370c.jpg",
-  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853120c0359b195a0dd9.jpeg",
-  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853108245e718a03d08d.jpg",
+  "https://masshvac.net/geo/d029-1200.jpg",
+  "https://masshvac.net/geo/d055-1200.jpg",
+  "https://masshvac.net/geo/d038-1200.jpg",
+  "https://masshvac.net/geo/d003-1200.jpg",
+  "https://masshvac.net/geo/d012-1200.jpg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531df9bdffb5f5e9f09.jpeg",
+  "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae752c1728d099.jpg",
+  "https://masshvac.net/geo/d071-1200.jpg",
 ];
 
 export function getImageForCity(slug: string, images: string[]): string {
