@@ -15,6 +15,7 @@ import { averageRating } from "@/data/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
 import { getLocalContent } from "@/data/local";
+import { CityQuoteMobile, CityAbout, CityProcess, CityProjects, CityEmergency } from "@/components/CitySections";
 
 const serviceIcons = [Flame, Snowflake, Wind, Wrench, AirVent];
 
@@ -129,6 +130,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+      <CityQuoteMobile cityName={city.name} />
+
       {/* Services in this city */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4">
@@ -170,6 +173,12 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
+      <CityAbout cityName={city.name} />
+      <CityProcess />
+      <CityProjects cityName={city.name} cityIndex={cityIndex} />
+      <CityEmergency cityName={city.name} />
+      <ReviewsWidget compact={Boolean(local)} />
+
       {!local && (
         <>
       {/* Why Choose Mass HVAC */}
@@ -206,7 +215,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         <div className="mx-auto max-w-7xl px-4 text-center">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-primary mb-2 flex items-center justify-center gap-2">
-              <MapPin className="w-5 h-5 text-accent" />HVAC Services in Nearby Cities
+              <MapPin className="w-5 h-5 text-accent" />Service Areas Near {city.name}
             </h2>
             <p className="text-gray-600 text-sm mb-8">We also serve these nearby MetroWest towns.</p>
             <div className="flex flex-wrap justify-center gap-3">
@@ -261,7 +270,6 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
       </section>
 
-      <ReviewsWidget compact={Boolean(local)} />
       <MapSection compact={Boolean(local)} />
 
       {/* JSON-LD: Service — aggregateRating intentionally OMITTED here.

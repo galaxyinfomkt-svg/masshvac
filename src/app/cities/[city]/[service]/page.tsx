@@ -15,6 +15,7 @@ import { averageRating } from "@/data/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { renderMarkdown } from "@/lib/markdown";
 import { getLocalContent } from "@/data/local";
+import { CityQuoteMobile, CityAbout, CityProcess, CityProjects, CityEmergency } from "@/components/CitySections";
 
 /** Search-style labels per service ("furnace repair natick" beats "Heating in Natick"). */
 const SEARCH_LABEL: Record<string, string> = {
@@ -163,6 +164,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
+      <CityQuoteMobile cityName={city.name} />
+
       {/* Content */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4">
@@ -173,6 +176,12 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
           </ScrollReveal>
         </div>
       </section>
+
+      <CityAbout cityName={city.name} />
+      <CityProcess />
+      <CityProjects cityName={city.name} cityIndex={cityIndex} />
+      <CityEmergency cityName={city.name} />
+      <ReviewsWidget compact={Boolean(localService)} />
 
       {!localService && (
         <>
@@ -310,7 +319,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ ci
         </div>
       </section>
 
-      <ReviewsWidget compact={Boolean(localService)} />
       <MapSection compact={Boolean(localService)} />
 
       {/* JSON-LD: Service */}
