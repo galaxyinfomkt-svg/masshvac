@@ -40,9 +40,7 @@ export default function QuoteSection() {
             Call {PHONE_DISPLAY}
           </a>
         </div>
-        <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(27,42,107,0.12)] border border-gray-100">
-          <LeadForm instance="quote-section" height={640} />
-        </div>
+        <LeadForm instance="quote-section" height={640} />
       </div>
     </section>
   );

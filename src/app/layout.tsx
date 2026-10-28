@@ -206,8 +206,8 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <link rel="preconnect" href="https://assets.cdn.filesafe.space" />
         <OrganizationJsonLd />
-        {/* LeadConnector form auto-resize helper (19 KB, loads when idle). */}
-        <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+        {/* LeadConnector form helper (19 KB), same script GHL gives with the embed. */}
+        <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
       </head>
 
       <body className="font-sans antialiased pb-[calc(3.25rem+env(safe-area-inset-bottom))] lg:pb-0">

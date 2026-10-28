@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, PhoneCall, FileText, CalendarCheck, ThumbsUp, ArrowRight, Zap, Award } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import LazyIframe from "@/components/LazyIframe";
+import LeadForm from "@/components/LeadForm";
 import { PHONE_DISPLAY, TEL_HREF } from "@/data/company";
 import { averageRating, reviewCount } from "@/data/reviews";
 import { projects } from "@/data/projects";
@@ -14,7 +14,6 @@ import { projects } from "@/data/projects";
  * and each city page has to stay mostly unique text.
  */
 
-const FORM_ID = "ko3gg97CJtkDUrqpruBq";
 const ABOUT_IMAGE = "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/69988531e92bc11a12e97972.jpg";
 const EMERGENCY_IMAGE = "https://assets.cdn.filesafe.space/sZJvTMNScvm4zh9WxYtH/media/6998853163ae753dac28d098.jpg";
 
@@ -32,33 +31,7 @@ export function CityQuoteMobile({ cityName }: { cityName: string }) {
             Free HVAC Quote in <span className="text-accent-on-dark">{cityName}</span>
           </h2>
         </div>
-        <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
-          <LazyIframe
-            src={`https://api.leadconnectorhq.com/widget/form/${FORM_ID}`}
-            className="w-full border-none"
-            style={{ height: "764px" }}
-            id={`quote-form-mobile-${FORM_ID}`}
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-activation-type="alwaysActivated"
-            data-deactivation-type="neverDeactivate"
-            data-form-name="FunilGhl"
-            data-height="764"
-            data-layout-iframe-id={`quote-form-mobile-${FORM_ID}`}
-            data-form-id={FORM_ID}
-            title="Free HVAC Estimate Form - Mass HVAC"
-            delayMs={1500}
-            placeholder={
-              <div className="flex w-full flex-col items-center justify-center px-6 text-center" style={{ minHeight: "764px" }} role="status">
-                <p className="text-sm text-gray-600">Loading the form&hellip;</p>
-                <a href={TEL_HREF} className="mt-3 font-bold text-accent underline">
-                  Or call {PHONE_DISPLAY}
-                </a>
-              </div>
-            }
-            placeholderHeight="764px"
-          />
-        </div>
+        <LeadForm instance="quote-form-mobile" height={764} title="Free HVAC Estimate Form - Mass HVAC" />
       </div>
     </section>
   );

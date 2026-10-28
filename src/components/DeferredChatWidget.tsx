@@ -12,8 +12,8 @@ type LeadConnectorWindow = Window & {
 /**
  * LeadConnector (Bee Pro Hub) chat widget.
  *
- * Desktop (≥1024px): loads after engagement (interaction, scroll, or 6s idle),
- * as before.
+ * Desktop (≥1024px): loads after engagement (interaction or scroll), never on its own while the
+ * visitor sits on the hero, so its prompt bubble does not cover the quote form.
  *
  * Mobile: loads ONLY when the visitor taps "Chat" in MobileStickyBar. In
  * production the auto-loaded launcher and its "Hi there!" prompt covered the
@@ -41,13 +41,11 @@ export default function DeferredChatWidget() {
     const events = ["pointerdown", "keydown"] as const;
     events.forEach((e) => window.addEventListener(e, trigger, { once: true, passive: true }));
     window.addEventListener("scroll", onScroll, { passive: true });
-    const idleTimeout = window.setTimeout(trigger, 6000);
 
     return () => {
       window.removeEventListener(OPEN_CHAT_EVENT, onOpen);
       events.forEach((e) => window.removeEventListener(e, trigger));
       window.removeEventListener("scroll", onScroll);
-      window.clearTimeout(idleTimeout);
     };
   }, [shouldLoad]);
 

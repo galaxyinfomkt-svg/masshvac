@@ -29,7 +29,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ReviewsWidget from "@/components/ReviewsWidget";
 import MapSection from "@/components/MapSection";
 import FAQAccordion from "@/components/FAQAccordion";
-import LazyIframe from "@/components/LazyIframe";
+import LeadForm from "@/components/LeadForm";
 
 export const metadata: Metadata = buildMetadata({
   title: "HVAC Contractor in Milford & MetroWest, MA | Mass HVAC Inc",
@@ -199,42 +199,9 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Right — Bare iframe form (desktop only, lazy-loaded to avoid
-                blocking LCP with reCAPTCHA + LeadConnector JS ~5MB) */}
+            {/* Right — the GHL form as it comes from GHL (desktop only): bare iframe, loads with the page */}
             <div className="hidden lg:block">
-              <LazyIframe
-                src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
-                className="w-full border-none rounded-lg"
-                style={{ height: "640px" }}
-                id="hero-form-ko3gg97CJtkDUrqpruBq"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="FunilGhl"
-                data-height="640"
-                data-layout-iframe-id="hero-form-ko3gg97CJtkDUrqpruBq"
-                data-form-id="ko3gg97CJtkDUrqpruBq"
-                title="Free HVAC Estimate - Mass HVAC Inc"
-                delayMs={3000}
-                placeholder={
-                  <div
-                    className="flex w-full flex-col items-center justify-center rounded-lg bg-white px-6 text-center shadow-[0_10px_40px_rgba(0,0,0,0.3)]"
-                    style={{ minHeight: "640px" }}
-                    role="status"
-                  >
-                    <p className="text-lg font-semibold text-primary">Get Your Free HVAC Estimate</p>
-                    <p className="mt-2 text-sm text-gray-600">Loading the form&hellip;</p>
-                    <a href={TEL_HREF} className="mt-4 font-bold text-accent underline">
-                      Or call {PHONE_DISPLAY}
-                    </a>
-                  </div>
-                }
-                placeholderHeight="640px"
-              />
+              <LeadForm instance="hero-form" height={640} title="Free HVAC Estimate - Mass HVAC Inc" className="w-full border-none rounded-lg" />
             </div>
           </div>
         </div>
@@ -263,37 +230,7 @@ export default function HomePage() {
               30-second form &middot; no obligation &middot; same-day response
             </p>
           </div>
-          <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
-            <LazyIframe
-              src="https://api.leadconnectorhq.com/widget/form/ko3gg97CJtkDUrqpruBq"
-              className="w-full border-none"
-              style={{ height: "764px" }}
-              id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-activation-type="alwaysActivated"
-              data-deactivation-type="neverDeactivate"
-              data-form-name="FunilGhl"
-              data-height="764"
-              data-layout-iframe-id="quote-form-mobile-ko3gg97CJtkDUrqpruBq"
-              data-form-id="ko3gg97CJtkDUrqpruBq"
-              title="Free HVAC Estimate Form - Mass HVAC"
-              delayMs={1500}
-              placeholder={
-                <div
-                  className="flex w-full flex-col items-center justify-center px-6 text-center"
-                  style={{ minHeight: "764px" }}
-                  role="status"
-                >
-                  <p className="text-sm text-gray-600">Loading the form&hellip;</p>
-                  <a href={TEL_HREF} className="mt-3 font-bold text-accent underline">
-                    Or call {PHONE_DISPLAY}
-                  </a>
-                </div>
-              }
-              placeholderHeight="764px"
-            />
-          </div>
+          <LeadForm instance="quote-form-mobile" height={764} title="Free HVAC Estimate Form - Mass HVAC" />
           <p className="text-center text-white/80 text-xs mt-4">
             Prefer to talk?{" "}
             <a href={TEL_HREF} className="text-white font-bold underline">

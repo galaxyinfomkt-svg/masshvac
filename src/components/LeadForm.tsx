@@ -1,52 +1,46 @@
-import LazyIframe from "@/components/LazyIframe";
-import { PHONE_DISPLAY, TEL_HREF } from "@/data/company";
-
 const FORM_ID = "ko3gg97CJtkDUrqpruBq";
 const FORM_SRC = `https://api.leadconnectorhq.com/widget/form/${FORM_ID}`;
 
 /**
- * The one LeadConnector (Bee Pro Hub) quote form, lazy-loaded everywhere.
- * `instance` must be unique per page so LeadConnector can size each iframe.
+ * The LeadConnector (Bee Pro Hub) quote form, exactly as GHL embeds it: a bare iframe in the
+ * server HTML, so the browser starts loading it with the page. No placeholder text, no delay and
+ * no card behind it; the form brings its own background.
+ *
+ * loading="lazy" only matters for forms that are off screen or inside a hidden breakpoint
+ * (the hero form on phones, the phone form on desktop): the browser skips those, and starts a
+ * form that is in view right away.
+ * `instance` must be unique per form so LeadConnector can size each iframe.
  */
 export default function LeadForm({
   instance,
   height = 640,
-  delayMs = 0,
-  title = "Free HVAC Estimate — Mass HVAC Inc",
+  title = "Free HVAC Estimate - Mass HVAC Inc",
+  className = "w-full border-none",
 }: {
   instance: string;
   height?: number;
-  delayMs?: number;
   title?: string;
+  className?: string;
 }) {
   const id = `${instance}-${FORM_ID}`;
   return (
-    <LazyIframe
+    <iframe
       src={FORM_SRC}
-      className="w-full border-none"
+      className={className}
       style={{ height: `${height}px` }}
       id={id}
+      loading="lazy"
       data-layout="{'id':'INLINE'}"
       data-trigger-type="alwaysShow"
+      data-trigger-value=""
       data-activation-type="alwaysActivated"
+      data-activation-value=""
       data-deactivation-type="neverDeactivate"
       data-form-name="FunilGhl"
       data-height={String(height)}
       data-layout-iframe-id={id}
       data-form-id={FORM_ID}
       title={title}
-      delayMs={delayMs}
-      placeholderHeight={`${height}px`}
-      placeholder={
-        <p className="text-sm text-gray-600 text-center px-6">
-          Loading the quote form…
-          <br />
-          Prefer to talk?{" "}
-          <a href={TEL_HREF} className="font-semibold text-accent underline">
-            Call {PHONE_DISPLAY}
-          </a>
-        </p>
-      }
     />
   );
 }

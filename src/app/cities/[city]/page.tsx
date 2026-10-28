@@ -122,9 +122,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
             {/* Right — Form (desktop only) */}
             <div className="hidden lg:block">
-              <div className="bg-white rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
-                <LeadForm instance="city-hero" height={640} delayMs={2000} title={`Free HVAC Estimate in ${city.name}, MA`} />
-              </div>
+              <LeadForm instance="city-hero" height={640} title={`Free HVAC Estimate in ${city.name}, MA`} />
             </div>
           </div>
         </div>
